@@ -115,6 +115,15 @@ namespace KVValidator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Validácia xml voči schéme neprešla!.
+        /// </summary>
+        internal static string XsdValidationFailed {
+            get {
+                return ResourceManager.GetString("XsdValidationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rok musí byť aspoň 2014!.
         /// </summary>
         internal static string YearNotValid {

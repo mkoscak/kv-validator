@@ -135,6 +135,9 @@
   <data name="TransactionSectionMissing" xml:space="preserve">
     <value>Vo vstupnom súbore chýba sekcia "Transakcie".</value>
   </data>
+  <data name="XsdValidationFailed" xml:space="preserve">
+    <value>Validácia xml voči schéme neprešla!</value>
+  </data>
   <data name="YearNotValid" xml:space="preserve">
     <value>Rok musí byť aspoň 2014!</value>
   </data>

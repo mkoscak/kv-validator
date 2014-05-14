@@ -3,6 +3,8 @@ using System.IO;
 using System.Linq;
 using KVValidator.Properties;
 using System;
+using System.Xml;
+using System.Xml.Schema;
 
 namespace KVValidator
 {
@@ -34,12 +36,24 @@ namespace KVValidator
 
         private static void Validate(IList<string> ret, string filePath)
         {
+            // existencia suboru
             if (!File.Exists(filePath))
             {
                 ret.Add(string.Format("{0} ('{1}')", Resources.InputFileDoesntExists, filePath));
                 return;
             }
 
+            // validacia voci XSD
+            try
+            {
+                ValidateXML(filePath);
+            }
+            catch (Exception ex)
+            {
+                ret.Add(string.Format("{0} ({1})", Resources.XsdValidationFailed, ex.Message));
+            }
+
+            // nacitanie XML
             var kv = KVDPH.LoadFromFile(filePath);
 
             // validacia sekcii
@@ -55,8 +69,40 @@ namespace KVValidator
                 ret.Add(Resources.YearNotValid);
 
             // druh kontrolneho vykazu musi byt vyplneny
-            if (kv.Identifikacia.Druh == null)
-                ret.Add(Resources.DocumentKindMissing);
+            /*if (kv.Identifikacia.Druh == null)
+                ret.Add(Resources.DocumentKindMissing);*/
+        }
+
+        /// <summary>
+        /// Validacia XML voci XSD
+        /// </summary>
+        /// <param name="xml"></param>
+        /// <returns></returns>
+        private static void ValidateXML(string xml)
+        {
+            // Set the validation settings.
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.ValidationType = ValidationType.Schema;
+            settings.ValidationFlags |= XmlSchemaValidationFlags.ProcessInlineSchema;
+            settings.ValidationFlags |= XmlSchemaValidationFlags.ProcessSchemaLocation;
+            settings.ValidationFlags |= XmlSchemaValidationFlags.ReportValidationWarnings;
+            settings.ValidationEventHandler += new ValidationEventHandler(ValidationCallBack);
+
+            // schema na validaciu
+            settings.Schemas.Add(@"https://ekr.financnasprava.sk/Formulare/XSD/kv_dph_2014.xsd", @".\XSD\kv_dph_2014.xsd");
+
+            // Create the XmlReader object.
+            var reader = XmlReader.Create(xml, settings);
+
+            // Parse the file. 
+            while (reader.Read())
+                ;
+        }
+
+        private static void ValidationCallBack(object sender, ValidationEventArgs args)
+        {
+            if (args.Severity != XmlSeverityType.Warning)
+                throw new Exception(args.Message);
         }
     }
 }

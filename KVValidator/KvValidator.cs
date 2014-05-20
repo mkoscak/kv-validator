@@ -5,20 +5,35 @@ using KVValidator.Properties;
 using System;
 using System.Xml;
 using System.Xml.Schema;
+using KVValidator.Interface;
 
 namespace KVValidator
 {
     /// <summary>
     /// Validator kontrolnych vykazov
     /// </summary>
-    public class KvValidator
+    public class KvValidator<T>
     {
+        /// <summary>
+        /// Validacne pravidla
+        /// </summary>
+        internal IList<IValidationRule<T>> Rules { get; set; }
+
+        /// <summary>
+        /// Konstruktor s validacnymi pravidlami
+        /// </summary>
+        /// <param name="rules"></param>
+        public KvValidator(IList<IValidationRule<T>> rules)
+        {
+            this.Rules = rules;
+        }
+
         /// <summary>
         /// Validacia XML kontrolneho vykazu na zadanej ceste
         /// </summary>
         /// <param name="filePath">Cesta k suboru</param>
         /// <returns>Zoznam chyb/problemov alebo prazdny list ak je vsetko ok</returns>
-        public static IList<string> Validate(string filePath)
+        public IList<string> Validate(string filePath)
         {
             var ret = new List<string>();
 
@@ -34,7 +49,7 @@ namespace KVValidator
             return ret;
         }
 
-        private static void Validate(IList<string> ret, string filePath)
+        private void Validate(IList<string> ret, string filePath)
         {
             // existencia suboru
             if (!File.Exists(filePath))

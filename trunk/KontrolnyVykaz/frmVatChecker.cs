@@ -18,11 +18,12 @@ namespace KontrolnyVykaz
             try
             {
                 Cursor = Cursors.WaitCursor;
-                var valRes = KvValidator.Validate("vzor.xml");
+                /*var validator = new RealWalidator..
+                var valRes = validator.Validate("vzor.xml");
                 if (valRes.Count > 0)
                     textBox1.Lines = valRes.ToArray();
                 else
-                    textBox1.Text = "OK";
+                    textBox1.Text = "OK";*/
             }
             catch (Exception ex)
             {

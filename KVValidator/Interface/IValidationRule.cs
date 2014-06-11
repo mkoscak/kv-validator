@@ -20,7 +20,7 @@ namespace KVValidator.Interface
         /// </summary>
         /// <param name="param">Objekt pre validaciu</param>
         /// <returns></returns>
-        IValidationItemResult Validate<T>(T param);
+        IValidationItemResult Validate<Tinput>(Tinput param);
 
         /// <summary>
         /// Textovy popis pravidla

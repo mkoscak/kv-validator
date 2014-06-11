@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Interface Name="KVValidator.Interface.IResultDetailedInfo">
+    <Position X="3.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IResultDetailedInfo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="KVValidator.Interface.IValidator">
+    <Position X="5.5" Y="2.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IValidator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="KVValidator.Interface.IValidationItemResult">
+    <Position X="4.25" Y="4.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAACAABAAAAAAAAAAAAAAAAAACAAAAAAAQAAAA=</HashCode>
+      <FileName>Interface\IValidationItemResult.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="KVValidator.Interface.IValidationObserver">
+    <Position X="5" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAQAAAAAgBAAAAAA=</HashCode>
+      <FileName>Interface\IValidationObserver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="KVValidator.Interface.IValidationResult">
+    <Position X="0.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IValidationResult.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="KVValidator.Interface.IValidationRule">
+    <Position X="0.5" Y="4.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAIAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IValidationRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="KVValidator.Interface.IValidationSet">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IValidationSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="KVValidator.Interface.IValidationSetFactory">
+    <Position X="0.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IValidationSetFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="System.Collections.Generic.IList&lt;T&gt;" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="KVValidator.Interface.ResultState">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAABAAAACBA=</HashCode>
+      <FileName>Interface\IValidationItemResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KVValidator.Interface.ObserverResult">
+    <Position X="4.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IValidationObserver.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KVValidator.Interface.RuleType">
+    <Position X="2.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABACAAAAAAAAAAAAAAAIAAABI=</HashCode>
+      <FileName>Interface\IValidationRule.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

@@ -18,5 +18,17 @@ namespace KVValidator.Interface
         /// <param name="rules">Zoznam pravidiel</param>
         /// <returns></returns>
         IValidationResult Validate<T>(T input, IValidationSet rules);
+
+        /// <summary>
+        /// Prida observera udalosti
+        /// </summary>
+        /// <param name="observer"></param>
+        void AddObserver(IValidationObserver observer);
+
+        /// <summary>
+        /// Odstrani observera udalosti
+        /// </summary>
+        /// <param name="observer"></param>
+        void RemoveObserver(IValidationObserver observer);
     }
 }

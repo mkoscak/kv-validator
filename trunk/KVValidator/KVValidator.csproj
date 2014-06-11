@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementation\DefaultValidationSetFactory.cs" />
+    <Compile Include="Implementation\ValidationItemResult.cs" />
     <Compile Include="Implementation\ValidationResult.cs" />
     <Compile Include="Implementation\ValidationSet.cs" />
     <Compile Include="Interface\IResultDetailedInfo.cs" />
@@ -63,9 +64,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Validators\YearValidator.cs" />
     <Compile Include="Xsd\kv_dph_2014.designer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram\Model.cd" />
     <None Include="Xsd\kv_dph_2014.xsd" />
   </ItemGroup>
   <ItemGroup>
@@ -74,9 +77,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Validators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

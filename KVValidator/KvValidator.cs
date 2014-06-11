@@ -17,13 +17,13 @@ namespace KVValidator
         /// <summary>
         /// Validacne pravidla
         /// </summary>
-        internal IList<IValidationRule<T>> Rules { get; set; }
+        internal IList<IValidationRule> Rules { get; set; }
 
         /// <summary>
         /// Konstruktor s validacnymi pravidlami
         /// </summary>
         /// <param name="rules"></param>
-        public KvValidator(IList<IValidationRule<T>> rules)
+        public KvValidator(IList<IValidationRule> rules)
         {
             this.Rules = rules;
         }

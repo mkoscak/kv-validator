@@ -8,35 +8,34 @@ namespace KVValidator.Interface
     /// <summary>
     /// Validacne pravidlo, napr. rok musi byt vacsi ako 2014 a pod.
     /// </summary>
-    /// <typeparam name="T">Typ parametra pre validaciu</typeparam>
-    public interface IValidationRule<T>
+    public interface IValidationRule
     {
+        /// <summary>
+        /// Co kontroluje validacne pravidlo, hlavicku, polozku alebo oboje?
+        /// </summary>
+        RuleType RuleType { get; }
+
         /// <summary>
         /// Proces validacie
         /// </summary>
         /// <param name="param">Objekt pre validaciu</param>
         /// <returns></returns>
-        ValidationRuleResult Validate(T param);
+        IValidationResult Validate<T>(T param);
 
         /// <summary>
-        /// Validacna hlaska v pripade, ze validacia nepresla
+        /// Textovy popis pravidla
         /// </summary>
-        string ValidationFailedMessage { get; }
-
-        /// <summary>
-        /// Validacna hlaska v pripade, ze validacia presla s varovanim
-        /// </summary>
-        string ValidationWarningMessage { get; }
+        string RuleDescription { get; }
     }
 
     /// <summary>
-    /// Vysledok validacie
+    /// Typ pravidla
     /// </summary>
-    public enum ValidationRuleResult
+    public enum RuleType
     {
         Unknown,
-        Ok,
-        OkWithWarning,
-        Failed,
+        HeaderChecker,
+        ItemChecker,
+        WholeXml,
     }
 }

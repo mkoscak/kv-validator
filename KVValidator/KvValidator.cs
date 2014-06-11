@@ -6,24 +6,25 @@ using System;
 using System.Xml;
 using System.Xml.Schema;
 using KVValidator.Interface;
+using KVValidator.Implementation;
 
 namespace KVValidator
 {
     /// <summary>
     /// Validator kontrolnych vykazov
     /// </summary>
-    public class KvValidator<T>
+    public class KvValidator
     {
         /// <summary>
         /// Validacne pravidla
         /// </summary>
-        internal IList<IValidationRule> Rules { get; set; }
+        internal ValidationSet Rules { get; set; }
 
         /// <summary>
         /// Konstruktor s validacnymi pravidlami
         /// </summary>
         /// <param name="rules"></param>
-        public KvValidator(IList<IValidationRule> rules)
+        public KvValidator(ValidationSet rules)
         {
             this.Rules = rules;
         }

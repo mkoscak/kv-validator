@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IResultDetailedInfo.cs" />
+    <Compile Include="Interface\IValidationResult.cs" />
     <Compile Include="Interface\IValidationRule.cs" />
     <Compile Include="KvValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KVValidator.Interface
 {
-    public interface IValidationResult : IList<IValidationItemResult>
+    public interface IValidationSet : IList<IValidationRule>
     {
     }
 }

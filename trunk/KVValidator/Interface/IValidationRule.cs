@@ -20,7 +20,7 @@ namespace KVValidator.Interface
         /// </summary>
         /// <param name="param">Objekt pre validaciu</param>
         /// <returns></returns>
-        IValidationResult Validate<T>(T param);
+        IValidationItemResult Validate<T>(T param);
 
         /// <summary>
         /// Textovy popis pravidla
@@ -34,8 +34,9 @@ namespace KVValidator.Interface
     public enum RuleType
     {
         Unknown,
-        HeaderChecker,
-        ItemChecker,
-        WholeXml,
+        HeaderChecker,  // validuje hlavicku
+        ItemChecker,    // validuje polozku vykazu
+        WholeXml,       // validuje cele xml, napr. voci XSD scheme
+        General,        // genericky validator, napr. kontrola na prazdny vstup a pod.
     }
 }

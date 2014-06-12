@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using KVValidator.Interface;
+using KVValidator.Validators;
 
 namespace KVValidator.Implementation
 {
@@ -30,7 +31,7 @@ namespace KVValidator.Implementation
         {
             Rules = new ValidationSet();
 
-            //Rules.Add();
+            Rules.Add(new YearValidator());
         }
 
         #endregion

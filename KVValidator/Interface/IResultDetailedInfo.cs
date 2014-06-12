@@ -8,12 +8,12 @@ namespace KVValidator.Interface
     /// <summary>
     /// Detail vysledku validacie, napr. info o cisle riadku, na ktorom je problem a pod.
     /// </summary>
-    public interface IResultDetailedInfo
+    public interface IDetailedResultInfo
     {
         /// <summary>
         /// Cislo riadku
         /// </summary>
-        int? LineNumber { get; }
+        int? LineNumber { get; set; }
 
         // TODO dalsie informacie?
     }

@@ -17,7 +17,7 @@ namespace KVValidator.Interface
         /// <param name="input">Vstupne data na validaciu</param>
         /// <param name="rules">Zoznam pravidiel</param>
         /// <returns></returns>
-        IValidationResult Validate<T>(T input, IValidationSet rules);
+        IValidationResult Validate(KVDPH input, IValidationSet rules);
 
         /// <summary>
         /// Prida observera udalosti

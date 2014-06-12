@@ -33,7 +33,7 @@ namespace KVValidator.Interface
         /// <summary>
         /// Detail vysledku, napr. v pripade problemu cislo riadku a pod.
         /// </summary>
-        IResultDetailedInfo Details { get; }
+        IDetailedResultInfo Details { get; }
     }
 
     /// <summary>

@@ -32,22 +32,27 @@ namespace KVValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (input.Obdobie.Rok != 2014)
-                ret = ValidationFailed();
+                ret = ValidationFailed(input.Obdobie.Rok);
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed()
+        private ValidationItemResult ValidationFailed(int year)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = "Rok musí byť väčší alebo rovný 2014!";
+            ret.ResultMessage = string.Format("Rok musí byť väčší alebo rovný 2014 (aktuálne {0})!", year);
             ret.ResultTooltip = "Upravte rok v sekcii '<Identifikacia>/<Obdobie>/<Rok>' na hodnotu väčšiu alebo rovnú 2014!";
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 7;
 
             return ret;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0} ({1})", this.RuleName, this.RuleType);
         }
     }
 }

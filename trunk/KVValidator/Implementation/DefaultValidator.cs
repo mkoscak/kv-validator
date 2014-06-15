@@ -26,27 +26,42 @@ namespace KVValidator.Implementation
             var generalCheckers = rules.Where(r => r.RuleType == RuleType.General).ToList();
             foreach (var genCheck in generalCheckers)
             {
+                if (HandleBeforeObservers(genCheck))
+                    continue;
+
                 var retCheck = genCheck.Validate(input);
                 if (retCheck.ValidationResultState != ResultState.Ok)
                     ret.Add(retCheck);
+
+                HandleObservers(retCheck);
             }
 
             // validacia xml ako celku
             var xmlCheckers = rules.Where(r => r.RuleType == RuleType.WholeXml).ToList();
             foreach (var xmlCheck in xmlCheckers)
             {
+                if (HandleBeforeObservers(xmlCheck))
+                    continue;
+
                 var retCheck = xmlCheck.Validate(input);
                 if (retCheck.ValidationResultState != ResultState.Ok)
                     ret.Add(retCheck);
+
+                HandleObservers(retCheck);
             }
 
             // validacia hlaviciek
             var headerCheckers = rules.Where(r => r.RuleType == RuleType.HeaderChecker).ToList();
             foreach (var headCheck in headerCheckers)
             {
+                if (HandleBeforeObservers(headCheck))
+                    continue;
+
                 var retCheck = headCheck.Validate(input.Identifikacia);
                 if (retCheck.ValidationResultState != ResultState.Ok)
                     ret.Add(retCheck);
+
+                HandleObservers(retCheck);
             }
 
             // validacia poloziek
@@ -72,6 +87,47 @@ namespace KVValidator.Implementation
             return ret;
         }
 
+        private bool HandleBeforeObservers(IValidationRule genCheck)
+        {
+            foreach (var obs in Observers)
+            {
+                if (obs.NextRule(genCheck) == ObserverResult.SkipRule)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private void HandleObservers(IValidationItemResult retCheck)
+        {
+            foreach (var obs in Observers)
+            {
+                switch (retCheck.ValidationResultState)
+                {
+                    case ResultState.Unknown:
+                        break;
+                    case ResultState.Ok:
+                        if (obs.OnOk(retCheck) == ObserverResult.StopValidation)
+                            throw new Exception("Validation skipped by observer!");
+                        break;
+                    case ResultState.OkWithWarning:
+                        if (obs.OnWarning(retCheck) == ObserverResult.StopValidation)
+                            throw new Exception("Validation skipped by observer!");
+                        break;
+                    case ResultState.Error:
+                        if (obs.OnError(retCheck) == ObserverResult.StopValidation)
+                            throw new Exception("Validation skipped by observer!");
+                        break;
+                    case ResultState.CriticalError:
+                        if (obs.OnCriticalError(retCheck) == ObserverResult.StopValidation)
+                            throw new Exception("Validation skipped by observer!");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
         /// <summary>
         /// Genericka validacia poloziek daneho typu
         /// </summary>
@@ -79,15 +135,20 @@ namespace KVValidator.Implementation
         /// <param name="items"></param>
         /// <param name="ret"></param>
         /// <param name="checkers"></param>
-        private static void ValidateItems<T>(IList<T> items, ValidationResult ret, List<IValidationRule> checkers)
+        private void ValidateItems<T>(IList<T> items, ValidationResult ret, List<IValidationRule> checkers)
         {
             foreach (var item in items)
             {
                 foreach (var itemCheck in checkers)
                 {
+                    if (HandleBeforeObservers(itemCheck))
+                        continue;
+
                     var retCheck = itemCheck.Validate(item);
                     if (retCheck.ValidationResultState != ResultState.Ok)
                         ret.Add(retCheck);
+
+                    HandleObservers(retCheck);
                 }
             }
         }

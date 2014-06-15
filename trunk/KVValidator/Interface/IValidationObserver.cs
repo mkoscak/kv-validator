@@ -11,6 +11,13 @@ namespace KVValidator.Interface
     public interface IValidationObserver
     {
         /// <summary>
+        /// Metoda volana pred validacnym pravidlom, klient moze vyziadat preskocenie validacie vratenim SkipRule
+        /// </summary>
+        /// <param name="rule"></param>
+        /// <returns></returns>
+        ObserverResult NextRule(IValidationRule rule);
+ 
+        /// <summary>
         /// Validacia skoncila uspechom.. mozeme napr. zalogovat alebo nereagovat
         /// </summary>
         /// <param name="result"></param>
@@ -46,5 +53,6 @@ namespace KVValidator.Interface
     {
         Continue,
         StopValidation,
+        SkipRule,
     }
 }

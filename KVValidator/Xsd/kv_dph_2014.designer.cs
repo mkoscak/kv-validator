@@ -416,6 +416,8 @@ namespace KVValidator
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ekr.financnasprava.sk/Formulare/XSD/kv_dph_2014.xsd")]
     public enum DruhKvType
     {
+        // modified by MiKo - defualt non filled
+        X,
 
         /// <remarks/>
         R,

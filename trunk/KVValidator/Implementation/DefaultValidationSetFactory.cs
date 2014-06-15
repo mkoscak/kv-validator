@@ -35,6 +35,7 @@ namespace KVValidator.Implementation
             Rules = new ValidationSet();
 
             Rules.Add(new YearValidator());
+            Rules.Add(new KvKindValidator());
         }
 
         #endregion

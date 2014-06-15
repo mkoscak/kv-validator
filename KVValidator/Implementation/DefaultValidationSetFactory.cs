@@ -13,6 +13,9 @@ namespace KVValidator.Implementation
 
         protected IValidationSet Rules { get; set; }
         
+        /// <summary>
+        /// Vrati default zoznam validacii
+        /// </summary>
         public IValidationSet ValidationSet
         {
             get

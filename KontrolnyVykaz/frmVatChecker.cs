@@ -167,5 +167,20 @@ namespace KontrolnyVykaz
         }
 
         #endregion
+
+        private void btnExecQuery_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnExecNonQ_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClearWin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

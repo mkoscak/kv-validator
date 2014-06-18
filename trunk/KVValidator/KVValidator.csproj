@@ -74,6 +74,8 @@
     <Compile Include="Sql\BaseEntity.cs" />
     <Compile Include="Sql\DbProvider.cs" />
     <Compile Include="Sql\IEntity.cs" />
+    <Compile Include="Validators\BlackListValidator\BlackListValidator.cs" />
+    <Compile Include="Validators\BlackListValidator\Entities\BlackListEntity.cs" />
     <Compile Include="Validators\KvKindValidator.cs" />
     <Compile Include="Validators\YearValidator.cs" />
     <Compile Include="Xsd\kv_dph_2014.designer.cs" />
@@ -91,9 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Xsd\README.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Validators\BlackListValidator\Entities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

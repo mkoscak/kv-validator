@@ -198,6 +198,11 @@ namespace KVValidator.Sql
             Valid = row[VALID].ToString() != "0";
         }
 
+        public static string NullableLong(long? l)
+        {
+            return l.HasValue ? l.Value.ToString() : "null";
+        }
+
         #region IEntity Members
 
         public abstract string GetTableName();

@@ -6,6 +6,7 @@ using System.Linq;
 using System.IO;
 using KVValidator.Implementation;
 using KVValidator.Interface;
+using KVValidator.Sql;
 
 namespace KontrolnyVykaz
 {
@@ -168,19 +169,42 @@ namespace KontrolnyVykaz
 
         #endregion
 
+        #region DB helper
+
+        DbProvider db = DbProvider.Instance;
+
         private void btnExecQuery_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                var res = db.ExecuteQuery(txtQuery.SelectedText);
+                if (res != null && res.Tables.Count > 0)
+                    gridResults.DataSource = res.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                txtQuery.AppendText(Environment.NewLine + ex.Message);
+            }
         }
 
         private void btnExecNonQ_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                db.ExecuteNonQuery(txtQuery.SelectedText);
+                txtQuery.AppendText(Environment.NewLine + "Command executed!");
+            }
+            catch (Exception ex)
+            {
+                txtQuery.AppendText(Environment.NewLine + ex.Message);
+            }
         }
 
         private void btnClearWin_Click(object sender, EventArgs e)
         {
-
+            txtQuery.Clear();
         }
+
+        #endregion
     }
 }

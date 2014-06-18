@@ -13,13 +13,6 @@ namespace KVValidator.Sql
     /// </summary>
     public class DbProvider
     {
-        public static string[] Tables = { "T_PRODUCT", "T_STORAGE", "T_STORAGE_STATE", };
-
-        // table names
-        public static string T_PRODUCT = Tables[0];
-        public static string T_STORAGE = Tables[1];
-        public static string T_STORAGE_STATE = Tables[2];
-
         public static string DataSource
         {
             get

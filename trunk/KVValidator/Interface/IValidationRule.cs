@@ -41,6 +41,7 @@ namespace KVValidator.Interface
     {
         Unknown,
         HeaderChecker,  // validuje hlavicku
+        GeneralItemChecker, // validuje vsetky typy itemov nizsie
         A1ItemChecker,
         A2ItemChecker,
         B1ItemChecker,

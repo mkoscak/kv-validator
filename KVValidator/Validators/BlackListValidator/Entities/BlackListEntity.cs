@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using KVValidator.Sql;
 
-namespace Koberce_2.Entities
+namespace KVValidator.Validators.BlackListValidator.Entities
 {
     /// <summary>
     /// Entita reprezentujuca neplatica..

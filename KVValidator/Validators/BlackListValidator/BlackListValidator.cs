@@ -10,29 +10,26 @@ namespace KVValidator.Validators.BlackListValidator
     /// <summary>
     /// Validuje zaznam voci internemu zoznamu v DB
     /// </summary>
-    class BlackListValidator : BaseValidationRule<Identifikacia>
+    class BlackListValidator : IValidationRule
     {
-        public override RuleType RuleType
+        public RuleType RuleType
         {
-            get { return RuleType.A1ItemChecker; }
+            get { return RuleType.GeneralItemChecker; }
         }
 
-        public override string RuleDescription
+        public string RuleDescription
         {
             get { return "Kontroluje, či je v hlavičke vyplnený druh kontrolného výkazu."; }
         }
 
-        public override string RuleName
+        public string RuleName
         {
             get { return "Validátor vyplnenosti druhu KV"; }
         }
 
-        protected override IValidationItemResult Validate(Identifikacia input)
+        public IValidationItemResult Validate(object input)
         {
             var ret = ValidationItemResult.CreateDefaultOk(this);
-
-            if (input.Druh != DruhKvType.R && input.Druh != DruhKvType.O && input.Druh != DruhKvType.D)
-                ret = ValidationFailed();
 
             return ret;
         }

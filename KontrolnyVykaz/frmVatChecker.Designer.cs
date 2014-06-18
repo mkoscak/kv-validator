@@ -40,6 +40,7 @@
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label33 = new System.Windows.Forms.Label();
+            this.btnBlacklistImport = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabTester.SuspendLayout();
             this.tabDbHelper.SuspendLayout();
@@ -51,7 +52,7 @@
             // 
             this.btnTest.Location = new System.Drawing.Point(3, 6);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.Size = new System.Drawing.Size(134, 31);
             this.btnTest.TabIndex = 0;
             this.btnTest.Text = "Validuj";
             this.btnTest.UseVisualStyleBackColor = true;
@@ -62,11 +63,11 @@
             this.txtLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLog.Location = new System.Drawing.Point(84, 6);
+            this.txtLog.Location = new System.Drawing.Point(143, 6);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtLog.Size = new System.Drawing.Size(746, 544);
+            this.txtLog.Size = new System.Drawing.Size(687, 544);
             this.txtLog.TabIndex = 1;
             // 
             // tabControl1
@@ -84,6 +85,7 @@
             // 
             // tabTester
             // 
+            this.tabTester.Controls.Add(this.btnBlacklistImport);
             this.tabTester.Controls.Add(this.btnTest);
             this.tabTester.Controls.Add(this.txtLog);
             this.tabTester.Location = new System.Drawing.Point(4, 22);
@@ -188,6 +190,16 @@
             this.label33.TabIndex = 2;
             this.label33.Text = "Selected items: ";
             // 
+            // btnBlacklistImport
+            // 
+            this.btnBlacklistImport.Location = new System.Drawing.Point(3, 43);
+            this.btnBlacklistImport.Name = "btnBlacklistImport";
+            this.btnBlacklistImport.Size = new System.Drawing.Size(134, 31);
+            this.btnBlacklistImport.TabIndex = 2;
+            this.btnBlacklistImport.Text = "Import blacklist";
+            this.btnBlacklistImport.UseVisualStyleBackColor = true;
+            this.btnBlacklistImport.Click += new System.EventHandler(this.btnBlacklistImport_Click);
+            // 
             // frmVatChecker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +234,7 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.DataGridView gridResults;
+        private System.Windows.Forms.Button btnBlacklistImport;
     }
 }
 

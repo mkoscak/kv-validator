@@ -29,7 +29,6 @@ namespace KontrolnyVykaz
                     return;
 
                 LogLn(string.Format("File {0} selected..", path));
-
                 Cursor = Cursors.WaitCursor;
 
                 Validate(path);
@@ -116,6 +115,8 @@ namespace KontrolnyVykaz
 
         private string GetXmlPath()
         {
+            var curDir = Environment.CurrentDirectory;
+
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.CheckFileExists = true;
             ofd.CheckPathExists = true;
@@ -123,11 +124,45 @@ namespace KontrolnyVykaz
             ofd.Filter = "XML files|*.xml";
             ofd.Multiselect = false;
             ofd.InitialDirectory = Environment.CurrentDirectory;
+            ofd.RestoreDirectory = true;
+
+            Environment.CurrentDirectory = curDir;
 
             if (ofd.ShowDialog() == DialogResult.OK)
                 return ofd.FileName;
 
             return null;
+        }
+
+        private void btnBlacklistImport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                LogLn("----------------------------------------------------------------------------", false);
+                LogLn("Import blacklist started..");
+
+                var xml = GetXmlPath();
+                if (string.IsNullOrEmpty(xml))
+                    return;
+
+                LogLn(string.Format("File {0} selected..", xml));
+                Cursor = Cursors.WaitCursor;
+
+                var count = KVValidator.Validators.BlackListValidator.Entities.BlackListManager.ImportDataFromXml(xml);
+
+                LogLn("Import success! " + count + " items..");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+                LogLn("Validation finish.." + Environment.NewLine);
+            }
+
         }
 
         #region IValidationObserver Members

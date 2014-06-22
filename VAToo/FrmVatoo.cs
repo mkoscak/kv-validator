@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using KVValidator;
 
 namespace VAToo
 {
@@ -22,6 +23,9 @@ namespace VAToo
             var path = Application.StartupPath + @"\logo.png";
             if (File.Exists(path))
                 picLogo.Image = Image.FromFile(path);
+
+            // temporary
+            gridTmp.DataSource = new BindingList<A1>();
         }
     }
 }

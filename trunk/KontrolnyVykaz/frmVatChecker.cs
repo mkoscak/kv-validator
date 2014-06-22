@@ -40,7 +40,7 @@ namespace KontrolnyVykaz
             finally
             {
                 Cursor = Cursors.Default;
-                LogLn("Validation finish.." + Environment.NewLine);
+                LogLn("Validation finished.." + Environment.NewLine);
             }
         }
 
@@ -160,7 +160,7 @@ namespace KontrolnyVykaz
             finally
             {
                 Cursor = Cursors.Default;
-                LogLn("Validation finish.." + Environment.NewLine);
+                LogLn("Import finished.." + Environment.NewLine);
             }
 
         }

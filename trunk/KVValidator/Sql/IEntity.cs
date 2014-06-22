@@ -8,5 +8,7 @@ namespace KVValidator.Sql
     public interface IEntity
     {
         string GetTableName();
+
+        string GetCreationScript();
     }
 }

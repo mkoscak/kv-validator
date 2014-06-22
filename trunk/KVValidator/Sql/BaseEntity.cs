@@ -28,7 +28,29 @@ namespace KVValidator.Sql
         /// </summary>
         public BaseEntity()
         {
+            CheckAndCreateEntityTable();
             Clear();
+        }
+
+        private void CheckAndCreateEntityTable()
+        {
+            if (!TableExists())
+                CreateTable();
+        }
+
+        private void CreateTable()
+        {
+            var script = GetCreationScript();
+            DbProvider.Instance.ExecuteNonQuery(script);
+        }
+
+        private bool TableExists()
+        {
+            var query = string.Format("select * from sqlite_master where name = \"{0}\"", GetTableName());
+            var res = DbProvider.Instance.ExecuteQuery(query);
+
+            return res != null && res.Tables != null && 
+                res.Tables.Count > 0 && res.Tables[0].Rows != null && res.Tables[0].Rows.Count > 0;
         }
 
         /// <summary>
@@ -206,6 +228,8 @@ namespace KVValidator.Sql
         #region IEntity Members
 
         public abstract string GetTableName();
+
+        public abstract string GetCreationScript();
 
         #endregion
     }

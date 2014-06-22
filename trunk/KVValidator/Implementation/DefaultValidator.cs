@@ -66,23 +66,23 @@ namespace KVValidator.Implementation
 
             // validacia poloziek
             ValidateItems<A1>(input.Transakcie.A1, ret,
-                rules.Where(r => r.RuleType == RuleType.A1ItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.A1ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
             ValidateItems<A2>(input.Transakcie.A2, ret,
-                rules.Where(r => r.RuleType == RuleType.A2ItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.A2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
             ValidateItems<B1>(input.Transakcie.B1, ret,
-                rules.Where(r => r.RuleType == RuleType.B2ItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.B2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
             ValidateItems<B2>(input.Transakcie.B2, ret,
-                rules.Where(r => r.RuleType == RuleType.B2ItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.B2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
             ValidateItems<B3>(input.Transakcie.B3, ret,
-                rules.Where(r => r.RuleType == RuleType.B3ItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.B3ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
             ValidateItems<C1>(input.Transakcie.C1, ret,
-                rules.Where(r => r.RuleType == RuleType.C1ItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.C1ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
             ValidateItems<C2>(input.Transakcie.C2, ret,
-                rules.Where(r => r.RuleType == RuleType.C2ItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.C2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
             ValidateItems<D1>(input.Transakcie.D1, ret,
-                rules.Where(r => r.RuleType == RuleType.D1ItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.D1ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
             ValidateItems<D2>(input.Transakcie.D2, ret,
-                rules.Where(r => r.RuleType == RuleType.D2ItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.D2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
 
             return ret;
         }

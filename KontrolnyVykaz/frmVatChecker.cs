@@ -7,6 +7,7 @@ using System.IO;
 using KVValidator.Implementation;
 using KVValidator.Interface;
 using KVValidator.Sql;
+using VAToo;
 
 namespace KontrolnyVykaz
 {
@@ -241,5 +242,11 @@ namespace KontrolnyVykaz
         }
 
         #endregion
+
+        private void btnVatoo_Click(object sender, EventArgs e)
+        {
+            FrmVatoo form = new FrmVatoo();
+            form.Show();
+        }
     }
 }

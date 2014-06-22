@@ -52,6 +52,11 @@ namespace KVValidator.Validators.BlackListValidator.Entities
             return BaseEntity<BlackListEntity>.LoadAll(TABLE_NAME);
         }
 
+        public static List<BlackListEntity> Load(string where)
+        {
+            return Load(where, null);
+        }
+
         public static List<BlackListEntity> Load(string where, string order)
         {
             return BaseEntity<BlackListEntity>.Load(TABLE_NAME, where, order);
@@ -87,6 +92,22 @@ namespace KVValidator.Validators.BlackListValidator.Entities
         public override string GetTableName()
         {
             return TABLE_NAME;
+        }
+
+        public override string GetCreationScript()
+        {
+            return @"DROP TABLE IF EXISTS T_BLACKLIST;
+                    CREATE TABLE T_BLACKLIST ( 
+	                    ""ID"" INTEGER PRIMARY KEY AUTOINCREMENT,
+	                    ""IC_DPH"" TEXT,
+	                    ""NAZOV"" TEXT,
+	                    ""OBEC"" TEXT,
+	                    ""PSC"" TEXT,
+	                    ""ADRESA"" TEXT,
+	                    ""ROK_PORUSENIA"" INTEGER,
+	                    ""DAT_ZVEREJNENIA"" TEXT,
+	                    ""COMMENT"" TEXT,
+	                    ""VALID"" INTEGER DEFAULT 1 );";
         }
     }
 }

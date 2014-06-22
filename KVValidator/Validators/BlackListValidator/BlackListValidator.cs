@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using KVValidator.Interface;
 using KVValidator.Implementation;
+using KVValidator.Validators.BlackListValidator.Entities;
 
 namespace KVValidator.Validators.BlackListValidator
 {
@@ -19,30 +20,56 @@ namespace KVValidator.Validators.BlackListValidator
 
         public string RuleDescription
         {
-            get { return "Kontroluje, či je v hlavičke vyplnený druh kontrolného výkazu."; }
+            get { return "Kontroluje, či je daný subjekt na zozname platiteľov DPH s dôvodom na zrušenie registrácie."; }
         }
 
         public string RuleName
         {
-            get { return "Validátor vyplnenosti druhu KV"; }
+            get { return "Validátor zrušených platiteľov DPH"; }
         }
 
         public IValidationItemResult Validate(object input)
         {
             var ret = ValidationItemResult.CreateDefaultOk(this);
+           
+            var def = "no_problemo";
+            var icDph = def;
+
+            if (input is A1)
+                icDph = (input as A1).Odb ?? def;
+            if (input is A2)
+                icDph = (input as A2).Odb ?? def;
+            if (input is B1)
+                icDph = (input as B1).Dod ?? def;
+            if (input is B2)
+                icDph = (input as B2).Dod ?? def;
+            /*if (input is B3)
+                icDph = (input as B3). ?? def;*/
+            if (input is C1)
+                icDph = (input as C1).Odb ?? def;
+            if (input is C2)
+                icDph = (input as C2).Dod ?? def;
+            /*if (input is D1)
+                icDph = (input as D1). ?? def;*/
+            /*if (input is D2)
+                icDph = (input as D2). ?? def;*/
+
+            var found = BlackListEntity.Load(string.Format("IC_DPH = \"{0}\"", icDph));
+            if (found != null && found.Count > 0)
+                ret = ValidationFailed(found[0]);
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed()
+        private ValidationItemResult ValidationFailed(BlackListEntity foundEntity)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = string.Format("Druh kontrolného výkazu nie je vyplnený resp. je vyplnený nekorektne!");
-            ret.ResultTooltip = "Vyplnte druh kontrolného výkazu v sekcii '<Identifikacia>/<Druh>' na hodnotu 'R', 'O' alebo 'D'!";
+            ret.ResultMessage = string.Format("Subjekt s IČ DPH {0} sa nachádza na zozname platiteľov DPH s dôvodom na zrušenie registrácie!", foundEntity.IcDph);
+            ret.ResultTooltip = string.Format("IČ DPH: {1}{0}Názov: {2}{0}Rok porušenia: {3}{0}Dátum zverejnenia: {4}{0}", Environment.NewLine, foundEntity.IcDph, foundEntity.Nazov, foundEntity.RokPorusenia, foundEntity.DatumZverejnenia);
             ret.Details = new DetailedResultInfo();
-            ret.Details.LineNumber = 5;
+            ret.Details.LineNumber = 0;
 
             return ret;
         }

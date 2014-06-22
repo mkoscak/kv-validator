@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using KVValidator.Interface;
 using KVValidator.Validators;
+using KVValidator.Validators.BlackListValidator;
 
 namespace KVValidator.Implementation
 {
@@ -36,6 +37,7 @@ namespace KVValidator.Implementation
 
             Rules.Add(new YearValidator());
             Rules.Add(new KvKindValidator());
+            Rules.Add(new BlackListValidator());
         }
 
         #endregion

@@ -32,6 +32,7 @@
             this.txtLog = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabTester = new System.Windows.Forms.TabPage();
+            this.btnBlacklistImport = new System.Windows.Forms.Button();
             this.tabDbHelper = new System.Windows.Forms.TabPage();
             this.gridResults = new System.Windows.Forms.DataGridView();
             this.btnClearWin = new System.Windows.Forms.Button();
@@ -40,7 +41,7 @@
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.btnBlacklistImport = new System.Windows.Forms.Button();
+            this.btnVatoo = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabTester.SuspendLayout();
             this.tabDbHelper.SuspendLayout();
@@ -85,6 +86,7 @@
             // 
             // tabTester
             // 
+            this.tabTester.Controls.Add(this.btnVatoo);
             this.tabTester.Controls.Add(this.btnBlacklistImport);
             this.tabTester.Controls.Add(this.btnTest);
             this.tabTester.Controls.Add(this.txtLog);
@@ -95,6 +97,16 @@
             this.tabTester.TabIndex = 0;
             this.tabTester.Text = "Tests";
             this.tabTester.UseVisualStyleBackColor = true;
+            // 
+            // btnBlacklistImport
+            // 
+            this.btnBlacklistImport.Location = new System.Drawing.Point(3, 43);
+            this.btnBlacklistImport.Name = "btnBlacklistImport";
+            this.btnBlacklistImport.Size = new System.Drawing.Size(134, 31);
+            this.btnBlacklistImport.TabIndex = 2;
+            this.btnBlacklistImport.Text = "Import blacklist";
+            this.btnBlacklistImport.UseVisualStyleBackColor = true;
+            this.btnBlacklistImport.Click += new System.EventHandler(this.btnBlacklistImport_Click);
             // 
             // tabDbHelper
             // 
@@ -190,15 +202,15 @@
             this.label33.TabIndex = 2;
             this.label33.Text = "Selected items: ";
             // 
-            // btnBlacklistImport
+            // btnVatoo
             // 
-            this.btnBlacklistImport.Location = new System.Drawing.Point(3, 43);
-            this.btnBlacklistImport.Name = "btnBlacklistImport";
-            this.btnBlacklistImport.Size = new System.Drawing.Size(134, 31);
-            this.btnBlacklistImport.TabIndex = 2;
-            this.btnBlacklistImport.Text = "Import blacklist";
-            this.btnBlacklistImport.UseVisualStyleBackColor = true;
-            this.btnBlacklistImport.Click += new System.EventHandler(this.btnBlacklistImport_Click);
+            this.btnVatoo.Location = new System.Drawing.Point(3, 106);
+            this.btnVatoo.Name = "btnVatoo";
+            this.btnVatoo.Size = new System.Drawing.Size(134, 31);
+            this.btnVatoo.TabIndex = 3;
+            this.btnVatoo.Text = "VAToo";
+            this.btnVatoo.UseVisualStyleBackColor = true;
+            this.btnVatoo.Click += new System.EventHandler(this.btnVatoo_Click);
             // 
             // frmVatChecker
             // 
@@ -235,6 +247,7 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.DataGridView gridResults;
         private System.Windows.Forms.Button btnBlacklistImport;
+        private System.Windows.Forms.Button btnVatoo;
     }
 }
 

@@ -705,6 +705,8 @@ namespace KVValidator
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ekr.financnasprava.sk/Formulare/XSD/kv_dph_2014.xsd", IncludeInSchema = false)]
     public enum ItemChoiceType
     {
+        /// <remarks/>
+        Missing,
 
         /// <remarks/>
         Mesiac,

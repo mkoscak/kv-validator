@@ -77,7 +77,12 @@
     <Compile Include="Validators\BlackListValidator\BlackListValidator.cs" />
     <Compile Include="Validators\BlackListValidator\Entities\BlackListEntity.cs" />
     <Compile Include="Validators\BlackListValidator\Entities\BlackListManager.cs" />
+    <Compile Include="Validators\CityValidator.cs" />
+    <Compile Include="Validators\IcDphValidator.cs" />
     <Compile Include="Validators\KvKindValidator.cs" />
+    <Compile Include="Validators\NameValidator.cs" />
+    <Compile Include="Validators\PeriodChecker.cs" />
+    <Compile Include="Validators\StateValidator.cs" />
     <Compile Include="Validators\YearValidator.cs" />
     <Compile Include="Xsd\kv_dph_2014.designer.cs" />
   </ItemGroup>

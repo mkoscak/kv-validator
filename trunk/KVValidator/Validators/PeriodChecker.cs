@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Interface;
 using KVValidator.Implementation;
+using KVValidator.Interface;
 
 namespace KVValidator.Validators
 {
     /// <summary>
-    /// Implementacia pravidla na validaciu roku
+    /// Validator poloziek z pola Obdobie
     /// </summary>
-    class YearValidator : BaseValidationRule<Identifikacia>
+    class PeriodChecker : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {
@@ -19,48 +19,49 @@ namespace KVValidator.Validators
 
         public override string RuleDescription
         {
-            get { return "Validuje rok kontrolného výkazu. Musí byť väčší alebo rovný roku 2014!"; }
+            get { return "Kontroluje zadané hodnoty v sekcii Obdobie."; }
         }
 
         public override string RuleName
         {
-            get { return "Validátor roku"; }
+            get { return "Validátor obdobia"; }
         }
 
         protected override IValidationItemResult Validate(Identifikacia input)
         {
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
-            if (input.Obdobie.Rok == 0)
-                ret = ValidationFailedYearMissing();
-            else if (input.Obdobie.Rok < 2014)
-                ret = ValidationFailed(input.Obdobie.Rok);
+            if (input.Obdobie == null)
+                ret = ValidationFailedPeriodMissing();
+            else if (input.Obdobie.ItemElementName == ItemChoiceType.Missing)
+                ret = ValidationFailedSubPeriodMissing();
+            // TODO mala by byt aj validacia, ze nesmu byt zadane sucasne..
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailedYearMissing()
+        private ValidationItemResult ValidationFailedSubPeriodMissing()
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = string.Format("Nie je zadaný rok!");
-            ret.ResultTooltip = "Doplňte rok do sekcie '<Identifikacia>/<Obdobie>/<Rok>' s hodnotou väčšou alebo rovnou 2014!";
+            ret.ResultMessage = string.Format("Jedna z možností Mesiac alebo Štvrťrok musí byť zadaná.!");
+            ret.ResultTooltip = "V sekcii '<Identifikacia>/<Obdobie>' doplňte položku Mesiac alebo Štvrťrok.";
             ret.Details = new DetailedResultInfo();
-            ret.Details.LineNumber = 7;
+            ret.Details.LineNumber = 8;
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed(int year)
+        private ValidationItemResult ValidationFailedPeriodMissing()
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = string.Format("Rok musí byť väčší alebo rovný 2014 (aktuálne {0})!", year);
-            ret.ResultTooltip = "Upravte rok v sekcii '<Identifikacia>/<Obdobie>/<Rok>' na hodnotu väčšiu alebo rovnú 2014!";
+            ret.ResultMessage = string.Format("Chýba povinná sekcia Obdobie!");
+            ret.ResultTooltip = "Vyplňte sekciu Obdobie do sekcie '<Identifikacia>/<Obdobie>'!";
             ret.Details = new DetailedResultInfo();
-            ret.Details.LineNumber = 7;
+            ret.Details.LineNumber = 6;
 
             return ret;
         }

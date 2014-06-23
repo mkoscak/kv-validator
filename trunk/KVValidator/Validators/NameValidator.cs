@@ -8,9 +8,9 @@ using KVValidator.Interface;
 namespace KVValidator.Validators
 {
     /// <summary>
-    /// Validator vyplnenia druhu kontrolneho vykazu
+    /// Validacia nazvu v hlavicke
     /// </summary>
-    class KvKindValidator : BaseValidationRule<Identifikacia>
+    class NameValidator : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {
@@ -19,19 +19,19 @@ namespace KVValidator.Validators
 
         public override string RuleDescription
         {
-            get { return "Kontroluje, či je v hlavičke vyplnený druh kontrolného výkazu."; }
+            get { return "Kontroluje, či je v hlavičke vyplnený názov subjektu."; }
         }
 
         public override string RuleName
         {
-            get { return "Validátor vyplnenosti druhu KV"; }
+            get { return "Validátor vyplnenosti názvu subjektu"; }
         }
 
         protected override IValidationItemResult Validate(Identifikacia input)
         {
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
-            if (input.Druh != DruhKvType.R && input.Druh != DruhKvType.O && input.Druh != DruhKvType.D)
+            if (string.IsNullOrEmpty(input.Nazov))
                 ret = ValidationFailed();
 
             return ret;
@@ -42,10 +42,10 @@ namespace KVValidator.Validators
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = string.Format("Druh kontrolného výkazu nie je vyplnený resp. je vyplnený nekorektne!");
-            ret.ResultTooltip = "Vyplňte druh kontrolného výkazu v sekcii '<Identifikacia>/<Druh>' na hodnotu 'R', 'O' alebo 'D'!";
+            ret.ResultMessage = string.Format("Nie je vyplnený názov subjektu v hlavičke!");
+            ret.ResultTooltip = "Vyplňte názov subjektu v sekcii '<Identifikacia>/<Nazov>'!";
             ret.Details = new DetailedResultInfo();
-            ret.Details.LineNumber = 5;
+            ret.Details.LineNumber = 10;
 
             return ret;
         }

@@ -35,8 +35,16 @@ namespace KVValidator.Implementation
         {
             Rules = new ValidationSet();
 
-            Rules.Add(new YearValidator());
+            // hlavicka
+            Rules.Add(new IcDphValidator());
             Rules.Add(new KvKindValidator());
+            Rules.Add(new YearValidator());
+            Rules.Add(new PeriodChecker());
+            Rules.Add(new NameValidator());
+            Rules.Add(new StateValidator());
+            Rules.Add(new CityValidator());
+
+            // polozky
             Rules.Add(new BlackListValidator());
         }
 

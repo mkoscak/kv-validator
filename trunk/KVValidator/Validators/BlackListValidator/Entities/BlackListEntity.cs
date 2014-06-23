@@ -107,7 +107,8 @@ namespace KVValidator.Validators.BlackListValidator.Entities
 	                    ""ROK_PORUSENIA"" INTEGER,
 	                    ""DAT_ZVEREJNENIA"" TEXT,
 	                    ""COMMENT"" TEXT,
-	                    ""VALID"" INTEGER DEFAULT 1 );";
+	                    ""VALID"" INTEGER DEFAULT 1 );
+                    CREATE INDEX IF NOT EXISTS IDX_IC_DPH ON T_BLACKLIST (IC_DPH);";
         }
     }
 }

@@ -8,6 +8,7 @@ using KVValidator.Implementation;
 using KVValidator.Interface;
 using KVValidator.Sql;
 using VAToo;
+using System.Diagnostics;
 
 namespace KontrolnyVykaz
 {
@@ -32,7 +33,11 @@ namespace KontrolnyVykaz
                 LogLn(string.Format("File {0} selected..", path));
                 Cursor = Cursors.WaitCursor;
 
+                var sw = new Stopwatch();
+                sw.Start();
                 Validate(path);
+                sw.Stop();
+                LogLn(string.Format("Duration {0} seconds..", sw.ElapsedMilliseconds / 1000));
             }
             catch (Exception ex)
             {

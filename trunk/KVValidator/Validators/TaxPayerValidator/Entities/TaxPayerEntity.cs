@@ -4,32 +4,30 @@ using System.Linq;
 using System.Text;
 using KVValidator.Sql;
 
-namespace KVValidator.Validators.BlackListValidator.Entities
+namespace KVValidator.Validators.TaxPayerValidator.Entities
 {
     /// <summary>
-    /// Entita reprezentujuca neplatica..
+    /// Entita registrovaneho platitela DPH
     /// </summary>
-    class BlackListEntity : BaseEntity<BlackListEntity>
+    class TaxPayerEntity : BaseEntity<TaxPayerEntity>
     {
-        public static string TABLE_NAME = "T_BLACKLIST";
+        public static string TABLE_NAME = "T_TAX_PAYER";
 
         public string IcDph { get; set; }
         public string Nazov{ get; set; }
         public string Obec { get; set; }
         public string Psc { get; set; }
         public string Adresa { get; set; }
-        public string DatumZverejnenia { get; set; }
-        public int    RokPorusenia { get; set; }
+        public string PodlaParagrafu { get; set; }
 
         static string IC_DPH = "IC_DPH";
         static string NAZOV = "NAZOV";
         static string OBEC = "OBEC";
         static string PSC = "PSC";
         static string ADRESA = "ADRESA";
-        static string ROK_PORUSENIA = "ROK_PORUSENIA";
-        static string DAT_ZVEREJNENIA = "DAT_ZVEREJNENIA";
+        static string PODLA_PARAGRAFU = "PODLA_PARAGRAFU";
 
-        public BlackListEntity()
+        public TaxPayerEntity()
         {
             Clear();
         }
@@ -43,40 +41,39 @@ namespace KVValidator.Validators.BlackListValidator.Entities
             Obec = string.Empty;
             Psc = string.Empty;
             Adresa = string.Empty;
-            DatumZverejnenia = string.Empty;
-            RokPorusenia = 0;
+            PodlaParagrafu = string.Empty;
         }
 
-        public static List<BlackListEntity> LoadAll()
+        public static List<TaxPayerEntity> LoadAll()
         {
-            return BaseEntity<BlackListEntity>.LoadAll(TABLE_NAME);
+            return BaseEntity<TaxPayerEntity>.LoadAll(TABLE_NAME);
         }
 
-        public static List<BlackListEntity> Load(string where)
+        public static List<TaxPayerEntity> Load(string where)
         {
             return Load(where, null);
         }
 
-        public static List<BlackListEntity> Load(string where, string order)
+        public static List<TaxPayerEntity> Load(string where, string order)
         {
-            return BaseEntity<BlackListEntity>.Load(TABLE_NAME, where, order);
+            return BaseEntity<TaxPayerEntity>.Load(TABLE_NAME, where, order);
         }
 
         public void Save()
         {
-            Save(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}", 
-                ID, IC_DPH, NAZOV, OBEC, PSC, ADRESA, ROK_PORUSENIA, DAT_ZVEREJNENIA, COMMENT, VALID),
-                string.Format("{0},\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",{6},\"{7}\",\"{8}\",{9}",
-                NullableLong(Id), IcDph, Nazov, Obec, Psc, Adresa, RokPorusenia, DatumZverejnenia, Comment, Valid ? 1 : 0
+            Save(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8}",
+                ID, IC_DPH, NAZOV, OBEC, PSC, ADRESA, PODLA_PARAGRAFU, COMMENT, VALID),
+                string.Format("{0},\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",{8}",
+                NullableLong(Id), IcDph, Nazov, Obec, Psc, Adresa, PodlaParagrafu, Comment, Valid ? 1 : 0
                 ));
         }
 
         public void Save(System.Data.SQLite.SQLiteConnection connection, System.Data.SQLite.SQLiteTransaction transaction)
         {
-            Save(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
-                ID, IC_DPH, NAZOV, OBEC, PSC, ADRESA, ROK_PORUSENIA, DAT_ZVEREJNENIA, COMMENT, VALID),
-                string.Format("{0},\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",{6},\"{7}\",\"{8}\",{9}",
-                NullableLong(Id), IcDph, Nazov, Obec, Psc, Adresa, RokPorusenia, DatumZverejnenia, Comment, Valid ? 1 : 0
+            Save(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8}",
+                ID, IC_DPH, NAZOV, OBEC, PSC, ADRESA, PODLA_PARAGRAFU, COMMENT, VALID),
+                string.Format("{0},\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",{8}",
+                NullableLong(Id), IcDph, Nazov, Obec, Psc, Adresa, PodlaParagrafu, Comment, Valid ? 1 : 0
                 ),
                 connection, transaction);
         }
@@ -90,8 +87,7 @@ namespace KVValidator.Validators.BlackListValidator.Entities
             Obec = row[OBEC].ToString();
             Psc = row[PSC].ToString();
             Adresa = row[ADRESA].ToString();
-            DatumZverejnenia = row[DAT_ZVEREJNENIA].ToString();
-            RokPorusenia = Convert.ToInt32(row[ROK_PORUSENIA].ToString());
+            PodlaParagrafu = row[PODLA_PARAGRAFU].ToString();
         }
 
         public override string ToString()
@@ -106,19 +102,18 @@ namespace KVValidator.Validators.BlackListValidator.Entities
 
         public override string GetCreationScript()
         {
-            return @"DROP TABLE IF EXISTS T_BLACKLIST;
-                    CREATE TABLE T_BLACKLIST ( 
+            return @"DROP TABLE IF EXISTS T_TAX_PAYER;
+                    CREATE TABLE T_TAX_PAYER ( 
 	                    ""ID"" INTEGER PRIMARY KEY AUTOINCREMENT,
 	                    ""IC_DPH"" TEXT,
 	                    ""NAZOV"" TEXT,
 	                    ""OBEC"" TEXT,
 	                    ""PSC"" TEXT,
 	                    ""ADRESA"" TEXT,
-	                    ""ROK_PORUSENIA"" INTEGER,
-	                    ""DAT_ZVEREJNENIA"" TEXT,
+	                    ""PODLA_PARAGRAFU"" TEXT,
 	                    ""COMMENT"" TEXT,
 	                    ""VALID"" INTEGER DEFAULT 1 );
-                    CREATE INDEX IF NOT EXISTS IDX_IC_DPH_BLACKLIST ON T_BLACKLIST (IC_DPH);";
+                    CREATE INDEX IF NOT EXISTS IDX_IC_DPH_TAX_PAYER ON T_TAX_PAYER (IC_DPH);";
         }
     }
 }

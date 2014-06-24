@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SQLite;
 
 namespace KVValidator.Sql
 {
@@ -185,6 +186,16 @@ namespace KVValidator.Sql
                 columns,
                 values
                 ));
+        }
+
+        public void Save(string columns, string values, SQLiteConnection connection, SQLiteTransaction trans)
+        {
+            DbProvider.Instance.ExecuteNonQuery(string.Format("insert or replace into {0} ( {1} ) values ( {2} )",
+                GetTableName(),
+                columns,
+                values
+                ),
+                connection, trans);
         }
 
         /// <summary>

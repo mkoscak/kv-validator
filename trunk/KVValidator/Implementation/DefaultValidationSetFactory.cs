@@ -5,6 +5,7 @@ using System.Text;
 using KVValidator.Interface;
 using KVValidator.Validators;
 using KVValidator.Validators.BlackListValidator;
+using KVValidator.Validators.TaxPayerValidator;
 
 namespace KVValidator.Implementation
 {
@@ -47,6 +48,7 @@ namespace KVValidator.Implementation
             // polozky
             Rules.Add(new BlackListValidator());
             Rules.Add(new TaxRateValidator());
+            Rules.Add(new TaxPayerValidator());
         }
 
         #endregion

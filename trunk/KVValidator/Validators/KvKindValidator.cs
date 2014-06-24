@@ -19,12 +19,12 @@ namespace KVValidator.Validators
 
         public override string RuleDescription
         {
-            get { return "Kontroluje, či je v hlavičke vyplnený druh kontrolného výkazu."; }
+            get { return "Kontroluje, či je v hlavičke vyplnený druh kontrolného výkazu a či je vyplnený korektne."; }
         }
 
         public override string RuleName
         {
-            get { return "Validátor vyplnenosti druhu KV"; }
+            get { return "Validátor druhu kontrolného výkazu"; }
         }
 
         protected override IValidationItemResult Validate(Identifikacia input)

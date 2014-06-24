@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using KVValidator.Implementation;
 using KVValidator.Interface;
+using KVValidator.Validators.TaxPayerValidator.Entities;
 
 namespace KVValidator.Validators
 {
@@ -19,12 +20,12 @@ namespace KVValidator.Validators
 
         public override string RuleDescription
         {
-            get { return "Kontroluje, či je v hlavičke vyplnené IČ platiteľa DPH."; }
+            get { return "Kontroluje IČ platiteľa DPH v hlavičke."; }
         }
 
         public override string RuleName
         {
-            get { return "Validátor vyplnenosti IČ platiteľa DPH"; }
+            get { return "Validátor IČ platiteľa DPH"; }
         }
 
         protected override IValidationItemResult Validate(Identifikacia input)
@@ -32,12 +33,33 @@ namespace KVValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (string.IsNullOrEmpty(input.IcDphPlatitela))
-                ret = ValidationFailed(input);
+                ret = ValidationFailedNullIc(input);
+            else
+            {
+                // kontrola na existujuce IC DPH
+                var found = TaxPayerEntity.Load(string.Format("IC_DPH = \"{0}\"", input.IcDphPlatitela));
+                if (found != null && found.Count == 0)
+                    ret = ValidationFailedNoExistPayer(input);
+            }
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed(Identifikacia problemItem)
+        private ValidationItemResult ValidationFailedNoExistPayer(Identifikacia problemItem)
+        {
+            var ret = new ValidationItemResult(this);
+
+            ret.ValidationResultState = ResultState.Error;
+            ret.ResultMessage = "IČ platiteľa DPH sa nenachádza medzi registrovanými platcami!";
+            ret.ResultTooltip = string.Format("Preverte, či je zoznam platiteľov DPH aktuálny a či je zadané IČ '{0}' v sekcii <Identifikacia> správne!", problemItem.IcDphPlatitela);
+            ret.ProblemObject = problemItem;
+            ret.Details = new DetailedResultInfo();
+            ret.Details.LineNumber = 4;
+
+            return ret;
+        }
+
+        private ValidationItemResult ValidationFailedNullIc(Identifikacia problemItem)
         {
             var ret = new ValidationItemResult(this);
 

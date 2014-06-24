@@ -144,7 +144,6 @@ namespace KontrolnyVykaz
         {
             try
             {
-
                 LogLn("----------------------------------------------------------------------------", false);
                 LogLn("Import blacklist started..");
 
@@ -168,7 +167,35 @@ namespace KontrolnyVykaz
                 Cursor = Cursors.Default;
                 LogLn("Import finished.." + Environment.NewLine);
             }
+        }
 
+        private void btnImportPayers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LogLn("----------------------------------------------------------------------------", false);
+                LogLn("Import tax payers started..");
+
+                var xml = GetXmlPath();
+                if (string.IsNullOrEmpty(xml))
+                    return;
+
+                LogLn(string.Format("File {0} selected..", xml));
+                Cursor = Cursors.WaitCursor;
+
+                var count = KVValidator.Validators.TaxPayerValidator.Entities.TaxPayersManager.ImportDataFromXml(xml);
+
+                LogLn("Import success! " + count + " items..");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+                LogLn("Import finished.." + Environment.NewLine);
+            }
         }
 
         #region IValidationObserver Members

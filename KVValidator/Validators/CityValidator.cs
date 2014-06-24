@@ -32,18 +32,19 @@ namespace KVValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (string.IsNullOrEmpty(input.Obec))
-                ret = ValidationFailed();
+                ret = ValidationFailed(input);
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed()
+        private ValidationItemResult ValidationFailed(Identifikacia problemItem)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
             ret.ResultMessage = string.Format("Nie je vyplnená obec subjektu v hlavičke!");
             ret.ResultTooltip = "Vyplňte obec v sekcii '<Identifikacia>/<Obec>'!";
+            ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 12;
 

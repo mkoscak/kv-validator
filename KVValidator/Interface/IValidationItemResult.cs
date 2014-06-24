@@ -31,6 +31,11 @@ namespace KVValidator.Interface
         string ResultTooltip { get; }
 
         /// <summary>
+        /// Objekt ktory obsahuje problemovy prvok/polozku, napr. A1
+        /// </summary>
+        object ProblemObject { get; set; }
+
+        /// <summary>
         /// Detail vysledku, napr. v pripade problemu cislo riadku a pod.
         /// </summary>
         IDetailedResultInfo Details { get; }

@@ -32,33 +32,35 @@ namespace KVValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (input.Obdobie.Rok == 0)
-                ret = ValidationFailedYearMissing();
+                ret = ValidationFailedYearMissing(input);
             else if (input.Obdobie.Rok < 2014)
-                ret = ValidationFailed(input.Obdobie.Rok);
+                ret = ValidationFailed(input.Obdobie.Rok, input);
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailedYearMissing()
+        private ValidationItemResult ValidationFailedYearMissing(Identifikacia problemItem)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
             ret.ResultMessage = string.Format("Nie je zadaný rok!");
             ret.ResultTooltip = "Doplňte rok do sekcie '<Identifikacia>/<Obdobie>/<Rok>' s hodnotou väčšou alebo rovnou 2014!";
+            ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 7;
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed(int year)
+        private ValidationItemResult ValidationFailed(int year, Identifikacia problemItem)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
             ret.ResultMessage = string.Format("Rok musí byť väčší alebo rovný 2014 (aktuálne {0})!", year);
             ret.ResultTooltip = "Upravte rok v sekcii '<Identifikacia>/<Obdobie>/<Rok>' na hodnotu väčšiu alebo rovnú 2014!";
+            ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 7;
 

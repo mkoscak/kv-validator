@@ -3,30 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using KVValidator.Sql;
-using System.Xml.Linq;
 using System.Xml;
 
-namespace KVValidator.Validators.BlackListValidator.Entities
+namespace KVValidator.Validators.TaxPayerValidator.Entities
 {
     /// <summary>
-    /// Spravuje polozky v tabule T_BLACKLIST
+    /// Manazer registrovanych platitelov DPH
     /// </summary>
-    public class BlackListManager
+    public class TaxPayersManager
     {
         /// <summary>
-        /// Import dat z XML 'ds_dphz.xml'
+        /// Import dat z XML 'ds_dphs.xml'
         /// </summary>
         /// <param name="path"></param>
         public static int ImportDataFromXml(string path)
         {
-            var entities = new List<BlackListEntity>();
+            var entities = new List<TaxPayerEntity>();
 
             // nacitanie entit z xml
             LoadEntitiesFromXml(path, entities);
 
             // zmazanie starych zaznamov
             var db = DbProvider.Instance;
-            db.ExecuteNonQuery(string.Format("delete from {0}", BlackListEntity.TABLE_NAME));
+            db.ExecuteNonQuery(string.Format("delete from {0}", TaxPayerEntity.TABLE_NAME));
 
             // ulozenie novych
             using (var con = DbProvider.Instance.GetConnection())
@@ -43,21 +42,21 @@ namespace KVValidator.Validators.BlackListValidator.Entities
             return entities.Count;
         }
 
-        private static void LoadEntitiesFromXml(string path, List<BlackListEntity> entities)
+        private static void LoadEntitiesFromXml(string path, List<TaxPayerEntity> entities)
         {
             var doc = new XmlDocument();
             doc.Load(path);
-            var dsDph = doc["ZoznamPlatitelovDPHsDovodomNaZrusenieRegistracie"]["DS_DPHZ"];
+            var dsDph = doc["ZoznamSubjektovRegistrovanychKDPH"]["DS_DPHS"];
             foreach (XmlElement el in dsDph)
             {
-                var ble = new BlackListEntity();
+                var ble = new TaxPayerEntity();
                 ble.IcDph = el["IC_DPH"].InnerText;
                 ble.Nazov = el["NAZOV"].InnerText.Replace('"', ' ');
                 ble.Obec = el["OBEC"].InnerText.Replace('"', ' ');
                 ble.Psc = el["PSC"].InnerText.Replace('"', ' ');
                 ble.Adresa = el["ADRESA"].InnerText.Replace('"', ' ');
-                ble.RokPorusenia = Convert.ToInt32(el["ROK_PORUSENIA"].InnerText);
-                ble.DatumZverejnenia = el["DAT_ZVEREJNENIA"].InnerText;
+                if (el["PODLA_PARAGRAFU"] != null)
+                    ble.PodlaParagrafu = el["PODLA_PARAGRAFU"].InnerText;
 
                 entities.Add(ble);
             }

@@ -66,6 +66,19 @@ namespace KVValidator.Sql
             }
         }
 
+        public void ExecuteNonQuery(string txtQuery, SQLiteConnection sql_con, SQLiteTransaction trans)
+        {
+            //using (var sql_con = GetConnection())
+            {
+                //sql_con.Open();
+                var sql_cmd = sql_con.CreateCommand();
+                sql_cmd.Transaction = trans;
+                sql_cmd.CommandText = txtQuery;
+                sql_cmd.ExecuteNonQuery();
+                //sql_con.Close();
+            }
+        }
+
         public DataSet ExecuteQuery(string query)
         {
             DataSet DS = new DataSet();

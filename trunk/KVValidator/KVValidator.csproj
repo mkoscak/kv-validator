@@ -83,6 +83,7 @@
     <Compile Include="Validators\NameValidator.cs" />
     <Compile Include="Validators\PeriodChecker.cs" />
     <Compile Include="Validators\StateValidator.cs" />
+    <Compile Include="Validators\TaxRateValidator.cs" />
     <Compile Include="Validators\YearValidator.cs" />
     <Compile Include="Xsd\kv_dph_2014.designer.cs" />
   </ItemGroup>

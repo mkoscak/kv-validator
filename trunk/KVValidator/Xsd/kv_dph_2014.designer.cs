@@ -1065,6 +1065,10 @@ namespace KVValidator
     {
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("0")]
+        Missing,
+
+        /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("10")]
         Item10,
 

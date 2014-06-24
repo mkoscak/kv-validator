@@ -46,6 +46,7 @@ namespace KVValidator.Implementation
 
             // polozky
             Rules.Add(new BlackListValidator());
+            Rules.Add(new TaxRateValidator());
         }
 
         #endregion

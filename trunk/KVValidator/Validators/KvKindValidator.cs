@@ -32,18 +32,19 @@ namespace KVValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (input.Druh != DruhKvType.R && input.Druh != DruhKvType.O && input.Druh != DruhKvType.D)
-                ret = ValidationFailed();
+                ret = ValidationFailed(input);
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed()
+        private ValidationItemResult ValidationFailed(Identifikacia problemItem)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
             ret.ResultMessage = string.Format("Druh kontrolného výkazu nie je vyplnený resp. je vyplnený nekorektne!");
             ret.ResultTooltip = "Vyplňte druh kontrolného výkazu v sekcii '<Identifikacia>/<Druh>' na hodnotu 'R', 'O' alebo 'D'!";
+            ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 5;
 

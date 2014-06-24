@@ -32,34 +32,36 @@ namespace KVValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (input.Obdobie == null)
-                ret = ValidationFailedPeriodMissing();
+                ret = ValidationFailedPeriodMissing(input);
             else if (input.Obdobie.ItemElementName == ItemChoiceType.Missing)
-                ret = ValidationFailedSubPeriodMissing();
+                ret = ValidationFailedSubPeriodMissing(input);
             // TODO mala by byt aj validacia, ze nesmu byt zadane sucasne..
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailedSubPeriodMissing()
+        private ValidationItemResult ValidationFailedSubPeriodMissing(Identifikacia problemItem)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
             ret.ResultMessage = string.Format("Jedna z možností Mesiac alebo Štvrťrok musí byť zadaná.!");
             ret.ResultTooltip = "V sekcii '<Identifikacia>/<Obdobie>' doplňte položku Mesiac alebo Štvrťrok.";
+            ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 8;
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailedPeriodMissing()
+        private ValidationItemResult ValidationFailedPeriodMissing(Identifikacia problemItem)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
             ret.ResultMessage = string.Format("Chýba povinná sekcia Obdobie!");
             ret.ResultTooltip = "Vyplňte sekciu Obdobie do sekcie '<Identifikacia>/<Obdobie>'!";
+            ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 6;
 

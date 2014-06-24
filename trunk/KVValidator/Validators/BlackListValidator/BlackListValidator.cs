@@ -56,18 +56,19 @@ namespace KVValidator.Validators.BlackListValidator
 
             var found = BlackListEntity.Load(string.Format("IC_DPH = \"{0}\"", icDph));
             if (found != null && found.Count > 0)
-                ret = ValidationFailed(found[0]);
+                ret = ValidationFailed(found[0], input);
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed(BlackListEntity foundEntity)
+        private ValidationItemResult ValidationFailed(BlackListEntity foundEntity, object problemItem)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
             ret.ResultMessage = string.Format("Subjekt s IČ DPH {0} sa nachádza na zozname platiteľov DPH s dôvodom na zrušenie registrácie!", foundEntity.IcDph);
             ret.ResultTooltip = string.Format("IČ DPH: {1}{0}Názov: {2}{0}Rok porušenia: {3}{0}Dátum zverejnenia: {4}{0}", Environment.NewLine, foundEntity.IcDph, foundEntity.Nazov, foundEntity.RokPorusenia, foundEntity.DatumZverejnenia);
+            ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 0;
 

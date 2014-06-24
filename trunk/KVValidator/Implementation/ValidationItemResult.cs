@@ -29,6 +29,8 @@ namespace KVValidator.Implementation
 
         public string ResultTooltip { get; set; }
 
+        public object ProblemObject { get; set; }
+
         public IDetailedResultInfo Details { get; set; }
 
         #endregion

@@ -57,7 +57,7 @@
             this.btnTest.TabIndex = 0;
             this.btnTest.Text = "Validuj";
             this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.button1_Click);
+            this.btnTest.Click += new System.EventHandler(this.btnValidate_Click);
             // 
             // txtLog
             // 

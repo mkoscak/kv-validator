@@ -40,7 +40,7 @@ namespace KVValidator.Implementation
             Rules.Add(new IcDphValidator());
             Rules.Add(new KvKindValidator());
             Rules.Add(new YearValidator());
-            Rules.Add(new PeriodChecker());
+            Rules.Add(new PeriodValidator());
             Rules.Add(new NameValidator());
             Rules.Add(new StateValidator());
             Rules.Add(new CityValidator());

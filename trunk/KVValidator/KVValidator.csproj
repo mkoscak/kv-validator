@@ -81,7 +81,7 @@
     <Compile Include="Validators\IcDphValidator.cs" />
     <Compile Include="Validators\KvKindValidator.cs" />
     <Compile Include="Validators\NameValidator.cs" />
-    <Compile Include="Validators\PeriodChecker.cs" />
+    <Compile Include="Validators\PeriodValidator.cs" />
     <Compile Include="Validators\StateValidator.cs" />
     <Compile Include="Validators\TaxPayerValidator\Entities\TaxPayerEntity.cs" />
     <Compile Include="Validators\TaxPayerValidator\Entities\TaxPayersManager.cs" />

@@ -10,7 +10,7 @@ namespace KVValidator.Validators
     /// <summary>
     /// Validator poloziek z pola Obdobie
     /// </summary>
-    class PeriodChecker : BaseValidationRule<Identifikacia>
+    class PeriodValidator : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {

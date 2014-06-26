@@ -280,5 +280,10 @@ namespace KontrolnyVykaz
             FrmVatoo form = new FrmVatoo();
             form.Show();
         }
+
+        private void btnDesign1_Click(object sender, EventArgs e)
+        {
+            new FrmDesignOne().Show(this);
+        }
     }
 }

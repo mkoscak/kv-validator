@@ -32,6 +32,7 @@
             this.txtLog = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabTester = new System.Windows.Forms.TabPage();
+            this.btnImportPayers = new System.Windows.Forms.Button();
             this.btnVatoo = new System.Windows.Forms.Button();
             this.btnBlacklistImport = new System.Windows.Forms.Button();
             this.tabDbHelper = new System.Windows.Forms.TabPage();
@@ -42,7 +43,7 @@
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.btnImportPayers = new System.Windows.Forms.Button();
+            this.btnDesign1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabTester.SuspendLayout();
             this.tabDbHelper.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             // tabTester
             // 
+            this.tabTester.Controls.Add(this.btnDesign1);
             this.tabTester.Controls.Add(this.btnImportPayers);
             this.tabTester.Controls.Add(this.btnVatoo);
             this.tabTester.Controls.Add(this.btnBlacklistImport);
@@ -99,6 +101,16 @@
             this.tabTester.TabIndex = 0;
             this.tabTester.Text = "Tests";
             this.tabTester.UseVisualStyleBackColor = true;
+            // 
+            // btnImportPayers
+            // 
+            this.btnImportPayers.Location = new System.Drawing.Point(3, 108);
+            this.btnImportPayers.Name = "btnImportPayers";
+            this.btnImportPayers.Size = new System.Drawing.Size(134, 31);
+            this.btnImportPayers.TabIndex = 4;
+            this.btnImportPayers.Text = "Import tax payers";
+            this.btnImportPayers.UseVisualStyleBackColor = true;
+            this.btnImportPayers.Click += new System.EventHandler(this.btnImportPayers_Click);
             // 
             // btnVatoo
             // 
@@ -214,15 +226,15 @@
             this.label33.TabIndex = 2;
             this.label33.Text = "Selected items: ";
             // 
-            // btnImportPayers
+            // btnDesign1
             // 
-            this.btnImportPayers.Location = new System.Drawing.Point(3, 108);
-            this.btnImportPayers.Name = "btnImportPayers";
-            this.btnImportPayers.Size = new System.Drawing.Size(134, 31);
-            this.btnImportPayers.TabIndex = 4;
-            this.btnImportPayers.Text = "Import tax payers";
-            this.btnImportPayers.UseVisualStyleBackColor = true;
-            this.btnImportPayers.Click += new System.EventHandler(this.btnImportPayers_Click);
+            this.btnDesign1.Location = new System.Drawing.Point(3, 253);
+            this.btnDesign1.Name = "btnDesign1";
+            this.btnDesign1.Size = new System.Drawing.Size(134, 31);
+            this.btnDesign1.TabIndex = 5;
+            this.btnDesign1.Text = "Design one";
+            this.btnDesign1.UseVisualStyleBackColor = true;
+            this.btnDesign1.Click += new System.EventHandler(this.btnDesign1_Click);
             // 
             // frmVatChecker
             // 
@@ -261,6 +273,7 @@
         private System.Windows.Forms.Button btnBlacklistImport;
         private System.Windows.Forms.Button btnVatoo;
         private System.Windows.Forms.Button btnImportPayers;
+        private System.Windows.Forms.Button btnDesign1;
     }
 }
 

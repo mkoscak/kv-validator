@@ -29,45 +29,47 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDesignOne));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle101 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle102 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle103 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle104 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuXml = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnIdentification = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelA = new System.Windows.Forms.ToolStripLabel();
+            this.btnA1 = new System.Windows.Forms.ToolStripButton();
+            this.btnA2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelB = new System.Windows.Forms.ToolStripLabel();
+            this.btnB1 = new System.Windows.Forms.ToolStripButton();
+            this.btnB2 = new System.Windows.Forms.ToolStripButton();
+            this.btnB3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelC = new System.Windows.Forms.ToolStripLabel();
+            this.btnC1 = new System.Windows.Forms.ToolStripButton();
+            this.btnC2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelD = new System.Windows.Forms.ToolStripLabel();
+            this.btnD1 = new System.Windows.Forms.ToolStripButton();
+            this.btnD2 = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuOps = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnReadXml = new System.Windows.Forms.ToolStripButton();
+            this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
+            this.btnSaveXml = new System.Windows.Forms.ToolStripButton();
+            this.btnOtherOps = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnImportBlackList = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImportVatPayers = new System.Windows.Forms.ToolStripMenuItem();
+            this.pixLogo = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.gridData = new VAToo.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuOps.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pixLogo)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.SuspendLayout();
             // 
             // menuXml
@@ -78,24 +80,24 @@
             this.menuXml.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menuXml.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuXml.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.btnIdentification,
             this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.toolStripButton2,
-            this.toolStripButton5,
+            this.toolStripLabelA,
+            this.btnA1,
+            this.btnA2,
             this.toolStripSeparator2,
-            this.toolStripLabel2,
-            this.toolStripButton4,
-            this.toolStripButton3,
-            this.toolStripButton6,
+            this.toolStripLabelB,
+            this.btnB1,
+            this.btnB2,
+            this.btnB3,
             this.toolStripSeparator3,
-            this.toolStripLabel3,
-            this.toolStripButton7,
-            this.toolStripButton8,
+            this.toolStripLabelC,
+            this.btnC1,
+            this.btnC2,
             this.toolStripSeparator4,
-            this.toolStripLabel4,
-            this.toolStripButton9,
-            this.toolStripButton10});
+            this.toolStripLabelD,
+            this.btnD1,
+            this.btnD2});
             this.menuXml.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuXml.Location = new System.Drawing.Point(10, 80);
             this.menuXml.Margin = new System.Windows.Forms.Padding(10);
@@ -105,176 +107,193 @@
             this.menuXml.TabIndex = 1;
             this.menuXml.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // btnIdentification
             // 
-            this.toolStripButton1.CheckOnClick = true;
-            this.toolStripButton1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton1.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton1.Text = "Identifikácia";
+            this.btnIdentification.CheckOnClick = true;
+            this.btnIdentification.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIdentification.ForeColor = System.Drawing.Color.Gray;
+            this.btnIdentification.Image = ((System.Drawing.Image)(resources.GetObject("btnIdentification.Image")));
+            this.btnIdentification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIdentification.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnIdentification.Name = "btnIdentification";
+            this.btnIdentification.Size = new System.Drawing.Size(128, 36);
+            this.btnIdentification.Text = "Identifikácia";
+            this.btnIdentification.Click += new System.EventHandler(this.btnIdentification_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
             // 
-            // toolStripLabel1
+            // toolStripLabelA
             // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripLabel1.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(128, 16);
-            this.toolStripLabel1.Text = "A";
-            this.toolStripLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripLabelA.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.toolStripLabelA.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripLabelA.Name = "toolStripLabelA";
+            this.toolStripLabelA.Size = new System.Drawing.Size(128, 16);
+            this.toolStripLabelA.Text = "A";
+            this.toolStripLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // toolStripButton2
+            // btnA1
             // 
-            this.toolStripButton2.Checked = true;
-            this.toolStripButton2.CheckOnClick = true;
-            this.toolStripButton2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toolStripButton2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton2.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton2.Text = "A1 (9)";
-            this.toolStripButton2.ToolTipText = "toto je A1";
+            this.btnA1.Checked = true;
+            this.btnA1.CheckOnClick = true;
+            this.btnA1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.btnA1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnA1.ForeColor = System.Drawing.Color.Gray;
+            this.btnA1.Image = ((System.Drawing.Image)(resources.GetObject("btnA1.Image")));
+            this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnA1.Name = "btnA1";
+            this.btnA1.Size = new System.Drawing.Size(128, 36);
+            this.btnA1.Text = "A1 (9)";
+            this.btnA1.ToolTipText = "A1 - Štandardné odberateľské faktúry (tuzemské)";
+            this.btnA1.Click += new System.EventHandler(this.btnA1_Click);
             // 
-            // toolStripButton5
+            // btnA2
             // 
-            this.toolStripButton5.CheckOnClick = true;
-            this.toolStripButton5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton5.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton5.Text = "A2";
-            this.toolStripButton5.ToolTipText = "toto zase A2";
+            this.btnA2.CheckOnClick = true;
+            this.btnA2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnA2.ForeColor = System.Drawing.Color.Gray;
+            this.btnA2.Image = ((System.Drawing.Image)(resources.GetObject("btnA2.Image")));
+            this.btnA2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnA2.Name = "btnA2";
+            this.btnA2.Size = new System.Drawing.Size(128, 36);
+            this.btnA2.Text = "A2";
+            this.btnA2.ToolTipText = "A2 - vybrané transakcie (daň platí príjemca)";
+            this.btnA2.Click += new System.EventHandler(this.btnA2_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(128, 6);
             // 
-            // toolStripLabel2
+            // toolStripLabelB
             // 
-            this.toolStripLabel2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripLabel2.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(128, 16);
-            this.toolStripLabel2.Text = "B";
-            this.toolStripLabel2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.toolStripLabelB.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.toolStripLabelB.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripLabelB.Name = "toolStripLabelB";
+            this.toolStripLabelB.Size = new System.Drawing.Size(128, 16);
+            this.toolStripLabelB.Text = "B";
+            this.toolStripLabelB.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
-            // toolStripButton4
+            // btnB1
             // 
-            this.toolStripButton4.CheckOnClick = true;
-            this.toolStripButton4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton4.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton4.Text = "B1";
+            this.btnB1.CheckOnClick = true;
+            this.btnB1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnB1.ForeColor = System.Drawing.Color.Gray;
+            this.btnB1.Image = ((System.Drawing.Image)(resources.GetObject("btnB1.Image")));
+            this.btnB1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB1.Name = "btnB1";
+            this.btnB1.Size = new System.Drawing.Size(128, 36);
+            this.btnB1.Text = "B1";
+            this.btnB1.ToolTipText = "B1 - prijaté faktúry (daň v tuzemsku)";
+            this.btnB1.Click += new System.EventHandler(this.btnB1_Click);
             // 
-            // toolStripButton3
+            // btnB2
             // 
-            this.toolStripButton3.CheckOnClick = true;
-            this.toolStripButton3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton3.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton3.Text = "B2";
+            this.btnB2.CheckOnClick = true;
+            this.btnB2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnB2.ForeColor = System.Drawing.Color.Gray;
+            this.btnB2.Image = ((System.Drawing.Image)(resources.GetObject("btnB2.Image")));
+            this.btnB2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB2.Name = "btnB2";
+            this.btnB2.Size = new System.Drawing.Size(128, 36);
+            this.btnB2.Text = "B2";
+            this.btnB2.ToolTipText = "B2 - prijaté faktúry (daň platí dodávateľ)";
+            this.btnB2.Click += new System.EventHandler(this.btnB2_Click);
             // 
-            // toolStripButton6
+            // btnB3
             // 
-            this.toolStripButton6.CheckOnClick = true;
-            this.toolStripButton6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton6.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton6.Text = "B3";
+            this.btnB3.CheckOnClick = true;
+            this.btnB3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnB3.ForeColor = System.Drawing.Color.Gray;
+            this.btnB3.Image = ((System.Drawing.Image)(resources.GetObject("btnB3.Image")));
+            this.btnB3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB3.Name = "btnB3";
+            this.btnB3.Size = new System.Drawing.Size(128, 36);
+            this.btnB3.Text = "B3";
+            this.btnB3.ToolTipText = "B3 - celkové sumy základov dane z prijatých zjednodušených faktúr";
+            this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(128, 6);
             // 
-            // toolStripLabel3
+            // toolStripLabelC
             // 
-            this.toolStripLabel3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripLabel3.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(128, 16);
-            this.toolStripLabel3.Text = "C";
-            this.toolStripLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripLabelC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.toolStripLabelC.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripLabelC.Name = "toolStripLabelC";
+            this.toolStripLabelC.Size = new System.Drawing.Size(128, 16);
+            this.toolStripLabelC.Text = "C";
+            this.toolStripLabelC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // toolStripButton7
+            // btnC1
             // 
-            this.toolStripButton7.CheckOnClick = true;
-            this.toolStripButton7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton7.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton7.Text = "C1";
+            this.btnC1.CheckOnClick = true;
+            this.btnC1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnC1.ForeColor = System.Drawing.Color.Gray;
+            this.btnC1.Image = ((System.Drawing.Image)(resources.GetObject("btnC1.Image")));
+            this.btnC1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnC1.Name = "btnC1";
+            this.btnC1.Size = new System.Drawing.Size(128, 36);
+            this.btnC1.Text = "C1";
+            this.btnC1.ToolTipText = "C1 - opravné faktúry k vystaveným faktúram (okrem ERP)";
+            this.btnC1.Click += new System.EventHandler(this.btnC1_Click);
             // 
-            // toolStripButton8
+            // btnC2
             // 
-            this.toolStripButton8.CheckOnClick = true;
-            this.toolStripButton8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton8.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton8.Text = "C2";
+            this.btnC2.CheckOnClick = true;
+            this.btnC2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnC2.ForeColor = System.Drawing.Color.Gray;
+            this.btnC2.Image = ((System.Drawing.Image)(resources.GetObject("btnC2.Image")));
+            this.btnC2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnC2.Name = "btnC2";
+            this.btnC2.Size = new System.Drawing.Size(128, 36);
+            this.btnC2.Text = "C2";
+            this.btnC2.ToolTipText = "C2 - opravné faktúry k prijatým faktúram";
+            this.btnC2.Click += new System.EventHandler(this.btnC2_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(128, 6);
             // 
-            // toolStripLabel4
+            // toolStripLabelD
             // 
-            this.toolStripLabel4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripLabel4.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(128, 16);
-            this.toolStripLabel4.Text = "D";
-            this.toolStripLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripLabelD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.toolStripLabelD.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripLabelD.Name = "toolStripLabelD";
+            this.toolStripLabelD.Size = new System.Drawing.Size(128, 16);
+            this.toolStripLabelD.Text = "D";
+            this.toolStripLabelD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // toolStripButton9
+            // btnD1
             // 
-            this.toolStripButton9.CheckOnClick = true;
-            this.toolStripButton9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton9.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton9.Text = "D1";
+            this.btnD1.CheckOnClick = true;
+            this.btnD1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnD1.ForeColor = System.Drawing.Color.Gray;
+            this.btnD1.Image = ((System.Drawing.Image)(resources.GetObject("btnD1.Image")));
+            this.btnD1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnD1.Name = "btnD1";
+            this.btnD1.Size = new System.Drawing.Size(128, 36);
+            this.btnD1.Text = "D1";
+            this.btnD1.ToolTipText = "D1 - sumár elektronickej registračnej pokladnice (ERP)";
+            this.btnD1.Click += new System.EventHandler(this.btnD1_Click);
             // 
-            // toolStripButton10
+            // btnD2
             // 
-            this.toolStripButton10.CheckOnClick = true;
-            this.toolStripButton10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton10.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(128, 36);
-            this.toolStripButton10.Text = "D2";
+            this.btnD2.CheckOnClick = true;
+            this.btnD2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnD2.ForeColor = System.Drawing.Color.Gray;
+            this.btnD2.Image = ((System.Drawing.Image)(resources.GetObject("btnD2.Image")));
+            this.btnD2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnD2.Name = "btnD2";
+            this.btnD2.Size = new System.Drawing.Size(128, 36);
+            this.btnD2.Text = "D2";
+            this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
+            this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -286,7 +305,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.menuXml, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.menuOps, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pixLogo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -306,10 +325,10 @@
             this.menuOps.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menuOps.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuOps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton11,
-            this.toolStripButton12,
-            this.toolStripButton13,
-            this.toolStripDropDownButton1});
+            this.btnReadXml,
+            this.btnCheckAll,
+            this.btnSaveXml,
+            this.btnOtherOps});
             this.menuOps.Location = new System.Drawing.Point(160, 10);
             this.menuOps.Margin = new System.Windows.Forms.Padding(10);
             this.menuOps.Name = "menuOps";
@@ -318,63 +337,79 @@
             this.menuOps.TabIndex = 2;
             this.menuOps.Text = "toolStrip1";
             // 
-            // toolStripButton11
+            // btnReadXml
             // 
-            this.toolStripButton11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton11.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
-            this.toolStripButton11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(112, 47);
-            this.toolStripButton11.Text = "Načítať KV";
+            this.btnReadXml.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnReadXml.ForeColor = System.Drawing.Color.Gray;
+            this.btnReadXml.Image = ((System.Drawing.Image)(resources.GetObject("btnReadXml.Image")));
+            this.btnReadXml.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReadXml.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReadXml.Name = "btnReadXml";
+            this.btnReadXml.Size = new System.Drawing.Size(112, 47);
+            this.btnReadXml.Text = "Načítať KV";
+            this.btnReadXml.Click += new System.EventHandler(this.btnReadXml_Click);
             // 
-            // toolStripButton12
+            // btnCheckAll
             // 
-            this.toolStripButton12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton12.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(148, 47);
-            this.toolStripButton12.Text = "Skontrolovať KV";
+            this.btnCheckAll.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCheckAll.ForeColor = System.Drawing.Color.Gray;
+            this.btnCheckAll.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckAll.Image")));
+            this.btnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCheckAll.Name = "btnCheckAll";
+            this.btnCheckAll.Size = new System.Drawing.Size(148, 47);
+            this.btnCheckAll.Text = "Skontrolovať KV";
             // 
-            // toolStripButton13
+            // btnSaveXml
             // 
-            this.toolStripButton13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripButton13.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
-            this.toolStripButton13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.Size = new System.Drawing.Size(104, 47);
-            this.toolStripButton13.Text = "Uložiť KV";
+            this.btnSaveXml.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSaveXml.ForeColor = System.Drawing.Color.Gray;
+            this.btnSaveXml.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveXml.Image")));
+            this.btnSaveXml.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveXml.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSaveXml.Name = "btnSaveXml";
+            this.btnSaveXml.Size = new System.Drawing.Size(104, 47);
+            this.btnSaveXml.Text = "Uložiť KV";
             // 
-            // toolStripDropDownButton1
+            // btnOtherOps
             // 
-            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.toolStripDropDownButton1.ForeColor = System.Drawing.Color.Gray;
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(152, 47);
-            this.toolStripDropDownButton1.Text = "Ďalšie operácie";
+            this.btnOtherOps.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnOtherOps.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnImportBlackList,
+            this.btnImportVatPayers});
+            this.btnOtherOps.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnOtherOps.ForeColor = System.Drawing.Color.Gray;
+            this.btnOtherOps.Image = ((System.Drawing.Image)(resources.GetObject("btnOtherOps.Image")));
+            this.btnOtherOps.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOtherOps.Name = "btnOtherOps";
+            this.btnOtherOps.Size = new System.Drawing.Size(152, 47);
+            this.btnOtherOps.Text = "Ďalšie operácie";
             // 
-            // pictureBox1
+            // btnImportBlackList
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.btnImportBlackList.Name = "btnImportBlackList";
+            this.btnImportBlackList.Size = new System.Drawing.Size(177, 22);
+            this.btnImportBlackList.Text = "Import black-list";
+            // 
+            // btnImportVatPayers
+            // 
+            this.btnImportVatPayers.Name = "btnImportVatPayers";
+            this.btnImportVatPayers.Size = new System.Drawing.Size(177, 22);
+            this.btnImportVatPayers.Text = "Import platcov";
+            // 
+            // pixLogo
+            // 
+            this.pixLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pixLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pixLogo.ErrorImage = null;
+            this.pixLogo.Image = ((System.Drawing.Image)(resources.GetObject("pixLogo.Image")));
+            this.pixLogo.InitialImage = null;
+            this.pixLogo.Location = new System.Drawing.Point(3, 3);
+            this.pixLogo.Name = "pixLogo";
+            this.pixLogo.Size = new System.Drawing.Size(144, 64);
+            this.pixLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pixLogo.TabIndex = 3;
+            this.pixLogo.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
@@ -383,8 +418,8 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblTitle, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.gridData, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(153, 73);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -393,60 +428,61 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(812, 516);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(10, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "A1 - nejake faktury";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Silver;
+            this.lblTitle.Location = new System.Drawing.Point(10, 10);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(462, 20);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "A1 - Štandardné odberateľské faktúry (tuzemské)";
             // 
-            // dataGridView1
+            // gridData
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(806, 470);
-            this.dataGridView1.TabIndex = 6;
+            this.gridData.AllowUserToOrderColumns = true;
+            this.gridData.AllowUserToResizeRows = false;
+            dataGridViewCellStyle101.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle101;
+            this.gridData.BackgroundColor = System.Drawing.Color.LightGray;
+            this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle102.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle102.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle102.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle102.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle102.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle102;
+            this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle103.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle103.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle103.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle103.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle103.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle103.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridData.DefaultCellStyle = dataGridViewCellStyle103;
+            this.gridData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridData.EnableHeadersVisualStyles = false;
+            this.gridData.Location = new System.Drawing.Point(3, 43);
+            this.gridData.Name = "gridData";
+            this.gridData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle104.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle104.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle104.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle104.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle104.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle104;
+            this.gridData.RowTemplate.Height = 25;
+            this.gridData.Size = new System.Drawing.Size(806, 470);
+            this.gridData.TabIndex = 6;
             // 
             // FrmDesignOne
             // 
@@ -466,10 +502,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.menuOps.ResumeLayout(false);
             this.menuOps.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pixLogo)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -478,32 +514,34 @@
 
         private System.Windows.Forms.ToolStrip menuXml;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton btnIdentification;
+        private System.Windows.Forms.ToolStripButton btnA1;
+        private System.Windows.Forms.ToolStripButton btnB2;
+        private System.Windows.Forms.ToolStripButton btnA2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton btnB1;
+        private System.Windows.Forms.ToolStripButton btnB3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton btnC1;
+        private System.Windows.Forms.ToolStripButton btnC2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelA;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelB;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelC;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelD;
+        private System.Windows.Forms.ToolStripButton btnD1;
+        private System.Windows.Forms.ToolStripButton btnD2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStrip menuOps;
-        private System.Windows.Forms.ToolStripButton toolStripButton11;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripButton btnReadXml;
+        private System.Windows.Forms.ToolStripButton btnCheckAll;
+        private System.Windows.Forms.ToolStripButton btnSaveXml;
+        private System.Windows.Forms.PictureBox pixLogo;
+        private System.Windows.Forms.ToolStripDropDownButton btnOtherOps;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.ToolStripMenuItem btnImportBlackList;
+        private System.Windows.Forms.ToolStripMenuItem btnImportVatPayers;
+        private VAToo.Components.MyDoubleBufferedGrid gridData;
     }
 }

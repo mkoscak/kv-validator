@@ -7,12 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using KVValidator;
+using KVValidator.Implementation;
+using KVValidator.Interface;
 
 namespace KontrolnyVykaz
 {
     public partial class FrmDesignOne : Form
     {
+        string FormTitle;
+
         KVDPH kvDph = new KVDPH();
+
+        IValidationResult lastValidationResult;
 
         public FrmDesignOne()
         {
@@ -38,6 +44,15 @@ namespace KontrolnyVykaz
 
             this.btnIdentification.PerformClick();
             UpdateButtonTexts();
+
+            // inicializacia hlavickoveho textu
+            this.FormTitle = this.Text;
+            SetFileName("nový.xml");
+        }
+
+        private void SetFileName(string name)
+        {
+            this.Text = string.Format("{0} - {1}", FormTitle, name);
         }
 
         void DisableAllButtons(ToolStripButton except)
@@ -60,6 +75,10 @@ namespace KontrolnyVykaz
         {
             DisableAllButtons(btnIdentification);
             gridData.DataSource = null;
+
+            /*gridData.Visible = false;
+            this.panelContent.Controls.Remove(gridData);
+            this.panelContent.Controls.Add(*/
         }
 
         private void btnA1_Click(object sender, EventArgs e)
@@ -177,6 +196,12 @@ namespace KontrolnyVykaz
 
             this.kvDph = KVDPH.LoadFromFile(path);
 
+            var found = path.LastIndexOf('\\');
+            if (found >= 0)
+                SetFileName(path.Substring(found + 1));
+            else
+                SetFileName(path);
+
             return true;
         }
 
@@ -190,6 +215,71 @@ namespace KontrolnyVykaz
             ofd.DefaultExt = "xml";
             ofd.Filter = "XML files|*.xml";
             ofd.Multiselect = false;
+            ofd.InitialDirectory = Environment.CurrentDirectory;
+            ofd.RestoreDirectory = true;
+
+            Environment.CurrentDirectory = curDir;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+                return ofd.FileName;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Samotna validacia
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCheckAll_Click(object sender, EventArgs e)
+        {
+            var rules = new DefaultValidationSetFactory().ValidationSet;
+            var validator = new DefaultValidator();
+
+            var result = validator.Validate(kvDph, rules);
+            if (result.Count == 0)
+            {
+                ValidationPassed();
+                return;
+            }
+            else
+            {
+                lastValidationResult = result;
+                ValidationFailed(lastValidationResult);
+                return;
+            }
+        }
+
+        private void ValidationFailed(IValidationResult lastValidationResult)
+        {
+            MessageBox.Show(this, string.Format("Validácia neprebehla v poriadku, bolo zistených {0} problémov..", lastValidationResult.Count), "Validácia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void ValidationPassed()
+        {
+            MessageBox.Show(this, "Validácia prebehla v poriadku, nenašiel sa žiadny problém!", "Validácia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnSaveXml_Click(object sender, EventArgs e)
+        {
+            string fName = GetOutFileName();
+            if (string.IsNullOrEmpty(fName))
+                return;
+
+            kvDph.SaveToFile(fName);
+        }
+
+        private string GetOutFileName()
+        {
+            var curDir = Environment.CurrentDirectory;
+
+            var ofd = new SaveFileDialog();
+            ofd.CheckFileExists = false;
+            ofd.CheckPathExists = true;
+            ofd.CreatePrompt = false;
+            ofd.AddExtension = true;
+            ofd.DefaultExt = "xml";
+            ofd.Filter = "XML files|*.xml";
             ofd.InitialDirectory = Environment.CurrentDirectory;
             ofd.RestoreDirectory = true;
 

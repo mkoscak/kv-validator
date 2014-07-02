@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDesignOne));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle101 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle102 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle103 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle104 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuXml = new System.Windows.Forms.ToolStrip();
             this.btnIdentification = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -61,14 +61,16 @@
             this.btnImportBlackList = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImportVatPayers = new System.Windows.Forms.ToolStripMenuItem();
             this.pixLogo = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelContent = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gridData = new VAToo.Components.MyDoubleBufferedGrid();
+            this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuOps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pixLogo)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -306,7 +308,7 @@
             this.tableLayoutPanel1.Controls.Add(this.menuXml, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.menuOps, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pixLogo, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panelContent, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -359,6 +361,7 @@
             this.btnCheckAll.Name = "btnCheckAll";
             this.btnCheckAll.Size = new System.Drawing.Size(148, 47);
             this.btnCheckAll.Text = "Skontrolovať KV";
+            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
             // 
             // btnSaveXml
             // 
@@ -370,13 +373,16 @@
             this.btnSaveXml.Name = "btnSaveXml";
             this.btnSaveXml.Size = new System.Drawing.Size(104, 47);
             this.btnSaveXml.Text = "Uložiť KV";
+            this.btnSaveXml.Click += new System.EventHandler(this.btnSaveXml_Click);
             // 
             // btnOtherOps
             // 
             this.btnOtherOps.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnOtherOps.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnImportBlackList,
-            this.btnImportVatPayers});
+            this.btnImportVatPayers,
+            this.toolStripSeparator5,
+            this.btnExportToExcel});
             this.btnOtherOps.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnOtherOps.ForeColor = System.Drawing.Color.Gray;
             this.btnOtherOps.Image = ((System.Drawing.Image)(resources.GetObject("btnOtherOps.Image")));
@@ -388,13 +394,13 @@
             // btnImportBlackList
             // 
             this.btnImportBlackList.Name = "btnImportBlackList";
-            this.btnImportBlackList.Size = new System.Drawing.Size(177, 22);
+            this.btnImportBlackList.Size = new System.Drawing.Size(232, 22);
             this.btnImportBlackList.Text = "Import black-list";
             // 
             // btnImportVatPayers
             // 
             this.btnImportVatPayers.Name = "btnImportVatPayers";
-            this.btnImportVatPayers.Size = new System.Drawing.Size(177, 22);
+            this.btnImportVatPayers.Size = new System.Drawing.Size(232, 22);
             this.btnImportVatPayers.Text = "Import platcov";
             // 
             // pixLogo
@@ -411,22 +417,22 @@
             this.pixLogo.TabIndex = 3;
             this.pixLogo.TabStop = false;
             // 
-            // tableLayoutPanel2
+            // panelContent
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.lblTitle, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.gridData, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(153, 73);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(812, 516);
-            this.tableLayoutPanel2.TabIndex = 4;
+            this.panelContent.ColumnCount = 1;
+            this.panelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelContent.Controls.Add(this.lblTitle, 0, 0);
+            this.panelContent.Controls.Add(this.gridData, 0, 1);
+            this.panelContent.Location = new System.Drawing.Point(153, 73);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.RowCount = 2;
+            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelContent.Size = new System.Drawing.Size(812, 516);
+            this.panelContent.TabIndex = 4;
             // 
             // lblTitle
             // 
@@ -444,45 +450,58 @@
             // 
             this.gridData.AllowUserToOrderColumns = true;
             this.gridData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle101.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle101;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.gridData.BackgroundColor = System.Drawing.Color.LightGray;
             this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle102.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle102.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle102.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle102.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle102.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle102;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle103.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle103.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle103.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle103.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle103.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle103.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridData.DefaultCellStyle = dataGridViewCellStyle103;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridData.EnableHeadersVisualStyles = false;
             this.gridData.Location = new System.Drawing.Point(3, 43);
             this.gridData.Name = "gridData";
             this.gridData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle104.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle104.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle104.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle104.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle104.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle104;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridData.RowHeadersWidth = 30;
             this.gridData.RowTemplate.Height = 25;
             this.gridData.Size = new System.Drawing.Size(806, 470);
             this.gridData.TabIndex = 6;
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(232, 22);
+            this.btnExportToExcel.Text = "Export výkazu do excelu";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(229, 6);
             // 
             // FrmDesignOne
             // 
@@ -495,7 +514,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 650);
             this.Name = "FrmDesignOne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmDesignOne";
+            this.Text = "Vatoo v0.7";
             this.Load += new System.EventHandler(this.FrmDesignOne_Load);
             this.menuXml.ResumeLayout(false);
             this.menuXml.PerformLayout();
@@ -503,8 +522,8 @@
             this.menuOps.ResumeLayout(false);
             this.menuOps.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pixLogo)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.panelContent.ResumeLayout(false);
+            this.panelContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
             this.ResumeLayout(false);
 
@@ -538,10 +557,12 @@
         private System.Windows.Forms.ToolStripButton btnSaveXml;
         private System.Windows.Forms.PictureBox pixLogo;
         private System.Windows.Forms.ToolStripDropDownButton btnOtherOps;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel panelContent;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ToolStripMenuItem btnImportBlackList;
         private System.Windows.Forms.ToolStripMenuItem btnImportVatPayers;
         private VAToo.Components.MyDoubleBufferedGrid gridData;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem btnExportToExcel;
     }
 }

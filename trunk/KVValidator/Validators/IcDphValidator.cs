@@ -33,25 +33,25 @@ namespace KVValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (string.IsNullOrEmpty(input.IcDphPlatitela))
-                ret = ValidationFailedNullIc(input);
+                ret = ValidationFailedNullIc(input.IcDphPlatitela);
             else
             {
                 // kontrola na existujuce IC DPH
                 var found = TaxPayerEntity.Load(string.Format("IC_DPH = \"{0}\"", input.IcDphPlatitela));
                 if (found != null && found.Count == 0)
-                    ret = ValidationFailedNoExistPayer(input);
+                    ret = ValidationFailedNoExistPayer(input.IcDphPlatitela);
             }
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailedNoExistPayer(Identifikacia problemItem)
+        private ValidationItemResult ValidationFailedNoExistPayer(object problemItem)
         {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
             ret.ResultMessage = "IČ platiteľa DPH sa nenachádza medzi registrovanými platcami!";
-            ret.ResultTooltip = string.Format("Preverte, či je zoznam platiteľov DPH aktuálny a či je zadané IČ '{0}' v sekcii <Identifikacia> správne!", problemItem.IcDphPlatitela);
+            ret.ResultTooltip = string.Format("Preverte, či je zoznam platiteľov DPH aktuálny a či je zadané IČ '{0}' v sekcii <Identifikacia> správne!", problemItem.ToString());
             ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 4;
@@ -59,7 +59,7 @@ namespace KVValidator.Validators
             return ret;
         }
 
-        private ValidationItemResult ValidationFailedNullIc(Identifikacia problemItem)
+        private ValidationItemResult ValidationFailedNullIc(object problemItem)
         {
             var ret = new ValidationItemResult(this);
 

@@ -19,10 +19,17 @@ namespace KontrolnyVykaz
         KVDPH kvDph = new KVDPH();
 
         IValidationResult lastValidationResult;
+        DataGridViewCellStyle errorStyle;
+        CtrlIdentification identification;
 
         public FrmDesignOne()
         {
             InitializeComponent();
+
+            identification = new CtrlIdentification();
+            identification.BorderStyle = BorderStyle.None;
+            identification.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(identification);
         }
 
         private void FrmDesignOne_Load(object sender, EventArgs e)
@@ -48,6 +55,9 @@ namespace KontrolnyVykaz
             // inicializacia hlavickoveho textu
             this.FormTitle = this.Text;
             SetFileName("nový.xml");
+
+            errorStyle = new DataGridViewCellStyle(gridData.DefaultCellStyle);
+            errorStyle.ForeColor = Color.Red;
         }
 
         private void SetFileName(string name)
@@ -68,7 +78,19 @@ namespace KontrolnyVykaz
             btnD1.Checked = false;
             btnD2.Checked = false;
             except.Checked = true;
+
             lblTitle.Text = except.ToolTipText;
+
+            if (except == btnIdentification)
+            {
+                gridData.Visible = false;
+                identification.Visible = true;
+            }
+            else if (!gridData.Visible)
+            {
+                gridData.Visible = true;
+                identification.Visible = false;
+            }
         }
 
         private void btnIdentification_Click(object sender, EventArgs e)
@@ -85,8 +107,30 @@ namespace KontrolnyVykaz
         {
             DisableAllButtons(btnA1);
             gridData.DataSource = new BindingList<A1>();
+
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A1 != null)
+            {
                 gridData.DataSource = new BindingList<A1>(kvDph.Transakcie.A1);
+                var ds = gridData.DataSource as BindingList<A1>;
+                CheckSetErrors<A1>(ds);
+            }
+        }
+
+        void CheckSetErrors<T>(BindingList<T> ds)
+            where T : class
+        {
+            if (lastValidationResult != null)
+            {
+                for (int i = 0; i < ds.Count; i++)
+                {
+                    var problems = lastValidationResult.Where(r => r.ProblemObject == ds[i]).ToList();
+                    if (problems.Count > 0)
+                    {
+                        gridData.Rows[i].DefaultCellStyle = errorStyle;
+                        gridData.Rows[i].Tag = problems;
+                    }
+                }
+            }
         }
 
         private void btnA2_Click(object sender, EventArgs e)
@@ -94,7 +138,11 @@ namespace KontrolnyVykaz
             DisableAllButtons(btnA2);
             gridData.DataSource = new BindingList<A2>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A2 != null)
+            {
                 gridData.DataSource = new BindingList<A2>(kvDph.Transakcie.A2);
+                var ds = gridData.DataSource as BindingList<A2>;
+                CheckSetErrors<A2>(ds);
+            }
         }
 
         private void btnB1_Click(object sender, EventArgs e)
@@ -102,7 +150,11 @@ namespace KontrolnyVykaz
             DisableAllButtons(btnB1);
             gridData.DataSource = new BindingList<B1>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B1 != null)
+            {
                 gridData.DataSource = new BindingList<B1>(kvDph.Transakcie.B1);
+                var ds = gridData.DataSource as BindingList<B1>;
+                CheckSetErrors<B1>(ds);
+            }
         }
 
         private void btnB2_Click(object sender, EventArgs e)
@@ -110,7 +162,11 @@ namespace KontrolnyVykaz
             DisableAllButtons(btnB2);
             gridData.DataSource = new BindingList<B2>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B2 != null)
+            {
                 gridData.DataSource = new BindingList<B2>(kvDph.Transakcie.B2);
+                var ds = gridData.DataSource as BindingList<B2>;
+                CheckSetErrors<B2>(ds);
+            }
         }
 
         private void btnB3_Click(object sender, EventArgs e)
@@ -118,7 +174,11 @@ namespace KontrolnyVykaz
             DisableAllButtons(btnB3);
             gridData.DataSource = new BindingList<B3>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B3 != null)
+            {
                 gridData.DataSource = new BindingList<B3>(kvDph.Transakcie.B3);
+                var ds = gridData.DataSource as BindingList<B3>;
+                CheckSetErrors<B3>(ds);
+            }
         }
 
         private void btnC1_Click(object sender, EventArgs e)
@@ -126,15 +186,23 @@ namespace KontrolnyVykaz
             DisableAllButtons(btnC1);
             gridData.DataSource = new BindingList<C1>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C1 != null)
+            {
                 gridData.DataSource = new BindingList<C1>(kvDph.Transakcie.C1);
+                var ds = gridData.DataSource as BindingList<C1>;
+                CheckSetErrors<C1>(ds);
+            }
         }
 
         private void btnC2_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnC2);
             gridData.DataSource = new BindingList<C2>();
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C2 != null)
+            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C2!= null)
+            {
                 gridData.DataSource = new BindingList<C2>(kvDph.Transakcie.C2);
+                var ds = gridData.DataSource as BindingList<C2>;
+                CheckSetErrors<C2>(ds);
+            }
         }
 
         private void btnD1_Click(object sender, EventArgs e)
@@ -142,7 +210,11 @@ namespace KontrolnyVykaz
             DisableAllButtons(btnD1);
             gridData.DataSource = new BindingList<D1>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D1 != null)
+            {
                 gridData.DataSource = new BindingList<D1>(kvDph.Transakcie.D1);
+                var ds = gridData.DataSource as BindingList<D1>;
+                CheckSetErrors<D1>(ds);
+            }
         }
 
         private void btnD2_Click(object sender, EventArgs e)
@@ -150,7 +222,11 @@ namespace KontrolnyVykaz
             DisableAllButtons(btnD2);
             gridData.DataSource = new BindingList<D2>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D2 != null)
+            {
                 gridData.DataSource = new BindingList<D2>(kvDph.Transakcie.D2);
+                var ds = gridData.DataSource as BindingList<D2>;
+                CheckSetErrors<D2>(ds);
+            }
         }
 
         private void btnReadXml_Click(object sender, EventArgs e)
@@ -162,6 +238,7 @@ namespace KontrolnyVykaz
                     return;
 
                 //MessageBox.Show(this, "Načítanie vstupného súboru prebehlo úspešne!", "Načítanie xml", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                identification.SetData(kvDph.Identifikacia);
                 btnIdentification.PerformClick();
                 UpdateButtonTexts();
             }
@@ -236,17 +313,32 @@ namespace KontrolnyVykaz
             var rules = new DefaultValidationSetFactory().ValidationSet;
             var validator = new DefaultValidator();
 
-            var result = validator.Validate(kvDph, rules);
-            if (result.Count == 0)
+            try
             {
-                ValidationPassed();
-                return;
+                Cursor = Cursors.WaitCursor;
+                var result = validator.Validate(kvDph, rules);
+
+                if (result.Count == 0)
+                {
+                    ValidationPassed();
+                    return;
+                }
+                else
+                {
+                    lastValidationResult = result;
+                    ValidationFailed(lastValidationResult);
+                    
+                    identification.SetProblems(result);
+                    return;
+                }
             }
-            else
+            catch (Exception)
             {
-                lastValidationResult = result;
-                ValidationFailed(lastValidationResult);
-                return;
+                throw;
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
             }
         }
 
@@ -289,6 +381,34 @@ namespace KontrolnyVykaz
                 return ofd.FileName;
 
             return null;
+        }
+
+        private void gridData_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            var row = gridData.Rows[e.RowIndex];
+            if (row.Tag == null)
+                return;
+
+            var problems = row.Tag as List<IValidationItemResult>;
+            if (problems.Count == 0)
+                return;
+
+            e.ToolTipText = BuildErrorTooltip(problems);
+        }
+
+        private string BuildErrorTooltip(List<IValidationItemResult> problems)
+        {
+            var sb = new StringBuilder();
+
+            foreach (var p in problems)
+            {
+                sb.AppendLine(p.ResultMessage);
+            }
+
+            return sb.ToString().Trim();
         }
     }
 }

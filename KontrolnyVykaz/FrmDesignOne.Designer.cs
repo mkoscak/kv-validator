@@ -60,12 +60,12 @@
             this.btnOtherOps = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnImportBlackList = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImportVatPayers = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.pixLogo = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gridData = new VAToo.Components.MyDoubleBufferedGrid();
-            this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuOps.SuspendLayout();
@@ -381,7 +381,7 @@
             this.btnOtherOps.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnImportBlackList,
             this.btnImportVatPayers,
-            this.toolStripSeparator5,
+            this.toolStripSeparator6,
             this.btnExportToExcel});
             this.btnOtherOps.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnOtherOps.ForeColor = System.Drawing.Color.Gray;
@@ -402,6 +402,17 @@
             this.btnImportVatPayers.Name = "btnImportVatPayers";
             this.btnImportVatPayers.Size = new System.Drawing.Size(232, 22);
             this.btnImportVatPayers.Text = "Import platcov";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(229, 6);
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(232, 22);
+            this.btnExportToExcel.Text = "Export výkazu do excelu";
             // 
             // pixLogo
             // 
@@ -491,17 +502,7 @@
             this.gridData.RowTemplate.Height = 25;
             this.gridData.Size = new System.Drawing.Size(806, 470);
             this.gridData.TabIndex = 6;
-            // 
-            // btnExportToExcel
-            // 
-            this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(232, 22);
-            this.btnExportToExcel.Text = "Export výkazu do excelu";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(229, 6);
+            this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
             // 
             // FrmDesignOne
             // 
@@ -562,7 +563,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnImportBlackList;
         private System.Windows.Forms.ToolStripMenuItem btnImportVatPayers;
         private VAToo.Components.MyDoubleBufferedGrid gridData;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem btnExportToExcel;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     }
 }

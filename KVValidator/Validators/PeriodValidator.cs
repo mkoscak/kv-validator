@@ -34,13 +34,13 @@ namespace KVValidator.Validators
             if (input.Obdobie == null)
                 ret = ValidationFailedPeriodMissing(input);
             else if (input.Obdobie.ItemElementName == ItemChoiceType.Missing)
-                ret = ValidationFailedSubPeriodMissing(input);
+                ret = ValidationFailedSubPeriodMissing(input.Obdobie);
             // TODO mala by byt aj validacia, ze nesmu byt zadane sucasne..
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailedSubPeriodMissing(Identifikacia problemItem)
+        private ValidationItemResult ValidationFailedSubPeriodMissing(object problemItem)
         {
             var ret = new ValidationItemResult(this);
 
@@ -54,7 +54,7 @@ namespace KVValidator.Validators
             return ret;
         }
 
-        private ValidationItemResult ValidationFailedPeriodMissing(Identifikacia problemItem)
+        private ValidationItemResult ValidationFailedPeriodMissing(object problemItem)
         {
             var ret = new ValidationItemResult(this);
 

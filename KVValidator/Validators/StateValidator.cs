@@ -32,12 +32,12 @@ namespace KVValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (string.IsNullOrEmpty(input.Stat))
-                ret = ValidationFailed(input);
+                ret = ValidationFailed(input.Stat);
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed(Identifikacia problemItem)
+        private ValidationItemResult ValidationFailed(object problemItem)
         {
             var ret = new ValidationItemResult(this);
 

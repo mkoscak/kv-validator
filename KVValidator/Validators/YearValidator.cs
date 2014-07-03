@@ -32,14 +32,14 @@ namespace KVValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (input.Obdobie.Rok == 0)
-                ret = ValidationFailedYearMissing(input);
+                ret = ValidationFailedYearMissing(input.Obdobie);
             else if (input.Obdobie.Rok < 2014)
-                ret = ValidationFailed(input.Obdobie.Rok, input);
+                ret = ValidationFailed(input.Obdobie.Rok, input.Obdobie);
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailedYearMissing(Identifikacia problemItem)
+        private ValidationItemResult ValidationFailedYearMissing(object problemItem)
         {
             var ret = new ValidationItemResult(this);
 
@@ -53,7 +53,7 @@ namespace KVValidator.Validators
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed(int year, Identifikacia problemItem)
+        private ValidationItemResult ValidationFailed(int year, object problemItem)
         {
             var ret = new ValidationItemResult(this);
 

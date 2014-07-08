@@ -2,19 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Interface;
-using KVValidator.Validators;
-using KVValidator.Validators.BlackListValidator;
-using KVValidator.Validators.TaxPayerValidator;
+using AvatValidator.Interface;
+using AvatValidator.Validators;
+using AvatValidator.Validators.BlackListValidator;
+using AvatValidator.Validators.TaxPayerValidator;
+using AvatValidator.Validators.TaxPayerValidator.Entities;
+using AvatValidator.Validators.BlackListValidator.Entities;
 
-namespace KVValidator.Implementation
+namespace AvatValidator.Implementation
 {
     public class DefaultValidationSetFactory : IValidationSetFactory
     {
         #region IValidationSetFactory Members
 
         protected IValidationSet Rules { get; set; }
-        
+
+        /// <summary>
+        /// Staticky inicializator
+        /// </summary>
+        static DefaultValidationSetFactory()
+        {
+            new TaxPayerEntity();
+            new BlackListEntity();
+        }
+
         /// <summary>
         /// Vrati default zoznam validacii
         /// </summary>

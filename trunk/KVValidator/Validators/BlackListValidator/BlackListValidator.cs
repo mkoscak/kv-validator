@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Interface;
-using KVValidator.Implementation;
-using KVValidator.Validators.BlackListValidator.Entities;
+using AvatValidator.Interface;
+using AvatValidator.Implementation;
+using AvatValidator.Validators.BlackListValidator.Entities;
 
-namespace KVValidator.Validators.BlackListValidator
+namespace AvatValidator.Validators.BlackListValidator
 {
     /// <summary>
     /// Validuje zaznam voci internemu zoznamu v DB

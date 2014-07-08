@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Text;
 using System.Windows.Forms;
-using KVValidator;
+using AvatValidator;
 using System.Linq;
 using System.IO;
-using KVValidator.Implementation;
-using KVValidator.Interface;
-using KVValidator.Sql;
+using AvatValidator.Implementation;
+using AvatValidator.Interface;
+using AvatValidator.Sql;
 using VAToo;
 using System.Diagnostics;
+using Avat.Forms;
 
 namespace KontrolnyVykaz
 {
@@ -84,7 +85,7 @@ namespace KontrolnyVykaz
             }
         }
 
-        private void HandleProblem(KVValidator.Interface.IValidationItemResult problem)
+        private void HandleProblem(AvatValidator.Interface.IValidationItemResult problem)
         {
             Log(Environment.NewLine, false);
             LogLn("Result: " + problem.ValidationResultState);
@@ -154,7 +155,7 @@ namespace KontrolnyVykaz
                 LogLn(string.Format("File {0} selected..", xml));
                 Cursor = Cursors.WaitCursor;
 
-                var count = KVValidator.Validators.BlackListValidator.Entities.BlackListManager.ImportDataFromXml(xml);
+                var count = AvatValidator.Validators.BlackListValidator.Entities.BlackListManager.ImportDataFromXml(xml);
 
                 LogLn("Import success! " + count + " items..");
             }
@@ -183,7 +184,7 @@ namespace KontrolnyVykaz
                 LogLn(string.Format("File {0} selected..", xml));
                 Cursor = Cursors.WaitCursor;
 
-                var count = KVValidator.Validators.TaxPayerValidator.Entities.TaxPayersManager.ImportDataFromXml(xml);
+                var count = AvatValidator.Validators.TaxPayerValidator.Entities.TaxPayersManager.ImportDataFromXml(xml);
 
                 LogLn("Import success! " + count + " items..");
             }
@@ -275,15 +276,9 @@ namespace KontrolnyVykaz
 
         #endregion
 
-        private void btnVatoo_Click(object sender, EventArgs e)
-        {
-            FrmVatoo form = new FrmVatoo();
-            form.Show();
-        }
-
         private void btnDesign1_Click(object sender, EventArgs e)
         {
-            new FrmDesignOne().Show(this);
+            new FrmAvat().Show(this);
         }
     }
 }

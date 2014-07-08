@@ -1,6 +1,6 @@
-﻿namespace KontrolnyVykaz
+﻿namespace Avat.Forms
 {
-    partial class FrmDesignOne
+    partial class FrmAvat
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDesignOne));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAvat));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -65,7 +65,7 @@
             this.pixLogo = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.gridData = new VAToo.Components.MyDoubleBufferedGrid();
+            this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuOps.SuspendLayout();
@@ -515,7 +515,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 650);
             this.Name = "FrmDesignOne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vatoo v0.7";
+            this.Text = "avat";
             this.Load += new System.EventHandler(this.FrmDesignOne_Load);
             this.menuXml.ResumeLayout(false);
             this.menuXml.PerformLayout();
@@ -562,7 +562,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ToolStripMenuItem btnImportBlackList;
         private System.Windows.Forms.ToolStripMenuItem btnImportVatPayers;
-        private VAToo.Components.MyDoubleBufferedGrid gridData;
+        private Avat.Components.MyDoubleBufferedGrid gridData;
         private System.Windows.Forms.ToolStripMenuItem btnExportToExcel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     }

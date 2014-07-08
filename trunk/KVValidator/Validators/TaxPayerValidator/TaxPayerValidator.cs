@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Interface;
-using KVValidator.Implementation;
-using KVValidator.Validators.TaxPayerValidator.Entities;
+using AvatValidator.Interface;
+using AvatValidator.Implementation;
+using AvatValidator.Validators.TaxPayerValidator.Entities;
 
-namespace KVValidator.Validators.TaxPayerValidator
+namespace AvatValidator.Validators.TaxPayerValidator
 {
     class TaxPayerValidator : IValidationRule
     {

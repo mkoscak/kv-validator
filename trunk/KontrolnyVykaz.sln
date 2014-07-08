@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KontrolnyVykaz", "KontrolnyVykaz\KontrolnyVykaz.csproj", "{451CE6C8-EA4C-4FBA-B034-E9D91BABD873}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KVValidator", "KVValidator\KVValidator.csproj", "{6828A03F-A278-429C-94A9-99C77EC600E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvatValidator", "KVValidator\AvatValidator.csproj", "{6828A03F-A278-429C-94A9-99C77EC600E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VAToo", "VAToo\VAToo.csproj", "{2779478D-2F80-4536-B246-5DC9D4679565}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avat", "VAToo\Avat.csproj", "{2779478D-2F80-4536-B246-5DC9D4679565}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6828A03F-A278-429C-94A9-99C77EC600E9} = {6828A03F-A278-429C-94A9-99C77EC600E9}
 	EndProjectSection

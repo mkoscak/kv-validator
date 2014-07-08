@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace KVValidator.Interface
+namespace AvatValidator.Interface
 {
     /// <summary>
     /// Validacne pravidlo, napr. rok musi byt vacsi ako 2014 a pod.

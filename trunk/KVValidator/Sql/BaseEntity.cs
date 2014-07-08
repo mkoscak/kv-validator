@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SQLite;
 
-namespace KVValidator.Sql
+namespace AvatValidator.Sql
 {
     /// <summary>
     /// Base DB entity with basic columns

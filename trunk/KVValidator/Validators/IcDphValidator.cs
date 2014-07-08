@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Implementation;
-using KVValidator.Interface;
-using KVValidator.Validators.TaxPayerValidator.Entities;
+using AvatValidator.Implementation;
+using AvatValidator.Interface;
+using AvatValidator.Validators.TaxPayerValidator.Entities;
 
-namespace KVValidator.Validators
+namespace AvatValidator.Validators
 {
     /// <summary>
     /// Validator vyplnenosti pola IcDphPlatitela v hlavicke, pripadne dalsie validacie tohto pola

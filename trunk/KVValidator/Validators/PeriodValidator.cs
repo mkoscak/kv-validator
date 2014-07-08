@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Implementation;
-using KVValidator.Interface;
+using AvatValidator.Implementation;
+using AvatValidator.Interface;
 
-namespace KVValidator.Validators
+namespace AvatValidator.Validators
 {
     /// <summary>
     /// Validator poloziek z pola Obdobie

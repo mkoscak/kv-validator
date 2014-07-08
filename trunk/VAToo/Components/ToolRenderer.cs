@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace KontrolnyVykaz
+namespace Avat.Components
 {
     class ToolRenderer : ToolStripSystemRenderer
     {

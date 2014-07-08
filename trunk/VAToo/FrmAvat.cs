@@ -6,13 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using KVValidator;
-using KVValidator.Implementation;
-using KVValidator.Interface;
+using AvatValidator;
+using AvatValidator.Implementation;
+using AvatValidator.Interface;
+using Avat.Components;
 
-namespace KontrolnyVykaz
+namespace Avat.Forms
 {
-    public partial class FrmDesignOne : Form
+    public partial class FrmAvat : Form
     {
         string FormTitle;
 
@@ -22,7 +23,7 @@ namespace KontrolnyVykaz
         DataGridViewCellStyle errorStyle;
         CtrlIdentification identification;
 
-        public FrmDesignOne()
+        public FrmAvat()
         {
             InitializeComponent();
 

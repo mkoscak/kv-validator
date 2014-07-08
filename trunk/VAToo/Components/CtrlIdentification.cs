@@ -6,10 +6,10 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using KVValidator;
-using KVValidator.Interface;
+using AvatValidator;
+using AvatValidator.Interface;
 
-namespace KontrolnyVykaz
+namespace Avat.Components
 {
     public partial class CtrlIdentification : UserControl
     {

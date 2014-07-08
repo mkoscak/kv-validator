@@ -6,7 +6,7 @@ using System.Data.SQLite;
 using System.Data;
 using System.IO;
 
-namespace KVValidator.Sql
+namespace AvatValidator.Sql
 {
     /// <summary>
     /// Spostredkuvava zakladne operacie s databazou Sqlite

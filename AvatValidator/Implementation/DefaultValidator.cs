@@ -91,7 +91,8 @@ namespace AvatValidator.Implementation
         {
             foreach (var obs in Observers)
             {
-                if (obs.NextRule(genCheck) == ObserverResult.SkipRule)
+                var ret = obs.NextRule(genCheck);
+                if (ret != ObserverResult.Continue)
                     return true;
             }
 
@@ -100,6 +101,7 @@ namespace AvatValidator.Implementation
 
         private void HandleObservers(IValidationItemResult retCheck)
         {
+            var skipMsg = "Validácia prerušená";
             foreach (var obs in Observers)
             {
                 switch (retCheck.ValidationResultState)
@@ -108,19 +110,19 @@ namespace AvatValidator.Implementation
                         break;
                     case ResultState.Ok:
                         if (obs.OnOk(retCheck) == ObserverResult.StopValidation)
-                            throw new Exception("Validation skipped by observer!");
+                            throw new Exception(skipMsg);
                         break;
                     case ResultState.OkWithWarning:
                         if (obs.OnWarning(retCheck) == ObserverResult.StopValidation)
-                            throw new Exception("Validation skipped by observer!");
+                            throw new Exception(skipMsg);
                         break;
                     case ResultState.Error:
                         if (obs.OnError(retCheck) == ObserverResult.StopValidation)
-                            throw new Exception("Validation skipped by observer!");
+                            throw new Exception(skipMsg);
                         break;
                     case ResultState.CriticalError:
                         if (obs.OnCriticalError(retCheck) == ObserverResult.StopValidation)
-                            throw new Exception("Validation skipped by observer!");
+                            throw new Exception(skipMsg);
                         break;
                     default:
                         break;

@@ -49,18 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CtrlIdentification.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CtrlIdentification.Designer.cs">
-      <DependentUpon>CtrlIdentification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDesignOne.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDesignOne.Designer.cs">
-      <DependentUpon>FrmDesignOne.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmVatChecker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,14 +57,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CtrlIdentification.resx">
-      <DependentUpon>CtrlIdentification.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDesignOne.resx">
-      <DependentUpon>FrmDesignOne.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmVatChecker.resx">
       <DependentUpon>frmVatChecker.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -99,20 +79,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ToolRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KVValidator\KVValidator.csproj">
+    <ProjectReference Include="..\KVValidator\AvatValidator.csproj">
       <Project>{6828A03F-A278-429C-94A9-99C77EC600E9}</Project>
-      <Name>KVValidator</Name>
+      <Name>AvatValidator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\VAToo\VAToo.csproj">
+    <ProjectReference Include="..\VAToo\Avat.csproj">
       <Project>{2779478D-2F80-4536-B246-5DC9D4679565}</Project>
-      <Name>VAToo</Name>
+      <Name>Avat</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

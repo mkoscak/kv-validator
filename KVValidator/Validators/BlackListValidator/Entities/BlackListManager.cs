@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Sql;
+using AvatValidator.Sql;
 using System.Xml.Linq;
 using System.Xml;
 
-namespace KVValidator.Validators.BlackListValidator.Entities
+namespace AvatValidator.Validators.BlackListValidator.Entities
 {
     /// <summary>
     /// Spravuje polozky v tabule T_BLACKLIST

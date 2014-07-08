@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Interface;
-using KVValidator.Implementation;
+using AvatValidator.Interface;
+using AvatValidator.Implementation;
 
-namespace KVValidator.Validators
+namespace AvatValidator.Validators
 {
     /// <summary>
     /// Implementacia pravidla na validaciu roku

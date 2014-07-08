@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using KVValidator.Sql;
+﻿using System.Collections.Generic;
+using AvatValidator.Sql;
 using System.Xml;
 
-namespace KVValidator.Validators.TaxPayerValidator.Entities
+namespace AvatValidator.Validators.TaxPayerValidator.Entities
 {
     /// <summary>
     /// Manazer registrovanych platitelov DPH

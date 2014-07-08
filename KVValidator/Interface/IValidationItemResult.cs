@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace KVValidator.Interface
+namespace AvatValidator.Interface
 {
     /// <summary>
     /// Object reprezentujuci vysledok validacie

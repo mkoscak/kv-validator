@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using KVValidator.Properties;
+using AvatValidator.Properties;
 using System;
 using System.Xml;
 using System.Xml.Schema;
-using KVValidator.Interface;
-using KVValidator.Implementation;
+using AvatValidator.Interface;
+using AvatValidator.Implementation;
 
-namespace KVValidator
+namespace AvatValidator
 {
     /// <summary>
     /// Validator kontrolnych vykazov

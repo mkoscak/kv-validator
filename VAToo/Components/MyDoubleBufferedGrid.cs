@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace VAToo.Components
+namespace Avat.Components
 {
     /// <summary>
     /// Double buffering-ovy datagridview komponent

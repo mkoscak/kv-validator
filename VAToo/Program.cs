@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Avat.Forms;
 
 namespace VAToo
 {
@@ -15,7 +16,7 @@ namespace VAToo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmVatoo());
+            Application.Run(new FrmAvat());
         }
     }
 }

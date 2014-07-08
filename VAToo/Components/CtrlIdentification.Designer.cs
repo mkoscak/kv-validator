@@ -1,4 +1,4 @@
-﻿namespace KontrolnyVykaz
+﻿namespace Avat.Components
 {
     partial class CtrlIdentification
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Sql;
+using AvatValidator.Sql;
 
-namespace KVValidator.Validators.BlackListValidator.Entities
+namespace AvatValidator.Validators.BlackListValidator.Entities
 {
     /// <summary>
     /// Entita reprezentujuca neplatica..

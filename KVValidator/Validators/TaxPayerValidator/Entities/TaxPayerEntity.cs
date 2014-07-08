@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Sql;
+using AvatValidator.Sql;
 
-namespace KVValidator.Validators.TaxPayerValidator.Entities
+namespace AvatValidator.Validators.TaxPayerValidator.Entities
 {
     /// <summary>
     /// Entita registrovaneho platitela DPH

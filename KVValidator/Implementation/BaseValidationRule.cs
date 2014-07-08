@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KVValidator.Interface;
+using AvatValidator.Interface;
 
-namespace KVValidator.Implementation
+namespace AvatValidator.Implementation
 {
     /// <summary>
     /// Interna pomocna trieda na kontrolu vstupnych typov

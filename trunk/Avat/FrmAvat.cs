@@ -10,12 +10,14 @@ using AvatValidator;
 using AvatValidator.Implementation;
 using AvatValidator.Interface;
 using Avat.Components;
+using System.Threading;
 
 namespace Avat.Forms
 {
-    public partial class FrmAvat : Form
+    public partial class FrmAvat : Form, IValidationObserver
     {
         string FormTitle;
+        string ActualFileName;
 
         KVDPH kvDph = new KVDPH();
 
@@ -95,6 +97,11 @@ namespace Avat.Forms
         }
 
         private void btnIdentification_Click(object sender, EventArgs e)
+        {
+            ShowIdentification();
+        }
+
+        private void ShowIdentification()
         {
             DisableAllButtons(btnIdentification);
             gridData.DataSource = null;
@@ -234,14 +241,12 @@ namespace Avat.Forms
         {
             try
             {
-                Cursor = Cursors.WaitCursor;
-                if (!ReadXml())
+                string path = GetXmlPath();
+                if (string.IsNullOrEmpty(path))
                     return;
 
-                //MessageBox.Show(this, "Načítanie vstupného súboru prebehlo úspešne!", "Načítanie xml", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                identification.SetData(kvDph.Identifikacia);
-                btnIdentification.PerformClick();
-                UpdateButtonTexts();
+                var p = new Progress(0, 100, "Načítanie vstupného súboru", "Načítavam..", ReadXmlProc, XmlRead, path, false, false);
+                p.StartWorker();
             }
             catch (Exception ex)
             {
@@ -250,6 +255,26 @@ namespace Avat.Forms
             finally
             {
                 Cursor = Cursors.Default;
+            }
+        }
+
+        void ReadXmlProc(BackgroundWorker bw, DoWorkEventArgs e, object userData)
+        {
+            ReadXml(userData.ToString());
+            bw.ReportProgress(100);
+        }
+
+        /// <summary>
+        /// po nacitani XML
+        /// </summary>
+        void XmlRead()
+        {
+            if (kvDph != null)
+            {
+                identification.SetData(kvDph.Identifikacia);
+                UpdateButtonTexts();
+                ShowIdentification();
+                SetFileName(ActualFileName);
             }
         }
 
@@ -266,19 +291,15 @@ namespace Avat.Forms
             btnD2.Text = string.Format("D2 ({0})", kvDph.Transakcie.D2.Count);
         }
 
-        private bool ReadXml()
+        private bool ReadXml(string path)
         {
-            string path = GetXmlPath();
-            if (string.IsNullOrEmpty(path))
-                return false;
-
             this.kvDph = KVDPH.LoadFromFile(path);
 
             var found = path.LastIndexOf('\\');
             if (found >= 0)
-                SetFileName(path.Substring(found + 1));
+                ActualFileName = path.Substring(found + 1);
             else
-                SetFileName(path);
+                ActualFileName = path;
 
             return true;
         }
@@ -311,27 +332,11 @@ namespace Avat.Forms
         /// <param name="e"></param>
         private void btnCheckAll_Click(object sender, EventArgs e)
         {
-            var rules = new DefaultValidationSetFactory().ValidationSet;
-            var validator = new DefaultValidator();
-
             try
             {
                 Cursor = Cursors.WaitCursor;
-                var result = validator.Validate(kvDph, rules);
-
-                if (result.Count == 0)
-                {
-                    ValidationPassed();
-                    return;
-                }
-                else
-                {
-                    lastValidationResult = result;
-                    ValidationFailed(lastValidationResult);
-                    
-                    identification.SetProblems(result);
-                    return;
-                }
+                var p = new Progress(0, 100, "Kontrola kontrolného výkazu", "Validujem..", ValidationProc, ValidationDone, null, true, false);
+                p.StartWorker();
             }
             catch (Exception)
             {
@@ -340,6 +345,53 @@ namespace Avat.Forms
             finally
             {
                 Cursor = Cursors.Default;
+            }
+        }
+
+        BackgroundWorker ValidationWorker;
+        int counter;
+        int total;
+        void ValidationProc(BackgroundWorker bw, DoWorkEventArgs e, object userData)
+        {
+            ValidationWorker = bw;
+            counter = 0;
+
+            var rules = new DefaultValidationSetFactory().ValidationSet;
+            var validator = new DefaultValidator();
+
+            // c je pocet validatorov poloziek
+            var c = rules.Count(r => r.RuleType == RuleType.A1ItemChecker || r.RuleType == RuleType.A2ItemChecker || r.RuleType == RuleType.B1ItemChecker || r.RuleType == RuleType.B2ItemChecker ||
+                r.RuleType == RuleType.B3ItemChecker || r.RuleType == RuleType.C1ItemChecker || r.RuleType == RuleType.C2ItemChecker || r.RuleType == RuleType.D1ItemChecker || r.RuleType == RuleType.D2ItemChecker ||
+                r.RuleType == RuleType.GeneralItemChecker);
+            // total je celkovy pocet validacii poloziek, ostatne zanedbavame..
+            total = c * (kvDph.Transakcie.A1.Count + kvDph.Transakcie.A2.Count + kvDph.Transakcie.B1.Count + kvDph.Transakcie.B2.Count + kvDph.Transakcie.B3.Count + 
+                kvDph.Transakcie.C1.Count + kvDph.Transakcie.C2.Count + kvDph.Transakcie.D1.Count + kvDph.Transakcie.D2.Count);
+            // aktualna validacia
+            counter = 0;
+            
+            validator.AddObserver(this);
+            lastValidationResult = validator.Validate(kvDph, rules);
+
+            ValidationWorker = null;
+            bw.ReportProgress(100);
+        }
+
+        void ValidationDone()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(ValidationDone));
+                return;
+            }
+
+            if (lastValidationResult.Count == 0)
+            {
+                ValidationPassed();
+            }
+            else
+            {
+                ValidationFailed(lastValidationResult);
+                identification.SetProblems(lastValidationResult);
             }
         }
 
@@ -411,5 +463,48 @@ namespace Avat.Forms
 
             return sb.ToString().Trim();
         }
+
+        #region IValidationObserver Members
+
+        public ObserverResult NextRule(IValidationRule rule)
+        {
+            counter++;
+            return HandleObserverEvent();
+        }
+
+        public ObserverResult OnOk(IValidationItemResult result)
+        {
+            return ObserverResult.Continue;
+        }
+
+        public ObserverResult OnWarning(IValidationItemResult result)
+        {
+            return ObserverResult.Continue;
+        }
+
+        public ObserverResult OnError(IValidationItemResult result)
+        {
+            return ObserverResult.Continue;
+        }
+
+        public ObserverResult OnCriticalError(IValidationItemResult result)
+        {
+            return ObserverResult.Continue;
+        }
+
+        private ObserverResult HandleObserverEvent()
+        {
+
+            if (ValidationWorker != null)
+            {
+                ValidationWorker.ReportProgress(Convert.ToInt32(((double)counter / total) * 100.0));
+                if (ValidationWorker.CancellationPending)
+                    return ObserverResult.StopValidation;
+            }
+
+            return ObserverResult.Continue;
+        }
+
+        #endregion
     }
 }

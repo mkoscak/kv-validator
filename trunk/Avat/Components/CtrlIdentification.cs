@@ -34,27 +34,27 @@ namespace Avat.Components
 
         private void ShowProblems()
         {
-            var probs = problems.Where(p => p.ProblemObject == identification.IcDphPlatitela).ToList();
+            var probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.Equals(identification.IcDphPlatitela)).ToList();
             if (probs.Count > 0)
                 SetProblems(lblIcDph, probs);
 
-            probs = problems.Where(p => p.ProblemObject == identification.Nazov).ToList();
+            probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.Equals(identification.Nazov)).ToList();
             if (probs.Count > 0)
                 SetProblems(lblNazov, probs);
 
-            /*probs = problems.Where(p => p.ProblemObject == identification.Druh).ToList();
+            /*probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject == identification.Druh).ToList();
             if (probs.Count > 0)
                 SetProblems(lblDruh, probs);*/
 
-            probs = problems.Where(p => p.ProblemObject == identification.Obdobie).ToList();
+            probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject == identification.Obdobie).ToList();
             if (probs.Count > 0)
                 SetProblems(lblObdobie, probs);
 
-            probs = problems.Where(p => p.ProblemObject == identification.Stat).ToList();
+            probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.Equals(identification.Stat)).ToList();
             if (probs.Count > 0)
                 SetProblems(lblStat, probs);
 
-            probs = problems.Where(p => p.ProblemObject == identification.Obec).ToList();
+            probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.Equals(identification.Obec)).ToList();
             if (probs.Count > 0)
                 SetProblems(lblObec, probs);
         }

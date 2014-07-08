@@ -57,10 +57,19 @@ namespace Avat.Forms
 
             // inicializacia hlavickoveho textu
             this.FormTitle = this.Text;
-            SetFileName("nový.xml");
 
             errorStyle = new DataGridViewCellStyle(gridData.DefaultCellStyle);
             errorStyle.ForeColor = Color.Red;
+
+            NewAvat();
+        }
+
+        private void NewAvat()
+        {
+            kvDph = new KVDPH();
+            ShowIdentification();
+            UpdateButtonTexts();
+            SetFileName("nový.xml");
         }
 
         private void SetFileName(string name)
@@ -104,6 +113,7 @@ namespace Avat.Forms
         private void ShowIdentification()
         {
             DisableAllButtons(btnIdentification);
+            identification.SetData(kvDph.Identifikacia);
             gridData.DataSource = null;
 
             /*gridData.Visible = false;
@@ -411,7 +421,19 @@ namespace Avat.Forms
             if (string.IsNullOrEmpty(fName))
                 return;
 
-            kvDph.SaveToFile(fName);
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+                kvDph.SaveToFile(fName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Počas ukladania súboru došlo k nasledujúcej chybe: " + ex.Message, "Uložiť", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
         }
 
         private string GetOutFileName()
@@ -506,5 +528,13 @@ namespace Avat.Forms
         }
 
         #endregion
+
+        private void btnNewAvat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "Naozaj si prajete začať nový kontrolný výkaz? Všetky neuložené zmeny budú stratené!", "Nový výkaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            NewAvat();
+        }
     }
 }

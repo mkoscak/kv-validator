@@ -11,7 +11,7 @@ using VAToo;
 using System.Diagnostics;
 using Avat.Forms;
 
-namespace KontrolnyVykaz
+namespace AvatTester
 {
     public partial class frmVatChecker : Form, IValidationObserver
     {

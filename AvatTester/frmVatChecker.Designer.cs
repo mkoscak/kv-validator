@@ -1,4 +1,4 @@
-﻿namespace KontrolnyVykaz
+﻿namespace AvatTester
 {
     partial class frmVatChecker
     {

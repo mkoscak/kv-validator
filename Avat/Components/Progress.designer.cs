@@ -108,7 +108,7 @@
             this.Controls.Add(this.progressBar);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(526, 148);
+            this.MinimumSize = new System.Drawing.Size(526, 170);
             this.Name = "Progress";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

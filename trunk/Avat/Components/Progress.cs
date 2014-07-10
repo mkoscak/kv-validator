@@ -51,21 +51,19 @@ namespace Avat.Components
 
         void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            bool doPostProcess = true;
+            bool doPostProcess = false;
 
             if (e.Cancelled == true)
             {
                 MessageBox.Show(this, "Operácia prerušená!", "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Visible = false;
                 Close();
-                doPostProcess = false;
             }
             else if (e.Error != null)
             {
                 MessageBox.Show(this, "Nastala chyba!" + Environment.NewLine + Environment.NewLine + e.Error.Message, "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Visible = false;
                 Close();
-                doPostProcess = false;
             }
             else
             {
@@ -73,6 +71,7 @@ namespace Avat.Components
                     MessageBox.Show(this, "Operácia ukončená!", "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Visible = false;
                 Close();
+                doPostProcess = true;
             }
 
             if (PostAction != null && doPostProcess)

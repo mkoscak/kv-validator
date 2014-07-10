@@ -58,6 +58,8 @@
             this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
             this.btnSaveXml = new System.Windows.Forms.ToolStripButton();
             this.btnOtherOps = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnNewAvat = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnImportBlackList = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImportVatPayers = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -65,8 +67,6 @@
             this.pixLogo = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnNewAvat = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -395,6 +395,18 @@
             this.btnOtherOps.Size = new System.Drawing.Size(152, 47);
             this.btnOtherOps.Text = "Ďalšie operácie";
             // 
+            // btnNewAvat
+            // 
+            this.btnNewAvat.Name = "btnNewAvat";
+            this.btnNewAvat.Size = new System.Drawing.Size(232, 22);
+            this.btnNewAvat.Text = "Nový výkaz";
+            this.btnNewAvat.Click += new System.EventHandler(this.btnNewAvat_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(229, 6);
+            // 
             // btnImportBlackList
             // 
             this.btnImportBlackList.Name = "btnImportBlackList";
@@ -417,6 +429,7 @@
             this.btnExportToExcel.Name = "btnExportToExcel";
             this.btnExportToExcel.Size = new System.Drawing.Size(232, 22);
             this.btnExportToExcel.Text = "Export výkazu do excelu";
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // pixLogo
             // 
@@ -460,18 +473,6 @@
             this.lblTitle.Size = new System.Drawing.Size(462, 20);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "A1 - Štandardné odberateľské faktúry (tuzemské)";
-            // 
-            // btnNewAvat
-            // 
-            this.btnNewAvat.Name = "btnNewAvat";
-            this.btnNewAvat.Size = new System.Drawing.Size(232, 22);
-            this.btnNewAvat.Text = "Nový výkaz";
-            this.btnNewAvat.Click += new System.EventHandler(this.btnNewAvat_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(229, 6);
             // 
             // gridData
             // 

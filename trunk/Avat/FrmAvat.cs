@@ -11,6 +11,8 @@ using AvatValidator.Implementation;
 using AvatValidator.Interface;
 using Avat.Components;
 using System.Threading;
+using OfficeOpenXml;
+using System.IO;
 
 namespace Avat.Forms
 {
@@ -121,19 +123,6 @@ namespace Avat.Forms
             this.panelContent.Controls.Add(*/
         }
 
-        private void btnA1_Click(object sender, EventArgs e)
-        {
-            DisableAllButtons(btnA1);
-            gridData.DataSource = new BindingList<A1>();
-
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A1 != null)
-            {
-                gridData.DataSource = new BindingList<A1>(kvDph.Transakcie.A1);
-                var ds = gridData.DataSource as BindingList<A1>;
-                CheckSetErrors<A1>(ds);
-            }
-        }
-
         void CheckSetErrors<T>(BindingList<T> ds)
             where T : class
         {
@@ -151,14 +140,27 @@ namespace Avat.Forms
             }
         }
 
+        private void btnA1_Click(object sender, EventArgs e)
+        {
+            DisableAllButtons(btnA1);
+            gridData.DataSource = new BindingList<A1>();
+
+            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A1 != null)
+            {
+                var ds = new BindingList<A1>(kvDph.Transakcie.A1);
+                gridData.DataSource = ds;
+                CheckSetErrors<A1>(ds);
+            }
+        }
+
         private void btnA2_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnA2);
             gridData.DataSource = new BindingList<A2>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A2 != null)
             {
-                gridData.DataSource = new BindingList<A2>(kvDph.Transakcie.A2);
-                var ds = gridData.DataSource as BindingList<A2>;
+                var ds = new BindingList<A2>(kvDph.Transakcie.A2);
+                gridData.DataSource = ds;
                 CheckSetErrors<A2>(ds);
             }
         }
@@ -169,8 +171,8 @@ namespace Avat.Forms
             gridData.DataSource = new BindingList<B1>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B1 != null)
             {
-                gridData.DataSource = new BindingList<B1>(kvDph.Transakcie.B1);
-                var ds = gridData.DataSource as BindingList<B1>;
+                var ds = new BindingList<B1>(kvDph.Transakcie.B1);
+                gridData.DataSource = ds;
                 CheckSetErrors<B1>(ds);
             }
         }
@@ -181,8 +183,8 @@ namespace Avat.Forms
             gridData.DataSource = new BindingList<B2>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B2 != null)
             {
-                gridData.DataSource = new BindingList<B2>(kvDph.Transakcie.B2);
-                var ds = gridData.DataSource as BindingList<B2>;
+                var ds = new BindingList<B2>(kvDph.Transakcie.B2);
+                gridData.DataSource = ds;
                 CheckSetErrors<B2>(ds);
             }
         }
@@ -193,8 +195,8 @@ namespace Avat.Forms
             gridData.DataSource = new BindingList<B3>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B3 != null)
             {
-                gridData.DataSource = new BindingList<B3>(kvDph.Transakcie.B3);
-                var ds = gridData.DataSource as BindingList<B3>;
+                var ds = new BindingList<B3>(kvDph.Transakcie.B3);
+                gridData.DataSource = ds;
                 CheckSetErrors<B3>(ds);
             }
         }
@@ -205,8 +207,8 @@ namespace Avat.Forms
             gridData.DataSource = new BindingList<C1>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C1 != null)
             {
-                gridData.DataSource = new BindingList<C1>(kvDph.Transakcie.C1);
-                var ds = gridData.DataSource as BindingList<C1>;
+                var ds = new BindingList<C1>(kvDph.Transakcie.C1);
+                gridData.DataSource = ds;
                 CheckSetErrors<C1>(ds);
             }
         }
@@ -215,10 +217,10 @@ namespace Avat.Forms
         {
             DisableAllButtons(btnC2);
             gridData.DataSource = new BindingList<C2>();
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C2!= null)
+            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C2 != null)
             {
-                gridData.DataSource = new BindingList<C2>(kvDph.Transakcie.C2);
-                var ds = gridData.DataSource as BindingList<C2>;
+                var ds = new BindingList<C2>(kvDph.Transakcie.C2);
+                gridData.DataSource = ds;
                 CheckSetErrors<C2>(ds);
             }
         }
@@ -229,8 +231,8 @@ namespace Avat.Forms
             gridData.DataSource = new BindingList<D1>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D1 != null)
             {
-                gridData.DataSource = new BindingList<D1>(kvDph.Transakcie.D1);
-                var ds = gridData.DataSource as BindingList<D1>;
+                var ds = new BindingList<D1>(kvDph.Transakcie.D1);
+                gridData.DataSource = ds;
                 CheckSetErrors<D1>(ds);
             }
         }
@@ -241,8 +243,8 @@ namespace Avat.Forms
             gridData.DataSource = new BindingList<D2>();
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D2 != null)
             {
-                gridData.DataSource = new BindingList<D2>(kvDph.Transakcie.D2);
-                var ds = gridData.DataSource as BindingList<D2>;
+                var ds = new BindingList<D2>(kvDph.Transakcie.D2);
+                gridData.DataSource = ds;
                 CheckSetErrors<D2>(ds);
             }
         }
@@ -374,11 +376,11 @@ namespace Avat.Forms
                 r.RuleType == RuleType.B3ItemChecker || r.RuleType == RuleType.C1ItemChecker || r.RuleType == RuleType.C2ItemChecker || r.RuleType == RuleType.D1ItemChecker || r.RuleType == RuleType.D2ItemChecker ||
                 r.RuleType == RuleType.GeneralItemChecker);
             // total je celkovy pocet validacii poloziek, ostatne zanedbavame..
-            total = c * (kvDph.Transakcie.A1.Count + kvDph.Transakcie.A2.Count + kvDph.Transakcie.B1.Count + kvDph.Transakcie.B2.Count + kvDph.Transakcie.B3.Count + 
+            total = c * (kvDph.Transakcie.A1.Count + kvDph.Transakcie.A2.Count + kvDph.Transakcie.B1.Count + kvDph.Transakcie.B2.Count + kvDph.Transakcie.B3.Count +
                 kvDph.Transakcie.C1.Count + kvDph.Transakcie.C2.Count + kvDph.Transakcie.D1.Count + kvDph.Transakcie.D2.Count);
             // aktualna validacia
             counter = 0;
-            
+
             validator.AddObserver(this);
             lastValidationResult = validator.Validate(kvDph, rules);
 
@@ -417,7 +419,7 @@ namespace Avat.Forms
 
         private void btnSaveXml_Click(object sender, EventArgs e)
         {
-            string fName = GetOutFileName();
+            string fName = GetOutXmlFileName();
             if (string.IsNullOrEmpty(fName))
                 return;
 
@@ -436,7 +438,17 @@ namespace Avat.Forms
             }
         }
 
-        private string GetOutFileName()
+        private string GetOutXmlFileName()
+        {
+            return GetOutFileName("xml", "XML files|*.xml");
+        }
+
+        private string GetOutXlsxFileName()
+        {
+            return GetOutFileName("xlsx", "Excel 2007 files|*.xlsx");
+        }
+
+        private string GetOutFileName(string defExt, string filter)
         {
             var curDir = Environment.CurrentDirectory;
 
@@ -445,8 +457,8 @@ namespace Avat.Forms
             ofd.CheckPathExists = true;
             ofd.CreatePrompt = false;
             ofd.AddExtension = true;
-            ofd.DefaultExt = "xml";
-            ofd.Filter = "XML files|*.xml";
+            ofd.DefaultExt = defExt;
+            ofd.Filter = filter;
             ofd.InitialDirectory = Environment.CurrentDirectory;
             ofd.RestoreDirectory = true;
 
@@ -535,6 +547,152 @@ namespace Avat.Forms
                 return;
 
             NewAvat();
+        }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var fname = GetOutXlsxFileName();
+                if (string.IsNullOrEmpty(fname))
+                    return;
+
+                var p = new Progress(0, 100, "Export kontrolného výkazu do programu Excel", "Exportujem..", ExportKvProc, ExportDone, fname, true, true);
+                p.StartWorker();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, string.Format("Export kontrolného výkazu do programu Excel neprebehol úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Export", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+
+        void ExportDone()
+        {
+            this.BringToFront();
+            this.Focus();
+        }
+
+        void ExportKvProc(BackgroundWorker bw, DoWorkEventArgs e, object userData)
+        {
+            var path = userData.ToString();
+
+            using (var excel = new ExcelPackage(/*new FileInfo(path)*/))
+            {
+                var wsIdent = excel.Workbook.Worksheets.Add("Identifikácia");
+
+                // stlpec A - nazvy poloziek
+                wsIdent.Cells[1, 1].Value = identification.lblIcDph.Text;
+                wsIdent.Cells[2, 1].Value = identification.lblDruh.Text;
+                wsIdent.Cells[3, 1].Value = identification.lblObdobie.Text;
+                wsIdent.Cells[4, 1].Value = identification.lblNazov.Text;
+                wsIdent.Cells[5, 1].Value = identification.lblStat.Text;
+                wsIdent.Cells[6, 1].Value = identification.lblObec.Text;
+                wsIdent.Cells[7, 1].Value = identification.lblPsc.Text;
+                wsIdent.Cells[8, 1].Value = identification.lblUlica.Text;
+                wsIdent.Cells[9, 1].Value = identification.lblTelefon.Text;
+                wsIdent.Cells[10, 1].Value = identification.lblEmail.Text;
+                wsIdent.Column(1).AutoFit();
+                var headerCol = wsIdent.Cells[1, 1, 10, 1];
+                headerCol.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                headerCol.Style.Fill.BackgroundColor.SetColor(Color.Silver);
+                headerCol.Style.Font.Bold = true;
+
+                // stlpec A - nazvy poloziek
+                wsIdent.Cells[1, 2].Value = identification.txtIcDph.Text;
+                wsIdent.Cells[2, 2].Value = identification.txtKind.Text;
+                wsIdent.Cells[3, 2].Value = identification.txtPeriod.Text;
+                wsIdent.Cells[4, 2].Value = identification.txtName.Text;
+                wsIdent.Cells[5, 2].Value = identification.txtState.Text;
+                wsIdent.Cells[6, 2].Value = identification.txtCity.Text;
+                wsIdent.Cells[7, 2].Value = identification.txtPsc.Text;
+                wsIdent.Cells[8, 2].Value = identification.txtAddress.Text;
+                wsIdent.Cells[9, 2].Value = identification.txtPhone.Text;
+                wsIdent.Cells[10, 2].Value = identification.txteMail.Text;
+                wsIdent.Column(2).AutoFit();
+                var dataCol = wsIdent.Cells[1, 2, 10, 2];
+                dataCol.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                dataCol.Style.Fill.BackgroundColor.SetColor(Color.Silver);
+                dataCol.Style.Font.Color.SetColor(Color.DimGray);
+
+                var ws = excel.Workbook.Worksheets.Add("A1");
+                ExportList<A1>(ws, kvDph.Transakcie.A1, bw);
+                ws = excel.Workbook.Worksheets.Add("A2");
+                ExportList<A2>(ws, kvDph.Transakcie.A2, bw);
+                ws = excel.Workbook.Worksheets.Add("B1");
+                ExportList<B1>(ws, kvDph.Transakcie.B1, bw);
+                ws = excel.Workbook.Worksheets.Add("B2");
+                ExportList<B2>(ws, kvDph.Transakcie.B2, bw);
+                ws = excel.Workbook.Worksheets.Add("B3");
+                ExportList<B3>(ws, kvDph.Transakcie.B3, bw);
+                ws = excel.Workbook.Worksheets.Add("C1");
+                ExportList<C1>(ws, kvDph.Transakcie.C1, bw);
+                ws = excel.Workbook.Worksheets.Add("C2");
+                ExportList<C2>(ws, kvDph.Transakcie.C2, bw);
+                ws = excel.Workbook.Worksheets.Add("D1");
+                ExportList<D1>(ws, kvDph.Transakcie.D1, bw);
+                ws = excel.Workbook.Worksheets.Add("D2");
+                ExportList<D2>(ws, kvDph.Transakcie.D2, bw);
+
+                excel.SaveAs(new FileInfo(path));
+            }
+        }
+
+        void ExportList<T>(ExcelWorksheet ws, IList<T> data, BackgroundWorker bw)
+            where T : class
+        {
+            bw.ReportProgress(0, "Export položiek " + ws.Name);
+
+            var tmp = ConvertToDatatable<T>(data);
+            for (int i = 0; i < tmp.Rows.Count; i++)
+            {
+                for (int j = 0; j < tmp.Columns.Count; j++)
+                {
+                    ws.Cells[i + 2, j + 1].Value = (tmp.Rows[i][j] ?? string.Empty).ToString();
+                }
+
+                var progres = (((double)i + 1) / (double)tmp.Rows.Count) * 100.0;
+                bw.ReportProgress(Convert.ToInt32(progres));
+            }
+
+            // header
+            bw.ReportProgress(100, "Nastavujem šírku stĺpcov " + ws.Name);
+            for (int i = 0; i < tmp.Columns.Count; i++)
+            {
+                ws.Cells[1, i + 1].Value = tmp.Columns[i].Caption;
+                ws.Column(i + 1).AutoFit();
+            }
+
+            var headerRow = ws.Cells[1, 1, 1, tmp.Columns.Count];
+            headerRow.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+            headerRow.Style.Fill.BackgroundColor.SetColor(Color.Silver);
+            headerRow.Style.Font.Bold = true;
+        }
+
+        public static DataTable ConvertToDatatable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection props =
+                TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            for (int i = 0; i < props.Count; i++)
+            {
+                PropertyDescriptor prop = props[i];
+                table.Columns.Add(prop.Name, prop.PropertyType);
+            }
+            object[] values = new object[props.Count];
+            foreach (T item in data)
+            {
+                for (int i = 0; i < values.Length; i++)
+                {
+                    values[i] = props[i].GetValue(item);
+                }
+                table.Rows.Add(values);
+            }
+
+            return table;
         }
     }
 }

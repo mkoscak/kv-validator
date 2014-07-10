@@ -142,7 +142,7 @@
             this.lblTelefon.Location = new System.Drawing.Point(10, 346);
             this.lblTelefon.Margin = new System.Windows.Forms.Padding(10);
             this.lblTelefon.Name = "lblTelefon";
-            this.lblTelefon.Size = new System.Drawing.Size(87, 22);
+            this.lblTelefon.Size = new System.Drawing.Size(86, 22);
             this.lblTelefon.TabIndex = 15;
             this.lblTelefon.Text = "Telefón:";
             // 
@@ -306,25 +306,25 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblIcDph;
-        private System.Windows.Forms.Label lblDruh;
-        private System.Windows.Forms.Label lblObdobie;
-        private System.Windows.Forms.Label lblNazov;
-        private System.Windows.Forms.Label lblStat;
-        private System.Windows.Forms.Label lblObec;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblTelefon;
-        private System.Windows.Forms.Label lblUlica;
-        private System.Windows.Forms.Label lblPsc;
-        private System.Windows.Forms.TextBox txtIcDph;
-        private System.Windows.Forms.TextBox txtKind;
-        private System.Windows.Forms.TextBox txtPeriod;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtState;
-        private System.Windows.Forms.TextBox txtCity;
-        private System.Windows.Forms.TextBox txtPsc;
-        private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txteMail;
+        internal System.Windows.Forms.Label lblIcDph;
+        internal System.Windows.Forms.Label lblDruh;
+        internal System.Windows.Forms.Label lblObdobie;
+        internal System.Windows.Forms.Label lblNazov;
+        internal System.Windows.Forms.Label lblStat;
+        internal System.Windows.Forms.Label lblObec;
+        internal System.Windows.Forms.Label lblEmail;
+        internal System.Windows.Forms.Label lblTelefon;
+        internal System.Windows.Forms.Label lblUlica;
+        internal System.Windows.Forms.Label lblPsc;
+        internal System.Windows.Forms.TextBox txtIcDph;
+        internal System.Windows.Forms.TextBox txtKind;
+        internal System.Windows.Forms.TextBox txtPeriod;
+        internal System.Windows.Forms.TextBox txtName;
+        internal System.Windows.Forms.TextBox txtState;
+        internal System.Windows.Forms.TextBox txtCity;
+        internal System.Windows.Forms.TextBox txtPsc;
+        internal System.Windows.Forms.TextBox txtAddress;
+        internal System.Windows.Forms.TextBox txtPhone;
+        internal System.Windows.Forms.TextBox txteMail;
     }
 }

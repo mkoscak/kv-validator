@@ -337,6 +337,21 @@ namespace Avat.Forms
             return null;
         }
 
+        bool ReadIdent()
+        {
+            try
+            {
+                kvDph.Identifikacia = identification.GetData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, string.Format("Načítanie Identifikácie skončilo nasledujúcou výnimkou: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// Samotna validacia
         /// </summary>
@@ -344,15 +359,17 @@ namespace Avat.Forms
         /// <param name="e"></param>
         private void btnCheckAll_Click(object sender, EventArgs e)
         {
+            if (!ReadIdent())
+                return;
+
             try
-            {
-                Cursor = Cursors.WaitCursor;
+            {                
                 var p = new Progress(0, 100, "Kontrola kontrolného výkazu", "Validujem..", ValidationProc, ValidationDone, null, true, false);
                 p.StartWorker();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(this, string.Format("Kontrola kontrolného výkazu neprebehla úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -419,6 +436,9 @@ namespace Avat.Forms
 
         private void btnSaveXml_Click(object sender, EventArgs e)
         {
+            if (!ReadIdent())
+                return;
+
             string fName = GetOutXmlFileName();
             if (string.IsNullOrEmpty(fName))
                 return;
@@ -531,6 +551,8 @@ namespace Avat.Forms
 
             if (ValidationWorker != null)
             {
+                if (counter > total)
+                    counter = total;
                 ValidationWorker.ReportProgress(Convert.ToInt32(((double)counter / total) * 100.0));
                 if (ValidationWorker.CancellationPending)
                     return ObserverResult.StopValidation;
@@ -562,6 +584,9 @@ namespace Avat.Forms
         /// <param name="e"></param>
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
+            if (!ReadIdent())
+                return;
+
             try
             {
                 var fname = GetOutXlsxFileName();
@@ -613,16 +638,16 @@ namespace Avat.Forms
                 headerCol.Style.Font.Bold = true;
 
                 // stlpec A - nazvy poloziek
-                wsIdent.Cells[1, 2].Value = identification.txtIcDph.Text;
-                wsIdent.Cells[2, 2].Value = identification.txtKind.Text;
-                wsIdent.Cells[3, 2].Value = identification.txtPeriod.Text;
-                wsIdent.Cells[4, 2].Value = identification.txtName.Text;
-                wsIdent.Cells[5, 2].Value = identification.txtState.Text;
-                wsIdent.Cells[6, 2].Value = identification.txtCity.Text;
-                wsIdent.Cells[7, 2].Value = identification.txtPsc.Text;
-                wsIdent.Cells[8, 2].Value = identification.txtAddress.Text;
-                wsIdent.Cells[9, 2].Value = identification.txtPhone.Text;
-                wsIdent.Cells[10, 2].Value = identification.txteMail.Text;
+                wsIdent.Cells[1, 2].Value = kvDph.Identifikacia.IcDphPlatitela;
+                wsIdent.Cells[2, 2].Value = kvDph.Identifikacia.Druh;
+                wsIdent.Cells[3, 2].Value = kvDph.Identifikacia.Obdobie.Item + "." + kvDph.Identifikacia.Obdobie.ItemElementName + " " + kvDph.Identifikacia.Obdobie.Rok.ToString();
+                wsIdent.Cells[4, 2].Value = kvDph.Identifikacia.Nazov;
+                wsIdent.Cells[5, 2].Value = kvDph.Identifikacia.Stat;
+                wsIdent.Cells[6, 2].Value = kvDph.Identifikacia.Obec;
+                wsIdent.Cells[7, 2].Value = kvDph.Identifikacia.PSC;
+                wsIdent.Cells[8, 2].Value = kvDph.Identifikacia.Ulica;
+                wsIdent.Cells[9, 2].Value = kvDph.Identifikacia.Tel;
+                wsIdent.Cells[10, 2].Value = kvDph.Identifikacia.Email;
                 wsIdent.Column(2).AutoFit();
                 var dataCol = wsIdent.Cells[1, 2, 10, 2];
                 dataCol.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;

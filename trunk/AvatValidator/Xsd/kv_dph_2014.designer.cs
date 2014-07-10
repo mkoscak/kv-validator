@@ -706,7 +706,7 @@ namespace AvatValidator
     public enum ItemChoiceType
     {
         /// <remarks/>
-        Missing,
+        ___,
 
         /// <remarks/>
         Mesiac,

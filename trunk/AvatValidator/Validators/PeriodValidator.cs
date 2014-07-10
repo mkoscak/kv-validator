@@ -33,7 +33,7 @@ namespace AvatValidator.Validators
 
             if (input.Obdobie == null)
                 ret = ValidationFailedPeriodMissing(input);
-            else if (input.Obdobie.ItemElementName == ItemChoiceType.Missing)
+            else if (input.Obdobie.ItemElementName == ItemChoiceType.___)
                 ret = ValidationFailedSubPeriodMissing(input.Obdobie);
             // TODO mala by byt aj validacia, ze nesmu byt zadane sucasne..
 

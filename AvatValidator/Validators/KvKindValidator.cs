@@ -32,12 +32,12 @@ namespace AvatValidator.Validators
             var ret = ValidationItemResult.CreateDefaultOk(this);
 
             if (input.Druh != DruhKvType.R && input.Druh != DruhKvType.O && input.Druh != DruhKvType.D)
-                ret = ValidationFailed(input);
+                ret = ValidationFailed(input.Druh);
 
             return ret;
         }
 
-        private ValidationItemResult ValidationFailed(Identifikacia problemItem)
+        private ValidationItemResult ValidationFailed(object problemItem)
         {
             var ret = new ValidationItemResult(this);
 

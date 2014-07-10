@@ -39,8 +39,6 @@
             this.lblUlica = new System.Windows.Forms.Label();
             this.lblPsc = new System.Windows.Forms.Label();
             this.txtIcDph = new System.Windows.Forms.TextBox();
-            this.txtKind = new System.Windows.Forms.TextBox();
-            this.txtPeriod = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtState = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
@@ -48,6 +46,12 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txteMail = new System.Windows.Forms.TextBox();
+            this.cbKind = new System.Windows.Forms.ComboBox();
+            this.cbPeriodType = new System.Windows.Forms.ComboBox();
+            this.txtYear = new System.Windows.Forms.NumericUpDown();
+            this.txtPeriod = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeriod)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIcDph
@@ -180,26 +184,6 @@
             this.txtIcDph.Size = new System.Drawing.Size(315, 29);
             this.txtIcDph.TabIndex = 17;
             // 
-            // txtKind
-            // 
-            this.txtKind.BackColor = System.Drawing.Color.Gray;
-            this.txtKind.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtKind.ForeColor = System.Drawing.Color.Silver;
-            this.txtKind.Location = new System.Drawing.Point(211, 48);
-            this.txtKind.Name = "txtKind";
-            this.txtKind.Size = new System.Drawing.Size(315, 29);
-            this.txtKind.TabIndex = 18;
-            // 
-            // txtPeriod
-            // 
-            this.txtPeriod.BackColor = System.Drawing.Color.Gray;
-            this.txtPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtPeriod.ForeColor = System.Drawing.Color.Silver;
-            this.txtPeriod.Location = new System.Drawing.Point(211, 90);
-            this.txtPeriod.Name = "txtPeriod";
-            this.txtPeriod.Size = new System.Drawing.Size(315, 29);
-            this.txtPeriod.TabIndex = 19;
-            // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.Gray;
@@ -271,11 +255,79 @@
             this.txteMail.TabIndex = 26;
             this.txteMail.Text = "@";
             // 
+            // cbKind
+            // 
+            this.cbKind.BackColor = System.Drawing.Color.Gray;
+            this.cbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKind.ForeColor = System.Drawing.Color.Silver;
+            this.cbKind.FormattingEnabled = true;
+            this.cbKind.Location = new System.Drawing.Point(211, 51);
+            this.cbKind.Name = "cbKind";
+            this.cbKind.Size = new System.Drawing.Size(315, 28);
+            this.cbKind.TabIndex = 27;
+            // 
+            // cbPeriodType
+            // 
+            this.cbPeriodType.BackColor = System.Drawing.Color.Gray;
+            this.cbPeriodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPeriodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPeriodType.ForeColor = System.Drawing.Color.Silver;
+            this.cbPeriodType.FormattingEnabled = true;
+            this.cbPeriodType.Location = new System.Drawing.Point(288, 90);
+            this.cbPeriodType.Name = "cbPeriodType";
+            this.cbPeriodType.Size = new System.Drawing.Size(161, 28);
+            this.cbPeriodType.TabIndex = 29;
+            // 
+            // txtYear
+            // 
+            this.txtYear.BackColor = System.Drawing.Color.Gray;
+            this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYear.ForeColor = System.Drawing.Color.Silver;
+            this.txtYear.Location = new System.Drawing.Point(455, 90);
+            this.txtYear.Maximum = new decimal(new int[] {
+            2099,
+            0,
+            0,
+            0});
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(71, 27);
+            this.txtYear.TabIndex = 30;
+            this.txtYear.Value = new decimal(new int[] {
+            2014,
+            0,
+            0,
+            0});
+            // 
+            // txtPeriod
+            // 
+            this.txtPeriod.BackColor = System.Drawing.Color.Gray;
+            this.txtPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPeriod.ForeColor = System.Drawing.Color.Silver;
+            this.txtPeriod.Location = new System.Drawing.Point(211, 91);
+            this.txtPeriod.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.txtPeriod.Name = "txtPeriod";
+            this.txtPeriod.Size = new System.Drawing.Size(71, 27);
+            this.txtPeriod.TabIndex = 31;
+            this.txtPeriod.Value = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            // 
             // CtrlIdentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Controls.Add(this.txtPeriod);
+            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.cbPeriodType);
+            this.Controls.Add(this.cbKind);
             this.Controls.Add(this.txteMail);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtAddress);
@@ -283,8 +335,6 @@
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtPeriod);
-            this.Controls.Add(this.txtKind);
             this.Controls.Add(this.txtIcDph);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTelefon);
@@ -299,6 +349,8 @@
             this.Name = "CtrlIdentification";
             this.Size = new System.Drawing.Size(646, 452);
             this.Load += new System.EventHandler(this.CtrlIdentification_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeriod)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,8 +369,6 @@
         internal System.Windows.Forms.Label lblUlica;
         internal System.Windows.Forms.Label lblPsc;
         internal System.Windows.Forms.TextBox txtIcDph;
-        internal System.Windows.Forms.TextBox txtKind;
-        internal System.Windows.Forms.TextBox txtPeriod;
         internal System.Windows.Forms.TextBox txtName;
         internal System.Windows.Forms.TextBox txtState;
         internal System.Windows.Forms.TextBox txtCity;
@@ -326,5 +376,9 @@
         internal System.Windows.Forms.TextBox txtAddress;
         internal System.Windows.Forms.TextBox txtPhone;
         internal System.Windows.Forms.TextBox txteMail;
+        internal System.Windows.Forms.ComboBox cbKind;
+        internal System.Windows.Forms.ComboBox cbPeriodType;
+        internal System.Windows.Forms.NumericUpDown txtYear;
+        internal System.Windows.Forms.NumericUpDown txtPeriod;
     }
 }

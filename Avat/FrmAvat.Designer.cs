@@ -412,12 +412,14 @@
             this.btnImportBlackList.Name = "btnImportBlackList";
             this.btnImportBlackList.Size = new System.Drawing.Size(232, 22);
             this.btnImportBlackList.Text = "Import black-list";
+            this.btnImportBlackList.Click += new System.EventHandler(this.btnImportBlackList_Click);
             // 
             // btnImportVatPayers
             // 
             this.btnImportVatPayers.Name = "btnImportVatPayers";
             this.btnImportVatPayers.Size = new System.Drawing.Size(232, 22);
             this.btnImportVatPayers.Text = "Import platcov";
+            this.btnImportVatPayers.Click += new System.EventHandler(this.btnImportVatPayers_Click);
             // 
             // toolStripSeparator6
             // 

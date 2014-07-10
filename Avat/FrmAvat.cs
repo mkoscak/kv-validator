@@ -541,6 +541,8 @@ namespace Avat.Forms
 
         #endregion
 
+        #region Novy KV
+
         private void btnNewAvat_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(this, "Naozaj si prajete začať nový kontrolný výkaz? Všetky neuložené zmeny budú stratené!", "Nový výkaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -549,6 +551,15 @@ namespace Avat.Forms
             NewAvat();
         }
 
+        #endregion
+
+        #region Export excel
+
+        /// <summary>
+        /// Export do excelu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
             try
@@ -619,29 +630,66 @@ namespace Avat.Forms
                 dataCol.Style.Font.Color.SetColor(Color.DimGray);
 
                 var ws = excel.Workbook.Worksheets.Add("A1");
-                ExportList<A1>(ws, kvDph.Transakcie.A1, bw);
+                if (!ExportList<A1>(ws, kvDph.Transakcie.A1, bw))
+                {
+                    e.Cancel = true;
+                    return;
+                }
                 ws = excel.Workbook.Worksheets.Add("A2");
-                ExportList<A2>(ws, kvDph.Transakcie.A2, bw);
+                if (!ExportList<A2>(ws, kvDph.Transakcie.A2, bw))
+                {
+                    e.Cancel = true;
+                    return;
+                }
                 ws = excel.Workbook.Worksheets.Add("B1");
-                ExportList<B1>(ws, kvDph.Transakcie.B1, bw);
+                if (!ExportList<B1>(ws, kvDph.Transakcie.B1, bw))
+                {
+                    e.Cancel = true;
+                    return;
+                }
                 ws = excel.Workbook.Worksheets.Add("B2");
-                ExportList<B2>(ws, kvDph.Transakcie.B2, bw);
+                if (!ExportList<B2>(ws, kvDph.Transakcie.B2, bw))
+                {
+                    e.Cancel = true;
+                    return;
+                }
                 ws = excel.Workbook.Worksheets.Add("B3");
-                ExportList<B3>(ws, kvDph.Transakcie.B3, bw);
+                if (!ExportList<B3>(ws, kvDph.Transakcie.B3, bw))
+                {
+                    e.Cancel = true;
+                    return;
+                }
                 ws = excel.Workbook.Worksheets.Add("C1");
-                ExportList<C1>(ws, kvDph.Transakcie.C1, bw);
+                if (!ExportList<C1>(ws, kvDph.Transakcie.C1, bw))
+                {
+                    e.Cancel = true;
+                    e.Cancel = true;
+                    return;
+                }
                 ws = excel.Workbook.Worksheets.Add("C2");
-                ExportList<C2>(ws, kvDph.Transakcie.C2, bw);
+                if (!ExportList<C2>(ws, kvDph.Transakcie.C2, bw))
+                {
+                    e.Cancel = true;
+                    return;
+                }
                 ws = excel.Workbook.Worksheets.Add("D1");
-                ExportList<D1>(ws, kvDph.Transakcie.D1, bw);
+                if (!ExportList<D1>(ws, kvDph.Transakcie.D1, bw))
+                {
+                    e.Cancel = true;
+                    return;
+                }
                 ws = excel.Workbook.Worksheets.Add("D2");
-                ExportList<D2>(ws, kvDph.Transakcie.D2, bw);
+                if (!ExportList<D2>(ws, kvDph.Transakcie.D2, bw))
+                {
+                    e.Cancel = true;
+                    return;
+                }
 
                 excel.SaveAs(new FileInfo(path));
             }
         }
 
-        void ExportList<T>(ExcelWorksheet ws, IList<T> data, BackgroundWorker bw)
+        bool ExportList<T>(ExcelWorksheet ws, IList<T> data, BackgroundWorker bw)
             where T : class
         {
             bw.ReportProgress(0, "Export položiek " + ws.Name);
@@ -656,6 +704,11 @@ namespace Avat.Forms
 
                 var progres = (((double)i + 1) / (double)tmp.Rows.Count) * 100.0;
                 bw.ReportProgress(Convert.ToInt32(progres));
+                if (bw.CancellationPending)
+                {
+                    bw.CancelAsync();
+                    return false;
+                }
             }
 
             // header
@@ -670,12 +723,13 @@ namespace Avat.Forms
             headerRow.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
             headerRow.Style.Fill.BackgroundColor.SetColor(Color.Silver);
             headerRow.Style.Font.Bold = true;
+
+            return true;
         }
 
         public static DataTable ConvertToDatatable<T>(IList<T> data)
         {
-            PropertyDescriptorCollection props =
-                TypeDescriptor.GetProperties(typeof(T));
+            PropertyDescriptorCollection props = TypeDescriptor.GetProperties(typeof(T));
             DataTable table = new DataTable();
             for (int i = 0; i < props.Count; i++)
             {
@@ -694,5 +748,87 @@ namespace Avat.Forms
 
             return table;
         }
+
+        #endregion
+
+        #region Importy do DB
+
+        /// <summary>
+        /// Import neplaticov - zrusenych platcov DPH
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnImportBlackList_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var xml = GetXmlPath();
+                if (string.IsNullOrEmpty(xml))
+                    return;
+
+                var p = new Progress(0, 100, "Import platiteľov DPH s dôvodom na zrušenie registrácie", "Importujem..", ImportBlackList, ImportDone, xml, false, true);
+                p.StartWorker();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, string.Format("Import platiteľov DPH s dôvodom na zrušenie registrácie neprebehol úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+        
+        void ImportDone()
+        {
+            this.Focus();
+            this.BringToFront();
+        }
+
+        void ImportBlackList(BackgroundWorker bw, DoWorkEventArgs e, object userData)
+        {
+            var path = userData.ToString();
+
+            bw.ReportProgress(50);
+            var count = AvatValidator.Validators.BlackListValidator.Entities.BlackListManager.ImportDataFromXml(path);
+            bw.ReportProgress(100);
+        }
+
+        /// <summary>
+        /// Import platitelov DPH
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnImportVatPayers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var xml = GetXmlPath();
+                if (string.IsNullOrEmpty(xml))
+                    return;
+
+                var p = new Progress(0, 100, "Import registrovaných platiteľov DPH", "Importujem..", ImportTaxPayers, ImportDone, xml, false, true);
+                p.StartWorker();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, string.Format("Import registrovaných platiteľov DPH neprebehol úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+
+        void ImportTaxPayers(BackgroundWorker bw, DoWorkEventArgs e, object userData)
+        {
+            var path = userData.ToString();
+
+            bw.ReportProgress(50);
+            var count = AvatValidator.Validators.TaxPayerValidator.Entities.TaxPayersManager.ImportDataFromXml(path);
+            bw.ReportProgress(100);
+        }
+
+        #endregion
     }
 }

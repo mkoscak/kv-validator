@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Progress));
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.lblCurrentOp = new System.Windows.Forms.Label();
             this.lblOp = new System.Windows.Forms.Label();
@@ -40,7 +39,7 @@
             // progressBar
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(15, 30);
+            this.progressBar.Location = new System.Drawing.Point(12, 25);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(486, 26);
             this.progressBar.TabIndex = 0;
@@ -48,7 +47,7 @@
             // lblCurrentOp
             // 
             this.lblCurrentOp.AutoSize = true;
-            this.lblCurrentOp.Location = new System.Drawing.Point(12, 14);
+            this.lblCurrentOp.Location = new System.Drawing.Point(9, 9);
             this.lblCurrentOp.Name = "lblCurrentOp";
             this.lblCurrentOp.Size = new System.Drawing.Size(99, 13);
             this.lblCurrentOp.TabIndex = 1;
@@ -57,7 +56,7 @@
             // lblOp
             // 
             this.lblOp.AutoSize = true;
-            this.lblOp.Location = new System.Drawing.Point(117, 14);
+            this.lblOp.Location = new System.Drawing.Point(114, 9);
             this.lblOp.Name = "lblOp";
             this.lblOp.Size = new System.Drawing.Size(38, 13);
             this.lblOp.TabIndex = 2;
@@ -67,7 +66,7 @@
             // 
             this.lblProgrress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProgrress.AutoSize = true;
-            this.lblProgrress.Location = new System.Drawing.Point(12, 59);
+            this.lblProgrress.Location = new System.Drawing.Point(9, 54);
             this.lblProgrress.Name = "lblProgrress";
             this.lblProgrress.Size = new System.Drawing.Size(49, 13);
             this.lblProgrress.TabIndex = 3;
@@ -77,7 +76,7 @@
             // 
             this.lblProg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProg.AutoSize = true;
-            this.lblProg.Location = new System.Drawing.Point(117, 59);
+            this.lblProg.Location = new System.Drawing.Point(114, 54);
             this.lblProg.Name = "lblProg";
             this.lblProg.Size = new System.Drawing.Size(38, 13);
             this.lblProg.TabIndex = 4;
@@ -86,7 +85,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(401, 72);
+            this.btnCancel.Location = new System.Drawing.Point(398, 74);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 26);
             this.btnCancel.TabIndex = 5;
@@ -98,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 132);
+            this.ClientSize = new System.Drawing.Size(510, 112);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblProg);
@@ -107,9 +106,9 @@
             this.Controls.Add(this.lblCurrentOp);
             this.Controls.Add(this.progressBar);
             this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(526, 170);
+            this.MinimumSize = new System.Drawing.Size(526, 150);
             this.Name = "Progress";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Priebeh";

@@ -46,16 +46,18 @@ namespace Avat.Components
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
 
             bw.RunWorkerAsync();
+            Cursor = Cursors.WaitCursor;
             ShowDialog();
+            Cursor = Cursors.Default;
         }
 
         void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            bool doPostProcess = false;
+            bool doPostProcess = true;
 
             if (e.Cancelled == true)
             {
-                MessageBox.Show(this, "Operácia prerušená!", "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Operácia prerušená používateľom!", "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Visible = false;
                 Close();
             }
@@ -71,7 +73,6 @@ namespace Avat.Components
                     MessageBox.Show(this, "Operácia ukončená!", "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Visible = false;
                 Close();
-                doPostProcess = true;
             }
 
             if (PostAction != null && doPostProcess)

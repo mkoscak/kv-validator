@@ -27,20 +27,20 @@ namespace AvatValidator.Validators
             get { return "Validátor sadzby DPH"; }
         }
 
-        public IValidationItemResult Validate(object input)
+        public IList<IValidationItemResult> Validate(object input)
         {
-            var ret = ValidationItemResult.CreateDefaultOk(this);
+            var ret = new List<IValidationItemResult>();
 
             if (input is A1 && (input as A1).S != SadzbaDaneType.Item10 && (input as A1).S != SadzbaDaneType.Item20)
-                ret = ValidationFailed(input);
+                ret.Add(ValidationFailed(input));
             if (input is B1 && (input as B1).S != SadzbaDaneType.Item10 && (input as B1).S != SadzbaDaneType.Item20)
-                ret = ValidationFailed(input);
+                ret.Add(ValidationFailed(input));
             if (input is B2 && (input as B2).S != SadzbaDaneType.Item10 && (input as B2).S != SadzbaDaneType.Item20)
-                ret = ValidationFailed(input);
+                ret.Add(ValidationFailed(input));
             if (input is C1 && (input as C1).S != SadzbaDaneType.Item10 && (input as C1).S != SadzbaDaneType.Item20)
-                ret = ValidationFailed(input);
+                ret.Add(ValidationFailed(input));
             if (input is C2 && (input as C2).S != SadzbaDaneType.Item10 && (input as C2).S != SadzbaDaneType.Item20)
-                ret = ValidationFailed(input);
+                ret.Add(ValidationFailed(input));
 
             return ret;
         }

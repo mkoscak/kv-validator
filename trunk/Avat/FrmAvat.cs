@@ -420,6 +420,7 @@ namespace Avat.Forms
             else
             {
                 ValidationFailed(lastValidationResult);
+                ShowIdentification();
                 identification.SetProblems(lastValidationResult);
             }
         }
@@ -512,7 +513,7 @@ namespace Avat.Forms
 
             foreach (var p in problems)
             {
-                sb.AppendLine(p.ResultMessage);
+                sb.AppendLine(p.ResultMessage + " - " + p.ResultTooltip);
             }
 
             return sb.ToString().Trim();

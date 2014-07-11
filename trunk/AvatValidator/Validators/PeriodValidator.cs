@@ -27,14 +27,14 @@ namespace AvatValidator.Validators
             get { return "Validátor obdobia"; }
         }
 
-        protected override IValidationItemResult Validate(Identifikacia input)
+        protected override IList<IValidationItemResult> Validate(Identifikacia input)
         {
-            var ret = ValidationItemResult.CreateDefaultOk(this);
+            var ret = new List<IValidationItemResult>();
 
             if (input.Obdobie == null)
-                ret = ValidationFailedPeriodMissing(input);
+                ret.Add(ValidationFailedPeriodMissing(input));
             else if (input.Obdobie.ItemElementName == ItemChoiceType.___)
-                ret = ValidationFailedSubPeriodMissing(input.Obdobie);
+                ret.Add(ValidationFailedSubPeriodMissing(input.Obdobie));
             // TODO mala by byt aj validacia, ze nesmu byt zadane sucasne..
 
             return ret;

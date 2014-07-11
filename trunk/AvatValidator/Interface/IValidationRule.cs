@@ -26,7 +26,7 @@ namespace AvatValidator.Interface
         /// <typeparam name="Tinput">typ vstupneho objektu</typeparam>
         /// <param name="param">Objekt pre validaciu</param>
         /// <returns></returns>
-        IValidationItemResult Validate(object input);
+        IList<IValidationItemResult> Validate(object input);
 
         /// <summary>
         /// Textovy popis pravidla

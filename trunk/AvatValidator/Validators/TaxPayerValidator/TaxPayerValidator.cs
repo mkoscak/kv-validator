@@ -25,9 +25,9 @@ namespace AvatValidator.Validators.TaxPayerValidator
             get { return "Validátor aktuálnych platiteľov DPH"; }
         }
 
-        public IValidationItemResult Validate(object input)
+        public IList<IValidationItemResult> Validate(object input)
         {
-            var ret = ValidationItemResult.CreateDefaultOk(this);
+            var ret = new List<IValidationItemResult>();
 
             string icDphOdb = null;
             string icDphDod = null;
@@ -52,7 +52,7 @@ namespace AvatValidator.Validators.TaxPayerValidator
                 
                 var found = TaxPayerEntity.Load(string.Format("IC_DPH = \"{0}\"", icDph));
                 if (found != null && found.Count == 0)
-                    ret = icDphOdb == null ? ValidationFailedDod(input, icDph) : ValidationFailedOdb(input, icDph);
+                    ret.Add(icDphOdb == null ? ValidationFailedDod(input, icDph) : ValidationFailedOdb(input, icDph));
             }
 
             return ret;

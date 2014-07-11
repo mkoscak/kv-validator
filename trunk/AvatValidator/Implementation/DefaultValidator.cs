@@ -30,8 +30,8 @@ namespace AvatValidator.Implementation
                     continue;
 
                 var retCheck = genCheck.Validate(input);
-                if (retCheck.ValidationResultState != ResultState.Ok)
-                    ret.Add(retCheck);
+                if (retCheck.Count(r => r.ValidationResultState != ResultState.Ok) > 0)
+                    ret.AddRange(retCheck);
 
                 HandleObservers(retCheck);
             }
@@ -44,8 +44,8 @@ namespace AvatValidator.Implementation
                     continue;
 
                 var retCheck = xmlCheck.Validate(input);
-                if (retCheck.ValidationResultState != ResultState.Ok)
-                    ret.Add(retCheck);
+                if (retCheck.Count(r => r.ValidationResultState != ResultState.Ok) > 0)
+                    ret.AddRange(retCheck);
 
                 HandleObservers(retCheck);
             }
@@ -58,8 +58,8 @@ namespace AvatValidator.Implementation
                     continue;
 
                 var retCheck = headCheck.Validate(input.Identifikacia);
-                if (retCheck.ValidationResultState != ResultState.Ok)
-                    ret.Add(retCheck);
+                if (retCheck.Count(r => r.ValidationResultState != ResultState.Ok) > 0)
+                    ret.AddRange(retCheck);
 
                 HandleObservers(retCheck);
             }
@@ -99,33 +99,36 @@ namespace AvatValidator.Implementation
             return false;
         }
 
-        private void HandleObservers(IValidationItemResult retCheck)
+        private void HandleObservers(IList<IValidationItemResult> retChecks)
         {
             var skipMsg = "Validácia prerušená";
             foreach (var obs in Observers)
             {
-                switch (retCheck.ValidationResultState)
+                foreach (var retCheck in retChecks)
                 {
-                    case ResultState.Unknown:
-                        break;
-                    case ResultState.Ok:
-                        if (obs.OnOk(retCheck) == ObserverResult.StopValidation)
-                            throw new Exception(skipMsg);
-                        break;
-                    case ResultState.OkWithWarning:
-                        if (obs.OnWarning(retCheck) == ObserverResult.StopValidation)
-                            throw new Exception(skipMsg);
-                        break;
-                    case ResultState.Error:
-                        if (obs.OnError(retCheck) == ObserverResult.StopValidation)
-                            throw new Exception(skipMsg);
-                        break;
-                    case ResultState.CriticalError:
-                        if (obs.OnCriticalError(retCheck) == ObserverResult.StopValidation)
-                            throw new Exception(skipMsg);
-                        break;
-                    default:
-                        break;
+                    switch (retCheck.ValidationResultState)
+                    {
+                        case ResultState.Unknown:
+                            break;
+                        case ResultState.Ok:
+                            if (obs.OnOk(retCheck) == ObserverResult.StopValidation)
+                                throw new Exception(skipMsg);
+                            break;
+                        case ResultState.OkWithWarning:
+                            if (obs.OnWarning(retCheck) == ObserverResult.StopValidation)
+                                throw new Exception(skipMsg);
+                            break;
+                        case ResultState.Error:
+                            if (obs.OnError(retCheck) == ObserverResult.StopValidation)
+                                throw new Exception(skipMsg);
+                            break;
+                        case ResultState.CriticalError:
+                            if (obs.OnCriticalError(retCheck) == ObserverResult.StopValidation)
+                                throw new Exception(skipMsg);
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
@@ -147,8 +150,8 @@ namespace AvatValidator.Implementation
                         continue;
 
                     var retCheck = itemCheck.Validate(item);
-                    if (retCheck.ValidationResultState != ResultState.Ok)
-                        ret.Add(retCheck);
+                    if (retCheck.Count(r => r.ValidationResultState != ResultState.Ok) > 0)
+                        ret.AddRange(retCheck);
 
                     HandleObservers(retCheck);
                 }

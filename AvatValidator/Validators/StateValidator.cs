@@ -27,12 +27,12 @@ namespace AvatValidator.Validators
             get { return "Validátor vyplnenosti štátu subjektu"; }
         }
 
-        protected override IValidationItemResult Validate(Identifikacia input)
+        protected override IList<IValidationItemResult> Validate(Identifikacia input)
         {
-            var ret = ValidationItemResult.CreateDefaultOk(this);
+            var ret = new List<IValidationItemResult>();
 
             if (string.IsNullOrEmpty(input.Stat))
-                ret = ValidationFailed(input.Stat);
+                ret.Add(ValidationFailed(input.Stat));
 
             return ret;
         }

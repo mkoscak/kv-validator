@@ -27,14 +27,14 @@ namespace AvatValidator.Validators
             get { return "Validátor roku"; }
         }
 
-        protected override IValidationItemResult Validate(Identifikacia input)
+        protected override IList<IValidationItemResult> Validate(Identifikacia input)
         {
-            var ret = ValidationItemResult.CreateDefaultOk(this);
+            var ret = new List<IValidationItemResult>();
 
             if (input.Obdobie.Rok == 0)
-                ret = ValidationFailedYearMissing(input.Obdobie);
+                ret.Add(ValidationFailedYearMissing(input.Obdobie));
             else if (input.Obdobie.Rok < 2014)
-                ret = ValidationFailed(input.Obdobie.Rok, input.Obdobie);
+                ret.Add(ValidationFailed(input.Obdobie.Rok, input.Obdobie));
 
             return ret;
         }

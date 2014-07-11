@@ -27,12 +27,12 @@ namespace AvatValidator.Validators
             get { return "Validátor vyplnenosti názvu subjektu"; }
         }
 
-        protected override IValidationItemResult Validate(Identifikacia input)
+        protected override IList<IValidationItemResult> Validate(Identifikacia input)
         {
-            var ret = ValidationItemResult.CreateDefaultOk(this);
+            var ret = new List<IValidationItemResult>();
 
             if (string.IsNullOrEmpty(input.Nazov))
-                ret = ValidationFailed(input.Nazov);
+                ret.Add(ValidationFailed(input.Nazov));
 
             return ret;
         }

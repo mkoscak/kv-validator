@@ -28,9 +28,9 @@ namespace AvatValidator.Validators.BlackListValidator
             get { return "Validátor zrušených platiteľov DPH"; }
         }
 
-        public IValidationItemResult Validate(object input)
+        public IList<IValidationItemResult> Validate(object input)
         {
-            var ret = ValidationItemResult.CreateDefaultOk(this);
+            var ret = new List<IValidationItemResult>();
            
             var def = "no_problemo";
             var icDph = def;
@@ -56,7 +56,7 @@ namespace AvatValidator.Validators.BlackListValidator
 
             var found = BlackListEntity.Load(string.Format("IC_DPH = \"{0}\"", icDph));
             if (found != null && found.Count > 0)
-                ret = ValidationFailed(found[0], input);
+                ret.Add(ValidationFailed(found[0], input));
 
             return ret;
         }

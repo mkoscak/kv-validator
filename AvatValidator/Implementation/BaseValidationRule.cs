@@ -14,7 +14,7 @@ namespace AvatValidator.Implementation
     {
         #region IValidationRule Members
 
-        public IValidationItemResult Validate(object input)
+        public IList<IValidationItemResult> Validate(object input)
         {
             if (input.GetType() != typeof(T))
                 throw new InvalidOperationException("Nesprávny vstupný typ pre danú validáciu!");
@@ -36,6 +36,6 @@ namespace AvatValidator.Implementation
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        protected abstract IValidationItemResult Validate(T input);
+        protected abstract IList<IValidationItemResult> Validate(T input);
     }
 }

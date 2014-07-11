@@ -28,18 +28,18 @@ namespace AvatValidator.Validators
             get { return "Validátor IČ platiteľa DPH"; }
         }
 
-        protected override IValidationItemResult Validate(Identifikacia input)
+        protected override IList<IValidationItemResult> Validate(Identifikacia input)
         {
-            var ret = ValidationItemResult.CreateDefaultOk(this);
+            var ret = new List<IValidationItemResult>();
 
             if (string.IsNullOrEmpty(input.IcDphPlatitela))
-                ret = ValidationFailedNullIc(input.IcDphPlatitela);
+                ret.Add(ValidationFailedNullIc(input.IcDphPlatitela));
             else
             {
                 // kontrola na existujuce IC DPH
                 var found = TaxPayerEntity.Load(string.Format("IC_DPH = \"{0}\"", input.IcDphPlatitela));
                 if (found != null && found.Count == 0)
-                    ret = ValidationFailedNoExistPayer(input.IcDphPlatitela);
+                    ret.Add(ValidationFailedNoExistPayer(input.IcDphPlatitela));
             }
 
             return ret;

@@ -79,6 +79,7 @@
     <Compile Include="Validators\BlackListValidator\Entities\BlackListEntity.cs" />
     <Compile Include="Validators\BlackListValidator\Entities\BlackListManager.cs" />
     <Compile Include="Validators\CityValidator.cs" />
+    <Compile Include="Validators\GoodsValidator.cs" />
     <Compile Include="Validators\IcDphValidator.cs" />
     <Compile Include="Validators\ItemTaxValidator.cs" />
     <Compile Include="Validators\KvKindValidator.cs" />

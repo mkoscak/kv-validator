@@ -29,6 +29,11 @@ namespace AvatValidator.Implementation
 
         public abstract string RuleDescription { get; }
 
+        public bool CheckHeaderCondition(object header)
+        {
+            return true;
+        }
+
         #endregion
 
         /// <summary>

@@ -75,6 +75,11 @@ namespace AvatValidator.Validators.BlackListValidator
             return ret;
         }
 
+        public bool CheckHeaderCondition(object header)
+        {
+            return true;
+        }
+
         public override string ToString()
         {
             return string.Format("{0} ({1})", this.RuleName, this.RuleType);

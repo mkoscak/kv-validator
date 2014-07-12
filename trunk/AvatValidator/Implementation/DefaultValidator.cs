@@ -66,23 +66,23 @@ namespace AvatValidator.Implementation
 
             // validacia poloziek
             ValidateItems<A1>(input.Transakcie.A1, ret,
-                rules.Where(r => r.RuleType == RuleType.A1ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.A1ItemChecker || r.RuleType == RuleType.GeneralItemChecker).Where(r => r.CheckHeaderCondition(input.Identifikacia)).ToList());
             ValidateItems<A2>(input.Transakcie.A2, ret,
-                rules.Where(r => r.RuleType == RuleType.A2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.A2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).Where(r => r.CheckHeaderCondition(input.Identifikacia)).ToList());
             ValidateItems<B1>(input.Transakcie.B1, ret,
-                rules.Where(r => r.RuleType == RuleType.B2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.B2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).Where(r => r.CheckHeaderCondition(input.Identifikacia)).ToList());
             ValidateItems<B2>(input.Transakcie.B2, ret,
-                rules.Where(r => r.RuleType == RuleType.B2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.B2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).Where(r => r.CheckHeaderCondition(input.Identifikacia)).ToList());
             ValidateItems<B3>(input.Transakcie.B3, ret,
-                rules.Where(r => r.RuleType == RuleType.B3ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.B3ItemChecker || r.RuleType == RuleType.GeneralItemChecker).Where(r => r.CheckHeaderCondition(input.Identifikacia)).ToList());
             ValidateItems<C1>(input.Transakcie.C1, ret,
-                rules.Where(r => r.RuleType == RuleType.C1ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.C1ItemChecker || r.RuleType == RuleType.GeneralItemChecker).Where(r => r.CheckHeaderCondition(input.Identifikacia)).ToList());
             ValidateItems<C2>(input.Transakcie.C2, ret,
-                rules.Where(r => r.RuleType == RuleType.C2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.C2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).Where(r => r.CheckHeaderCondition(input.Identifikacia)).ToList());
             ValidateItems<D1>(input.Transakcie.D1, ret,
-                rules.Where(r => r.RuleType == RuleType.D1ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.D1ItemChecker || r.RuleType == RuleType.GeneralItemChecker).Where(r => r.CheckHeaderCondition(input.Identifikacia)).ToList());
             ValidateItems<D2>(input.Transakcie.D2, ret,
-                rules.Where(r => r.RuleType == RuleType.D2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).ToList());
+                rules.Where(r => r.RuleType == RuleType.D2ItemChecker || r.RuleType == RuleType.GeneralItemChecker).Where(r => r.CheckHeaderCondition(input.Identifikacia)).ToList());
 
             return ret;
         }

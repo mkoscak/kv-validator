@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6828A03F-A278-429C-94A9-99C77EC600E9}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -79,6 +79,7 @@
     <Compile Include="Validators\BlackListValidator\Entities\BlackListEntity.cs" />
     <Compile Include="Validators\BlackListValidator\Entities\BlackListManager.cs" />
     <Compile Include="Validators\CityValidator.cs" />
+    <Compile Include="Validators\CorrectionValidator.cs" />
     <Compile Include="Validators\GoodsValidator.cs" />
     <Compile Include="Validators\IcDphValidator.cs" />
     <Compile Include="Validators\ItemTaxValidator.cs" />

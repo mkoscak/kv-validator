@@ -32,6 +32,13 @@ namespace AvatValidator.Interface
         /// Textovy popis pravidla
         /// </summary>
         string RuleDescription { get; }
+
+        /// <summary>
+        /// Pri validacii poloziek moze validator vyzadovat len polozky ktorych hlavicka splna urcitu podmienku, touto metodou si to vie validator skontrolovat
+        /// </summary>
+        /// <param name="header"></param>
+        /// <returns>True ak chceme spustit validaciu</returns>
+        bool CheckHeaderCondition(object header);
     }
 
     /// <summary>

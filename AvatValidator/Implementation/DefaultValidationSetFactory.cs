@@ -62,6 +62,7 @@ namespace AvatValidator.Implementation
             Rules.Add(new TaxPayerValidator());
             Rules.Add(new ItemTaxValidator());
             Rules.Add(new GoodsValidator());
+            Rules.Add(new CorrectionValidator());
         }
 
         #endregion

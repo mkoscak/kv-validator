@@ -43,7 +43,95 @@ namespace AvatValidator.Validators
             if (res2003 != null)
                 ret.Add(res2003);
 
+            // suma vs. zaklad dane
+            IValidationItemResult resSumVsRate = CheckSumRate(input);
+            if (resSumVsRate != null)
+                ret.Add(resSumVsRate);
+
             return ret;
+        }
+
+        private IValidationItemResult CheckSumRate(object input)
+        {
+            var errMsgs = new string[] {
+                "Suma dane v eurách musí byť nižšia ako Základ dane v eurách.",
+                "Celková suma dane v eurách musí byť nižšia ako Celková suma základov dane v eurách.",
+                "Rozdiel sumy dane v eurách musí byť nižšia ako Rozdiel základu dane v eurách.",
+                "Celková suma dane v eurách (základná sadzba) musí byť nižšia ako Celková suma základov dane vrátane opráv v eurách (základná sadzba).",
+                "Celková suma dane v eurách (znížená sadzba) musí byť nižšia ako Celková suma základov dane vrátane opráv v eurách (znížená sadzba)."
+            };
+
+            // hlaska 1
+            if (input is A1)
+            {
+                var i = input as A1;
+                if (i.D >= i.Z)
+                    return CreateWarningResult(input, errMsgs[0], "");
+            }
+            if (input is B1)
+            {
+                var i = input as B1;
+                if (i.D >= i.Z)
+                    return CreateWarningResult(input, errMsgs[0], "");
+            }
+            if (input is B2)
+            {
+                var i = input as B2;
+                if (i.D >= i.Z)
+                    return CreateWarningResult(input, errMsgs[0], "");
+            }
+
+            // hlaska 2
+            if (input is B3)
+            {
+                var i = input as B3;
+                if (i.D >= i.Z)
+                    return CreateWarningResult(input, errMsgs[1], "");
+            }
+
+            // hlaska 3
+            if (input is C1)
+            {
+                var i = input as C1;
+                if (i.DR >= i.ZR)
+                    return CreateWarningResult(input, errMsgs[2], "");
+            }
+            if (input is C2)
+            {
+                var i = input as C2;
+                if (i.DR >= i.ZR)
+                    return CreateWarningResult(input, errMsgs[2], "");
+            }
+
+            // hlaska 4
+            if (input is D1)
+            {
+                var i = input as D1;
+                if (i.D >= i.Z)
+                    return CreateWarningResult(input, errMsgs[3], "");
+            }
+            if (input is D2)
+            {
+                var i = input as D2;
+                if (i.D >= i.Z)
+                    return CreateWarningResult(input, errMsgs[3], "");
+            }
+
+            // hlaska 5
+            if (input is D1)
+            {
+                var i = input as D1;
+                if (i.DZn >= i.ZZn)
+                    return CreateWarningResult(input, errMsgs[4], "");
+            }
+            if (input is D2)
+            {
+                var i = input as D2;
+                if (i.DZn >= i.ZZn)
+                    return CreateWarningResult(input, errMsgs[4], "");
+            }
+
+            return null;
         }
 
         private IValidationItemResult Check2003(object input)
@@ -145,10 +233,10 @@ namespace AvatValidator.Validators
                 S = (input as C1).S;
             if (input is C2)
                 S = (input as C2).S;*/
-            /*if (input is D1)
-                S = (input as D1).S;
+            if (input is D1)
+                S = SadzbaDaneType.Item20;//zakladna sadzba
             if (input is D2)
-                S = (input as D2).S;*/
+                S = SadzbaDaneType.Item20;//zakladna sadzba
 
             if (S == SadzbaDaneType.Item10)
                 return 10;
@@ -196,25 +284,26 @@ namespace AvatValidator.Validators
 
         private ValidationItemResult Validation2002Failed(object problemItem)
         {
-            var ret = new ValidationItemResult(this);
-
-            ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = string.Format("Daň je chybná!");
-            ret.ResultTooltip = string.Format("Základ dane * sadzba dane sa nerovná výslednej dani!");
-            ret.ProblemObject = problemItem;
-            ret.Details = new DetailedResultInfo();
-            ret.Details.LineNumber = 0;
-
-            return ret;
+            return CreateFailedResult(problemItem, "Daň je chybná!", "Základ dane * sadzba dane sa nerovná výslednej dani!");
         }
 
         private IValidationItemResult Validation2003Failed(object problemItem)
         {
+            return CreateFailedResult(problemItem, "Odpočet je chybný!", "Odpočet je vyšší ako Daň!");
+        }
+
+        private ValidationItemResult Validation2001Failed(object problemItem)
+        {
+            return CreateFailedResult(problemItem, "Základ dane nesmie byť záporný!", "Opravte základ dane na nezápornú hodnotu!");
+        }
+
+        private ValidationItemResult CreateFailedResult(object problemItem, string msg, string tooltip)
+        {
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = string.Format("Odpočet je chybný!");
-            ret.ResultTooltip = string.Format("Odpočet je vyšší ako Daň!");
+            ret.ResultMessage = string.Format(msg);
+            ret.ResultTooltip = string.Format(tooltip);
             ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 0;
@@ -222,18 +311,25 @@ namespace AvatValidator.Validators
             return ret;
         }
 
-        private ValidationItemResult Validation2001Failed(object problemItem)
+
+
+        private ValidationItemResult CreateWarningResult(object problemItem, string msg, string tooltip)
         {
             var ret = new ValidationItemResult(this);
 
-            ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = string.Format("Základ dane nesmie byť záporný!");
-            ret.ResultTooltip = string.Format("Opravte základ dane na nezápornú hodnotu!");
+            ret.ValidationResultState = ResultState.OkWithWarning;
+            ret.ResultMessage = string.Format(msg);
+            ret.ResultTooltip = string.Format(tooltip);
             ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
             ret.Details.LineNumber = 0;
 
             return ret;
+        }
+
+        public bool CheckHeaderCondition(object header)
+        {
+            return true;
         }
 
         public override string ToString()

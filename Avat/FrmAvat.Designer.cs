@@ -146,6 +146,7 @@
             this.btnA1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnA1.ForeColor = System.Drawing.Color.Gray;
             this.btnA1.Image = ((System.Drawing.Image)(resources.GetObject("btnA1.Image")));
+            this.btnA1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnA1.Name = "btnA1";
             this.btnA1.Size = new System.Drawing.Size(128, 36);
@@ -159,6 +160,7 @@
             this.btnA2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnA2.ForeColor = System.Drawing.Color.Gray;
             this.btnA2.Image = ((System.Drawing.Image)(resources.GetObject("btnA2.Image")));
+            this.btnA2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnA2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnA2.Name = "btnA2";
             this.btnA2.Size = new System.Drawing.Size(128, 36);
@@ -186,6 +188,7 @@
             this.btnB1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnB1.ForeColor = System.Drawing.Color.Gray;
             this.btnB1.Image = ((System.Drawing.Image)(resources.GetObject("btnB1.Image")));
+            this.btnB1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnB1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnB1.Name = "btnB1";
             this.btnB1.Size = new System.Drawing.Size(128, 36);
@@ -199,6 +202,7 @@
             this.btnB2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnB2.ForeColor = System.Drawing.Color.Gray;
             this.btnB2.Image = ((System.Drawing.Image)(resources.GetObject("btnB2.Image")));
+            this.btnB2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnB2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnB2.Name = "btnB2";
             this.btnB2.Size = new System.Drawing.Size(128, 36);
@@ -212,6 +216,7 @@
             this.btnB3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnB3.ForeColor = System.Drawing.Color.Gray;
             this.btnB3.Image = ((System.Drawing.Image)(resources.GetObject("btnB3.Image")));
+            this.btnB3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnB3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnB3.Name = "btnB3";
             this.btnB3.Size = new System.Drawing.Size(128, 36);
@@ -239,6 +244,7 @@
             this.btnC1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnC1.ForeColor = System.Drawing.Color.Gray;
             this.btnC1.Image = ((System.Drawing.Image)(resources.GetObject("btnC1.Image")));
+            this.btnC1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnC1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnC1.Name = "btnC1";
             this.btnC1.Size = new System.Drawing.Size(128, 36);
@@ -252,6 +258,7 @@
             this.btnC2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnC2.ForeColor = System.Drawing.Color.Gray;
             this.btnC2.Image = ((System.Drawing.Image)(resources.GetObject("btnC2.Image")));
+            this.btnC2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnC2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnC2.Name = "btnC2";
             this.btnC2.Size = new System.Drawing.Size(128, 36);
@@ -279,6 +286,7 @@
             this.btnD1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnD1.ForeColor = System.Drawing.Color.Gray;
             this.btnD1.Image = ((System.Drawing.Image)(resources.GetObject("btnD1.Image")));
+            this.btnD1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnD1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnD1.Name = "btnD1";
             this.btnD1.Size = new System.Drawing.Size(128, 36);
@@ -292,9 +300,10 @@
             this.btnD2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnD2.ForeColor = System.Drawing.Color.Gray;
             this.btnD2.Image = ((System.Drawing.Image)(resources.GetObject("btnD2.Image")));
+            this.btnD2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnD2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnD2.Name = "btnD2";
-            this.btnD2.Size = new System.Drawing.Size(128, 36);
+            this.btnD2.Size = new System.Drawing.Size(60, 36);
             this.btnD2.Text = "D2";
             this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
             this.btnD2.Click += new System.EventHandler(this.btnD2_Click);

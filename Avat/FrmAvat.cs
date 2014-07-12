@@ -13,6 +13,7 @@ using Avat.Components;
 using System.Threading;
 using OfficeOpenXml;
 using System.IO;
+using Avat.Wrappers;
 
 namespace Avat.Forms
 {
@@ -25,6 +26,7 @@ namespace Avat.Forms
 
         IValidationResult lastValidationResult;
         DataGridViewCellStyle errorStyle;
+        DataGridViewCellStyle warningStyle;
         CtrlIdentification identification;
 
         public FrmAvat()
@@ -47,11 +49,6 @@ namespace Avat.Forms
             this.menuOps.Renderer = new ToolRenderer();
             this.menuOps.BackColor = this.BackColor;
 
-            var tmp = new BindingList<A1>();
-            for (int i = 0; i < 10; i++)
-                tmp.Add(new A1());
-            this.gridData.DataSource = tmp;
-
             this.gridData.BackgroundColor = this.BackColor;
 
             this.btnIdentification.PerformClick();
@@ -62,6 +59,8 @@ namespace Avat.Forms
 
             errorStyle = new DataGridViewCellStyle(gridData.DefaultCellStyle);
             errorStyle.ForeColor = Color.Red;
+            warningStyle = new DataGridViewCellStyle(gridData.DefaultCellStyle);
+            warningStyle.ForeColor = Color.DarkOrange;
 
             NewAvat();
         }
@@ -69,7 +68,7 @@ namespace Avat.Forms
         private void NewAvat()
         {
             kvDph = new KVDPH();
-            ShowIdentification();
+            ShowNewIdentification();
             UpdateButtonTexts();
             SetFileName("nový.xml");
         }
@@ -115,15 +114,18 @@ namespace Avat.Forms
         private void ShowIdentification()
         {
             DisableAllButtons(btnIdentification);
-            identification.SetData(kvDph.Identifikacia);
+            identification.SetData(kvDph.Identifikacia, false);
             gridData.DataSource = null;
-
-            /*gridData.Visible = false;
-            this.panelContent.Controls.Remove(gridData);
-            this.panelContent.Controls.Add(*/
         }
 
-        void CheckSetErrors<T>(BindingList<T> ds)
+        private void ShowNewIdentification()
+        {
+            DisableAllButtons(btnIdentification);
+            identification.SetData(kvDph.Identifikacia, true);
+            gridData.DataSource = null;
+        }
+
+        void CheckSetErrors<T>(IList<T> ds)
             where T : class
         {
             if (lastValidationResult != null)
@@ -133,7 +135,11 @@ namespace Avat.Forms
                     var problems = lastValidationResult.Where(r => r.ProblemObject == ds[i]).ToList();
                     if (problems.Count > 0)
                     {
-                        gridData.Rows[i].DefaultCellStyle = errorStyle;
+                        if (problems.Any(p => p.ValidationResultState == ResultState.OkWithWarning))
+                            gridData.Rows[i].DefaultCellStyle = warningStyle;
+                        else
+                            gridData.Rows[i].DefaultCellStyle = errorStyle;
+                     
                         gridData.Rows[i].Tag = problems;
                     }
                 }
@@ -143,13 +149,13 @@ namespace Avat.Forms
         private void btnA1_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnA1);
-            gridData.DataSource = new BindingList<A1>();
+            gridData.DataSource = new BindingList<A1Wrapper>();
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A1 != null)
             {
-                var ds = new BindingList<A1>(kvDph.Transakcie.A1);
+                var ds = new BindingList<A1Wrapper>(kvDph.Transakcie.A1.Select(a => new A1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<A1>(ds);
+                CheckSetErrors<A1>(kvDph.Transakcie.A1);
             }
         }
 
@@ -283,9 +289,8 @@ namespace Avat.Forms
         {
             if (kvDph != null)
             {
-                identification.SetData(kvDph.Identifikacia);
                 UpdateButtonTexts();
-                ShowIdentification();
+                ShowNewIdentification();
                 SetFileName(ActualFileName);
             }
         }
@@ -513,7 +518,10 @@ namespace Avat.Forms
 
             foreach (var p in problems)
             {
-                sb.AppendLine(p.ResultMessage + " - " + p.ResultTooltip);
+                if (string.IsNullOrEmpty(p.ResultTooltip))
+                    sb.AppendLine(p.ResultMessage);
+                else
+                    sb.AppendLine(p.ResultMessage + " - " + p.ResultTooltip);
             }
 
             return sb.ToString().Trim();

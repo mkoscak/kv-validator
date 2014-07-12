@@ -81,14 +81,18 @@ namespace Avat.Components
             lblUlica.ForeColor = origColor;
         }
 
-        private void SetProblems(Label txtBox, List<IValidationItemResult> probs)
+        private void SetProblems(Label lblBox, List<IValidationItemResult> probs)
         {
-            txtBox.ForeColor = Color.Red;
+            if (probs.Any(i => i.ValidationResultState == ResultState.OkWithWarning))
+                lblBox.ForeColor = Color.Orange;
+            else
+                lblBox.ForeColor = Color.Red;
+
             if (probs.Count > 0)
-                new ToolTip().SetToolTip(txtBox, probs[0].ResultMessage);
+                new ToolTip().SetToolTip(lblBox, probs[0].ResultMessage);
         }
 
-        public void SetData(Identifikacia data)
+        public void SetData(Identifikacia data, bool noProblem)
         {
             this.identification = data;
 
@@ -105,7 +109,8 @@ namespace Avat.Components
             txtPhone.Text = data.Tel;
             txteMail.Text = data.Email;
 
-            ShowNoProblems();
+            if (noProblem)
+                ShowNoProblems();
         }
 
         public Identifikacia GetData()
@@ -134,16 +139,16 @@ namespace Avat.Components
 
         private void ShowNoProblems()
         {
-            lblIcDph.ForeColor = Color.Gray;
-            lblDruh.ForeColor = Color.Gray;
-            lblObdobie.ForeColor = Color.Gray;
-            lblNazov.ForeColor = Color.Gray;
-            lblStat.ForeColor = Color.Gray;
-            lblObec.ForeColor = Color.Gray;
-            lblEmail.ForeColor = Color.Gray;
-            lblTelefon.ForeColor = Color.Gray;
-            lblPsc.ForeColor = Color.Gray;
-            lblUlica.ForeColor = Color.Gray;
+            lblIcDph.ForeColor = origColor;
+            lblDruh.ForeColor = origColor;
+            lblObdobie.ForeColor = origColor;
+            lblNazov.ForeColor = origColor;
+            lblStat.ForeColor = origColor;
+            lblObec.ForeColor = origColor;
+            lblEmail.ForeColor = origColor;
+            lblTelefon.ForeColor = origColor;
+            lblPsc.ForeColor = origColor;
+            lblUlica.ForeColor = origColor;
         }
     }
 }

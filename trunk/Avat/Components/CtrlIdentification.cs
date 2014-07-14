@@ -25,7 +25,8 @@ namespace Avat.Components
 
         private void CtrlIdentification_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(45, 54, 54);
+            //this.BackColor = Color.FromArgb(45, 54, 54);
+            //this.BackColor = Color.FromArgb(255, 255, 255);
 
             this.origColor = lblIcDph.ForeColor;
         }

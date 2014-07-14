@@ -58,7 +58,7 @@
             // 
             this.lblIcDph.AutoSize = true;
             this.lblIcDph.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIcDph.ForeColor = System.Drawing.Color.Gray;
+            this.lblIcDph.ForeColor = System.Drawing.Color.DimGray;
             this.lblIcDph.Location = new System.Drawing.Point(10, 10);
             this.lblIcDph.Margin = new System.Windows.Forms.Padding(10);
             this.lblIcDph.Name = "lblIcDph";
@@ -70,7 +70,7 @@
             // 
             this.lblDruh.AutoSize = true;
             this.lblDruh.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDruh.ForeColor = System.Drawing.Color.Gray;
+            this.lblDruh.ForeColor = System.Drawing.Color.DimGray;
             this.lblDruh.Location = new System.Drawing.Point(10, 52);
             this.lblDruh.Margin = new System.Windows.Forms.Padding(10);
             this.lblDruh.Name = "lblDruh";
@@ -82,7 +82,7 @@
             // 
             this.lblObdobie.AutoSize = true;
             this.lblObdobie.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblObdobie.ForeColor = System.Drawing.Color.Gray;
+            this.lblObdobie.ForeColor = System.Drawing.Color.DimGray;
             this.lblObdobie.Location = new System.Drawing.Point(10, 94);
             this.lblObdobie.Margin = new System.Windows.Forms.Padding(10);
             this.lblObdobie.Name = "lblObdobie";
@@ -94,7 +94,7 @@
             // 
             this.lblNazov.AutoSize = true;
             this.lblNazov.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazov.ForeColor = System.Drawing.Color.Gray;
+            this.lblNazov.ForeColor = System.Drawing.Color.DimGray;
             this.lblNazov.Location = new System.Drawing.Point(10, 136);
             this.lblNazov.Margin = new System.Windows.Forms.Padding(10);
             this.lblNazov.Name = "lblNazov";
@@ -106,7 +106,7 @@
             // 
             this.lblStat.AutoSize = true;
             this.lblStat.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStat.ForeColor = System.Drawing.Color.Gray;
+            this.lblStat.ForeColor = System.Drawing.Color.DimGray;
             this.lblStat.Location = new System.Drawing.Point(10, 178);
             this.lblStat.Margin = new System.Windows.Forms.Padding(10);
             this.lblStat.Name = "lblStat";
@@ -118,7 +118,7 @@
             // 
             this.lblObec.AutoSize = true;
             this.lblObec.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblObec.ForeColor = System.Drawing.Color.Gray;
+            this.lblObec.ForeColor = System.Drawing.Color.DimGray;
             this.lblObec.Location = new System.Drawing.Point(10, 220);
             this.lblObec.Margin = new System.Windows.Forms.Padding(10);
             this.lblObec.Name = "lblObec";
@@ -130,7 +130,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEmail.ForeColor = System.Drawing.Color.Gray;
+            this.lblEmail.ForeColor = System.Drawing.Color.DimGray;
             this.lblEmail.Location = new System.Drawing.Point(10, 388);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(10);
             this.lblEmail.Name = "lblEmail";
@@ -142,7 +142,7 @@
             // 
             this.lblTelefon.AutoSize = true;
             this.lblTelefon.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTelefon.ForeColor = System.Drawing.Color.Gray;
+            this.lblTelefon.ForeColor = System.Drawing.Color.DimGray;
             this.lblTelefon.Location = new System.Drawing.Point(10, 346);
             this.lblTelefon.Margin = new System.Windows.Forms.Padding(10);
             this.lblTelefon.Name = "lblTelefon";
@@ -154,7 +154,7 @@
             // 
             this.lblUlica.AutoSize = true;
             this.lblUlica.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUlica.ForeColor = System.Drawing.Color.Gray;
+            this.lblUlica.ForeColor = System.Drawing.Color.DimGray;
             this.lblUlica.Location = new System.Drawing.Point(10, 304);
             this.lblUlica.Margin = new System.Windows.Forms.Padding(10);
             this.lblUlica.Name = "lblUlica";
@@ -166,7 +166,7 @@
             // 
             this.lblPsc.AutoSize = true;
             this.lblPsc.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPsc.ForeColor = System.Drawing.Color.Gray;
+            this.lblPsc.ForeColor = System.Drawing.Color.DimGray;
             this.lblPsc.Location = new System.Drawing.Point(10, 262);
             this.lblPsc.Margin = new System.Windows.Forms.Padding(10);
             this.lblPsc.Name = "lblPsc";
@@ -176,9 +176,9 @@
             // 
             // txtIcDph
             // 
-            this.txtIcDph.BackColor = System.Drawing.Color.Gray;
+            this.txtIcDph.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtIcDph.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtIcDph.ForeColor = System.Drawing.Color.Silver;
+            this.txtIcDph.ForeColor = System.Drawing.Color.Black;
             this.txtIcDph.Location = new System.Drawing.Point(211, 6);
             this.txtIcDph.Name = "txtIcDph";
             this.txtIcDph.Size = new System.Drawing.Size(315, 29);
@@ -186,9 +186,9 @@
             // 
             // txtName
             // 
-            this.txtName.BackColor = System.Drawing.Color.Gray;
+            this.txtName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtName.ForeColor = System.Drawing.Color.Silver;
+            this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.Location = new System.Drawing.Point(211, 132);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(315, 29);
@@ -196,9 +196,9 @@
             // 
             // txtState
             // 
-            this.txtState.BackColor = System.Drawing.Color.Gray;
+            this.txtState.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtState.ForeColor = System.Drawing.Color.Silver;
+            this.txtState.ForeColor = System.Drawing.Color.Black;
             this.txtState.Location = new System.Drawing.Point(211, 174);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(315, 29);
@@ -206,9 +206,9 @@
             // 
             // txtCity
             // 
-            this.txtCity.BackColor = System.Drawing.Color.Gray;
+            this.txtCity.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtCity.ForeColor = System.Drawing.Color.Silver;
+            this.txtCity.ForeColor = System.Drawing.Color.Black;
             this.txtCity.Location = new System.Drawing.Point(211, 216);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(315, 29);
@@ -216,9 +216,9 @@
             // 
             // txtPsc
             // 
-            this.txtPsc.BackColor = System.Drawing.Color.Gray;
+            this.txtPsc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtPsc.ForeColor = System.Drawing.Color.Silver;
+            this.txtPsc.ForeColor = System.Drawing.Color.Black;
             this.txtPsc.Location = new System.Drawing.Point(211, 255);
             this.txtPsc.Name = "txtPsc";
             this.txtPsc.Size = new System.Drawing.Size(315, 29);
@@ -226,9 +226,9 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.BackColor = System.Drawing.Color.Gray;
+            this.txtAddress.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAddress.ForeColor = System.Drawing.Color.Silver;
+            this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.Location = new System.Drawing.Point(211, 300);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(315, 29);
@@ -236,9 +236,9 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.BackColor = System.Drawing.Color.Gray;
+            this.txtPhone.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtPhone.ForeColor = System.Drawing.Color.Silver;
+            this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.Location = new System.Drawing.Point(211, 342);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(315, 29);
@@ -246,9 +246,9 @@
             // 
             // txteMail
             // 
-            this.txteMail.BackColor = System.Drawing.Color.Gray;
+            this.txteMail.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txteMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txteMail.ForeColor = System.Drawing.Color.Silver;
+            this.txteMail.ForeColor = System.Drawing.Color.Black;
             this.txteMail.Location = new System.Drawing.Point(211, 384);
             this.txteMail.Name = "txteMail";
             this.txteMail.Size = new System.Drawing.Size(315, 29);
@@ -257,10 +257,10 @@
             // 
             // cbKind
             // 
-            this.cbKind.BackColor = System.Drawing.Color.Gray;
+            this.cbKind.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKind.ForeColor = System.Drawing.Color.Silver;
+            this.cbKind.ForeColor = System.Drawing.Color.Black;
             this.cbKind.FormattingEnabled = true;
             this.cbKind.Location = new System.Drawing.Point(211, 51);
             this.cbKind.Name = "cbKind";
@@ -269,10 +269,10 @@
             // 
             // cbPeriodType
             // 
-            this.cbPeriodType.BackColor = System.Drawing.Color.Gray;
+            this.cbPeriodType.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbPeriodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPeriodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPeriodType.ForeColor = System.Drawing.Color.Silver;
+            this.cbPeriodType.ForeColor = System.Drawing.Color.Black;
             this.cbPeriodType.FormattingEnabled = true;
             this.cbPeriodType.Location = new System.Drawing.Point(288, 90);
             this.cbPeriodType.Name = "cbPeriodType";
@@ -281,9 +281,9 @@
             // 
             // txtYear
             // 
-            this.txtYear.BackColor = System.Drawing.Color.Gray;
+            this.txtYear.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYear.ForeColor = System.Drawing.Color.Silver;
+            this.txtYear.ForeColor = System.Drawing.Color.Black;
             this.txtYear.Location = new System.Drawing.Point(455, 90);
             this.txtYear.Maximum = new decimal(new int[] {
             2099,
@@ -301,9 +301,9 @@
             // 
             // txtPeriod
             // 
-            this.txtPeriod.BackColor = System.Drawing.Color.Gray;
+            this.txtPeriod.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPeriod.ForeColor = System.Drawing.Color.Silver;
+            this.txtPeriod.ForeColor = System.Drawing.Color.Black;
             this.txtPeriod.Location = new System.Drawing.Point(211, 91);
             this.txtPeriod.Maximum = new decimal(new int[] {
             999,
@@ -323,7 +323,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtPeriod);
             this.Controls.Add(this.txtYear);
             this.Controls.Add(this.cbPeriodType);

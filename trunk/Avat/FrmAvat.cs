@@ -41,7 +41,8 @@ namespace Avat.Forms
 
         private void FrmDesignOne_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(45, 54, 54);
+            //this.BackColor = Color.FromArgb(45, 54, 54);
+            this.BackColor = Color.FromArgb(255, 255, 255);
 
             this.menuXml.Renderer = new ToolRenderer();
             this.menuXml.BackColor = this.BackColor;

@@ -245,19 +245,6 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pixLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAWBJREFUSEuNVoFx
-        wyAM9AgeISN1hI6QETpCR/AIGaEjZJRu4P6DhCUhF/3dJyA9D9iCZDvPMyVwZPEVgR18Cfc70QNk45Hl
-        7wjQ/C1jyfed8CmCZ5bPCERz8nYCbo+NV5aPBHLz7BG1oBfuURMJfBg92cxbTgQ0/QR15ZGMM+8mY19j
-        APNsDHOJbwfIVpWtugB9LNdq+078IiTBquGLXe2gVRUQn7lbteUc6IN1IEJp3pqT9Qla8NqJqyJgaQ64
-        AzoaLni9sHEOgIq57n4c0GFqSYEVAhVzjvkG2WHh9LEqiKRIvivmXxKPPCZjS2BpHrR6xXAnTeNElhSA
-        y5UnY9hYvoOK+WQmcT+p7bRAwVx0ev/8e+P6Tn3lNP8BNT/dU0M/GjXzu2pRTr+CZfMxoNc7q0X1v9J3
-        78Lo6+aWwHTaMxLxBl2ak9SIPl25ktDjXTZXAst/Hv2jT8KdlM1rPLc/AMMxW42gFQoAAAAASUVORK5C
-        YII=
-</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>35</value>
   </metadata>

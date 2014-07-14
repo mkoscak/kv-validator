@@ -51,6 +51,20 @@ namespace Avat.Components
             Cursor = Cursors.Default;
         }
 
+        string ErrorMsg;
+        string ErrorTitle;
+        MessageBoxButtons ErrorBtns;
+        MessageBoxIcon ErrorIcon;
+        bool ErrorShowInnerMessage;
+        public void SetErrorMessage(string msg, string title, MessageBoxButtons buttons, MessageBoxIcon icon, bool showOrigErrMsg)
+        {
+            ErrorMsg = msg;
+            ErrorTitle = title;
+            ErrorBtns = buttons;
+            ErrorIcon = icon;
+            ErrorShowInnerMessage = ShowOkMessage;
+        }
+
         void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             bool doPostProcess = true;
@@ -63,7 +77,11 @@ namespace Avat.Components
             }
             else if (e.Error != null)
             {
-                MessageBox.Show(this, "Nastala chyba!" + Environment.NewLine + Environment.NewLine + e.Error.Message, "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!string.IsNullOrEmpty(ErrorMsg))
+                    MessageBox.Show(this, string.Format("{0}{1}", ErrorMsg, ErrorShowInnerMessage ? e.Error.Message : string.Empty), ErrorTitle, ErrorBtns, ErrorIcon);
+                else
+                    MessageBox.Show(this, "Nastala chyba!" + Environment.NewLine + Environment.NewLine + e.Error.Message, "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMsg = null;
                 this.Visible = false;
                 Close();
             }

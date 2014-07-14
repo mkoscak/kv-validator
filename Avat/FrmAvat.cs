@@ -264,11 +264,12 @@ namespace Avat.Forms
                     return;
 
                 var p = new Progress(0, 100, "Načítanie vstupného súboru", "Načítavam..", ReadXmlProc, XmlRead, path, false, false);
+                p.SetErrorMessage("Načítanie vstupného súboru neprebehlo úspešne, kontaktujte administrátora!", "Načítanie vstupu", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
                 p.StartWorker();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, string.Format("Načítanie vstupného súboru neprebehlo úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Načítanie xml", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, string.Format("Načítanie vstupného súboru neprebehlo úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Načítanie vstupu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -370,11 +371,12 @@ namespace Avat.Forms
             try
             {                
                 var p = new Progress(0, 100, "Kontrola kontrolného výkazu", "Validujem..", ValidationProc, ValidationDone, null, true, false);
+                p.SetErrorMessage("Kontrola kontrolného výkazu neprebehla úspešne, nastala neočakávaná chyba!", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
                 p.StartWorker();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, string.Format("Kontrola kontrolného výkazu neprebehla úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(this, string.Format("Kontrola kontrolného výkazu neprebehla úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

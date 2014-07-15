@@ -41,16 +41,8 @@ namespace Avat.Forms
 
         private void FrmDesignOne_Load(object sender, EventArgs e)
         {
-            //this.BackColor = Color.FromArgb(45, 54, 54);
-            this.BackColor = Color.FromArgb(255, 255, 255);
-
             this.menuXml.Renderer = new ToolRenderer();
-            this.menuXml.BackColor = this.BackColor;
-
-            this.menuOps.Renderer = new ToolRenderer();
-            this.menuOps.BackColor = this.BackColor;
-
-            this.gridData.BackgroundColor = this.BackColor;
+            this.menuOps.Renderer = new OpsToolRenderer();
 
             this.btnIdentification.PerformClick();
             UpdateButtonTexts();
@@ -371,13 +363,13 @@ namespace Avat.Forms
 
             try
             {                
-                var p = new Progress(0, 100, "Kontrola kontrolného výkazu", "Validujem..", ValidationProc, ValidationDone, null, true, false);
-                p.SetErrorMessage("Kontrola kontrolného výkazu neprebehla úspešne, nastala neočakávaná chyba!", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
+                var p = new Progress(0, 100, "Kontrola výkazu", "Validujem..", ValidationProc, ValidationDone, null, true, false);
+                p.SetErrorMessage("Kontrola výkazu neprebehla úspešne, nastala neočakávaná chyba!", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
                 p.StartWorker();
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(this, string.Format("Kontrola kontrolného výkazu neprebehla úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(this, string.Format("Kontrola výkazu neprebehla úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -420,6 +412,9 @@ namespace Avat.Forms
                 Invoke(new Action(ValidationDone));
                 return;
             }
+
+            if (lastValidationResult == null)
+                return;
 
             if (lastValidationResult.Count == 0)
             {

@@ -46,7 +46,7 @@ namespace Avat.Components
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
 
             bw.RunWorkerAsync();
-            Cursor = Cursors.WaitCursor;
+            Cursor = Cursors.AppStarting;
             ShowDialog();
             Cursor = Cursors.Default;
         }
@@ -117,6 +117,27 @@ namespace Avat.Components
         {
             if (bw != null)
                 bw.CancelAsync();
+        }
+    }
+
+    class MyProgress : ProgressBar
+    {
+        public MyProgress()
+        {
+            this.SetStyle(ControlStyles.UserPaint, true);
+        }
+
+        Brush b = new SolidBrush(SystemColors.Highlight);
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            Rectangle rec = e.ClipRectangle;
+
+            if (ProgressBarRenderer.IsSupported)
+                ProgressBarRenderer.DrawHorizontalBar(e.Graphics, rec);
+
+            e.Graphics.FillRectangle(b, 2, 2, (int)Math.Round((double)(this.Value / 100.0) * rec.Width) - 4, rec.Height - 4);
+            
+            //base.OnPaintBackground(e);
         }
     }
 }

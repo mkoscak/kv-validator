@@ -177,8 +177,9 @@
             // txtIcDph
             // 
             this.txtIcDph.BackColor = System.Drawing.SystemColors.Info;
+            this.txtIcDph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIcDph.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtIcDph.ForeColor = System.Drawing.Color.Black;
+            this.txtIcDph.ForeColor = System.Drawing.Color.DimGray;
             this.txtIcDph.Location = new System.Drawing.Point(211, 6);
             this.txtIcDph.Name = "txtIcDph";
             this.txtIcDph.Size = new System.Drawing.Size(315, 29);
@@ -187,8 +188,9 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.SystemColors.Info;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtName.ForeColor = System.Drawing.Color.Black;
+            this.txtName.ForeColor = System.Drawing.Color.DimGray;
             this.txtName.Location = new System.Drawing.Point(211, 132);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(315, 29);
@@ -197,8 +199,9 @@
             // txtState
             // 
             this.txtState.BackColor = System.Drawing.SystemColors.Info;
+            this.txtState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtState.ForeColor = System.Drawing.Color.Black;
+            this.txtState.ForeColor = System.Drawing.Color.DimGray;
             this.txtState.Location = new System.Drawing.Point(211, 174);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(315, 29);
@@ -207,8 +210,9 @@
             // txtCity
             // 
             this.txtCity.BackColor = System.Drawing.SystemColors.Info;
+            this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtCity.ForeColor = System.Drawing.Color.Black;
+            this.txtCity.ForeColor = System.Drawing.Color.DimGray;
             this.txtCity.Location = new System.Drawing.Point(211, 216);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(315, 29);
@@ -217,8 +221,9 @@
             // txtPsc
             // 
             this.txtPsc.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPsc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtPsc.ForeColor = System.Drawing.Color.Black;
+            this.txtPsc.ForeColor = System.Drawing.Color.DimGray;
             this.txtPsc.Location = new System.Drawing.Point(211, 255);
             this.txtPsc.Name = "txtPsc";
             this.txtPsc.Size = new System.Drawing.Size(315, 29);
@@ -227,8 +232,9 @@
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAddress.ForeColor = System.Drawing.Color.Black;
+            this.txtAddress.ForeColor = System.Drawing.Color.DimGray;
             this.txtAddress.Location = new System.Drawing.Point(211, 300);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(315, 29);
@@ -237,8 +243,9 @@
             // txtPhone
             // 
             this.txtPhone.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtPhone.ForeColor = System.Drawing.Color.DimGray;
             this.txtPhone.Location = new System.Drawing.Point(211, 342);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(315, 29);
@@ -247,8 +254,9 @@
             // txteMail
             // 
             this.txteMail.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txteMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txteMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txteMail.ForeColor = System.Drawing.Color.Black;
+            this.txteMail.ForeColor = System.Drawing.Color.DimGray;
             this.txteMail.Location = new System.Drawing.Point(211, 384);
             this.txteMail.Name = "txteMail";
             this.txteMail.Size = new System.Drawing.Size(315, 29);
@@ -258,8 +266,10 @@
             // cbKind
             // 
             this.cbKind.BackColor = System.Drawing.SystemColors.Info;
+            this.cbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbKind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKind.ForeColor = System.Drawing.Color.Black;
+            this.cbKind.ForeColor = System.Drawing.Color.DimGray;
             this.cbKind.FormattingEnabled = true;
             this.cbKind.Location = new System.Drawing.Point(211, 51);
             this.cbKind.Name = "cbKind";
@@ -269,8 +279,10 @@
             // cbPeriodType
             // 
             this.cbPeriodType.BackColor = System.Drawing.SystemColors.Info;
+            this.cbPeriodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPeriodType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPeriodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPeriodType.ForeColor = System.Drawing.Color.Black;
+            this.cbPeriodType.ForeColor = System.Drawing.Color.DimGray;
             this.cbPeriodType.FormattingEnabled = true;
             this.cbPeriodType.Location = new System.Drawing.Point(288, 90);
             this.cbPeriodType.Name = "cbPeriodType";
@@ -280,8 +292,9 @@
             // txtYear
             // 
             this.txtYear.BackColor = System.Drawing.SystemColors.Info;
+            this.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYear.ForeColor = System.Drawing.Color.Black;
+            this.txtYear.ForeColor = System.Drawing.Color.DimGray;
             this.txtYear.Location = new System.Drawing.Point(455, 90);
             this.txtYear.Maximum = new decimal(new int[] {
             2099,
@@ -300,8 +313,9 @@
             // txtPeriod
             // 
             this.txtPeriod.BackColor = System.Drawing.SystemColors.Info;
+            this.txtPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPeriod.ForeColor = System.Drawing.Color.Black;
+            this.txtPeriod.ForeColor = System.Drawing.Color.DimGray;
             this.txtPeriod.Location = new System.Drawing.Point(211, 91);
             this.txtPeriod.Maximum = new decimal(new int[] {
             999,

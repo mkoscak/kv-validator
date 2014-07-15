@@ -32,7 +32,7 @@ namespace AvatValidator.Validators
             var ret = new List<IValidationItemResult>();
 
             if (string.IsNullOrEmpty(input.Obec))
-                ret.Add(ValidationFailed(input.Obec));
+                ret.Add(ValidationFailed("<obec>"));
 
             return ret;
         }

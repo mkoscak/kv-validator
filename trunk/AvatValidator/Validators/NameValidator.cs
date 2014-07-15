@@ -32,7 +32,7 @@ namespace AvatValidator.Validators
             var ret = new List<IValidationItemResult>();
 
             if (string.IsNullOrEmpty(input.Nazov))
-                ret.Add(ValidationFailed(input.Nazov));
+                ret.Add(ValidationFailed("<nazov>"));
 
             return ret;
         }

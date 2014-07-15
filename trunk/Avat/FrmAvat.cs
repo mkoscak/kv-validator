@@ -36,6 +36,7 @@ namespace Avat.Forms
             identification = new CtrlIdentification();
             identification.BorderStyle = BorderStyle.None;
             identification.Dock = DockStyle.Fill;
+            identification.Margin = new Padding(0);
             panelContent.Controls.Add(identification);
         }
 
@@ -51,9 +52,10 @@ namespace Avat.Forms
             this.FormTitle = this.Text;
 
             errorStyle = new DataGridViewCellStyle(gridData.DefaultCellStyle);
-            errorStyle.ForeColor = Color.Red;
+            errorStyle.BackColor = Color.FromArgb(255, 128, 128);
+            errorStyle.ForeColor = Color.White;
             warningStyle = new DataGridViewCellStyle(gridData.DefaultCellStyle);
-            warningStyle.ForeColor = Color.DarkOrange;
+            warningStyle.BackColor = Color.DarkOrange;
 
             NewAvat();
         }
@@ -109,6 +111,7 @@ namespace Avat.Forms
             DisableAllButtons(btnIdentification);
             identification.SetData(kvDph.Identifikacia, false);
             gridData.DataSource = null;
+            identification.lblIcDph.Focus();
         }
 
         private void ShowNewIdentification()
@@ -116,6 +119,7 @@ namespace Avat.Forms
             DisableAllButtons(btnIdentification);
             identification.SetData(kvDph.Identifikacia, true);
             gridData.DataSource = null;
+            identification.lblIcDph.Focus();
         }
 
         void CheckSetErrors<T>(IList<T> ds)
@@ -560,7 +564,8 @@ namespace Avat.Forms
             {
                 if (counter > total)
                     counter = total;
-                ValidationWorker.ReportProgress(Convert.ToInt32(((double)counter / total) * 100.0));
+                if (total > 0)
+                    ValidationWorker.ReportProgress(Convert.ToInt32(((double)counter / total) * 100.0));
                 if (ValidationWorker.CancellationPending)
                     return ObserverResult.StopValidation;
             }

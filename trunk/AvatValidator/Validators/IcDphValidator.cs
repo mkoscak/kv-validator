@@ -33,7 +33,7 @@ namespace AvatValidator.Validators
             var ret = new List<IValidationItemResult>();
 
             if (string.IsNullOrEmpty(input.IcDphPlatitela))
-                ret.Add(ValidationFailedNullIc(input.IcDphPlatitela));
+                ret.Add(ValidationFailedNullIc("<icdph>"));
             else
             {
                 // kontrola na existujuce IC DPH

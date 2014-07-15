@@ -32,7 +32,7 @@ namespace AvatValidator.Validators
             var ret = new List<IValidationItemResult>();
 
             if (string.IsNullOrEmpty(input.Stat))
-                ret.Add(ValidationFailed(input.Stat));
+                ret.Add(ValidationFailed("<stat>"));
 
             return ret;
         }

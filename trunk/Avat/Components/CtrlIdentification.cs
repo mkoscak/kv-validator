@@ -13,7 +13,8 @@ namespace Avat.Components
 {
     public partial class CtrlIdentification : UserControl
     {
-        Color origColor;
+        Color origColorMandatory;
+        Color origColorNoMandatory;
 
         public CtrlIdentification()
         {
@@ -25,10 +26,8 @@ namespace Avat.Components
 
         private void CtrlIdentification_Load(object sender, EventArgs e)
         {
-            //this.BackColor = Color.FromArgb(45, 54, 54);
-            //this.BackColor = Color.FromArgb(255, 255, 255);
-
-            this.origColor = lblIcDph.ForeColor;
+            this.origColorMandatory = txtIcDph.BackColor;
+            this.origColorNoMandatory = txtPsc.BackColor;
         }
 
         Identifikacia identification;
@@ -42,55 +41,54 @@ namespace Avat.Components
 
         private void ShowProblems()
         {
-            DefColors();
-            var probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.Equals(identification.IcDphPlatitela)).ToList();
+            ShowNoProblems();
+            var probs = problems.Where(p => p.ProblemObject != null && (p.ProblemObject.Equals(identification.IcDphPlatitela) || p.ProblemObject.ToString() == "<icdph>") ).ToList();
             if (probs.Count > 0)
-                SetProblems(lblIcDph, probs);
+                SetProblems(txtIcDph, probs);
 
-            probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.Equals(identification.Nazov)).ToList();
+            probs = problems.Where(p => p.ProblemObject != null && (p.ProblemObject.Equals(identification.Nazov) || p.ProblemObject.ToString() == "<nazov>")).ToList();
             if (probs.Count > 0)
-                SetProblems(lblNazov, probs);
+                SetProblems(txtName, probs);
 
             probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.GetType() == typeof(DruhKvType)).ToList();
             if (probs.Count > 0)
-                SetProblems(lblDruh, probs);
+                SetProblems(cbKind, probs);
 
-            probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject == identification.Obdobie).ToList();
+            probs = problems.Where(p => p.ProblemObject != null && (p.ProblemObject == identification.Obdobie || p.ProblemObject.ToString() == "<obdobie>")).ToList();
             if (probs.Count > 0)
-                SetProblems(lblObdobie, probs);
+            {
+                SetProblems(txtPeriod, probs);
+                SetProblems(cbPeriodType, probs);
+                SetProblems(txtYear, probs);
+            }
+            probs = problems.Where(p => p.ProblemObject != null && (p.ProblemObject.Equals(identification.Obdobie.Item) || p.ProblemObject.ToString() == "<period>")).ToList();
+            if (probs.Count > 0)
+                SetProblems(txtPeriod, probs);
+            probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.Equals(identification.Obdobie.ItemElementName)).ToList();
+            if (probs.Count > 0)
+                SetProblems(cbPeriodType, probs);
+            probs = problems.Where(p => p.ProblemObject != null && (p.ProblemObject.Equals(identification.Obdobie.Rok) || p.ProblemObject.ToString() == "<rok>")).ToList();
+            if (probs.Count > 0)
+                SetProblems(txtYear, probs);
 
-            probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.Equals(identification.Stat)).ToList();
+            probs = problems.Where(p => p.ProblemObject != null && (p.ProblemObject.Equals(identification.Stat) || p.ProblemObject.ToString() == "<stat>")).ToList();
             if (probs.Count > 0)
-                SetProblems(lblStat, probs);
+                SetProblems(txtState, probs);
 
-            probs = problems.Where(p => p.ProblemObject != null && p.ProblemObject.Equals(identification.Obec)).ToList();
+            probs = problems.Where(p => p.ProblemObject != null && (p.ProblemObject.Equals(identification.Obec) || p.ProblemObject.ToString() == "<obec>")).ToList();
             if (probs.Count > 0)
-                SetProblems(lblObec, probs);
+                SetProblems(txtCity, probs);
         }
 
-        private void DefColors()
-        {
-            lblIcDph.ForeColor = origColor;
-            lblDruh.ForeColor = origColor;
-            lblEmail.ForeColor = origColor;
-            lblNazov.ForeColor = origColor;
-            lblObdobie.ForeColor = origColor;
-            lblObec.ForeColor = origColor;
-            lblPsc.ForeColor = origColor;
-            lblStat.ForeColor = origColor;
-            lblTelefon.ForeColor = origColor;
-            lblUlica.ForeColor = origColor;
-        }
-
-        private void SetProblems(Label lblBox, List<IValidationItemResult> probs)
+        private void SetProblems(Control ctrl, List<IValidationItemResult> probs)
         {
             if (probs.Any(i => i.ValidationResultState == ResultState.OkWithWarning))
-                lblBox.ForeColor = Color.Orange;
+                ctrl.BackColor = Color.Orange;
             else
-                lblBox.ForeColor = Color.Red;
+                ctrl.BackColor = Color.FromArgb(255, 128, 128);
 
             if (probs.Count > 0)
-                new ToolTip().SetToolTip(lblBox, probs[0].ResultMessage);
+                new ToolTip().SetToolTip(ctrl, string.Join(Environment.NewLine, probs.Select(ir => ir.ResultMessage + " - " + ir.ResultTooltip).ToArray()));
         }
 
         public void SetData(Identifikacia data, bool noProblem)
@@ -140,16 +138,18 @@ namespace Avat.Components
 
         private void ShowNoProblems()
         {
-            lblIcDph.ForeColor = origColor;
-            lblDruh.ForeColor = origColor;
-            lblObdobie.ForeColor = origColor;
-            lblNazov.ForeColor = origColor;
-            lblStat.ForeColor = origColor;
-            lblObec.ForeColor = origColor;
-            lblEmail.ForeColor = origColor;
-            lblTelefon.ForeColor = origColor;
-            lblPsc.ForeColor = origColor;
-            lblUlica.ForeColor = origColor;
+            txtIcDph.BackColor = origColorMandatory;
+            cbKind.BackColor = origColorMandatory;
+            txtPeriod.BackColor = origColorMandatory;
+            cbPeriodType.BackColor = origColorMandatory;
+            txtYear.BackColor = origColorMandatory;
+            txtName.BackColor = origColorMandatory;
+            txtState.BackColor = origColorMandatory;
+            txtCity.BackColor = origColorMandatory;
+            txteMail.BackColor = origColorNoMandatory;
+            txtPhone.BackColor = origColorNoMandatory;
+            txtPsc.BackColor = origColorNoMandatory;
+            txtAddress.BackColor = origColorNoMandatory;
         }
     }
 }

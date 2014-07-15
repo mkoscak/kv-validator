@@ -45,8 +45,8 @@ namespace Avat.Components
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
 
+            Cursor = btnCancel.Enabled ? Cursors.AppStarting : Cursors.WaitCursor;
             bw.RunWorkerAsync();
-            Cursor = Cursors.AppStarting;
             ShowDialog();
             Cursor = Cursors.Default;
         }

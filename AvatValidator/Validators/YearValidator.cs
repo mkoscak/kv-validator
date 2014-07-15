@@ -32,9 +32,9 @@ namespace AvatValidator.Validators
             var ret = new List<IValidationItemResult>();
 
             if (input.Obdobie.Rok == 0)
-                ret.Add(ValidationFailedYearMissing(input.Obdobie));
+                ret.Add(ValidationFailedYearMissing("<rok>"));
             else if (input.Obdobie.Rok < 2014)
-                ret.Add(ValidationFailed(input.Obdobie.Rok, input.Obdobie));
+                ret.Add(ValidationFailed(input.Obdobie.Rok, input.Obdobie.Rok));
 
             return ret;
         }

@@ -32,10 +32,33 @@ namespace AvatValidator.Validators
             var ret = new List<IValidationItemResult>();
 
             if (input.Obdobie == null)
-                ret.Add(ValidationFailedPeriodMissing(input));
+                ret.Add(ValidationFailedPeriodMissing("<obdobie>"));
             else if (input.Obdobie.ItemElementName == ItemChoiceType.___)
-                ret.Add(ValidationFailedSubPeriodMissing(input.Obdobie));
-            // TODO mala by byt aj validacia, ze nesmu byt zadane sucasne..
+                ret.Add(ValidationFailedSubPeriodMissing(input.Obdobie.ItemElementName));
+            else
+            {
+                if ( (input.Obdobie.Item < 1))
+                    ret.Add(ValidationFailedPeriod("<period>"));
+                else if (
+                    (input.Obdobie.ItemElementName == ItemChoiceType.Stvrtrok && input.Obdobie.Item > 4) ||
+                    (input.Obdobie.ItemElementName == ItemChoiceType.Mesiac && input.Obdobie.Item > 12)
+                   )
+                    ret.Add(ValidationFailedPeriod(input.Obdobie.Item));
+            }
+
+            return ret;
+        }
+
+        private ValidationItemResult ValidationFailedPeriod(object problemItem)
+        {
+            var ret = new ValidationItemResult(this);
+
+            ret.ValidationResultState = ResultState.Error;
+            ret.ResultMessage = string.Format("Obdobie je mimo povolený rozsah!");
+            ret.ResultTooltip = "Obdobie musí byť pre možnosť Mesiac od 1 do 12 a pre možnosť štvrťrok od 1 do 4.";
+            ret.ProblemObject = problemItem;
+            ret.Details = new DetailedResultInfo();
+            ret.Details.LineNumber = 7;
 
             return ret;
         }
@@ -45,7 +68,7 @@ namespace AvatValidator.Validators
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = string.Format("Jedna z možností Mesiac alebo Štvrťrok musí byť zadaná.!");
+            ret.ResultMessage = string.Format("Jedna z možností Mesiac alebo Štvrťrok musí byť zadaná!");
             ret.ResultTooltip = "V sekcii '<Identifikacia>/<Obdobie>' doplňte položku Mesiac alebo Štvrťrok.";
             ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();

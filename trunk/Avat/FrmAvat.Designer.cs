@@ -69,6 +69,7 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeader2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.toolStripCorner = new System.Windows.Forms.ToolStrip();
             this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -105,11 +106,11 @@
             this.btnD1,
             this.btnD2});
             this.menuXml.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuXml.Location = new System.Drawing.Point(10, 55);
-            this.menuXml.Margin = new System.Windows.Forms.Padding(10);
+            this.menuXml.Location = new System.Drawing.Point(0, 45);
             this.menuXml.Name = "menuXml";
+            this.menuXml.Padding = new System.Windows.Forms.Padding(0);
             this.menuXml.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuXml.Size = new System.Drawing.Size(130, 473);
+            this.menuXml.Size = new System.Drawing.Size(150, 493);
             this.menuXml.TabIndex = 1;
             this.menuXml.Text = "toolStrip1";
             // 
@@ -122,25 +123,25 @@
             this.btnIdentification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIdentification.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnIdentification.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnIdentification.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnIdentification.Name = "btnIdentification";
             this.btnIdentification.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.btnIdentification.Size = new System.Drawing.Size(128, 31);
+            this.btnIdentification.Size = new System.Drawing.Size(148, 31);
             this.btnIdentification.Text = "Identifikácia";
             this.btnIdentification.Click += new System.EventHandler(this.btnIdentification_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // toolStripLabelA
             // 
             this.toolStripLabelA.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripLabelA.ForeColor = System.Drawing.Color.DarkGray;
             this.toolStripLabelA.Name = "toolStripLabelA";
-            this.toolStripLabelA.Size = new System.Drawing.Size(128, 16);
+            this.toolStripLabelA.Size = new System.Drawing.Size(149, 16);
             this.toolStripLabelA.Text = "A";
-            this.toolStripLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnA1
             // 
@@ -153,9 +154,10 @@
             this.btnA1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnA1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnA1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnA1.Name = "btnA1";
             this.btnA1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnA1.Size = new System.Drawing.Size(128, 32);
+            this.btnA1.Size = new System.Drawing.Size(148, 32);
             this.btnA1.Text = "A1 (9)";
             this.btnA1.ToolTipText = "A1 - Štandardné odberateľské faktúry (tuzemské)";
             this.btnA1.Click += new System.EventHandler(this.btnA1_Click);
@@ -169,9 +171,10 @@
             this.btnA2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnA2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnA2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnA2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnA2.Name = "btnA2";
             this.btnA2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnA2.Size = new System.Drawing.Size(128, 32);
+            this.btnA2.Size = new System.Drawing.Size(148, 32);
             this.btnA2.Text = "A2";
             this.btnA2.ToolTipText = "A2 - vybrané transakcie (daň platí príjemca)";
             this.btnA2.Click += new System.EventHandler(this.btnA2_Click);
@@ -179,16 +182,15 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // toolStripLabelB
             // 
             this.toolStripLabelB.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripLabelB.ForeColor = System.Drawing.Color.DarkGray;
             this.toolStripLabelB.Name = "toolStripLabelB";
-            this.toolStripLabelB.Size = new System.Drawing.Size(128, 16);
+            this.toolStripLabelB.Size = new System.Drawing.Size(149, 16);
             this.toolStripLabelB.Text = "B";
-            this.toolStripLabelB.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // btnB1
             // 
@@ -199,9 +201,10 @@
             this.btnB1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnB1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnB1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnB1.Name = "btnB1";
             this.btnB1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnB1.Size = new System.Drawing.Size(128, 32);
+            this.btnB1.Size = new System.Drawing.Size(148, 32);
             this.btnB1.Text = "B1";
             this.btnB1.ToolTipText = "B1 - prijaté faktúry (daň v tuzemsku)";
             this.btnB1.Click += new System.EventHandler(this.btnB1_Click);
@@ -215,9 +218,10 @@
             this.btnB2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnB2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnB2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnB2.Name = "btnB2";
             this.btnB2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnB2.Size = new System.Drawing.Size(128, 32);
+            this.btnB2.Size = new System.Drawing.Size(148, 32);
             this.btnB2.Text = "B2";
             this.btnB2.ToolTipText = "B2 - prijaté faktúry (daň platí dodávateľ)";
             this.btnB2.Click += new System.EventHandler(this.btnB2_Click);
@@ -231,9 +235,10 @@
             this.btnB3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnB3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnB3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB3.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnB3.Name = "btnB3";
             this.btnB3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnB3.Size = new System.Drawing.Size(128, 32);
+            this.btnB3.Size = new System.Drawing.Size(148, 32);
             this.btnB3.Text = "B3";
             this.btnB3.ToolTipText = "B3 - celkové sumy základov dane z prijatých zjednodušených faktúr";
             this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
@@ -241,16 +246,15 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
             // 
             // toolStripLabelC
             // 
             this.toolStripLabelC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripLabelC.ForeColor = System.Drawing.Color.DarkGray;
             this.toolStripLabelC.Name = "toolStripLabelC";
-            this.toolStripLabelC.Size = new System.Drawing.Size(128, 16);
+            this.toolStripLabelC.Size = new System.Drawing.Size(149, 16);
             this.toolStripLabelC.Text = "C";
-            this.toolStripLabelC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnC1
             // 
@@ -261,9 +265,10 @@
             this.btnC1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnC1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnC1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnC1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnC1.Name = "btnC1";
             this.btnC1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnC1.Size = new System.Drawing.Size(128, 32);
+            this.btnC1.Size = new System.Drawing.Size(148, 32);
             this.btnC1.Text = "C1";
             this.btnC1.ToolTipText = "C1 - opravné faktúry k vystaveným faktúram (okrem ERP)";
             this.btnC1.Click += new System.EventHandler(this.btnC1_Click);
@@ -277,9 +282,10 @@
             this.btnC2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnC2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnC2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnC2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnC2.Name = "btnC2";
             this.btnC2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnC2.Size = new System.Drawing.Size(128, 32);
+            this.btnC2.Size = new System.Drawing.Size(148, 32);
             this.btnC2.Text = "C2";
             this.btnC2.ToolTipText = "C2 - opravné faktúry k prijatým faktúram";
             this.btnC2.Click += new System.EventHandler(this.btnC2_Click);
@@ -287,16 +293,15 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
             // toolStripLabelD
             // 
             this.toolStripLabelD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolStripLabelD.ForeColor = System.Drawing.Color.DarkGray;
             this.toolStripLabelD.Name = "toolStripLabelD";
-            this.toolStripLabelD.Size = new System.Drawing.Size(128, 16);
+            this.toolStripLabelD.Size = new System.Drawing.Size(149, 16);
             this.toolStripLabelD.Text = "D";
-            this.toolStripLabelD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnD1
             // 
@@ -307,9 +312,10 @@
             this.btnD1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnD1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnD1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnD1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnD1.Name = "btnD1";
             this.btnD1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnD1.Size = new System.Drawing.Size(128, 32);
+            this.btnD1.Size = new System.Drawing.Size(148, 32);
             this.btnD1.Text = "D1";
             this.btnD1.ToolTipText = "D1 - sumár elektronickej registračnej pokladnice (ERP)";
             this.btnD1.Click += new System.EventHandler(this.btnD1_Click);
@@ -323,9 +329,10 @@
             this.btnD2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnD2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnD2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnD2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnD2.Name = "btnD2";
             this.btnD2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnD2.Size = new System.Drawing.Size(128, 32);
+            this.btnD2.Size = new System.Drawing.Size(148, 32);
             this.btnD2.Text = "D2";
             this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
             this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
@@ -341,6 +348,7 @@
             this.tableLayoutPanel1.Controls.Add(this.menuXml, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.menuOps, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelContent, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.toolStripCorner, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 65);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -552,6 +560,19 @@
             this.lblHeader.Text = "AVAT";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // toolStripCorner
+            // 
+            this.toolStripCorner.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripCorner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripCorner.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripCorner.Location = new System.Drawing.Point(0, 0);
+            this.toolStripCorner.Name = "toolStripCorner";
+            this.toolStripCorner.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStripCorner.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStripCorner.Size = new System.Drawing.Size(150, 45);
+            this.toolStripCorner.TabIndex = 5;
+            this.toolStripCorner.Text = "toolStrip1";
+            // 
             // gridData
             // 
             this.gridData.AllowUserToOrderColumns = true;
@@ -619,6 +640,7 @@
             this.menuXml.ResumeLayout(false);
             this.menuXml.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.menuOps.ResumeLayout(false);
             this.menuOps.PerformLayout();
             this.panelContent.ResumeLayout(false);
@@ -667,5 +689,6 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblHeader2;
+        private System.Windows.Forms.ToolStrip toolStripCorner;
     }
 }

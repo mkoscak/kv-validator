@@ -44,6 +44,7 @@ namespace Avat.Forms
         {
             this.menuXml.Renderer = new ToolRenderer();
             this.menuOps.Renderer = new OpsToolRenderer();
+            this.toolStripCorner.Renderer = new ToolRenderer();
 
             this.btnIdentification.PerformClick();
             UpdateButtonTexts();

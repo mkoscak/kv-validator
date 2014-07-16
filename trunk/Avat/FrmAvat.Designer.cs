@@ -125,8 +125,8 @@
             this.btnIdentification.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnIdentification.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnIdentification.Name = "btnIdentification";
-            this.btnIdentification.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.btnIdentification.Size = new System.Drawing.Size(148, 31);
+            this.btnIdentification.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnIdentification.Size = new System.Drawing.Size(148, 35);
             this.btnIdentification.Text = "Identifikácia";
             this.btnIdentification.Click += new System.EventHandler(this.btnIdentification_Click);
             // 
@@ -156,8 +156,8 @@
             this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnA1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnA1.Name = "btnA1";
-            this.btnA1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnA1.Size = new System.Drawing.Size(148, 32);
+            this.btnA1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnA1.Size = new System.Drawing.Size(148, 33);
             this.btnA1.Text = "A1 (9)";
             this.btnA1.ToolTipText = "A1 - Štandardné odberateľské faktúry (tuzemské)";
             this.btnA1.Click += new System.EventHandler(this.btnA1_Click);
@@ -173,7 +173,7 @@
             this.btnA2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnA2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnA2.Name = "btnA2";
-            this.btnA2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.btnA2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.btnA2.Size = new System.Drawing.Size(148, 32);
             this.btnA2.Text = "A2";
             this.btnA2.ToolTipText = "A2 - vybrané transakcie (daň platí príjemca)";
@@ -203,8 +203,8 @@
             this.btnB1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnB1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnB1.Name = "btnB1";
-            this.btnB1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnB1.Size = new System.Drawing.Size(148, 32);
+            this.btnB1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnB1.Size = new System.Drawing.Size(148, 33);
             this.btnB1.Text = "B1";
             this.btnB1.ToolTipText = "B1 - prijaté faktúry (daň v tuzemsku)";
             this.btnB1.Click += new System.EventHandler(this.btnB1_Click);
@@ -220,8 +220,8 @@
             this.btnB2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnB2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnB2.Name = "btnB2";
-            this.btnB2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnB2.Size = new System.Drawing.Size(148, 32);
+            this.btnB2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnB2.Size = new System.Drawing.Size(148, 33);
             this.btnB2.Text = "B2";
             this.btnB2.ToolTipText = "B2 - prijaté faktúry (daň platí dodávateľ)";
             this.btnB2.Click += new System.EventHandler(this.btnB2_Click);
@@ -237,8 +237,8 @@
             this.btnB3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnB3.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnB3.Name = "btnB3";
-            this.btnB3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnB3.Size = new System.Drawing.Size(148, 32);
+            this.btnB3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnB3.Size = new System.Drawing.Size(148, 33);
             this.btnB3.Text = "B3";
             this.btnB3.ToolTipText = "B3 - celkové sumy základov dane z prijatých zjednodušených faktúr";
             this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
@@ -267,8 +267,8 @@
             this.btnC1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnC1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnC1.Name = "btnC1";
-            this.btnC1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnC1.Size = new System.Drawing.Size(148, 32);
+            this.btnC1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnC1.Size = new System.Drawing.Size(148, 33);
             this.btnC1.Text = "C1";
             this.btnC1.ToolTipText = "C1 - opravné faktúry k vystaveným faktúram (okrem ERP)";
             this.btnC1.Click += new System.EventHandler(this.btnC1_Click);
@@ -284,8 +284,8 @@
             this.btnC2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnC2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnC2.Name = "btnC2";
-            this.btnC2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnC2.Size = new System.Drawing.Size(148, 32);
+            this.btnC2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnC2.Size = new System.Drawing.Size(148, 33);
             this.btnC2.Text = "C2";
             this.btnC2.ToolTipText = "C2 - opravné faktúry k prijatým faktúram";
             this.btnC2.Click += new System.EventHandler(this.btnC2_Click);
@@ -314,8 +314,8 @@
             this.btnD1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnD1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnD1.Name = "btnD1";
-            this.btnD1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnD1.Size = new System.Drawing.Size(148, 32);
+            this.btnD1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnD1.Size = new System.Drawing.Size(148, 33);
             this.btnD1.Text = "D1";
             this.btnD1.ToolTipText = "D1 - sumár elektronickej registračnej pokladnice (ERP)";
             this.btnD1.Click += new System.EventHandler(this.btnD1_Click);
@@ -331,8 +331,8 @@
             this.btnD2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnD2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
             this.btnD2.Name = "btnD2";
-            this.btnD2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnD2.Size = new System.Drawing.Size(148, 32);
+            this.btnD2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnD2.Size = new System.Drawing.Size(148, 33);
             this.btnD2.Text = "D2";
             this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
             this.btnD2.Click += new System.EventHandler(this.btnD2_Click);

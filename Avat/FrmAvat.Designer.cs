@@ -105,11 +105,11 @@
             this.btnD1,
             this.btnD2});
             this.menuXml.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuXml.Location = new System.Drawing.Point(10, 48);
+            this.menuXml.Location = new System.Drawing.Point(10, 55);
             this.menuXml.Margin = new System.Windows.Forms.Padding(10);
             this.menuXml.Name = "menuXml";
             this.menuXml.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuXml.Size = new System.Drawing.Size(130, 480);
+            this.menuXml.Size = new System.Drawing.Size(130, 473);
             this.menuXml.TabIndex = 1;
             this.menuXml.Text = "toolStrip1";
             // 
@@ -344,9 +344,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 65);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -367,9 +366,9 @@
             this.btnOtherOps});
             this.menuOps.Location = new System.Drawing.Point(150, 0);
             this.menuOps.Name = "menuOps";
-            this.menuOps.Padding = new System.Windows.Forms.Padding(0);
+            this.menuOps.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.menuOps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuOps.Size = new System.Drawing.Size(840, 38);
+            this.menuOps.Size = new System.Drawing.Size(842, 45);
             this.menuOps.TabIndex = 2;
             this.menuOps.Text = "toolStrip1";
             // 
@@ -382,8 +381,9 @@
             this.btnReadXml.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReadXml.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnReadXml.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReadXml.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.btnReadXml.Name = "btnReadXml";
-            this.btnReadXml.Size = new System.Drawing.Size(88, 35);
+            this.btnReadXml.Size = new System.Drawing.Size(88, 34);
             this.btnReadXml.Text = "Načítať";
             this.btnReadXml.Click += new System.EventHandler(this.btnReadXml_Click);
             // 
@@ -396,8 +396,9 @@
             this.btnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheckAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCheckAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCheckAll.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
             this.btnCheckAll.Name = "btnCheckAll";
-            this.btnCheckAll.Size = new System.Drawing.Size(116, 35);
+            this.btnCheckAll.Size = new System.Drawing.Size(116, 34);
             this.btnCheckAll.Text = "Skontrolovať";
             this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
             // 
@@ -410,8 +411,9 @@
             this.btnSaveXml.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveXml.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnSaveXml.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSaveXml.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
             this.btnSaveXml.Name = "btnSaveXml";
-            this.btnSaveXml.Size = new System.Drawing.Size(72, 35);
+            this.btnSaveXml.Size = new System.Drawing.Size(72, 34);
             this.btnSaveXml.Text = "Uložiť";
             this.btnSaveXml.Click += new System.EventHandler(this.btnSaveXml_Click);
             // 
@@ -431,12 +433,14 @@
             this.btnOtherOps.Image = ((System.Drawing.Image)(resources.GetObject("btnOtherOps.Image")));
             this.btnOtherOps.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnOtherOps.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOtherOps.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
             this.btnOtherOps.Name = "btnOtherOps";
-            this.btnOtherOps.Size = new System.Drawing.Size(140, 35);
+            this.btnOtherOps.Size = new System.Drawing.Size(140, 34);
             this.btnOtherOps.Text = "Ďalšie operácie";
             // 
             // btnNewAvat
             // 
+            this.btnNewAvat.ForeColor = System.Drawing.Color.DimGray;
             this.btnNewAvat.Name = "btnNewAvat";
             this.btnNewAvat.Size = new System.Drawing.Size(232, 22);
             this.btnNewAvat.Text = "Nový výkaz";
@@ -449,6 +453,7 @@
             // 
             // btnImportBlackList
             // 
+            this.btnImportBlackList.ForeColor = System.Drawing.Color.DimGray;
             this.btnImportBlackList.Name = "btnImportBlackList";
             this.btnImportBlackList.Size = new System.Drawing.Size(232, 22);
             this.btnImportBlackList.Text = "Import black-list";
@@ -456,6 +461,7 @@
             // 
             // btnImportVatPayers
             // 
+            this.btnImportVatPayers.ForeColor = System.Drawing.Color.DimGray;
             this.btnImportVatPayers.Name = "btnImportVatPayers";
             this.btnImportVatPayers.Size = new System.Drawing.Size(232, 22);
             this.btnImportVatPayers.Text = "Import platcov";
@@ -468,6 +474,7 @@
             // 
             // btnExportToExcel
             // 
+            this.btnExportToExcel.ForeColor = System.Drawing.Color.DimGray;
             this.btnExportToExcel.Name = "btnExportToExcel";
             this.btnExportToExcel.Size = new System.Drawing.Size(232, 22);
             this.btnExportToExcel.Text = "Export výkazu do excelu";
@@ -482,12 +489,12 @@
             this.panelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.panelContent.Controls.Add(this.lblTitle, 0, 0);
             this.panelContent.Controls.Add(this.gridData, 0, 1);
-            this.panelContent.Location = new System.Drawing.Point(153, 41);
+            this.panelContent.Location = new System.Drawing.Point(153, 48);
             this.panelContent.Name = "panelContent";
             this.panelContent.RowCount = 2;
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelContent.Size = new System.Drawing.Size(834, 494);
+            this.panelContent.Size = new System.Drawing.Size(836, 487);
             this.panelContent.TabIndex = 4;
             // 
             // lblTitle
@@ -501,7 +508,7 @@
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(834, 49);
+            this.lblTitle.Size = new System.Drawing.Size(836, 49);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "A1 - Štandardné odberateľské faktúry (tuzemské)";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -591,7 +598,7 @@
             this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridData.RowHeadersWidth = 30;
             this.gridData.RowTemplate.Height = 25;
-            this.gridData.Size = new System.Drawing.Size(832, 443);
+            this.gridData.Size = new System.Drawing.Size(834, 436);
             this.gridData.TabIndex = 6;
             this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
             // 

@@ -80,8 +80,12 @@ namespace Avat.Components
                 SetProblems(txtCity, probs);
         }
 
+        internal bool HasProblems { get; set; }
+
         private void SetProblems(Control ctrl, List<IValidationItemResult> probs)
         {
+            HasProblems = true;
+
             if (probs.Any(i => i.ValidationResultState == ResultState.OkWithWarning))
                 ctrl.BackColor = Color.Orange;
             else

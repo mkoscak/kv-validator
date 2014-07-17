@@ -34,26 +34,28 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuXml = new System.Windows.Forms.ToolStrip();
-            this.btnIdentification = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabelA = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.menuOps = new System.Windows.Forms.ToolStrip();
+            this.panelContent = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.toolStripCorner = new System.Windows.Forms.ToolStrip();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.lblHeader2 = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
+            this.btnIdentification = new System.Windows.Forms.ToolStripButton();
             this.btnA1 = new System.Windows.Forms.ToolStripButton();
             this.btnA2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabelB = new System.Windows.Forms.ToolStripLabel();
             this.btnB1 = new System.Windows.Forms.ToolStripButton();
             this.btnB2 = new System.Windows.Forms.ToolStripButton();
             this.btnB3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabelC = new System.Windows.Forms.ToolStripLabel();
             this.btnC1 = new System.Windows.Forms.ToolStripButton();
             this.btnC2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabelD = new System.Windows.Forms.ToolStripLabel();
             this.btnD1 = new System.Windows.Forms.ToolStripButton();
             this.btnD2 = new System.Windows.Forms.ToolStripButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.menuOps = new System.Windows.Forms.ToolStrip();
             this.btnReadXml = new System.Windows.Forms.ToolStripButton();
             this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
             this.btnSaveXml = new System.Windows.Forms.ToolStripButton();
@@ -64,12 +66,6 @@
             this.btnImportVatPayers = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelContent = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.lblHeader2 = new System.Windows.Forms.Label();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.toolStripCorner = new System.Windows.Forms.ToolStrip();
             this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -89,20 +85,16 @@
             this.menuXml.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnIdentification,
             this.toolStripSeparator1,
-            this.toolStripLabelA,
             this.btnA1,
             this.btnA2,
             this.toolStripSeparator2,
-            this.toolStripLabelB,
             this.btnB1,
             this.btnB2,
             this.btnB3,
             this.toolStripSeparator3,
-            this.toolStripLabelC,
             this.btnC1,
             this.btnC2,
             this.toolStripSeparator4,
-            this.toolStripLabelD,
             this.btnD1,
             this.btnD2});
             this.menuXml.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
@@ -114,228 +106,25 @@
             this.menuXml.TabIndex = 1;
             this.menuXml.Text = "toolStrip1";
             // 
-            // btnIdentification
-            // 
-            this.btnIdentification.CheckOnClick = true;
-            this.btnIdentification.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIdentification.ForeColor = System.Drawing.Color.Gray;
-            this.btnIdentification.Image = ((System.Drawing.Image)(resources.GetObject("btnIdentification.Image")));
-            this.btnIdentification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIdentification.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnIdentification.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnIdentification.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnIdentification.Name = "btnIdentification";
-            this.btnIdentification.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnIdentification.Size = new System.Drawing.Size(148, 35);
-            this.btnIdentification.Text = "Identifikácia";
-            this.btnIdentification.Click += new System.EventHandler(this.btnIdentification_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripLabelA
-            // 
-            this.toolStripLabelA.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripLabelA.ForeColor = System.Drawing.Color.DarkGray;
-            this.toolStripLabelA.Name = "toolStripLabelA";
-            this.toolStripLabelA.Size = new System.Drawing.Size(149, 16);
-            this.toolStripLabelA.Text = "A";
-            // 
-            // btnA1
-            // 
-            this.btnA1.Checked = true;
-            this.btnA1.CheckOnClick = true;
-            this.btnA1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.btnA1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnA1.ForeColor = System.Drawing.Color.Gray;
-            this.btnA1.Image = ((System.Drawing.Image)(resources.GetObject("btnA1.Image")));
-            this.btnA1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnA1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnA1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnA1.Name = "btnA1";
-            this.btnA1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnA1.Size = new System.Drawing.Size(148, 33);
-            this.btnA1.Text = "A1 (9)";
-            this.btnA1.ToolTipText = "A1 - Štandardné odberateľské faktúry (tuzemské)";
-            this.btnA1.Click += new System.EventHandler(this.btnA1_Click);
-            // 
-            // btnA2
-            // 
-            this.btnA2.CheckOnClick = true;
-            this.btnA2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnA2.ForeColor = System.Drawing.Color.Gray;
-            this.btnA2.Image = ((System.Drawing.Image)(resources.GetObject("btnA2.Image")));
-            this.btnA2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnA2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnA2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnA2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnA2.Name = "btnA2";
-            this.btnA2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnA2.Size = new System.Drawing.Size(148, 32);
-            this.btnA2.Text = "A2";
-            this.btnA2.ToolTipText = "A2 - vybrané transakcie (daň platí príjemca)";
-            this.btnA2.Click += new System.EventHandler(this.btnA2_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
-            // toolStripLabelB
-            // 
-            this.toolStripLabelB.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripLabelB.ForeColor = System.Drawing.Color.DarkGray;
-            this.toolStripLabelB.Name = "toolStripLabelB";
-            this.toolStripLabelB.Size = new System.Drawing.Size(149, 16);
-            this.toolStripLabelB.Text = "B";
-            // 
-            // btnB1
-            // 
-            this.btnB1.CheckOnClick = true;
-            this.btnB1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnB1.ForeColor = System.Drawing.Color.Gray;
-            this.btnB1.Image = ((System.Drawing.Image)(resources.GetObject("btnB1.Image")));
-            this.btnB1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnB1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnB1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnB1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnB1.Name = "btnB1";
-            this.btnB1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnB1.Size = new System.Drawing.Size(148, 33);
-            this.btnB1.Text = "B1";
-            this.btnB1.ToolTipText = "B1 - prijaté faktúry (daň v tuzemsku)";
-            this.btnB1.Click += new System.EventHandler(this.btnB1_Click);
-            // 
-            // btnB2
-            // 
-            this.btnB2.CheckOnClick = true;
-            this.btnB2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnB2.ForeColor = System.Drawing.Color.Gray;
-            this.btnB2.Image = ((System.Drawing.Image)(resources.GetObject("btnB2.Image")));
-            this.btnB2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnB2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnB2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnB2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnB2.Name = "btnB2";
-            this.btnB2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnB2.Size = new System.Drawing.Size(148, 33);
-            this.btnB2.Text = "B2";
-            this.btnB2.ToolTipText = "B2 - prijaté faktúry (daň platí dodávateľ)";
-            this.btnB2.Click += new System.EventHandler(this.btnB2_Click);
-            // 
-            // btnB3
-            // 
-            this.btnB3.CheckOnClick = true;
-            this.btnB3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnB3.ForeColor = System.Drawing.Color.Gray;
-            this.btnB3.Image = ((System.Drawing.Image)(resources.GetObject("btnB3.Image")));
-            this.btnB3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnB3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnB3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnB3.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnB3.Name = "btnB3";
-            this.btnB3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnB3.Size = new System.Drawing.Size(148, 33);
-            this.btnB3.Text = "B3";
-            this.btnB3.ToolTipText = "B3 - celkové sumy základov dane z prijatých zjednodušených faktúr";
-            this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
             // 
-            // toolStripLabelC
-            // 
-            this.toolStripLabelC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripLabelC.ForeColor = System.Drawing.Color.DarkGray;
-            this.toolStripLabelC.Name = "toolStripLabelC";
-            this.toolStripLabelC.Size = new System.Drawing.Size(149, 16);
-            this.toolStripLabelC.Text = "C";
-            // 
-            // btnC1
-            // 
-            this.btnC1.CheckOnClick = true;
-            this.btnC1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnC1.ForeColor = System.Drawing.Color.Gray;
-            this.btnC1.Image = ((System.Drawing.Image)(resources.GetObject("btnC1.Image")));
-            this.btnC1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnC1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnC1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnC1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnC1.Name = "btnC1";
-            this.btnC1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnC1.Size = new System.Drawing.Size(148, 33);
-            this.btnC1.Text = "C1";
-            this.btnC1.ToolTipText = "C1 - opravné faktúry k vystaveným faktúram (okrem ERP)";
-            this.btnC1.Click += new System.EventHandler(this.btnC1_Click);
-            // 
-            // btnC2
-            // 
-            this.btnC2.CheckOnClick = true;
-            this.btnC2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnC2.ForeColor = System.Drawing.Color.Gray;
-            this.btnC2.Image = ((System.Drawing.Image)(resources.GetObject("btnC2.Image")));
-            this.btnC2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnC2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnC2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnC2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnC2.Name = "btnC2";
-            this.btnC2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnC2.Size = new System.Drawing.Size(148, 33);
-            this.btnC2.Text = "C2";
-            this.btnC2.ToolTipText = "C2 - opravné faktúry k prijatým faktúram";
-            this.btnC2.Click += new System.EventHandler(this.btnC2_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripLabelD
-            // 
-            this.toolStripLabelD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripLabelD.ForeColor = System.Drawing.Color.DarkGray;
-            this.toolStripLabelD.Name = "toolStripLabelD";
-            this.toolStripLabelD.Size = new System.Drawing.Size(149, 16);
-            this.toolStripLabelD.Text = "D";
-            // 
-            // btnD1
-            // 
-            this.btnD1.CheckOnClick = true;
-            this.btnD1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnD1.ForeColor = System.Drawing.Color.Gray;
-            this.btnD1.Image = ((System.Drawing.Image)(resources.GetObject("btnD1.Image")));
-            this.btnD1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnD1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnD1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnD1.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnD1.Name = "btnD1";
-            this.btnD1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnD1.Size = new System.Drawing.Size(148, 33);
-            this.btnD1.Text = "D1";
-            this.btnD1.ToolTipText = "D1 - sumár elektronickej registračnej pokladnice (ERP)";
-            this.btnD1.Click += new System.EventHandler(this.btnD1_Click);
-            // 
-            // btnD2
-            // 
-            this.btnD2.CheckOnClick = true;
-            this.btnD2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnD2.ForeColor = System.Drawing.Color.Gray;
-            this.btnD2.Image = ((System.Drawing.Image)(resources.GetObject("btnD2.Image")));
-            this.btnD2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnD2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnD2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnD2.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
-            this.btnD2.Name = "btnD2";
-            this.btnD2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.btnD2.Size = new System.Drawing.Size(148, 33);
-            this.btnD2.Text = "D2";
-            this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
-            this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -363,7 +152,7 @@
             // menuOps
             // 
             this.menuOps.AutoSize = false;
-            this.menuOps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            this.menuOps.BackColor = System.Drawing.Color.GhostWhite;
             this.menuOps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuOps.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menuOps.ImageScalingSize = new System.Drawing.Size(32, 32);
@@ -379,114 +168,6 @@
             this.menuOps.Size = new System.Drawing.Size(842, 45);
             this.menuOps.TabIndex = 2;
             this.menuOps.Text = "toolStrip1";
-            // 
-            // btnReadXml
-            // 
-            this.btnReadXml.BackColor = System.Drawing.Color.Transparent;
-            this.btnReadXml.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReadXml.ForeColor = System.Drawing.Color.Gray;
-            this.btnReadXml.Image = ((System.Drawing.Image)(resources.GetObject("btnReadXml.Image")));
-            this.btnReadXml.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReadXml.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnReadXml.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnReadXml.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
-            this.btnReadXml.Name = "btnReadXml";
-            this.btnReadXml.Size = new System.Drawing.Size(88, 34);
-            this.btnReadXml.Text = "Načítať";
-            this.btnReadXml.Click += new System.EventHandler(this.btnReadXml_Click);
-            // 
-            // btnCheckAll
-            // 
-            this.btnCheckAll.BackColor = System.Drawing.Color.Transparent;
-            this.btnCheckAll.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCheckAll.ForeColor = System.Drawing.Color.Gray;
-            this.btnCheckAll.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckAll.Image")));
-            this.btnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnCheckAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCheckAll.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
-            this.btnCheckAll.Name = "btnCheckAll";
-            this.btnCheckAll.Size = new System.Drawing.Size(116, 34);
-            this.btnCheckAll.Text = "Skontrolovať";
-            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
-            // 
-            // btnSaveXml
-            // 
-            this.btnSaveXml.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaveXml.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSaveXml.ForeColor = System.Drawing.Color.Gray;
-            this.btnSaveXml.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveXml.Image")));
-            this.btnSaveXml.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveXml.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSaveXml.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSaveXml.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
-            this.btnSaveXml.Name = "btnSaveXml";
-            this.btnSaveXml.Size = new System.Drawing.Size(72, 34);
-            this.btnSaveXml.Text = "Uložiť";
-            this.btnSaveXml.Click += new System.EventHandler(this.btnSaveXml_Click);
-            // 
-            // btnOtherOps
-            // 
-            this.btnOtherOps.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnOtherOps.BackColor = System.Drawing.Color.Transparent;
-            this.btnOtherOps.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNewAvat,
-            this.toolStripSeparator5,
-            this.btnImportBlackList,
-            this.btnImportVatPayers,
-            this.toolStripSeparator6,
-            this.btnExportToExcel});
-            this.btnOtherOps.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnOtherOps.ForeColor = System.Drawing.Color.Gray;
-            this.btnOtherOps.Image = ((System.Drawing.Image)(resources.GetObject("btnOtherOps.Image")));
-            this.btnOtherOps.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnOtherOps.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnOtherOps.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
-            this.btnOtherOps.Name = "btnOtherOps";
-            this.btnOtherOps.Size = new System.Drawing.Size(140, 34);
-            this.btnOtherOps.Text = "Ďalšie operácie";
-            // 
-            // btnNewAvat
-            // 
-            this.btnNewAvat.ForeColor = System.Drawing.Color.DimGray;
-            this.btnNewAvat.Name = "btnNewAvat";
-            this.btnNewAvat.Size = new System.Drawing.Size(232, 22);
-            this.btnNewAvat.Text = "Nový výkaz";
-            this.btnNewAvat.Click += new System.EventHandler(this.btnNewAvat_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(229, 6);
-            // 
-            // btnImportBlackList
-            // 
-            this.btnImportBlackList.ForeColor = System.Drawing.Color.DimGray;
-            this.btnImportBlackList.Name = "btnImportBlackList";
-            this.btnImportBlackList.Size = new System.Drawing.Size(232, 22);
-            this.btnImportBlackList.Text = "Import black-list";
-            this.btnImportBlackList.Click += new System.EventHandler(this.btnImportBlackList_Click);
-            // 
-            // btnImportVatPayers
-            // 
-            this.btnImportVatPayers.ForeColor = System.Drawing.Color.DimGray;
-            this.btnImportVatPayers.Name = "btnImportVatPayers";
-            this.btnImportVatPayers.Size = new System.Drawing.Size(232, 22);
-            this.btnImportVatPayers.Text = "Import platcov";
-            this.btnImportVatPayers.Click += new System.EventHandler(this.btnImportVatPayers_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(229, 6);
-            // 
-            // btnExportToExcel
-            // 
-            this.btnExportToExcel.ForeColor = System.Drawing.Color.DimGray;
-            this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(232, 22);
-            this.btnExportToExcel.Text = "Export výkazu do excelu";
-            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // panelContent
             // 
@@ -520,6 +201,19 @@
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "A1 - Štandardné odberateľské faktúry (tuzemské)";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // toolStripCorner
+            // 
+            this.toolStripCorner.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripCorner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripCorner.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripCorner.Location = new System.Drawing.Point(0, 0);
+            this.toolStripCorner.Name = "toolStripCorner";
+            this.toolStripCorner.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStripCorner.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStripCorner.Size = new System.Drawing.Size(150, 45);
+            this.toolStripCorner.TabIndex = 5;
+            this.toolStripCorner.Text = "toolStrip1";
             // 
             // panelHeader
             // 
@@ -560,18 +254,287 @@
             this.lblHeader.Text = "AVAT";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // toolStripCorner
+            // btnIdentification
             // 
-            this.toolStripCorner.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripCorner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripCorner.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripCorner.Location = new System.Drawing.Point(0, 0);
-            this.toolStripCorner.Name = "toolStripCorner";
-            this.toolStripCorner.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStripCorner.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStripCorner.Size = new System.Drawing.Size(150, 45);
-            this.toolStripCorner.TabIndex = 5;
-            this.toolStripCorner.Text = "toolStrip1";
+            this.btnIdentification.CheckOnClick = true;
+            this.btnIdentification.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIdentification.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnIdentification.Image = global::Avat.Properties.Resources.identdef;
+            this.btnIdentification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIdentification.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnIdentification.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnIdentification.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnIdentification.Name = "btnIdentification";
+            this.btnIdentification.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnIdentification.Size = new System.Drawing.Size(129, 35);
+            this.btnIdentification.Text = "Identifikácia";
+            this.btnIdentification.Click += new System.EventHandler(this.btnIdentification_Click);
+            // 
+            // btnA1
+            // 
+            this.btnA1.Checked = true;
+            this.btnA1.CheckOnClick = true;
+            this.btnA1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.btnA1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnA1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnA1.Image = global::Avat.Properties.Resources.okdef;
+            this.btnA1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnA1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnA1.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnA1.Name = "btnA1";
+            this.btnA1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnA1.Size = new System.Drawing.Size(129, 40);
+            this.btnA1.Text = "A1 (9)";
+            this.btnA1.ToolTipText = "A1 - Štandardné odberateľské faktúry (tuzemské)";
+            this.btnA1.Click += new System.EventHandler(this.btnA1_Click);
+            // 
+            // btnA2
+            // 
+            this.btnA2.CheckOnClick = true;
+            this.btnA2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnA2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnA2.Image = ((System.Drawing.Image)(resources.GetObject("btnA2.Image")));
+            this.btnA2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnA2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnA2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnA2.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnA2.Name = "btnA2";
+            this.btnA2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnA2.Size = new System.Drawing.Size(129, 40);
+            this.btnA2.Text = "A2";
+            this.btnA2.ToolTipText = "A2 - vybrané transakcie (daň platí príjemca)";
+            this.btnA2.Click += new System.EventHandler(this.btnA2_Click);
+            // 
+            // btnB1
+            // 
+            this.btnB1.CheckOnClick = true;
+            this.btnB1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnB1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnB1.Image = ((System.Drawing.Image)(resources.GetObject("btnB1.Image")));
+            this.btnB1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnB1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnB1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB1.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnB1.Name = "btnB1";
+            this.btnB1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnB1.Size = new System.Drawing.Size(129, 40);
+            this.btnB1.Text = "B1";
+            this.btnB1.ToolTipText = "B1 - prijaté faktúry (daň v tuzemsku)";
+            this.btnB1.Click += new System.EventHandler(this.btnB1_Click);
+            // 
+            // btnB2
+            // 
+            this.btnB2.CheckOnClick = true;
+            this.btnB2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnB2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnB2.Image = ((System.Drawing.Image)(resources.GetObject("btnB2.Image")));
+            this.btnB2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnB2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnB2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB2.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnB2.Name = "btnB2";
+            this.btnB2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnB2.Size = new System.Drawing.Size(129, 40);
+            this.btnB2.Text = "B2";
+            this.btnB2.ToolTipText = "B2 - prijaté faktúry (daň platí dodávateľ)";
+            this.btnB2.Click += new System.EventHandler(this.btnB2_Click);
+            // 
+            // btnB3
+            // 
+            this.btnB3.CheckOnClick = true;
+            this.btnB3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnB3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnB3.Image = ((System.Drawing.Image)(resources.GetObject("btnB3.Image")));
+            this.btnB3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnB3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnB3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB3.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnB3.Name = "btnB3";
+            this.btnB3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnB3.Size = new System.Drawing.Size(129, 40);
+            this.btnB3.Text = "B3";
+            this.btnB3.ToolTipText = "B3 - celkové sumy základov dane z prijatých zjednodušených faktúr";
+            this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
+            // 
+            // btnC1
+            // 
+            this.btnC1.CheckOnClick = true;
+            this.btnC1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnC1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnC1.Image = ((System.Drawing.Image)(resources.GetObject("btnC1.Image")));
+            this.btnC1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnC1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnC1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnC1.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnC1.Name = "btnC1";
+            this.btnC1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnC1.Size = new System.Drawing.Size(129, 40);
+            this.btnC1.Text = "C1";
+            this.btnC1.ToolTipText = "C1 - opravné faktúry k vystaveným faktúram (okrem ERP)";
+            this.btnC1.Click += new System.EventHandler(this.btnC1_Click);
+            // 
+            // btnC2
+            // 
+            this.btnC2.CheckOnClick = true;
+            this.btnC2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnC2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnC2.Image = ((System.Drawing.Image)(resources.GetObject("btnC2.Image")));
+            this.btnC2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnC2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnC2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnC2.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnC2.Name = "btnC2";
+            this.btnC2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnC2.Size = new System.Drawing.Size(129, 40);
+            this.btnC2.Text = "C2";
+            this.btnC2.ToolTipText = "C2 - opravné faktúry k prijatým faktúram";
+            this.btnC2.Click += new System.EventHandler(this.btnC2_Click);
+            // 
+            // btnD1
+            // 
+            this.btnD1.CheckOnClick = true;
+            this.btnD1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnD1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnD1.Image = ((System.Drawing.Image)(resources.GetObject("btnD1.Image")));
+            this.btnD1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnD1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnD1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnD1.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnD1.Name = "btnD1";
+            this.btnD1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnD1.Size = new System.Drawing.Size(129, 40);
+            this.btnD1.Text = "D1";
+            this.btnD1.ToolTipText = "D1 - sumár elektronickej registračnej pokladnice (ERP)";
+            this.btnD1.Click += new System.EventHandler(this.btnD1_Click);
+            // 
+            // btnD2
+            // 
+            this.btnD2.CheckOnClick = true;
+            this.btnD2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnD2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnD2.Image = ((System.Drawing.Image)(resources.GetObject("btnD2.Image")));
+            this.btnD2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnD2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnD2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnD2.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnD2.Name = "btnD2";
+            this.btnD2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnD2.Size = new System.Drawing.Size(129, 40);
+            this.btnD2.Text = "D2";
+            this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
+            this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
+            // 
+            // btnReadXml
+            // 
+            this.btnReadXml.BackColor = System.Drawing.Color.Transparent;
+            this.btnReadXml.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnReadXml.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
+            this.btnReadXml.Image = ((System.Drawing.Image)(resources.GetObject("btnReadXml.Image")));
+            this.btnReadXml.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnReadXml.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReadXml.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.btnReadXml.Name = "btnReadXml";
+            this.btnReadXml.Size = new System.Drawing.Size(84, 34);
+            this.btnReadXml.Text = "Načítať";
+            this.btnReadXml.Click += new System.EventHandler(this.btnReadXml_Click);
+            // 
+            // btnCheckAll
+            // 
+            this.btnCheckAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnCheckAll.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCheckAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
+            this.btnCheckAll.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckAll.Image")));
+            this.btnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCheckAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCheckAll.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.btnCheckAll.Name = "btnCheckAll";
+            this.btnCheckAll.Size = new System.Drawing.Size(106, 34);
+            this.btnCheckAll.Text = "Skontrolovať";
+            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
+            // 
+            // btnSaveXml
+            // 
+            this.btnSaveXml.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveXml.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSaveXml.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
+            this.btnSaveXml.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveXml.Image")));
+            this.btnSaveXml.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveXml.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSaveXml.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSaveXml.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.btnSaveXml.Name = "btnSaveXml";
+            this.btnSaveXml.Size = new System.Drawing.Size(68, 34);
+            this.btnSaveXml.Text = "Uložiť";
+            this.btnSaveXml.Click += new System.EventHandler(this.btnSaveXml_Click);
+            // 
+            // btnOtherOps
+            // 
+            this.btnOtherOps.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnOtherOps.BackColor = System.Drawing.Color.Transparent;
+            this.btnOtherOps.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNewAvat,
+            this.toolStripSeparator5,
+            this.btnImportBlackList,
+            this.btnImportVatPayers,
+            this.toolStripSeparator6,
+            this.btnExportToExcel});
+            this.btnOtherOps.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtherOps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
+            this.btnOtherOps.Image = ((System.Drawing.Image)(resources.GetObject("btnOtherOps.Image")));
+            this.btnOtherOps.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnOtherOps.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOtherOps.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
+            this.btnOtherOps.Name = "btnOtherOps";
+            this.btnOtherOps.Size = new System.Drawing.Size(130, 34);
+            this.btnOtherOps.Text = "Ďalšie operácie";
+            // 
+            // btnNewAvat
+            // 
+            this.btnNewAvat.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewAvat.ForeColor = System.Drawing.Color.Black;
+            this.btnNewAvat.Name = "btnNewAvat";
+            this.btnNewAvat.Size = new System.Drawing.Size(218, 22);
+            this.btnNewAvat.Text = "Nový výkaz";
+            this.btnNewAvat.Click += new System.EventHandler(this.btnNewAvat_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(215, 6);
+            // 
+            // btnImportBlackList
+            // 
+            this.btnImportBlackList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportBlackList.ForeColor = System.Drawing.Color.Black;
+            this.btnImportBlackList.Name = "btnImportBlackList";
+            this.btnImportBlackList.Size = new System.Drawing.Size(218, 22);
+            this.btnImportBlackList.Text = "Import black-list";
+            this.btnImportBlackList.Click += new System.EventHandler(this.btnImportBlackList_Click);
+            // 
+            // btnImportVatPayers
+            // 
+            this.btnImportVatPayers.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportVatPayers.ForeColor = System.Drawing.Color.Black;
+            this.btnImportVatPayers.Name = "btnImportVatPayers";
+            this.btnImportVatPayers.Size = new System.Drawing.Size(218, 22);
+            this.btnImportVatPayers.Text = "Import platcov";
+            this.btnImportVatPayers.Click += new System.EventHandler(this.btnImportVatPayers_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(215, 6);
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportToExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(218, 22);
+            this.btnExportToExcel.Text = "Export výkazu do excelu";
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // gridData
             // 
@@ -665,10 +628,6 @@
         private System.Windows.Forms.ToolStripButton btnC1;
         private System.Windows.Forms.ToolStripButton btnC2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelA;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelB;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelC;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelD;
         private System.Windows.Forms.ToolStripButton btnD1;
         private System.Windows.Forms.ToolStripButton btnD2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

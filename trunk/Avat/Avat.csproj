@@ -101,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,6 +119,24 @@
       <Project>{6828A03F-A278-429C-94A9-99C77EC600E9}</Project>
       <Name>AvatValidator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\okdef2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\okno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\identdef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\identok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\identokno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\okdef.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

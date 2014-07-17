@@ -14,6 +14,7 @@ using System.Threading;
 using OfficeOpenXml;
 using System.IO;
 using Avat.Wrappers;
+using Avat.Properties;
 
 namespace Avat.Forms
 {
@@ -261,6 +262,9 @@ namespace Avat.Forms
                 if (string.IsNullOrEmpty(path))
                     return;
 
+                SetIcons(null);//def icons
+                lastValidationResult = null;
+
                 var p = new Progress(0, 100, "Načítanie vstupného súboru", "Načítavam..", ReadXmlProc, XmlRead, path, false, false);
                 p.SetErrorMessage("Načítanie vstupného súboru neprebehlo úspešne, kontaktujte administrátora!", "Načítanie vstupu", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
                 p.StartWorker();
@@ -367,7 +371,8 @@ namespace Avat.Forms
                 return;
 
             try
-            {                
+            {
+                identification.HasProblems = false;
                 var p = new Progress(0, 100, "Kontrola výkazu", "Validujem..", ValidationProc, ValidationDone, null, true, false);
                 p.SetErrorMessage("Kontrola výkazu neprebehla úspešne, nastala neočakávaná chyba!", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
                 p.StartWorker();
@@ -430,7 +435,53 @@ namespace Avat.Forms
                 ValidationFailed(lastValidationResult);
                 ShowIdentification();
                 identification.SetProblems(lastValidationResult);
+
+                SetIcons(lastValidationResult);
             }
+        }
+
+        private void SetIcons(IValidationResult lastValidationResult)
+        {
+            if (lastValidationResult == null)
+            {
+                btnIdentification.Image = Resources.identdef;
+                btnA1.Image = Resources.okdef;
+                btnA2.Image = Resources.okdef;
+                btnB1.Image = Resources.okdef;
+                btnB2.Image = Resources.okdef;
+                btnB3.Image = Resources.okdef;
+                btnC1.Image = Resources.okdef;
+                btnC2.Image = Resources.okdef;
+                btnD1.Image = Resources.okdef;
+                btnD2.Image = Resources.okdef;
+                return;
+            }
+
+            // identifikacia
+            if (identification.HasProblems)
+                btnIdentification.Image = Resources.identokno;
+            else
+                btnIdentification.Image = Resources.identok;
+
+            // polozky
+            bool prob = lastValidationResult.Any(r => r.ProblemObject is A1);
+            btnA1.Image = prob ? Resources.okno : Resources.okdef2;
+            prob = lastValidationResult.Any(r => r.ProblemObject is A2);
+            btnA2.Image = prob ? Resources.okno : Resources.okdef2;
+            prob = lastValidationResult.Any(r => r.ProblemObject is B1);
+            btnB1.Image = prob ? Resources.okno : Resources.okdef2;
+            prob = lastValidationResult.Any(r => r.ProblemObject is B2);
+            btnB2.Image = prob ? Resources.okno : Resources.okdef2;
+            prob = lastValidationResult.Any(r => r.ProblemObject is B3);
+            btnB3.Image = prob ? Resources.okno : Resources.okdef2;
+            prob = lastValidationResult.Any(r => r.ProblemObject is C1);
+            btnC1.Image = prob ? Resources.okno : Resources.okdef2;
+            prob = lastValidationResult.Any(r => r.ProblemObject is C2);
+            btnC2.Image = prob ? Resources.okno : Resources.okdef2;
+            prob = lastValidationResult.Any(r => r.ProblemObject is D1);
+            btnD1.Image = prob ? Resources.okno : Resources.okdef2;
+            prob = lastValidationResult.Any(r => r.ProblemObject is D2);
+            btnD2.Image = prob ? Resources.okno : Resources.okdef2;
         }
 
         private void ValidationFailed(IValidationResult lastValidationResult)

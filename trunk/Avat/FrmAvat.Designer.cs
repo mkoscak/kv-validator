@@ -34,28 +34,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuXml = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.menuOps = new System.Windows.Forms.ToolStrip();
-            this.panelContent = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.toolStripCorner = new System.Windows.Forms.ToolStrip();
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.lblHeader2 = new System.Windows.Forms.Label();
-            this.lblHeader = new System.Windows.Forms.Label();
             this.btnIdentification = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnA1 = new System.Windows.Forms.ToolStripButton();
             this.btnA2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnB1 = new System.Windows.Forms.ToolStripButton();
             this.btnB2 = new System.Windows.Forms.ToolStripButton();
             this.btnB3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnC1 = new System.Windows.Forms.ToolStripButton();
             this.btnC2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnD1 = new System.Windows.Forms.ToolStripButton();
             this.btnD2 = new System.Windows.Forms.ToolStripButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.menuOps = new System.Windows.Forms.ToolStrip();
             this.btnReadXml = new System.Windows.Forms.ToolStripButton();
             this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
             this.btnSaveXml = new System.Windows.Forms.ToolStripButton();
@@ -66,13 +60,19 @@
             this.btnImportVatPayers = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelContent = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.gridData = new Avat.Components.MyDoubleBufferedGrid();
+            this.toolStripCorner = new System.Windows.Forms.ToolStrip();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.lblHeader2 = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuOps.SuspendLayout();
             this.panelContent.SuspendLayout();
-            this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuXml
@@ -106,154 +106,6 @@
             this.menuXml.TabIndex = 1;
             this.menuXml.Text = "toolStrip1";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.menuXml, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.menuOps, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panelContent, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.toolStripCorner, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 65);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 538);
-            this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // menuOps
-            // 
-            this.menuOps.AutoSize = false;
-            this.menuOps.BackColor = System.Drawing.Color.GhostWhite;
-            this.menuOps.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuOps.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.menuOps.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.menuOps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnReadXml,
-            this.btnCheckAll,
-            this.btnSaveXml,
-            this.btnOtherOps});
-            this.menuOps.Location = new System.Drawing.Point(150, 0);
-            this.menuOps.Name = "menuOps";
-            this.menuOps.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.menuOps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuOps.Size = new System.Drawing.Size(842, 45);
-            this.menuOps.TabIndex = 2;
-            this.menuOps.Text = "toolStrip1";
-            // 
-            // panelContent
-            // 
-            this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelContent.ColumnCount = 1;
-            this.panelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelContent.Controls.Add(this.lblTitle, 0, 0);
-            this.panelContent.Controls.Add(this.gridData, 0, 1);
-            this.panelContent.Location = new System.Drawing.Point(153, 48);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.RowCount = 2;
-            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelContent.Size = new System.Drawing.Size(836, 487);
-            this.panelContent.TabIndex = 4;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTitle.BackColor = System.Drawing.Color.White;
-            this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(836, 49);
-            this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "A1 - Štandardné odberateľské faktúry (tuzemské)";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // toolStripCorner
-            // 
-            this.toolStripCorner.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripCorner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripCorner.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripCorner.Location = new System.Drawing.Point(0, 0);
-            this.toolStripCorner.Name = "toolStripCorner";
-            this.toolStripCorner.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStripCorner.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStripCorner.Size = new System.Drawing.Size(150, 45);
-            this.toolStripCorner.TabIndex = 5;
-            this.toolStripCorner.Text = "toolStrip1";
-            // 
-            // panelHeader
-            // 
-            this.panelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.panelHeader.Controls.Add(this.lblHeader2);
-            this.panelHeader.Controls.Add(this.lblHeader);
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(992, 65);
-            this.panelHeader.TabIndex = 3;
-            // 
-            // lblHeader2
-            // 
-            this.lblHeader2.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeader2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblHeader2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader2.ForeColor = System.Drawing.Color.White;
-            this.lblHeader2.Location = new System.Drawing.Point(139, 0);
-            this.lblHeader2.Name = "lblHeader2";
-            this.lblHeader2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lblHeader2.Size = new System.Drawing.Size(326, 65);
-            this.lblHeader2.TabIndex = 1;
-            this.lblHeader2.Text = "KONTROLNÝ VÝKAZ DPH 2014";
-            this.lblHeader2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeader.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblHeader.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.ForeColor = System.Drawing.Color.White;
-            this.lblHeader.Location = new System.Drawing.Point(0, 0);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(139, 65);
-            this.lblHeader.TabIndex = 0;
-            this.lblHeader.Text = "AVAT";
-            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnIdentification
             // 
             this.btnIdentification.CheckOnClick = true;
@@ -270,6 +122,11 @@
             this.btnIdentification.Text = "Identifikácia";
             this.btnIdentification.Click += new System.EventHandler(this.btnIdentification_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
             // btnA1
             // 
             this.btnA1.Checked = true;
@@ -277,7 +134,7 @@
             this.btnA1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.btnA1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnA1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnA1.Image = global::Avat.Properties.Resources.okdef;
+            this.btnA1.Image = ((System.Drawing.Image)(resources.GetObject("btnA1.Image")));
             this.btnA1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnA1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -305,6 +162,11 @@
             this.btnA2.Text = "A2";
             this.btnA2.ToolTipText = "A2 - vybrané transakcie (daň platí príjemca)";
             this.btnA2.Click += new System.EventHandler(this.btnA2_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // btnB1
             // 
@@ -357,6 +219,11 @@
             this.btnB3.ToolTipText = "B3 - celkové sumy základov dane z prijatých zjednodušených faktúr";
             this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            // 
             // btnC1
             // 
             this.btnC1.CheckOnClick = true;
@@ -391,6 +258,11 @@
             this.btnC2.ToolTipText = "C2 - opravné faktúry k prijatým faktúram";
             this.btnC2.Click += new System.EventHandler(this.btnC2_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            // 
             // btnD1
             // 
             this.btnD1.CheckOnClick = true;
@@ -424,6 +296,49 @@
             this.btnD2.Text = "D2";
             this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
             this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.menuXml, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.menuOps, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelContent, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.toolStripCorner, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 65);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 538);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // menuOps
+            // 
+            this.menuOps.AutoSize = false;
+            this.menuOps.BackColor = System.Drawing.Color.GhostWhite;
+            this.menuOps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuOps.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.menuOps.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menuOps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnReadXml,
+            this.btnCheckAll,
+            this.btnSaveXml,
+            this.btnOtherOps});
+            this.menuOps.Location = new System.Drawing.Point(150, 0);
+            this.menuOps.Name = "menuOps";
+            this.menuOps.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.menuOps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuOps.Size = new System.Drawing.Size(842, 45);
+            this.menuOps.TabIndex = 2;
+            this.menuOps.Text = "toolStrip1";
             // 
             // btnReadXml
             // 
@@ -536,6 +451,39 @@
             this.btnExportToExcel.Text = "Export výkazu do excelu";
             this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
+            // panelContent
+            // 
+            this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelContent.ColumnCount = 1;
+            this.panelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelContent.Controls.Add(this.lblTitle, 0, 0);
+            this.panelContent.Controls.Add(this.gridData, 0, 1);
+            this.panelContent.Location = new System.Drawing.Point(153, 48);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.RowCount = 2;
+            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelContent.Size = new System.Drawing.Size(836, 487);
+            this.panelContent.TabIndex = 4;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitle.BackColor = System.Drawing.Color.White;
+            this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(836, 49);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "A1 - Štandardné odberateľské faktúry (tuzemské)";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // gridData
             // 
             this.gridData.AllowUserToOrderColumns = true;
@@ -586,6 +534,58 @@
             this.gridData.TabIndex = 6;
             this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
             // 
+            // toolStripCorner
+            // 
+            this.toolStripCorner.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripCorner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripCorner.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripCorner.Location = new System.Drawing.Point(0, 0);
+            this.toolStripCorner.Name = "toolStripCorner";
+            this.toolStripCorner.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStripCorner.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStripCorner.Size = new System.Drawing.Size(150, 45);
+            this.toolStripCorner.TabIndex = 5;
+            this.toolStripCorner.Text = "toolStrip1";
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
+            this.panelHeader.Controls.Add(this.lblHeader2);
+            this.panelHeader.Controls.Add(this.lblHeader);
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(992, 65);
+            this.panelHeader.TabIndex = 3;
+            // 
+            // lblHeader2
+            // 
+            this.lblHeader2.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeader2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblHeader2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader2.ForeColor = System.Drawing.Color.White;
+            this.lblHeader2.Location = new System.Drawing.Point(139, 0);
+            this.lblHeader2.Name = "lblHeader2";
+            this.lblHeader2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.lblHeader2.Size = new System.Drawing.Size(326, 65);
+            this.lblHeader2.TabIndex = 1;
+            this.lblHeader2.Text = "KONTROLNÝ VÝKAZ DPH 2014";
+            this.lblHeader2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeader.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblHeader.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.White;
+            this.lblHeader.Location = new System.Drawing.Point(0, 0);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(139, 65);
+            this.lblHeader.TabIndex = 0;
+            this.lblHeader.Text = "AVAT";
+            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FrmAvat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -607,8 +607,8 @@
             this.menuOps.ResumeLayout(false);
             this.menuOps.PerformLayout();
             this.panelContent.ResumeLayout(false);
-            this.panelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
+            this.panelHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

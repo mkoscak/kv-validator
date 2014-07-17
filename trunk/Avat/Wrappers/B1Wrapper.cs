@@ -7,30 +7,30 @@ using System.ComponentModel;
 
 namespace Avat.Wrappers
 {
-    class A1Wrapper
+    class B1Wrapper
     {
-        A1 a1;
+        B1 b1;
 
-        public static implicit operator A1(A1Wrapper a)
+        public static implicit operator B1(B1Wrapper a)
         {
-            return a.a1;
+            return a.b1;
         }
 
-        public A1Wrapper(A1 a1)
+        public B1Wrapper(B1 b1)
         {
-            this.a1 = a1;
+            this.b1 = b1;
         }
 
-        [DisplayName("IČ odberateľa")]
-        public string Odberatel
+        [DisplayName("IČ dodávateľa")]
+        public string Dodavatel
         {
             get
             {
-                return a1.Odb;
+                return b1.Dod;
             }
             set
             {
-                a1.Odb = value;
+                b1.Dod = value;
             }
         }
 
@@ -39,11 +39,11 @@ namespace Avat.Wrappers
         {
             get
             {
-                return a1.F;
+                return b1.F;
             }
             set
             {
-                a1.F = value;
+                b1.F = value;
             }
         }
 
@@ -52,11 +52,11 @@ namespace Avat.Wrappers
         {
             get
             {
-                return a1.Den;
+                return b1.Den;
             }
             set
             {
-                a1.Den = value;
+                b1.Den = value;
             }
         }
 
@@ -65,11 +65,11 @@ namespace Avat.Wrappers
         {
             get
             {
-                return a1.Z;
+                return b1.Z;
             }
             set
             {
-                a1.Z = value;
+                b1.Z = value;
             }
         }
 
@@ -78,11 +78,11 @@ namespace Avat.Wrappers
         {
             get
             {
-                return a1.D;
+                return b1.D;
             }
             set
             {
-                a1.D = value;
+                b1.D = value;
             }
         }
 
@@ -91,7 +91,7 @@ namespace Avat.Wrappers
         {
             get
             {
-                switch (a1.S)
+                switch (b1.S)
                 {
                     case SadzbaDaneType.Item10:
                         return 10;
@@ -106,11 +106,24 @@ namespace Avat.Wrappers
             set
             {
                 if (value == 10)
-                    a1.S = SadzbaDaneType.Item10;
+                    b1.S = SadzbaDaneType.Item10;
                 else if (value == 20)
-                    a1.S = SadzbaDaneType.Item20;
+                    b1.S = SadzbaDaneType.Item20;
                 else
-                    a1.S = SadzbaDaneType.Missing;
+                    b1.S = SadzbaDaneType.Missing;
+            }
+        }
+
+        [DisplayName("Odpočítaná daň (€)")]
+        public decimal Odpocet
+        {
+            get
+            {
+                return b1.O;
+            }
+            set
+            {
+                b1.O = value;
             }
         }
 
@@ -119,25 +132,25 @@ namespace Avat.Wrappers
         {
             get
             {
-                return a1.KOprSpecified ? a1.KOpr.ToString().Replace("Item", string.Empty) : string.Empty;
+                return b1.KOprSpecified ? b1.KOpr.ToString().Replace("Item", string.Empty) : string.Empty;
             }
             set
             {
                 try
                 {
-                    a1.KOprSpecified = false;
+                    b1.KOprSpecified = false;
                     if (value == "1")
                     {
-                        a1.KOpr = KodOpravyType.Item1;
-                        a1.KOprSpecified = true;
+                        b1.KOpr = KodOpravyType.Item1;
+                        b1.KOprSpecified = true;
                     }
                     if (value == "2")
                     {
-                        a1.KOpr = KodOpravyType.Item2;
-                        a1.KOprSpecified = true;
+                        b1.KOpr = KodOpravyType.Item2;
+                        b1.KOprSpecified = true;
                     }
                 }
-                catch (Exception) {}
+                catch (Exception) { }
             }
         }
     }

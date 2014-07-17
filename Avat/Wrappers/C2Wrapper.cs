@@ -2,87 +2,87 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AvatValidator;
 using System.ComponentModel;
+using AvatValidator;
 
 namespace Avat.Wrappers
 {
-    class A1Wrapper
+    class C2Wrapper
     {
-        A1 a1;
+        C2 c2;
 
-        public static implicit operator A1(A1Wrapper a)
+        public static implicit operator C2(C2Wrapper a)
         {
-            return a.a1;
+            return a.c2;
         }
 
-        public A1Wrapper(A1 a1)
+        public C2Wrapper(C2 c2)
         {
-            this.a1 = a1;
+            this.c2 = c2;
         }
 
-        [DisplayName("IČ odberateľa")]
-        public string Odberatel
+        [DisplayName("IČ dodávateľa")]
+        public string Dodavatel
         {
             get
             {
-                return a1.Odb;
+                return c2.Dod;
             }
             set
             {
-                a1.Odb = value;
+                c2.Dod = value;
             }
         }
 
-        [DisplayName("Číslo faktúry")]
-        public string Faktura
+        [DisplayName("Číslo opravnej faktúry")]
+        public string FakturaOpr
         {
             get
             {
-                return a1.F;
+                return c2.FO;
             }
             set
             {
-                a1.F = value;
+                c2.FO = value;
             }
         }
 
-        [DisplayName("Dátum dodania")]
-        public DateTime DatumDod
+        [DisplayName("Číslo pôvodnej faktúry")]
+        public string FakturaPov
         {
             get
             {
-                return a1.Den;
+                return c2.FP;
             }
             set
             {
-                a1.Den = value;
+                c2.FP = value;
             }
         }
 
-        [DisplayName("Základ dane (€)")]
-        public decimal ZakladDane
+        [DisplayName("Rozdiel základu dane (€)")]
+        public decimal ZakladDaneRozdiel
         {
             get
             {
-                return a1.Z;
+                return c2.ZR;
             }
             set
             {
-                a1.Z = value;
+                c2.ZR = value;
             }
         }
 
-        [DisplayName("Suma dane (€)")]
-        public decimal SumaDane
+        [DisplayName("Rozdiel sumy dane (€)")]
+        public decimal SumaDaneRozdiel
         {
             get
             {
-                return a1.D;
+                return c2.DR;
             }
             set
             {
-                a1.D = value;
+                c2.DR = value;
             }
         }
 
@@ -91,7 +91,7 @@ namespace Avat.Wrappers
         {
             get
             {
-                switch (a1.S)
+                switch (c2.S)
                 {
                     case SadzbaDaneType.Item10:
                         return 10;
@@ -106,11 +106,24 @@ namespace Avat.Wrappers
             set
             {
                 if (value == 10)
-                    a1.S = SadzbaDaneType.Item10;
+                    c2.S = SadzbaDaneType.Item10;
                 else if (value == 20)
-                    a1.S = SadzbaDaneType.Item20;
+                    c2.S = SadzbaDaneType.Item20;
                 else
-                    a1.S = SadzbaDaneType.Missing;
+                    c2.S = SadzbaDaneType.Missing;
+            }
+        }
+
+        [DisplayName("Rozdiel v sume odpočítenej dane (€)")]
+        public decimal OdpocitanaDanRozdiel
+        {
+            get
+            {
+                return c2.OR;
+            }
+            set
+            {
+                c2.OR = value;
             }
         }
 
@@ -119,25 +132,25 @@ namespace Avat.Wrappers
         {
             get
             {
-                return a1.KOprSpecified ? a1.KOpr.ToString().Replace("Item", string.Empty) : string.Empty;
+                return c2.KOprSpecified ? c2.KOpr.ToString().Replace("Item", string.Empty) : string.Empty;
             }
             set
             {
                 try
                 {
-                    a1.KOprSpecified = false;
+                    c2.KOprSpecified = false;
                     if (value == "1")
                     {
-                        a1.KOpr = KodOpravyType.Item1;
-                        a1.KOprSpecified = true;
+                        c2.KOpr = KodOpravyType.Item1;
+                        c2.KOprSpecified = true;
                     }
                     if (value == "2")
                     {
-                        a1.KOpr = KodOpravyType.Item2;
-                        a1.KOprSpecified = true;
+                        c2.KOpr = KodOpravyType.Item2;
+                        c2.KOprSpecified = true;
                     }
                 }
-                catch (Exception) {}
+                catch (Exception) { }
             }
         }
     }

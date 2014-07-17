@@ -113,6 +113,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Wrappers\A1Wrapper.cs" />
+    <Compile Include="Wrappers\A2Wrapper.cs" />
+    <Compile Include="Wrappers\B1Wrapper.cs" />
+    <Compile Include="Wrappers\B2Wrapper.cs" />
+    <Compile Include="Wrappers\B3Wrapper.cs" />
+    <Compile Include="Wrappers\C1Wrapper.cs" />
+    <Compile Include="Wrappers\C2Wrapper.cs" />
+    <Compile Include="Wrappers\D1Wrapper.cs" />
+    <Compile Include="Wrappers\D2Wrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AvatValidator\AvatValidator.csproj">

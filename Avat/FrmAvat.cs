@@ -145,10 +145,16 @@ namespace Avat.Forms
             }
         }
 
+        void ClearGrid<T>()
+        {
+            gridData.DataSource = null;
+            gridData.DataSource = new BindingList<T>();
+        }
+
         private void btnA1_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnA1);
-            gridData.DataSource = new BindingList<A1Wrapper>();
+            ClearGrid<A1Wrapper>();
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A1 != null)
             {
@@ -161,96 +167,104 @@ namespace Avat.Forms
         private void btnA2_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnA2);
-            gridData.DataSource = new BindingList<A2>();
+            ClearGrid<A2Wrapper>();
+
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A2 != null)
             {
-                var ds = new BindingList<A2>(kvDph.Transakcie.A2);
+                var ds = new BindingList<A2Wrapper>(kvDph.Transakcie.A2.Select(a => new A2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<A2>(ds);
+                CheckSetErrors<A2>(kvDph.Transakcie.A2);
             }
         }
 
         private void btnB1_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnB1);
-            gridData.DataSource = new BindingList<B1>();
+            ClearGrid<B1Wrapper>();
+
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B1 != null)
             {
-                var ds = new BindingList<B1>(kvDph.Transakcie.B1);
+                var ds = new BindingList<B1Wrapper>(kvDph.Transakcie.B1.Select(a => new B1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<B1>(ds);
+                CheckSetErrors<B1>(kvDph.Transakcie.B1);
             }
         }
 
         private void btnB2_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnB2);
-            gridData.DataSource = new BindingList<B2>();
+            ClearGrid<B2Wrapper>();
+
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B2 != null)
             {
-                var ds = new BindingList<B2>(kvDph.Transakcie.B2);
+                var ds = new BindingList<B2Wrapper>(kvDph.Transakcie.B2.Select(a => new B2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<B2>(ds);
+                CheckSetErrors<B2>(kvDph.Transakcie.B2);
             }
         }
 
         private void btnB3_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnB3);
-            gridData.DataSource = new BindingList<B3>();
+            ClearGrid<B3Wrapper>();
+
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B3 != null)
             {
-                var ds = new BindingList<B3>(kvDph.Transakcie.B3);
+                var ds = new BindingList<B3Wrapper>(kvDph.Transakcie.B3.Select(a => new B3Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<B3>(ds);
+                CheckSetErrors<B3>(kvDph.Transakcie.B3);
             }
         }
 
         private void btnC1_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnC1);
-            gridData.DataSource = new BindingList<C1>();
+            ClearGrid<C1Wrapper>();
+
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C1 != null)
             {
-                var ds = new BindingList<C1>(kvDph.Transakcie.C1);
+                var ds = new BindingList<C1Wrapper>(kvDph.Transakcie.C1.Select(a => new C1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<C1>(ds);
+                CheckSetErrors<C1>(kvDph.Transakcie.C1);
             }
         }
 
         private void btnC2_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnC2);
-            gridData.DataSource = new BindingList<C2>();
+            ClearGrid<C2Wrapper>();
+
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C2 != null)
             {
-                var ds = new BindingList<C2>(kvDph.Transakcie.C2);
+                var ds = new BindingList<C2Wrapper>(kvDph.Transakcie.C2.Select(a => new C2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<C2>(ds);
+                CheckSetErrors<C2>(kvDph.Transakcie.C2);
             }
         }
 
         private void btnD1_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnD1);
-            gridData.DataSource = new BindingList<D1>();
+            ClearGrid<D1Wrapper>();
+
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D1 != null)
             {
-                var ds = new BindingList<D1>(kvDph.Transakcie.D1);
+                var ds = new BindingList<D1Wrapper>(kvDph.Transakcie.D1.Select(a => new D1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<D1>(ds);
+                CheckSetErrors<D1>(kvDph.Transakcie.D1);
             }
         }
 
         private void btnD2_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnD2);
-            gridData.DataSource = new BindingList<D2>();
+            ClearGrid<D2Wrapper>();
+
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D2 != null)
             {
-                var ds = new BindingList<D2>(kvDph.Transakcie.D2);
+                var ds = new BindingList<D2Wrapper>(kvDph.Transakcie.D2.Select(a => new D2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<D2>(ds);
+                CheckSetErrors<D2>(kvDph.Transakcie.D2);
             }
         }
 

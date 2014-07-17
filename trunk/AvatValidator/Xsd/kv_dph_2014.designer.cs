@@ -4476,6 +4476,8 @@ namespace AvatValidator
                 memoryStream = new System.IO.MemoryStream();
                 System.Xml.XmlWriterSettings xmlWriterSettings = new System.Xml.XmlWriterSettings();
                 xmlWriterSettings.Encoding = encoding;
+                xmlWriterSettings.NewLineOnAttributes = true;
+                xmlWriterSettings.Indent = true;
                 System.Xml.XmlWriter xmlWriter = XmlWriter.Create(memoryStream, xmlWriterSettings);
                 Serializer.Serialize(xmlWriter, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);

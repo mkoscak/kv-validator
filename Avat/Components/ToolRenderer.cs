@@ -9,28 +9,26 @@ namespace Avat.Components
 {
     class ToolRenderer : ToolStripSystemRenderer
     {
-        Brush hoverBrush = new SolidBrush(Color.FromArgb(235, 240, 245));
-        Color hoverTextColor = Color.White;
-
+        Pen p = new Pen(Color.FromArgb(111, 125, 140));
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
-            e.Graphics.DrawLine(Pens.Gray, e.AffectedBounds.Right - 1, e.AffectedBounds.Top, e.AffectedBounds.Right - 1, e.AffectedBounds.Bottom);
-            //base.OnRenderToolStripBorder(e);
+            e.Graphics.DrawLine(p, e.AffectedBounds.Right - 1, e.AffectedBounds.Top, e.AffectedBounds.Right - 1, e.AffectedBounds.Bottom);
         }
 
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
         {
             var p = Brushes.White;
-            if ((e.Item as ToolStripButton).Checked || e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position)))
-                p = hoverBrush;
+            var isHover = (e.Item as ToolStripButton).Checked || e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position));
+            if ((e.Item as ToolStripButton).Checked)
+                p = Brushes.GhostWhite;
 
             e.Graphics.FillRectangle(p, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
-            //base.OnRenderButtonBackground(e);
+            if (isHover)
+                e.Graphics.DrawRectangle(Pens.LightBlue, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
         }
 
         protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
         {
-            //base.OnRenderSeparator(e);
         }
     }
 }

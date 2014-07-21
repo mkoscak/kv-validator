@@ -1,4 +1,5 @@
-﻿namespace Avat.Components
+﻿using System.Windows.Forms;
+namespace Avat.Components
 {
     partial class CtrlIdentification
     {
@@ -46,12 +47,16 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txteMail = new System.Windows.Forms.TextBox();
-            this.cbKind = new System.Windows.Forms.ComboBox();
-            this.cbPeriodType = new System.Windows.Forms.ComboBox();
             this.txtYear = new System.Windows.Forms.NumericUpDown();
             this.txtPeriod = new System.Windows.Forms.NumericUpDown();
+            this.panelKind = new System.Windows.Forms.Panel();
+            this.cbKind = new System.Windows.Forms.ComboBox();
+            this.cbPeriodType = new System.Windows.Forms.ComboBox();
+            this.panelPeriod = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.txtYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriod)).BeginInit();
+            this.panelKind.SuspendLayout();
+            this.panelPeriod.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIcDph
@@ -263,39 +268,13 @@
             this.txteMail.TabIndex = 26;
             this.txteMail.Text = "@";
             // 
-            // cbKind
-            // 
-            this.cbKind.BackColor = System.Drawing.SystemColors.Info;
-            this.cbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbKind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKind.ForeColor = System.Drawing.Color.Black;
-            this.cbKind.FormattingEnabled = true;
-            this.cbKind.Location = new System.Drawing.Point(158, 52);
-            this.cbKind.Name = "cbKind";
-            this.cbKind.Size = new System.Drawing.Size(315, 24);
-            this.cbKind.TabIndex = 27;
-            // 
-            // cbPeriodType
-            // 
-            this.cbPeriodType.BackColor = System.Drawing.SystemColors.Info;
-            this.cbPeriodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPeriodType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbPeriodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPeriodType.ForeColor = System.Drawing.Color.Black;
-            this.cbPeriodType.FormattingEnabled = true;
-            this.cbPeriodType.Location = new System.Drawing.Point(235, 91);
-            this.cbPeriodType.Name = "cbPeriodType";
-            this.cbPeriodType.Size = new System.Drawing.Size(161, 24);
-            this.cbPeriodType.TabIndex = 29;
-            // 
             // txtYear
             // 
             this.txtYear.BackColor = System.Drawing.SystemColors.Info;
             this.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYear.ForeColor = System.Drawing.Color.Black;
-            this.txtYear.Location = new System.Drawing.Point(402, 91);
+            this.txtYear.Location = new System.Drawing.Point(402, 92);
             this.txtYear.Maximum = new decimal(new int[] {
             2099,
             0,
@@ -331,15 +310,67 @@
             0,
             0});
             // 
+            // panelKind
+            // 
+            this.panelKind.BackColor = System.Drawing.Color.Transparent;
+            this.panelKind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelKind.Controls.Add(this.cbKind);
+            this.panelKind.Location = new System.Drawing.Point(158, 52);
+            this.panelKind.Margin = new System.Windows.Forms.Padding(0);
+            this.panelKind.Name = "panelKind";
+            this.panelKind.Size = new System.Drawing.Size(315, 24);
+            this.panelKind.TabIndex = 32;
+            // 
+            // cbKind
+            // 
+            this.cbKind.BackColor = System.Drawing.SystemColors.Info;
+            this.cbKind.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbKind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKind.ForeColor = System.Drawing.Color.Black;
+            this.cbKind.FormattingEnabled = true;
+            this.cbKind.Location = new System.Drawing.Point(0, 0);
+            this.cbKind.Margin = new System.Windows.Forms.Padding(0);
+            this.cbKind.Name = "cbKind";
+            this.cbKind.Size = new System.Drawing.Size(313, 24);
+            this.cbKind.TabIndex = 27;
+            // 
+            // cbPeriodType
+            // 
+            this.cbPeriodType.BackColor = System.Drawing.SystemColors.Info;
+            this.cbPeriodType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbPeriodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPeriodType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbPeriodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPeriodType.ForeColor = System.Drawing.Color.Black;
+            this.cbPeriodType.FormattingEnabled = true;
+            this.cbPeriodType.Location = new System.Drawing.Point(0, 0);
+            this.cbPeriodType.Margin = new System.Windows.Forms.Padding(0);
+            this.cbPeriodType.Name = "cbPeriodType";
+            this.cbPeriodType.Size = new System.Drawing.Size(162, 24);
+            this.cbPeriodType.TabIndex = 29;
+            // 
+            // panelPeriod
+            // 
+            this.panelPeriod.BackColor = System.Drawing.Color.Transparent;
+            this.panelPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPeriod.Controls.Add(this.cbPeriodType);
+            this.panelPeriod.Location = new System.Drawing.Point(235, 92);
+            this.panelPeriod.Margin = new System.Windows.Forms.Padding(0);
+            this.panelPeriod.Name = "panelPeriod";
+            this.panelPeriod.Size = new System.Drawing.Size(164, 24);
+            this.panelPeriod.TabIndex = 33;
+            // 
             // CtrlIdentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panelPeriod);
+            this.Controls.Add(this.panelKind);
             this.Controls.Add(this.txtPeriod);
             this.Controls.Add(this.txtYear);
-            this.Controls.Add(this.cbPeriodType);
-            this.Controls.Add(this.cbKind);
             this.Controls.Add(this.txteMail);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtAddress);
@@ -363,6 +394,8 @@
             this.Load += new System.EventHandler(this.CtrlIdentification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriod)).EndInit();
+            this.panelKind.ResumeLayout(false);
+            this.panelPeriod.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,9 +421,11 @@
         internal System.Windows.Forms.TextBox txtAddress;
         internal System.Windows.Forms.TextBox txtPhone;
         internal System.Windows.Forms.TextBox txteMail;
-        internal System.Windows.Forms.ComboBox cbKind;
-        internal System.Windows.Forms.ComboBox cbPeriodType;
         internal System.Windows.Forms.NumericUpDown txtYear;
         internal System.Windows.Forms.NumericUpDown txtPeriod;
+        internal ComboBox cbKind;
+        internal ComboBox cbPeriodType;
+        private System.Windows.Forms.Panel panelKind;
+        private Panel panelPeriod;
     }
 }

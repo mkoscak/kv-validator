@@ -7,7 +7,7 @@ using AvatValidator;
 
 namespace Avat.Wrappers
 {
-    class C2Wrapper
+    class C2Wrapper : IIdHolder
     {
         C2 c2;
 
@@ -19,6 +19,19 @@ namespace Avat.Wrappers
         public C2Wrapper(C2 c2)
         {
             this.c2 = c2;
+            id = ItemCounter.Next;
+        }
+
+        int id = -1;
+        [DisplayName("#")]
+        public int Id
+        {
+            get
+            {
+                if (id == -1)
+                    id = ItemCounter.Next;
+                return id;
+            }
         }
 
         [DisplayName("IČ dodávateľa")]
@@ -153,5 +166,14 @@ namespace Avat.Wrappers
                 catch (Exception) { }
             }
         }
+
+        #region IIdHolder Members
+
+        public void SetId(int id)
+        {
+            this.id = id;
+        }
+
+        #endregion
     }
 }

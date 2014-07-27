@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace Avat.Wrappers
 {
-    class D1Wrapper
+    class D1Wrapper : IIdHolder
     {
         D1 d1;
 
@@ -19,6 +19,19 @@ namespace Avat.Wrappers
         public D1Wrapper(D1 d1)
         {
             this.d1 = d1;
+            id = ItemCounter.Next;
+        }
+
+        int id = -1;
+        [DisplayName("#")]
+        public int Id
+        {
+            get
+            {
+                if (id == -1)
+                    id = ItemCounter.Next;
+                return id;
+            }
         }
 
         [DisplayName("Suma obratov (€)")]
@@ -112,5 +125,14 @@ namespace Avat.Wrappers
                 catch (Exception) { }
             }
         }
+
+        #region IIdHolder Members
+
+        public void SetId(int id)
+        {
+            this.id = id;
+        }
+
+        #endregion
     }
 }

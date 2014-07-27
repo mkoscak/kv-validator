@@ -62,6 +62,7 @@
     <Compile Include="Components\MyDoubleBufferedGrid.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Components\MySortableBindingList.cs" />
     <Compile Include="Components\MyTableLayout.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -121,6 +122,8 @@
     <Compile Include="Wrappers\C2Wrapper.cs" />
     <Compile Include="Wrappers\D1Wrapper.cs" />
     <Compile Include="Wrappers\D2Wrapper.cs" />
+    <Compile Include="Wrappers\IIdHolder.cs" />
+    <Compile Include="Wrappers\ItemCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AvatValidator\AvatValidator.csproj">

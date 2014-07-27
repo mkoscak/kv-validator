@@ -10,7 +10,6 @@ using AvatValidator;
 using AvatValidator.Implementation;
 using AvatValidator.Interface;
 using Avat.Components;
-using System.Threading;
 using OfficeOpenXml;
 using System.IO;
 using Avat.Wrappers;
@@ -146,9 +145,11 @@ namespace Avat.Forms
         }
 
         void ClearGrid<T>()
+            where T: IIdHolder
         {
+            ItemCounter.Reset();
             gridData.DataSource = null;
-            gridData.DataSource = new BindingList<T>();
+            gridData.DataSource = new MySortableBindingList<T>();
         }
 
         private void btnA1_Click(object sender, EventArgs e)
@@ -158,7 +159,7 @@ namespace Avat.Forms
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A1 != null)
             {
-                var ds = new BindingList<A1Wrapper>(kvDph.Transakcie.A1.Select(a => new A1Wrapper(a)).ToList());
+                var ds = new MySortableBindingList<A1Wrapper>(kvDph.Transakcie.A1.Select(a => new A1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
                 CheckSetErrors<A1>(kvDph.Transakcie.A1);
             }
@@ -171,7 +172,7 @@ namespace Avat.Forms
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A2 != null)
             {
-                var ds = new BindingList<A2Wrapper>(kvDph.Transakcie.A2.Select(a => new A2Wrapper(a)).ToList());
+                var ds = new MySortableBindingList<A2Wrapper>(kvDph.Transakcie.A2.Select(a => new A2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
                 CheckSetErrors<A2>(kvDph.Transakcie.A2);
             }
@@ -184,7 +185,7 @@ namespace Avat.Forms
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B1 != null)
             {
-                var ds = new BindingList<B1Wrapper>(kvDph.Transakcie.B1.Select(a => new B1Wrapper(a)).ToList());
+                var ds = new MySortableBindingList<B1Wrapper>(kvDph.Transakcie.B1.Select(a => new B1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
                 CheckSetErrors<B1>(kvDph.Transakcie.B1);
             }
@@ -197,7 +198,7 @@ namespace Avat.Forms
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B2 != null)
             {
-                var ds = new BindingList<B2Wrapper>(kvDph.Transakcie.B2.Select(a => new B2Wrapper(a)).ToList());
+                var ds = new MySortableBindingList<B2Wrapper>(kvDph.Transakcie.B2.Select(a => new B2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
                 CheckSetErrors<B2>(kvDph.Transakcie.B2);
             }
@@ -210,7 +211,7 @@ namespace Avat.Forms
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B3 != null)
             {
-                var ds = new BindingList<B3Wrapper>(kvDph.Transakcie.B3.Select(a => new B3Wrapper(a)).ToList());
+                var ds = new MySortableBindingList<B3Wrapper>(kvDph.Transakcie.B3.Select(a => new B3Wrapper(a)).ToList());
                 gridData.DataSource = ds;
                 CheckSetErrors<B3>(kvDph.Transakcie.B3);
             }
@@ -223,7 +224,7 @@ namespace Avat.Forms
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C1 != null)
             {
-                var ds = new BindingList<C1Wrapper>(kvDph.Transakcie.C1.Select(a => new C1Wrapper(a)).ToList());
+                var ds = new MySortableBindingList<C1Wrapper>(kvDph.Transakcie.C1.Select(a => new C1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
                 CheckSetErrors<C1>(kvDph.Transakcie.C1);
             }
@@ -236,7 +237,7 @@ namespace Avat.Forms
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C2 != null)
             {
-                var ds = new BindingList<C2Wrapper>(kvDph.Transakcie.C2.Select(a => new C2Wrapper(a)).ToList());
+                var ds = new MySortableBindingList<C2Wrapper>(kvDph.Transakcie.C2.Select(a => new C2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
                 CheckSetErrors<C2>(kvDph.Transakcie.C2);
             }
@@ -249,7 +250,7 @@ namespace Avat.Forms
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D1 != null)
             {
-                var ds = new BindingList<D1Wrapper>(kvDph.Transakcie.D1.Select(a => new D1Wrapper(a)).ToList());
+                var ds = new MySortableBindingList<D1Wrapper>(kvDph.Transakcie.D1.Select(a => new D1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
                 CheckSetErrors<D1>(kvDph.Transakcie.D1);
             }
@@ -262,7 +263,7 @@ namespace Avat.Forms
 
             if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D2 != null)
             {
-                var ds = new BindingList<D2Wrapper>(kvDph.Transakcie.D2.Select(a => new D2Wrapper(a)).ToList());
+                var ds = new MySortableBindingList<D2Wrapper>(kvDph.Transakcie.D2.Select(a => new D2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
                 CheckSetErrors<D2>(kvDph.Transakcie.D2);
             }

@@ -7,7 +7,7 @@ using AvatValidator.Implementation;
 
 namespace AvatValidator.Validators
 {
-    class ItemTaxValidator : IValidationRule
+    public class ItemTaxValidator : IValidationRule
     {
         public RuleType RuleType
         {

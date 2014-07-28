@@ -10,7 +10,7 @@ namespace AvatValidator.Validators
     /// <summary>
     /// Validator poloziek z pola Obdobie
     /// </summary>
-    class PeriodValidator : BaseValidationRule<Identifikacia>
+    public class PeriodValidator : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {

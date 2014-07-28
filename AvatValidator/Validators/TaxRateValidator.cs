@@ -10,7 +10,7 @@ namespace AvatValidator.Validators
     /// <summary>
     /// Validator sadzby dane
     /// </summary>
-    class TaxRateValidator : IValidationRule
+    public class TaxRateValidator : IValidationRule
     {
         public RuleType RuleType
         {

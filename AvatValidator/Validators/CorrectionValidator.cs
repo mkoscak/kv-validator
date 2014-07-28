@@ -7,7 +7,7 @@ using AvatValidator.Implementation;
 
 namespace AvatValidator.Validators
 {
-    class CorrectionValidator : IValidationRule
+    public class CorrectionValidator : IValidationRule
     {
         public RuleType RuleType
         {

@@ -10,7 +10,7 @@ namespace AvatValidator.Validators
     /// <summary>
     /// Validator vyplnenosti pola Obec v hlavicke, pripadne dalsie validacie tohto pola
     /// </summary>
-    class CityValidator : BaseValidationRule<Identifikacia>
+    public class CityValidator : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {

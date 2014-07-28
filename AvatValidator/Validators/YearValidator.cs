@@ -10,7 +10,7 @@ namespace AvatValidator.Validators
     /// <summary>
     /// Implementacia pravidla na validaciu roku
     /// </summary>
-    class YearValidator : BaseValidationRule<Identifikacia>
+    public class YearValidator : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {

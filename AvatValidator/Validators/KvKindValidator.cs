@@ -10,7 +10,7 @@ namespace AvatValidator.Validators
     /// <summary>
     /// Validator vyplnenia druhu kontrolneho vykazu
     /// </summary>
-    class KvKindValidator : BaseValidationRule<Identifikacia>
+    public class KvKindValidator : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {

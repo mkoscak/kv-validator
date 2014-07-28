@@ -9,7 +9,7 @@ namespace Avat.Wrappers
 {
     class D1Wrapper : IIdHolder
     {
-        D1 d1;
+        internal D1 d1;
 
         public static implicit operator D1(D1Wrapper a)
         {

@@ -17,7 +17,7 @@ namespace AvatValidator.Validators.BlackListValidator.Entities
         /// Import dat z XML 'ds_dphz.xml'
         /// </summary>
         /// <param name="path"></param>
-        public static int ImportDataFromXml(string path)
+        public static int ImportDataFromXml(string path, string dbName)
         {
             var entities = new List<BlackListEntity>();
 
@@ -25,11 +25,12 @@ namespace AvatValidator.Validators.BlackListValidator.Entities
             LoadEntitiesFromXml(path, entities);
 
             // zmazanie starych zaznamov
-            var db = DbProvider.Instance;
+            var db = DbProvider.CreateProvider(dbName);
+            new BlackListEntity(db);//init tabuliek
             db.ExecuteNonQuery(string.Format("delete from {0}", BlackListEntity.TABLE_NAME));
 
             // ulozenie novych
-            using (var con = DbProvider.Instance.GetConnection())
+            using (var con = db.GetConnection())
             {
                 con.Open();
                 using (var tr = con.BeginTransaction())

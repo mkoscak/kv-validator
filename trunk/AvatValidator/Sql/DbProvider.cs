@@ -13,7 +13,9 @@ namespace AvatValidator.Sql
     /// </summary>
     public class DbProvider
     {
-        public static string DataSource
+        string DataSource;
+
+        public static string DefaultDataSource
         {
             get
             {
@@ -24,14 +26,21 @@ namespace AvatValidator.Sql
         /// <summary>
         /// Singleton..
         /// </summary>
-        private DbProvider()
+        private DbProvider(string dataSource)
         {
+            this.DataSource = dataSource;
             // vytvorenie DB suboru
-            if (!File.Exists(DataSource))
+            if (!File.Exists(dataSource))
             {
-                SQLiteConnection.CreateFile(DataSource);
+                SQLiteConnection.CreateFile(dataSource);
             }
         }
+
+        private DbProvider()
+            :this(DefaultDataSource)
+        {
+        }
+
         private static DbProvider db;
         public static DbProvider Instance
         {
@@ -47,6 +56,11 @@ namespace AvatValidator.Sql
         /// End of singleton
         /// </summary>
         /// <returns></returns>
+
+        public static DbProvider CreateProvider(string name)
+        {
+            return new DbProvider(name);
+        }
 
         public SQLiteConnection GetConnection()
         {

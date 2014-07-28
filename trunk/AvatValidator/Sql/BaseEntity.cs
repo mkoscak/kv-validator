@@ -24,31 +24,40 @@ namespace AvatValidator.Sql
         public static string COMMENT = "COMMENT";
         public static string VALID = "VALID";
 
-        /// <summary>
-        /// Constructor with table name of the entity..
-        /// </summary>
-        public BaseEntity()
+        DbProvider Db;
+
+        public BaseEntity(DbProvider db)
         {
+            this.Db = db;
+
             CheckAndCreateEntityTable();
             Clear();
         }
 
+        /// <summary>
+        /// default Constructor
+        /// </summary>
+        public BaseEntity()
+            : this(DbProvider.Instance)
+        {
+        }
+
         private void CheckAndCreateEntityTable()
         {
-            if (!TableExists())
-                CreateTable();
+            if (!TableExists(Db))
+                CreateTable(Db);
         }
 
-        private void CreateTable()
+        private void CreateTable(DbProvider db)
         {
             var script = GetCreationScript();
-            DbProvider.Instance.ExecuteNonQuery(script);
+            db.ExecuteNonQuery(script);
         }
 
-        private bool TableExists()
+        private bool TableExists(DbProvider db)
         {
             var query = string.Format("select * from sqlite_master where name = \"{0}\"", GetTableName());
-            var res = DbProvider.Instance.ExecuteQuery(query);
+            var res = db.ExecuteQuery(query);
 
             return res != null && res.Tables != null && 
                 res.Tables.Count > 0 && res.Tables[0].Rows != null && res.Tables[0].Rows.Count > 0;

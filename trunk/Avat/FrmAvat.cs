@@ -14,6 +14,9 @@ using OfficeOpenXml;
 using System.IO;
 using Avat.Wrappers;
 using Avat.Properties;
+using AvatValidator.Validators.BlackListValidator.Entities;
+using AvatValidator.Validators.TaxPayerValidator.Entities;
+using AvatValidator.Sql;
 
 namespace Avat.Forms
 {
@@ -59,7 +62,78 @@ namespace Avat.Forms
             warningStyle.BackColor = Color.DarkOrange;
 
             NewAvat();
+
+            RunImports();
         }
+
+        #region Automaticke importy
+
+        bool ImportRunning = false;
+        string blFile = @".\data\ds_dphz.xml";
+        string tpFile = @".\data\ds_dphs.xml";
+        string TmpDatabaseName = "tmp_avat.db";
+
+        private void RunImports()
+        {
+            var bw = new BackgroundWorker();
+            bw.DoWork += new DoWorkEventHandler(bw_ImportsWork);
+            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ImportsProgressChanged);
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_ImportsCompleted);
+            bw.WorkerReportsProgress = true;
+            bw.WorkerSupportsCancellation = true;
+            ImportRunning = true;
+            bw.RunWorkerAsync();
+        }
+
+        void bw_ImportsCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            try
+            {
+                if (File.Exists(TmpDatabaseName) && File.Exists(DbProvider.DefaultDataSource))
+                {
+                    if (File.Exists(DbProvider.DefaultDataSource + ".old"))
+                        File.Delete(DbProvider.DefaultDataSource + ".old");
+
+                    File.Move(DbProvider.DefaultDataSource, DbProvider.DefaultDataSource + ".old");
+                    File.Move(TmpDatabaseName, DbProvider.DefaultDataSource);
+
+                    // aktualizacia a presun uspesne.. premenujeme zdrojove xml na spracovane
+                    if (File.Exists(blFile))
+                        File.Move(blFile, blFile + ".processed");
+                    if (File.Exists(tpFile))
+                        File.Move(tpFile, tpFile + ".processed");
+                }
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                ImportRunning = false;
+                lblHeaderProgress.Text = string.Empty;
+            }
+        }
+
+        void bw_ImportsProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            // ??
+            lblHeaderProgress.Text = (e.UserState ?? "").ToString();
+        }
+
+        void bw_ImportsWork(object sender, DoWorkEventArgs e)
+        {
+            if (File.Exists(blFile) && File.Exists(tpFile))
+            {
+                var bw = sender as BackgroundWorker;
+                bw.ReportProgress(50, "Import black-list..");
+                BlackListManager.ImportDataFromXml(blFile, TmpDatabaseName);
+                bw.ReportProgress(99, "Import platcov..");
+                TaxPayersManager.ImportDataFromXml(tpFile, TmpDatabaseName);
+                bw.ReportProgress(100, "Hotovo!");
+            }
+        }
+
+        #endregion
 
         private void NewAvat()
         {
@@ -343,6 +417,12 @@ namespace Avat.Forms
         /// <param name="e"></param>
         private void btnCheckAll_Click(object sender, EventArgs e)
         {
+            if (ImportRunning)
+            {
+                MessageBox.Show(this, "Práve prebieha aktualizácia databázy, počkajte kým sa proces dokončí.", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (!ReadIdent())
                 return;
 
@@ -827,7 +907,7 @@ namespace Avat.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnImportBlackList_Click(object sender, EventArgs e)
+        /*private void btnImportBlackList_Click(object sender, EventArgs e)
         {
             try
             {
@@ -861,14 +941,14 @@ namespace Avat.Forms
             bw.ReportProgress(50);
             var count = AvatValidator.Validators.BlackListValidator.Entities.BlackListManager.ImportDataFromXml(path);
             bw.ReportProgress(100);
-        }
+        }*/
 
         /// <summary>
         /// Import platitelov DPH
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnImportVatPayers_Click(object sender, EventArgs e)
+        /*private void btnImportVatPayers_Click(object sender, EventArgs e)
         {
             try
             {
@@ -896,7 +976,7 @@ namespace Avat.Forms
             bw.ReportProgress(50);
             var count = AvatValidator.Validators.TaxPayerValidator.Entities.TaxPayersManager.ImportDataFromXml(path);
             bw.ReportProgress(100);
-        }
+        }*/
 
         #endregion
 

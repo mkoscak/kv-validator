@@ -155,7 +155,7 @@ namespace AvatTester
                 LogLn(string.Format("File {0} selected..", xml));
                 Cursor = Cursors.WaitCursor;
 
-                var count = AvatValidator.Validators.BlackListValidator.Entities.BlackListManager.ImportDataFromXml(xml);
+                var count = AvatValidator.Validators.BlackListValidator.Entities.BlackListManager.ImportDataFromXml(xml, DbProvider.DefaultDataSource);
 
                 LogLn("Import success! " + count + " items..");
             }
@@ -184,7 +184,7 @@ namespace AvatTester
                 LogLn(string.Format("File {0} selected..", xml));
                 Cursor = Cursors.WaitCursor;
 
-                var count = AvatValidator.Validators.TaxPayerValidator.Entities.TaxPayersManager.ImportDataFromXml(xml);
+                var count = AvatValidator.Validators.TaxPayerValidator.Entities.TaxPayersManager.ImportDataFromXml(xml, DbProvider.DefaultDataSource);
 
                 LogLn("Import success! " + count + " items..");
             }

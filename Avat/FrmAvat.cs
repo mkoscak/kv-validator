@@ -123,27 +123,6 @@ namespace Avat.Forms
             identification.lblIcDph.Focus();
         }
 
-        void CheckSetErrors<T>(IList<T> ds)
-            where T : class
-        {
-            if (lastValidationResult != null)
-            {
-                for (int i = 0; i < ds.Count; i++)
-                {
-                    var problems = lastValidationResult.Where(r => r.ProblemObject == ds[i]).ToList();
-                    if (problems.Count > 0)
-                    {
-                        if (problems.Any(p => p.ValidationResultState == ResultState.OkWithWarning))
-                            gridData.Rows[i].DefaultCellStyle = warningStyle;
-                        else
-                            gridData.Rows[i].DefaultCellStyle = errorStyle;
-                     
-                        gridData.Rows[i].Tag = problems;
-                    }
-                }
-            }
-        }
-
         void ClearGrid<T>()
             where T: IIdHolder
         {
@@ -161,7 +140,6 @@ namespace Avat.Forms
             {
                 var ds = new MySortableBindingList<A1Wrapper>(kvDph.Transakcie.A1.Select(a => new A1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<A1>(kvDph.Transakcie.A1);
             }
         }
 
@@ -174,10 +152,8 @@ namespace Avat.Forms
             {
                 var ds = new MySortableBindingList<A2Wrapper>(kvDph.Transakcie.A2.Select(a => new A2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<A2>(kvDph.Transakcie.A2);
             }
         }
-
         private void btnB1_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnB1);
@@ -187,7 +163,6 @@ namespace Avat.Forms
             {
                 var ds = new MySortableBindingList<B1Wrapper>(kvDph.Transakcie.B1.Select(a => new B1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<B1>(kvDph.Transakcie.B1);
             }
         }
 
@@ -200,7 +175,6 @@ namespace Avat.Forms
             {
                 var ds = new MySortableBindingList<B2Wrapper>(kvDph.Transakcie.B2.Select(a => new B2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<B2>(kvDph.Transakcie.B2);
             }
         }
 
@@ -213,7 +187,6 @@ namespace Avat.Forms
             {
                 var ds = new MySortableBindingList<B3Wrapper>(kvDph.Transakcie.B3.Select(a => new B3Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<B3>(kvDph.Transakcie.B3);
             }
         }
 
@@ -226,7 +199,6 @@ namespace Avat.Forms
             {
                 var ds = new MySortableBindingList<C1Wrapper>(kvDph.Transakcie.C1.Select(a => new C1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<C1>(kvDph.Transakcie.C1);
             }
         }
 
@@ -239,7 +211,6 @@ namespace Avat.Forms
             {
                 var ds = new MySortableBindingList<C2Wrapper>(kvDph.Transakcie.C2.Select(a => new C2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<C2>(kvDph.Transakcie.C2);
             }
         }
 
@@ -252,7 +223,6 @@ namespace Avat.Forms
             {
                 var ds = new MySortableBindingList<D1Wrapper>(kvDph.Transakcie.D1.Select(a => new D1Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<D1>(kvDph.Transakcie.D1);
             }
         }
 
@@ -265,7 +235,6 @@ namespace Avat.Forms
             {
                 var ds = new MySortableBindingList<D2Wrapper>(kvDph.Transakcie.D2.Select(a => new D2Wrapper(a)).ToList());
                 gridData.DataSource = ds;
-                CheckSetErrors<D2>(kvDph.Transakcie.D2);
             }
         }
 
@@ -934,5 +903,48 @@ namespace Avat.Forms
         }
 
         #endregion
+
+        private void gridData_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            e.Handled = false;
+            if (lastValidationResult == null || lastValidationResult.Count == 0 || e.RowIndex < 0)
+                return;
+
+            var r = gridData.Rows[e.RowIndex];
+            if (r.DataBoundItem is A1Wrapper)
+                CheckErr((r.DataBoundItem as A1Wrapper).a1, r);
+            if (r.DataBoundItem is A2Wrapper)
+                CheckErr((r.DataBoundItem as A2Wrapper).a2, r);
+            if (r.DataBoundItem is B1Wrapper)
+                CheckErr((r.DataBoundItem as B1Wrapper).b1, r);
+            if (r.DataBoundItem is B2Wrapper)
+                CheckErr((r.DataBoundItem as B2Wrapper).b2, r);
+            if (r.DataBoundItem is B3Wrapper)
+                CheckErr((r.DataBoundItem as B3Wrapper).b3, r);
+            if (r.DataBoundItem is C1Wrapper)
+                CheckErr((r.DataBoundItem as C1Wrapper).c1, r);
+            if (r.DataBoundItem is C2Wrapper)
+                CheckErr((r.DataBoundItem as C2Wrapper).c2, r);
+            if (r.DataBoundItem is D1Wrapper)
+                CheckErr((r.DataBoundItem as D1Wrapper).d1, r);
+            if (r.DataBoundItem is D2Wrapper)
+                CheckErr((r.DataBoundItem as D2Wrapper).d2, r);
+        }
+
+        private void CheckErr(object obj, DataGridViewRow r)
+        {
+            if (obj == null)
+                return;
+
+            var problems = lastValidationResult.Where(vir => vir.ProblemObject == obj).ToList();
+            if (problems == null)
+                return;
+
+            if (problems.Any(p => p.ValidationResultState == ResultState.OkWithWarning))
+                r.DefaultCellStyle = warningStyle;
+            else if (problems.Any(p => p.ValidationResultState == ResultState.Error))
+                r.DefaultCellStyle = errorStyle;
+            r.Tag = problems;
+        }
     }
 }

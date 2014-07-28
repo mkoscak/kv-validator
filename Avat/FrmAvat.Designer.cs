@@ -532,6 +532,7 @@
             this.gridData.RowTemplate.Height = 25;
             this.gridData.Size = new System.Drawing.Size(834, 436);
             this.gridData.TabIndex = 6;
+            this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
             this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
             // 
             // toolStripCorner

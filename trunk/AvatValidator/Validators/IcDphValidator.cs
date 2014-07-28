@@ -11,7 +11,7 @@ namespace AvatValidator.Validators
     /// <summary>
     /// Validator vyplnenosti pola IcDphPlatitela v hlavicke, pripadne dalsie validacie tohto pola
     /// </summary>
-    class IcDphValidator : BaseValidationRule<Identifikacia>
+    public class IcDphValidator : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {

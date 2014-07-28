@@ -55,9 +55,6 @@
             this.btnSaveXml = new System.Windows.Forms.ToolStripButton();
             this.btnOtherOps = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnNewAvat = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnImportBlackList = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnImportVatPayers = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.panelContent = new System.Windows.Forms.TableLayoutPanel();
@@ -390,9 +387,6 @@
             this.btnOtherOps.BackColor = System.Drawing.Color.Transparent;
             this.btnOtherOps.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNewAvat,
-            this.toolStripSeparator5,
-            this.btnImportBlackList,
-            this.btnImportVatPayers,
             this.toolStripSeparator6,
             this.btnExportToExcel});
             this.btnOtherOps.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -413,29 +407,6 @@
             this.btnNewAvat.Size = new System.Drawing.Size(218, 22);
             this.btnNewAvat.Text = "Nový výkaz";
             this.btnNewAvat.Click += new System.EventHandler(this.btnNewAvat_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(215, 6);
-            // 
-            // btnImportBlackList
-            // 
-            this.btnImportBlackList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportBlackList.ForeColor = System.Drawing.Color.Black;
-            this.btnImportBlackList.Name = "btnImportBlackList";
-            this.btnImportBlackList.Size = new System.Drawing.Size(218, 22);
-            this.btnImportBlackList.Text = "Import black-list";
-            this.btnImportBlackList.Click += new System.EventHandler(this.btnImportBlackList_Click);
-            // 
-            // btnImportVatPayers
-            // 
-            this.btnImportVatPayers.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportVatPayers.ForeColor = System.Drawing.Color.Black;
-            this.btnImportVatPayers.Name = "btnImportVatPayers";
-            this.btnImportVatPayers.Size = new System.Drawing.Size(218, 22);
-            this.btnImportVatPayers.Text = "Import platcov";
-            this.btnImportVatPayers.Click += new System.EventHandler(this.btnImportVatPayers_Click);
             // 
             // toolStripSeparator6
             // 
@@ -639,13 +610,10 @@
         private System.Windows.Forms.ToolStripDropDownButton btnOtherOps;
         private System.Windows.Forms.TableLayoutPanel panelContent;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.ToolStripMenuItem btnImportBlackList;
-        private System.Windows.Forms.ToolStripMenuItem btnImportVatPayers;
         private Avat.Components.MyDoubleBufferedGrid gridData;
         private System.Windows.Forms.ToolStripMenuItem btnExportToExcel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem btnNewAvat;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblHeader2;

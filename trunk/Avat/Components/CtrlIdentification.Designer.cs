@@ -64,7 +64,7 @@ namespace Avat.Components
             this.lblIcDph.AutoSize = true;
             this.lblIcDph.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIcDph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblIcDph.Location = new System.Drawing.Point(10, 10);
+            this.lblIcDph.Location = new System.Drawing.Point(22, 10);
             this.lblIcDph.Margin = new System.Windows.Forms.Padding(10);
             this.lblIcDph.Name = "lblIcDph";
             this.lblIcDph.Size = new System.Drawing.Size(123, 18);
@@ -76,7 +76,7 @@ namespace Avat.Components
             this.lblDruh.AutoSize = true;
             this.lblDruh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDruh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblDruh.Location = new System.Drawing.Point(10, 52);
+            this.lblDruh.Location = new System.Drawing.Point(50, 54);
             this.lblDruh.Margin = new System.Windows.Forms.Padding(10);
             this.lblDruh.Name = "lblDruh";
             this.lblDruh.Size = new System.Drawing.Size(95, 18);
@@ -88,7 +88,7 @@ namespace Avat.Components
             this.lblObdobie.AutoSize = true;
             this.lblObdobie.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObdobie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblObdobie.Location = new System.Drawing.Point(10, 94);
+            this.lblObdobie.Location = new System.Drawing.Point(72, 94);
             this.lblObdobie.Margin = new System.Windows.Forms.Padding(10);
             this.lblObdobie.Name = "lblObdobie";
             this.lblObdobie.Size = new System.Drawing.Size(73, 18);
@@ -100,7 +100,7 @@ namespace Avat.Components
             this.lblNazov.AutoSize = true;
             this.lblNazov.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblNazov.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblNazov.Location = new System.Drawing.Point(10, 136);
+            this.lblNazov.Location = new System.Drawing.Point(29, 136);
             this.lblNazov.Margin = new System.Windows.Forms.Padding(10);
             this.lblNazov.Name = "lblNazov";
             this.lblNazov.Size = new System.Drawing.Size(116, 18);
@@ -112,7 +112,7 @@ namespace Avat.Components
             this.lblStat.AutoSize = true;
             this.lblStat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblStat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblStat.Location = new System.Drawing.Point(10, 178);
+            this.lblStat.Location = new System.Drawing.Point(105, 178);
             this.lblStat.Margin = new System.Windows.Forms.Padding(10);
             this.lblStat.Name = "lblStat";
             this.lblStat.Size = new System.Drawing.Size(40, 18);
@@ -124,7 +124,7 @@ namespace Avat.Components
             this.lblObec.AutoSize = true;
             this.lblObec.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblObec.Location = new System.Drawing.Point(10, 220);
+            this.lblObec.Location = new System.Drawing.Point(95, 220);
             this.lblObec.Margin = new System.Windows.Forms.Padding(10);
             this.lblObec.Name = "lblObec";
             this.lblObec.Size = new System.Drawing.Size(50, 18);
@@ -136,7 +136,7 @@ namespace Avat.Components
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblEmail.Location = new System.Drawing.Point(10, 388);
+            this.lblEmail.Location = new System.Drawing.Point(90, 388);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(10);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(55, 18);
@@ -148,7 +148,7 @@ namespace Avat.Components
             this.lblTelefon.AutoSize = true;
             this.lblTelefon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblTelefon.Location = new System.Drawing.Point(10, 346);
+            this.lblTelefon.Location = new System.Drawing.Point(84, 346);
             this.lblTelefon.Margin = new System.Windows.Forms.Padding(10);
             this.lblTelefon.Name = "lblTelefon";
             this.lblTelefon.Size = new System.Drawing.Size(61, 18);
@@ -160,7 +160,7 @@ namespace Avat.Components
             this.lblUlica.AutoSize = true;
             this.lblUlica.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblUlica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblUlica.Location = new System.Drawing.Point(10, 304);
+            this.lblUlica.Location = new System.Drawing.Point(98, 304);
             this.lblUlica.Margin = new System.Windows.Forms.Padding(10);
             this.lblUlica.Name = "lblUlica";
             this.lblUlica.Size = new System.Drawing.Size(47, 18);
@@ -172,7 +172,7 @@ namespace Avat.Components
             this.lblPsc.AutoSize = true;
             this.lblPsc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.lblPsc.Location = new System.Drawing.Point(10, 262);
+            this.lblPsc.Location = new System.Drawing.Point(99, 259);
             this.lblPsc.Margin = new System.Windows.Forms.Padding(10);
             this.lblPsc.Name = "lblPsc";
             this.lblPsc.Size = new System.Drawing.Size(46, 18);

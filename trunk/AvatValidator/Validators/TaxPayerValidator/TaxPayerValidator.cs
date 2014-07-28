@@ -8,7 +8,7 @@ using AvatValidator.Validators.TaxPayerValidator.Entities;
 
 namespace AvatValidator.Validators.TaxPayerValidator
 {
-    class TaxPayerValidator : IValidationRule
+    public class TaxPayerValidator : IValidationRule
     {
         public RuleType RuleType
         {

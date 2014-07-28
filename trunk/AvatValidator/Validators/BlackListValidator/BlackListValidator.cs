@@ -11,7 +11,7 @@ namespace AvatValidator.Validators.BlackListValidator
     /// <summary>
     /// Validuje zaznam voci internemu zoznamu v DB
     /// </summary>
-    class BlackListValidator : IValidationRule
+    public class BlackListValidator : IValidationRule
     {
         public RuleType RuleType
         {

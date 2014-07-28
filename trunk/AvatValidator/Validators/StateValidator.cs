@@ -10,7 +10,7 @@ namespace AvatValidator.Validators
     /// <summary>
     /// Validator vyplnenosti pola Stat v hlavicke, pripadne dalsie validacie tohto pola
     /// </summary>
-    class StateValidator : BaseValidationRule<Identifikacia>
+    public class StateValidator : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {

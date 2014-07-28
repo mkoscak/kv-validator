@@ -64,7 +64,7 @@ namespace Avat.Forms
         private void NewAvat()
         {
             kvDph = new KVDPH();
-            ShowNewIdentification();
+            ShowIdentification(true);
             UpdateButtonTexts();
             SetFileName("nový.xml");
         }
@@ -104,21 +104,13 @@ namespace Avat.Forms
 
         private void btnIdentification_Click(object sender, EventArgs e)
         {
-            ShowIdentification();
+            ShowIdentification(false);
         }
 
-        private void ShowIdentification()
+        private void ShowIdentification(bool noProblems)
         {
             DisableAllButtons(btnIdentification);
-            identification.SetData(kvDph.Identifikacia, false);
-            gridData.DataSource = null;
-            identification.lblIcDph.Focus();
-        }
-
-        private void ShowNewIdentification()
-        {
-            DisableAllButtons(btnIdentification);
-            identification.SetData(kvDph.Identifikacia, true);
+            identification.SetData(kvDph.Identifikacia, noProblems);
             gridData.DataSource = null;
             identification.lblIcDph.Focus();
         }
@@ -277,7 +269,7 @@ namespace Avat.Forms
             if (kvDph != null)
             {
                 UpdateButtonTexts();
-                ShowNewIdentification();
+                ShowIdentification(true);
                 SetFileName(ActualFileName);
             }
         }
@@ -363,7 +355,7 @@ namespace Avat.Forms
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(this, string.Format("Kontrola výkazu neprebehla úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, string.Format("Kontrola výkazu neprebehla úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -417,7 +409,7 @@ namespace Avat.Forms
             else
             {
                 ValidationFailed(lastValidationResult);
-                ShowIdentification();
+                ShowIdentification(false);
                 identification.SetProblems(lastValidationResult);
 
                 SetIcons(lastValidationResult);
@@ -470,12 +462,16 @@ namespace Avat.Forms
 
         private void ValidationFailed(IValidationResult lastValidationResult)
         {
-            MessageBox.Show(this, string.Format("Validácia neprebehla v poriadku, bolo zistených {0} problémov..", lastValidationResult.Count), "Validácia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //MessageBox.Show(this, string.Format("Validácia neprebehla v poriadku, bolo zistených {0} problémov..", lastValidationResult.Count), "Validácia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var frm = new FrmValidationResult(lastValidationResult);
+            frm.ShowDialog(this);
         }
 
         private void ValidationPassed()
         {
-            MessageBox.Show(this, "Validácia prebehla v poriadku, nenašiel sa žiadny problém!", "Validácia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show(this, "Validácia prebehla v poriadku, nenašiel sa žiadny problém!", "Validácia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var frm = new FrmValidationResult(lastValidationResult);
+            frm.ShowDialog(this);
         }
 
         private void btnSaveXml_Click(object sender, EventArgs e)
@@ -507,12 +503,12 @@ namespace Avat.Forms
             return GetOutFileName("xml", "XML files|*.xml");
         }
 
-        private string GetOutXlsxFileName()
+        internal static string GetOutXlsxFileName()
         {
             return GetOutFileName("xlsx", "Excel 2007 files|*.xlsx");
         }
 
-        private string GetOutFileName(string defExt, string filter)
+        internal static string GetOutFileName(string defExt, string filter)
         {
             var curDir = Environment.CurrentDirectory;
 

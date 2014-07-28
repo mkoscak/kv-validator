@@ -10,7 +10,7 @@ namespace AvatValidator.Validators
     /// <summary>
     /// Validacia nazvu v hlavicke
     /// </summary>
-    class NameValidator : BaseValidationRule<Identifikacia>
+    public class NameValidator : BaseValidationRule<Identifikacia>
     {
         public override RuleType RuleType
         {

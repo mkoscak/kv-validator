@@ -27,9 +27,15 @@ namespace AvatValidator.Validators.TaxPayerValidator.Entities
         static string ADRESA = "ADRESA";
         static string PODLA_PARAGRAFU = "PODLA_PARAGRAFU";
 
-        public TaxPayerEntity()
+        public TaxPayerEntity(DbProvider db)
+            : base(db)
         {
             Clear();
+        }
+
+        public TaxPayerEntity()
+            : this(DbProvider.Instance)
+        {
         }
 
         public override void Clear()

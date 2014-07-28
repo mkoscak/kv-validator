@@ -13,7 +13,7 @@ namespace AvatValidator.Validators.TaxPayerValidator.Entities
         /// Import dat z XML 'ds_dphs.xml'
         /// </summary>
         /// <param name="path"></param>
-        public static int ImportDataFromXml(string path)
+        public static int ImportDataFromXml(string path, string dbName)
         {
             var entities = new List<TaxPayerEntity>();
 
@@ -21,11 +21,12 @@ namespace AvatValidator.Validators.TaxPayerValidator.Entities
             LoadEntitiesFromXml(path, entities);
 
             // zmazanie starych zaznamov
-            var db = DbProvider.Instance;
+            var db = DbProvider.CreateProvider(dbName);
+            new TaxPayerEntity(db);//init tabuliek
             db.ExecuteNonQuery(string.Format("delete from {0}", TaxPayerEntity.TABLE_NAME));
 
             // ulozenie novych
-            using (var con = DbProvider.Instance.GetConnection())
+            using (var con = db.GetConnection())
             {
                 con.Open();
                 using (var tr = con.BeginTransaction())

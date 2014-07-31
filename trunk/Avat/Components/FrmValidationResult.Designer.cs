@@ -85,7 +85,7 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(634, 65);
+            this.panelHeader.Size = new System.Drawing.Size(642, 65);
             this.panelHeader.TabIndex = 4;
             // 
             // lblHeader2
@@ -378,7 +378,7 @@
             this.lblTovary.Location = new System.Drawing.Point(86, 440);
             this.lblTovary.Margin = new System.Windows.Forms.Padding(10);
             this.lblTovary.Name = "lblTovary";
-            this.lblTovary.Size = new System.Drawing.Size(56, 18);
+            this.lblTovary.Size = new System.Drawing.Size(58, 18);
             this.lblTovary.TabIndex = 25;
             this.lblTovary.Text = "Tovary:";
             // 
@@ -680,7 +680,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(634, 562);
+            this.ClientSize = new System.Drawing.Size(642, 566);
             this.Controls.Add(this.btnExportReport);
             this.Controls.Add(this.lblpD2);
             this.Controls.Add(this.lblD2);

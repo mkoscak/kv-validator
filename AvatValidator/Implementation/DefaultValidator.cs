@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using AvatValidator.Interface;
+using AvatValidator.Exceptions;
 
 namespace AvatValidator.Implementation
 {
@@ -92,6 +93,9 @@ namespace AvatValidator.Implementation
             foreach (var obs in Observers)
             {
                 var ret = obs.NextRule(genCheck);
+                if (ret == ObserverResult.StopValidation)
+                    throw new ValidationCancelled();
+
                 if (ret != ObserverResult.Continue)
                     return true;
             }
@@ -101,7 +105,6 @@ namespace AvatValidator.Implementation
 
         private void HandleObservers(IList<IValidationItemResult> retChecks)
         {
-            var skipMsg = "Validácia prerušená";
             foreach (var obs in Observers)
             {
                 foreach (var retCheck in retChecks)
@@ -112,19 +115,19 @@ namespace AvatValidator.Implementation
                             break;
                         case ResultState.Ok:
                             if (obs.OnOk(retCheck) == ObserverResult.StopValidation)
-                                throw new Exception(skipMsg);
+                                throw new ValidationCancelled();
                             break;
                         case ResultState.OkWithWarning:
                             if (obs.OnWarning(retCheck) == ObserverResult.StopValidation)
-                                throw new Exception(skipMsg);
+                                throw new ValidationCancelled();
                             break;
                         case ResultState.Error:
                             if (obs.OnError(retCheck) == ObserverResult.StopValidation)
-                                throw new Exception(skipMsg);
+                                throw new ValidationCancelled();
                             break;
                         case ResultState.CriticalError:
                             if (obs.OnCriticalError(retCheck) == ObserverResult.StopValidation)
-                                throw new Exception(skipMsg);
+                                throw new ValidationCancelled();
                             break;
                         default:
                             break;

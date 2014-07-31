@@ -23,10 +23,10 @@ namespace Avat.Components
 
             if (useAlternateStyle)
                 AlternatingRowsDefaultCellStyle.BackColor = SystemColors.Info;
-
-            var selector = new DataGridViewColumnSelector(this);
             AllowUserToResizeRows = false;
             BackgroundColor = Color.Gainsboro;
+
+            var selector = new DataGridViewColumnSelector(this);
         }
     }
 

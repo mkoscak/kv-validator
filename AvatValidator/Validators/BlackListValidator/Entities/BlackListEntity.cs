@@ -9,7 +9,7 @@ namespace AvatValidator.Validators.BlackListValidator.Entities
     /// <summary>
     /// Entita reprezentujuca neplatica..
     /// </summary>
-    class BlackListEntity : BaseEntity<BlackListEntity>
+    public class BlackListEntity : BaseEntity<BlackListEntity>
     {
         public static string TABLE_NAME = "T_BLACKLIST";
 
@@ -21,13 +21,13 @@ namespace AvatValidator.Validators.BlackListValidator.Entities
         public string DatumZverejnenia { get; set; }
         public int    RokPorusenia { get; set; }
 
-        static string IC_DPH = "IC_DPH";
-        static string NAZOV = "NAZOV";
-        static string OBEC = "OBEC";
-        static string PSC = "PSC";
-        static string ADRESA = "ADRESA";
-        static string ROK_PORUSENIA = "ROK_PORUSENIA";
-        static string DAT_ZVEREJNENIA = "DAT_ZVEREJNENIA";
+        public static string IC_DPH = "IC_DPH";
+        public static string NAZOV = "NAZOV";
+        public static string OBEC = "OBEC";
+        public static string PSC = "PSC";
+        public static string ADRESA = "ADRESA";
+        public static string ROK_PORUSENIA = "ROK_PORUSENIA";
+        public static string DAT_ZVEREJNENIA = "DAT_ZVEREJNENIA";
 
         public BlackListEntity(DbProvider db)
             : base(db)

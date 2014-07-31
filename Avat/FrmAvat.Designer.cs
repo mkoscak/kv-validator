@@ -57,6 +57,7 @@
             this.btnNewAvat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBiznisReport = new System.Windows.Forms.ToolStripMenuItem();
             this.panelContent = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.toolStripCorner = new System.Windows.Forms.ToolStrip();
@@ -389,7 +390,8 @@
             this.btnOtherOps.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNewAvat,
             this.toolStripSeparator6,
-            this.btnExportToExcel});
+            this.btnExportToExcel,
+            this.btnBiznisReport});
             this.btnOtherOps.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOtherOps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
             this.btnOtherOps.Image = ((System.Drawing.Image)(resources.GetObject("btnOtherOps.Image")));
@@ -422,6 +424,13 @@
             this.btnExportToExcel.Size = new System.Drawing.Size(218, 22);
             this.btnExportToExcel.Text = "Export výkazu do excelu";
             this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
+            // 
+            // btnBiznisReport
+            // 
+            this.btnBiznisReport.Name = "btnBiznisReport";
+            this.btnBiznisReport.Size = new System.Drawing.Size(218, 22);
+            this.btnBiznisReport.Text = "Biznis report";
+            this.btnBiznisReport.Click += new System.EventHandler(this.btnBiznisReport_Click);
             // 
             // panelContent
             // 
@@ -550,6 +559,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.NullValue = null;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -638,5 +648,6 @@
         private System.Windows.Forms.Label lblHeader2;
         private System.Windows.Forms.ToolStrip toolStripCorner;
         private System.Windows.Forms.Label lblHeaderProgress;
+        private System.Windows.Forms.ToolStripMenuItem btnBiznisReport;
     }
 }

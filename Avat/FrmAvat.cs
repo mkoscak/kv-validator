@@ -1022,5 +1022,98 @@ namespace Avat.Forms
                 r.DefaultCellStyle = errorStyle;
             r.Tag = problems;
         }
+
+        private void btnBiznisReport_Click(object sender, EventArgs e)
+        {
+            if (kvDph == null)
+                return;
+
+            ReadIdent();
+
+            var br = new BiznisReport();
+
+            AnalyzujVyst(ref br.PocVyst, ref br.SumaVyst, ref br.DaneVyst);
+            AnalyzujPrij(ref br.PocPrij, ref br.SumaPrij, ref br.DanePrij);
+            br.Balance = br.SumaVyst - br.SumaPrij;
+            br.PocetBlacklistOdb = VratPocetBlackListOdb();
+            br.PocetBlacklistDod = VratPocetBlackListDod();
+
+            // TODO top 5 transkacii
+            var frm = new FrmBiznisReport(br);
+            frm.ShowDialog(this);
+        }
+
+        private int VratPocetBlackListOdb()
+        {
+            var objs = new List<string>();
+
+            objs.AddRange(kvDph.Transakcie.A1.Select(a => a.Odb).ToList());
+            objs.AddRange(kvDph.Transakcie.A2.Select(a => a.Odb).ToList());
+            objs.AddRange(kvDph.Transakcie.C1.Select(a => a.Odb).ToList());
+
+            return CountBlacklist(objs.Distinct().ToList());
+        }
+
+        private int VratPocetBlackListDod()
+        {
+            var objs = new List<string>();
+
+            objs.AddRange(kvDph.Transakcie.B1.Select(a => a.Dod).ToList());
+            objs.AddRange(kvDph.Transakcie.B2.Select(a => a.Dod).ToList());
+            objs.AddRange(kvDph.Transakcie.C2.Select(a => a.Dod).ToList());
+
+            return CountBlacklist(objs.Distinct().ToList());
+        }
+
+        private int CountBlacklist(List<string> list)
+        {
+            new BlackListEntity();
+            list.Remove(null);
+            var icList = string.Join(", ", list.Select(s => "\"" + s + "\"").ToArray());
+            var q = string.Format("select count(*) from {0} where {1} in ({2})", BlackListEntity.TABLE_NAME, BlackListEntity.IC_DPH, icList);
+            var ds = DbProvider.Instance.ExecuteQuery(q);
+            
+            return Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+        }
+
+        private void AnalyzujVyst(ref int poc, ref decimal suma, ref decimal dane)
+        {
+            // pocty
+            poc += kvDph.Transakcie.A1.Count;
+            poc += kvDph.Transakcie.A2.Count;
+            poc += kvDph.Transakcie.C1.Count;
+
+            // sumy
+            suma += kvDph.Transakcie.A1.Sum(a => a.Z);
+            suma += kvDph.Transakcie.A2.Sum(a => a.Z);
+            suma += kvDph.Transakcie.C1.Sum(a => a.ZR);
+
+            // dane
+            dane += kvDph.Transakcie.A1.Sum(a => a.D);
+            //dane += kvDph.Transakcie.A2.Sum(a => a.D);
+            dane += kvDph.Transakcie.C1.Sum(a => a.DR);
+
+            // B3?
+        }
+
+        private void AnalyzujPrij(ref int poc, ref decimal suma, ref decimal dane)
+        {
+            // pocty
+            poc += kvDph.Transakcie.B1.Count;
+            poc += kvDph.Transakcie.B2.Count;
+            poc += kvDph.Transakcie.C2.Count;
+
+            // sumy
+            suma += kvDph.Transakcie.B1.Sum(a => a.Z);
+            suma += kvDph.Transakcie.B2.Sum(a => a.Z);
+            suma += kvDph.Transakcie.C2.Sum(a => a.ZR);
+
+            // dane
+            dane += kvDph.Transakcie.B1.Sum(a => a.D);
+            dane += kvDph.Transakcie.B2.Sum(a => a.D);
+            dane += kvDph.Transakcie.C2.Sum(a => a.DR);
+
+            // B3?
+        }
     }
 }

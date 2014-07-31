@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using AvatValidator.Exceptions;
 
 namespace Avat.Components
 {
@@ -77,10 +78,19 @@ namespace Avat.Components
             }
             else if (e.Error != null)
             {
-                if (!string.IsNullOrEmpty(ErrorMsg))
-                    MessageBox.Show(this, string.Format("{0}{1}", ErrorMsg, ErrorShowInnerMessage ? e.Error.Message : string.Empty), ErrorTitle, ErrorBtns, ErrorIcon);
+                if (e.Error is ValidationCancelled)
+                {
+                    MessageBox.Show(this, e.Error.Message, ErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 else
-                    MessageBox.Show(this, "Nastala chyba!" + Environment.NewLine + Environment.NewLine + e.Error.Message, "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+
+                    if (!string.IsNullOrEmpty(ErrorMsg))
+                        MessageBox.Show(this, string.Format("{0}{1}", ErrorMsg, ErrorShowInnerMessage ? e.Error.Message : string.Empty), ErrorTitle, ErrorBtns, ErrorIcon);
+                    else
+                        MessageBox.Show(this, "Nastala chyba!" + Environment.NewLine + Environment.NewLine + e.Error.Message, "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 ErrorMsg = null;
                 this.Visible = false;
                 Close();

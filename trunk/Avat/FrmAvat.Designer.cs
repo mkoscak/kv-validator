@@ -541,7 +541,6 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.gridData.BackgroundColor = System.Drawing.Color.White;
             this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -583,8 +582,6 @@
             this.gridData.RowTemplate.Height = 25;
             this.gridData.Size = new System.Drawing.Size(834, 436);
             this.gridData.TabIndex = 6;
-            this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
-            this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
             // 
             // FrmAvat
             // 
@@ -639,7 +636,6 @@
         private System.Windows.Forms.ToolStripDropDownButton btnOtherOps;
         private System.Windows.Forms.TableLayoutPanel panelContent;
         private System.Windows.Forms.Label lblTitle;
-        private Avat.Components.MyDoubleBufferedGrid gridData;
         private System.Windows.Forms.ToolStripMenuItem btnExportToExcel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem btnNewAvat;
@@ -649,5 +645,6 @@
         private System.Windows.Forms.ToolStrip toolStripCorner;
         private System.Windows.Forms.Label lblHeaderProgress;
         private System.Windows.Forms.ToolStripMenuItem btnBiznisReport;
+        private Avat.Components.MyDoubleBufferedGrid gridData;
     }
 }

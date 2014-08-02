@@ -47,6 +47,11 @@ namespace Avat.Wrappers
                     id = ItemCounter.Next;
                 return id;
             }
+
+            internal set
+            {
+                id = value;
+            }
         }
 
         [DisplayName("IČ dodávateľa")]

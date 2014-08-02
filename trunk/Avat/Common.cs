@@ -5,6 +5,9 @@ using System.Text;
 using AvatValidator.Validators.TaxPayerValidator.Entities;
 using AvatValidator.Validators.BlackListValidator.Entities;
 using AvatValidator.Sql;
+using OfficeOpenXml;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace Avat
 {
@@ -56,6 +59,26 @@ namespace Avat
                 return null;
 
             return found[0];
+        }
+
+        public static void ExportGridToExcel(ExcelWorksheet ws, DataGridView grid)
+        {
+            for (int i = 0; i < grid.Columns.Count; i++)
+            {
+                // header
+                var hCell = ws.Cells[1, i + 1];
+                hCell.Value = grid.Columns[i].HeaderText;
+                hCell.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                hCell.Style.Fill.BackgroundColor.SetColor(Color.Wheat);
+                hCell.Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+
+                for (int j = 0; j < grid.Rows.Count; j++)
+                {
+                    ws.Cells[j + 2, i + 1].Value = (grid[i, j].Value ?? string.Empty);
+                }
+
+                ws.Column(i + 1).AutoFit();
+            }
         }
     }
 }

@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeader2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
@@ -53,9 +61,21 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblpDod = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.tabReports = new System.Windows.Forms.TabControl();
+            this.tabSumar = new System.Windows.Forms.TabPage();
+            this.tabTopOdb = new System.Windows.Forms.TabPage();
+            this.gridTopOdb = new Avat.Components.MyDoubleBufferedGrid();
+            this.tabTopDod = new System.Windows.Forms.TabPage();
+            this.gridTopDod = new Avat.Components.MyDoubleBufferedGrid();
             this.panelHeader.SuspendLayout();
             this.grpPrij.SuspendLayout();
             this.grpVyst.SuspendLayout();
+            this.tabReports.SuspendLayout();
+            this.tabSumar.SuspendLayout();
+            this.tabTopOdb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTopOdb)).BeginInit();
+            this.tabTopDod.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTopDod)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -67,7 +87,7 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(564, 65);
+            this.panelHeader.Size = new System.Drawing.Size(587, 65);
             this.panelHeader.TabIndex = 4;
             // 
             // lblHeader2
@@ -107,7 +127,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.btnClose.Location = new System.Drawing.Point(447, 427);
+            this.btnClose.Location = new System.Drawing.Point(470, 427);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 26);
@@ -153,7 +173,7 @@
             this.btnExportReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.btnExportReport.Location = new System.Drawing.Point(337, 427);
+            this.btnExportReport.Location = new System.Drawing.Point(360, 427);
             this.btnExportReport.Margin = new System.Windows.Forms.Padding(0);
             this.btnExportReport.Name = "btnExportReport";
             this.btnExportReport.Size = new System.Drawing.Size(100, 26);
@@ -165,6 +185,7 @@
             // 
             // grpPrij
             // 
+            this.grpPrij.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grpPrij.Controls.Add(this.lblpDanPrij);
             this.grpPrij.Controls.Add(this.label3);
             this.grpPrij.Controls.Add(this.lblpSumaPrij);
@@ -172,7 +193,7 @@
             this.grpPrij.Controls.Add(this.lblIcDph);
             this.grpPrij.Controls.Add(this.lblpPocPrij);
             this.grpPrij.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpPrij.Location = new System.Drawing.Point(8, 68);
+            this.grpPrij.Location = new System.Drawing.Point(6, 6);
             this.grpPrij.Name = "grpPrij";
             this.grpPrij.Size = new System.Drawing.Size(269, 151);
             this.grpPrij.TabIndex = 48;
@@ -233,6 +254,7 @@
             // 
             // grpVyst
             // 
+            this.grpVyst.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grpVyst.Controls.Add(this.lblpDanVyst);
             this.grpVyst.Controls.Add(this.label4);
             this.grpVyst.Controls.Add(this.lblpSumaVyst);
@@ -240,7 +262,7 @@
             this.grpVyst.Controls.Add(this.label7);
             this.grpVyst.Controls.Add(this.lblpPocVyst);
             this.grpVyst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpVyst.Location = new System.Drawing.Point(283, 68);
+            this.grpVyst.Location = new System.Drawing.Point(281, 6);
             this.grpVyst.Name = "grpVyst";
             this.grpVyst.Size = new System.Drawing.Size(269, 151);
             this.grpVyst.TabIndex = 49;
@@ -327,11 +349,12 @@
             // 
             // lblpBilancia
             // 
+            this.lblpBilancia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpBilancia.AutoSize = true;
             this.lblpBilancia.BackColor = System.Drawing.Color.Transparent;
             this.lblpBilancia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblpBilancia.ForeColor = System.Drawing.Color.Green;
-            this.lblpBilancia.Location = new System.Drawing.Point(297, 232);
+            this.lblpBilancia.Location = new System.Drawing.Point(295, 170);
             this.lblpBilancia.Margin = new System.Windows.Forms.Padding(10);
             this.lblpBilancia.Name = "lblpBilancia";
             this.lblpBilancia.Size = new System.Drawing.Size(17, 18);
@@ -340,11 +363,12 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.label5.Location = new System.Drawing.Point(209, 232);
+            this.label5.Location = new System.Drawing.Point(207, 170);
             this.label5.Margin = new System.Windows.Forms.Padding(10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 18);
@@ -353,11 +377,12 @@
             // 
             // lblpOdb
             // 
+            this.lblpOdb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpOdb.AutoSize = true;
             this.lblpOdb.BackColor = System.Drawing.Color.Transparent;
             this.lblpOdb.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblpOdb.ForeColor = System.Drawing.Color.Green;
-            this.lblpOdb.Location = new System.Drawing.Point(297, 270);
+            this.lblpOdb.Location = new System.Drawing.Point(295, 208);
             this.lblpOdb.Margin = new System.Windows.Forms.Padding(10);
             this.lblpOdb.Name = "lblpOdb";
             this.lblpOdb.Size = new System.Drawing.Size(17, 18);
@@ -366,11 +391,12 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.label8.Location = new System.Drawing.Point(53, 270);
+            this.label8.Location = new System.Drawing.Point(51, 208);
             this.label8.Margin = new System.Windows.Forms.Padding(10);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(224, 18);
@@ -379,11 +405,12 @@
             // 
             // lblpDod
             // 
+            this.lblpDod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpDod.AutoSize = true;
             this.lblpDod.BackColor = System.Drawing.Color.Transparent;
             this.lblpDod.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblpDod.ForeColor = System.Drawing.Color.Green;
-            this.lblpDod.Location = new System.Drawing.Point(297, 308);
+            this.lblpDod.Location = new System.Drawing.Point(295, 246);
             this.lblpDod.Margin = new System.Windows.Forms.Padding(10);
             this.lblpDod.Name = "lblpDod";
             this.lblpDod.Size = new System.Drawing.Size(17, 18);
@@ -392,39 +419,191 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.label9.Location = new System.Drawing.Point(51, 308);
+            this.label9.Location = new System.Drawing.Point(49, 246);
             this.label9.Margin = new System.Windows.Forms.Padding(10);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(226, 18);
             this.label9.TabIndex = 54;
             this.label9.Text = "Počet dodávateľov z black-listu:";
             // 
+            // tabReports
+            // 
+            this.tabReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabReports.Controls.Add(this.tabSumar);
+            this.tabReports.Controls.Add(this.tabTopOdb);
+            this.tabReports.Controls.Add(this.tabTopDod);
+            this.tabReports.Location = new System.Drawing.Point(8, 68);
+            this.tabReports.Name = "tabReports";
+            this.tabReports.SelectedIndex = 0;
+            this.tabReports.Size = new System.Drawing.Size(567, 356);
+            this.tabReports.TabIndex = 56;
+            // 
+            // tabSumar
+            // 
+            this.tabSumar.Controls.Add(this.grpPrij);
+            this.tabSumar.Controls.Add(this.lblpDod);
+            this.tabSumar.Controls.Add(this.grpVyst);
+            this.tabSumar.Controls.Add(this.label9);
+            this.tabSumar.Controls.Add(this.label5);
+            this.tabSumar.Controls.Add(this.lblpOdb);
+            this.tabSumar.Controls.Add(this.lblpBilancia);
+            this.tabSumar.Controls.Add(this.label8);
+            this.tabSumar.Location = new System.Drawing.Point(4, 22);
+            this.tabSumar.Name = "tabSumar";
+            this.tabSumar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSumar.Size = new System.Drawing.Size(559, 330);
+            this.tabSumar.TabIndex = 0;
+            this.tabSumar.Text = "Štatistika výkazu";
+            this.tabSumar.UseVisualStyleBackColor = true;
+            // 
+            // tabTopOdb
+            // 
+            this.tabTopOdb.Controls.Add(this.gridTopOdb);
+            this.tabTopOdb.Location = new System.Drawing.Point(4, 22);
+            this.tabTopOdb.Name = "tabTopOdb";
+            this.tabTopOdb.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTopOdb.Size = new System.Drawing.Size(559, 330);
+            this.tabTopOdb.TabIndex = 1;
+            this.tabTopOdb.Text = "Top 5 odberateľských transakcií";
+            this.tabTopOdb.UseVisualStyleBackColor = true;
+            // 
+            // gridTopOdb
+            // 
+            this.gridTopOdb.AllowUserToAddRows = false;
+            this.gridTopOdb.AllowUserToDeleteRows = false;
+            this.gridTopOdb.AllowUserToOrderColumns = true;
+            this.gridTopOdb.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gridTopOdb.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridTopOdb.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.gridTopOdb.BackgroundColor = System.Drawing.Color.White;
+            this.gridTopOdb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridTopOdb.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridTopOdb.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridTopOdb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridTopOdb.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridTopOdb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridTopOdb.EnableHeadersVisualStyles = false;
+            this.gridTopOdb.GridColor = System.Drawing.Color.Gainsboro;
+            this.gridTopOdb.Location = new System.Drawing.Point(3, 3);
+            this.gridTopOdb.Margin = new System.Windows.Forms.Padding(1);
+            this.gridTopOdb.Name = "gridTopOdb";
+            this.gridTopOdb.ReadOnly = true;
+            this.gridTopOdb.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTopOdb.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridTopOdb.RowHeadersWidth = 30;
+            this.gridTopOdb.RowTemplate.Height = 25;
+            this.gridTopOdb.Size = new System.Drawing.Size(553, 324);
+            this.gridTopOdb.TabIndex = 6;
+            // 
+            // tabTopDod
+            // 
+            this.tabTopDod.Controls.Add(this.gridTopDod);
+            this.tabTopDod.Location = new System.Drawing.Point(4, 22);
+            this.tabTopDod.Name = "tabTopDod";
+            this.tabTopDod.Size = new System.Drawing.Size(559, 330);
+            this.tabTopDod.TabIndex = 2;
+            this.tabTopDod.Text = "Top 5 dodávateľských transakcií";
+            this.tabTopDod.UseVisualStyleBackColor = true;
+            // 
+            // gridTopDod
+            // 
+            this.gridTopDod.AllowUserToAddRows = false;
+            this.gridTopDod.AllowUserToDeleteRows = false;
+            this.gridTopDod.AllowUserToOrderColumns = true;
+            this.gridTopDod.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gridTopDod.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.gridTopDod.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.gridTopDod.BackgroundColor = System.Drawing.Color.White;
+            this.gridTopDod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridTopDod.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridTopDod.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridTopDod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridTopDod.DefaultCellStyle = dataGridViewCellStyle7;
+            this.gridTopDod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridTopDod.EnableHeadersVisualStyles = false;
+            this.gridTopDod.GridColor = System.Drawing.Color.Gainsboro;
+            this.gridTopDod.Location = new System.Drawing.Point(0, 0);
+            this.gridTopDod.Margin = new System.Windows.Forms.Padding(1);
+            this.gridTopDod.Name = "gridTopDod";
+            this.gridTopDod.ReadOnly = true;
+            this.gridTopDod.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTopDod.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.gridTopDod.RowHeadersWidth = 30;
+            this.gridTopDod.RowTemplate.Height = 25;
+            this.gridTopDod.Size = new System.Drawing.Size(559, 330);
+            this.gridTopDod.TabIndex = 6;
+            // 
             // FrmBiznisReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(564, 466);
-            this.Controls.Add(this.lblpDod);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.lblpOdb);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.lblpBilancia);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.grpVyst);
-            this.Controls.Add(this.grpPrij);
+            this.ClientSize = new System.Drawing.Size(587, 466);
+            this.Controls.Add(this.tabReports);
             this.Controls.Add(this.btnExportReport);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelHeader);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(572, 500);
+            this.MinimumSize = new System.Drawing.Size(595, 500);
             this.Name = "FrmBiznisReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Biznis report";
@@ -434,8 +613,14 @@
             this.grpPrij.PerformLayout();
             this.grpVyst.ResumeLayout(false);
             this.grpVyst.PerformLayout();
+            this.tabReports.ResumeLayout(false);
+            this.tabSumar.ResumeLayout(false);
+            this.tabSumar.PerformLayout();
+            this.tabTopOdb.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridTopOdb)).EndInit();
+            this.tabTopDod.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridTopDod)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -466,5 +651,11 @@
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.Label lblpDod;
         internal System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabControl tabReports;
+        private System.Windows.Forms.TabPage tabSumar;
+        private System.Windows.Forms.TabPage tabTopOdb;
+        private System.Windows.Forms.TabPage tabTopDod;
+        private MyDoubleBufferedGrid gridTopDod;
+        private MyDoubleBufferedGrid gridTopOdb;
     }
 }

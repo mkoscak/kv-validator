@@ -18,7 +18,40 @@ namespace Avat.Components
         public int PocetBlacklistOdb = 0;
         public int PocetBlacklistDod = 0;
 
-        internal List<A1Wrapper> TopOdberatel = new List<A1Wrapper>();
-        internal List<B1Wrapper> TopDodavatel = new List<B1Wrapper>();
+        List<A1Wrapper> topOdberatel;
+        internal List<A1Wrapper> TopOdberatel
+        {
+            get
+            {
+                return topOdberatel;
+            }
+
+            set
+            {
+                topOdberatel = value;
+                for (int i = 0; i < topOdberatel.Count; i++)
+                {
+                    topOdberatel[i].Id = i + 1;
+                }
+            }
+        }
+
+        List<B1Wrapper> topDodavatel;
+        internal List<B1Wrapper> TopDodavatel
+        {
+            get
+            {
+                return topDodavatel;
+            }
+
+            set
+            {
+                topDodavatel = value;
+                for (int i = 0; i < topDodavatel.Count; i++)
+                {
+                    topDodavatel[i].Id = i + 1;
+                }
+            }
+        }
     }
 }

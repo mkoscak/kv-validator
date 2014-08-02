@@ -1023,6 +1023,7 @@ namespace Avat.Forms
             r.Tag = problems;
         }
 
+        static int TOP_TRANS = 5;
         private void btnBiznisReport_Click(object sender, EventArgs e)
         {
             if (kvDph == null)
@@ -1038,7 +1039,20 @@ namespace Avat.Forms
             br.PocetBlacklistOdb = VratPocetBlackListOdb();
             br.PocetBlacklistDod = VratPocetBlackListDod();
 
-            // TODO top 5 transkacii
+            // top odberatelske z A1 a A2
+            var tmpTransOdb = kvDph.Transakcie.A1.OrderByDescending(a => a.Z).
+                    Take(TOP_TRANS).Select(a => new A1Wrapper(a)).ToList();
+            tmpTransOdb.AddRange(kvDph.Transakcie.A2.OrderByDescending(a => a.Z).
+                    Take(TOP_TRANS).Select(a => new A1Wrapper(a)).ToList());
+            br.TopOdberatel = tmpTransOdb.OrderByDescending(a => a.SumaDane).Take(TOP_TRANS).ToList();
+
+            // top dodavatelske z B1 a B2
+            var tmpTransDod = kvDph.Transakcie.B1.OrderByDescending(a => a.Z).
+                    Take(TOP_TRANS).Select(a => new B1Wrapper(a)).ToList();
+            tmpTransDod.AddRange(kvDph.Transakcie.B2.OrderByDescending(a => a.Z).
+                    Take(TOP_TRANS).Select(a => new B1Wrapper(a)).ToList());
+            br.TopDodavatel = tmpTransDod.OrderByDescending(a => a.SumaDane).Take(TOP_TRANS).ToList();
+
             var frm = new FrmBiznisReport(br);
             frm.ShowDialog(this);
         }

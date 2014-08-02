@@ -22,6 +22,22 @@ namespace Avat.Wrappers
             id = ItemCounter.Next;
         }
 
+        public B1Wrapper(B2 b2)
+        {
+            this.b1 = new B1();
+            b1.D = b2.D;
+            b1.Den = b2.Den;
+            b1.Dod = b2.Dod;
+            b1.F = b2.F;
+            b1.KOpr = b2.KOpr;
+            b1.KOprSpecified = b2.KOprSpecified;
+            b1.O = b2.O;
+            b1.S = b2.S;
+            b1.Z = b2.Z;
+
+            id = ItemCounter.Next;
+        }
+
         [DisplayName("#")]
         public int Id
         {

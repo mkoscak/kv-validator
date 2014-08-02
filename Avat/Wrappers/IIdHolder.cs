@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AvatValidator.Validators.TaxPayerValidator.Entities;
 
 namespace Avat.Wrappers
 {

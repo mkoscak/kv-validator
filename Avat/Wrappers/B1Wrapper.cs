@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace Avat.Wrappers
 {
-    class B1Wrapper : IIdHolder
+    class B1Wrapper : CommonWrapper
     {
         internal B1 b1;
 
@@ -22,7 +22,6 @@ namespace Avat.Wrappers
             id = ItemCounter.Next;
         }
 
-        int id = -1;
         [DisplayName("#")]
         public int Id
         {
@@ -44,6 +43,19 @@ namespace Avat.Wrappers
             set
             {
                 b1.Dod = value;
+            }
+        }
+
+        [DisplayName("Dodávateľ")]
+        public string DodavatelName
+        {
+            get
+            {
+                var found = Common.GetTaxPayer(Dodavatel);
+                if (found == null)
+                    return string.Empty;
+
+                return found.Nazov;
             }
         }
 
@@ -166,14 +178,5 @@ namespace Avat.Wrappers
                 catch (Exception) { }
             }
         }
-
-        #region IIdHolder Members
-
-        public void SetId(int id)
-        {
-            this.id = id;
-        }
-
-        #endregion
     }
 }

@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
     <Compile Include="Components\BiznisReport.cs" />
     <Compile Include="Components\FrmBiznisReport.cs">
       <SubType>Form</SubType>
@@ -141,6 +142,7 @@
     <Compile Include="Wrappers\B3Wrapper.cs" />
     <Compile Include="Wrappers\C1Wrapper.cs" />
     <Compile Include="Wrappers\C2Wrapper.cs" />
+    <Compile Include="Wrappers\CommonWrapper.cs" />
     <Compile Include="Wrappers\D1Wrapper.cs" />
     <Compile Include="Wrappers\D2Wrapper.cs" />
     <Compile Include="Wrappers\IIdHolder.cs" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Avat.Wrappers;
 
 namespace Avat.Components
 {
@@ -16,5 +17,8 @@ namespace Avat.Components
         public decimal DanePrij = 0;
         public int PocetBlacklistOdb = 0;
         public int PocetBlacklistDod = 0;
+
+        internal List<A1Wrapper> TopOdberatel = new List<A1Wrapper>();
+        internal List<B1Wrapper> TopDodavatel = new List<B1Wrapper>();
     }
 }

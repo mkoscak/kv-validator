@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace Avat.Wrappers
 {
-    class B3Wrapper : IIdHolder
+    class B3Wrapper : CommonWrapper
     {
         internal B3 b3;
 
@@ -22,7 +22,6 @@ namespace Avat.Wrappers
             id = ItemCounter.Next;
         }
 
-        int id = -1;
         [DisplayName("#")]
         public int Id
         {
@@ -99,14 +98,5 @@ namespace Avat.Wrappers
                 catch (Exception) { }
             }
         }
-
-        #region IIdHolder Members
-
-        public void SetId(int id)
-        {
-            this.id = id;
-        }
-
-        #endregion
     }
 }

@@ -41,7 +41,14 @@ namespace Avat.Wrappers
         {
             get
             {
+                if (id == -1)
+                    id = ItemCounter.Next;
                 return id;
+            }
+
+            internal set
+            {
+                id = value;
             }
         }
 

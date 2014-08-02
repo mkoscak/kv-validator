@@ -137,6 +137,7 @@
             // 
             // lblIcDph
             // 
+            this.lblIcDph.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIcDph.AutoSize = true;
             this.lblIcDph.BackColor = System.Drawing.Color.Transparent;
             this.lblIcDph.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -150,6 +151,7 @@
             // 
             // lblpIcDph
             // 
+            this.lblpIcDph.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpIcDph.AutoSize = true;
             this.lblpIcDph.BackColor = System.Drawing.Color.Transparent;
             this.lblpIcDph.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -163,6 +165,7 @@
             // 
             // lblDruh
             // 
+            this.lblDruh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDruh.AutoSize = true;
             this.lblDruh.BackColor = System.Drawing.Color.Transparent;
             this.lblDruh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -176,6 +179,7 @@
             // 
             // lblpDruh
             // 
+            this.lblpDruh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpDruh.AutoSize = true;
             this.lblpDruh.BackColor = System.Drawing.Color.Transparent;
             this.lblpDruh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -189,6 +193,7 @@
             // 
             // lblObdobie
             // 
+            this.lblObdobie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblObdobie.AutoSize = true;
             this.lblObdobie.BackColor = System.Drawing.Color.Transparent;
             this.lblObdobie.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -202,6 +207,7 @@
             // 
             // lblpObdobie
             // 
+            this.lblpObdobie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpObdobie.AutoSize = true;
             this.lblpObdobie.BackColor = System.Drawing.Color.Transparent;
             this.lblpObdobie.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -215,6 +221,7 @@
             // 
             // lblNazov
             // 
+            this.lblNazov.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNazov.AutoSize = true;
             this.lblNazov.BackColor = System.Drawing.Color.Transparent;
             this.lblNazov.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -228,6 +235,7 @@
             // 
             // lblpNazov
             // 
+            this.lblpNazov.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpNazov.AutoSize = true;
             this.lblpNazov.BackColor = System.Drawing.Color.Transparent;
             this.lblpNazov.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -241,6 +249,7 @@
             // 
             // lblStat
             // 
+            this.lblStat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStat.AutoSize = true;
             this.lblStat.BackColor = System.Drawing.Color.Transparent;
             this.lblStat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -254,6 +263,7 @@
             // 
             // lblpStat
             // 
+            this.lblpStat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpStat.AutoSize = true;
             this.lblpStat.BackColor = System.Drawing.Color.Transparent;
             this.lblpStat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -267,6 +277,7 @@
             // 
             // lblObec
             // 
+            this.lblObec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblObec.AutoSize = true;
             this.lblObec.BackColor = System.Drawing.Color.Transparent;
             this.lblObec.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -280,6 +291,7 @@
             // 
             // lblpObec
             // 
+            this.lblpObec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpObec.AutoSize = true;
             this.lblpObec.BackColor = System.Drawing.Color.Transparent;
             this.lblpObec.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -293,6 +305,7 @@
             // 
             // lblpBlacklist
             // 
+            this.lblpBlacklist.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpBlacklist.AutoSize = true;
             this.lblpBlacklist.BackColor = System.Drawing.Color.Transparent;
             this.lblpBlacklist.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -306,6 +319,7 @@
             // 
             // lblBlacklist
             // 
+            this.lblBlacklist.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblBlacklist.AutoSize = true;
             this.lblBlacklist.BackColor = System.Drawing.Color.Transparent;
             this.lblBlacklist.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -319,6 +333,7 @@
             // 
             // lblTaxpayer
             // 
+            this.lblTaxpayer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTaxpayer.AutoSize = true;
             this.lblTaxpayer.BackColor = System.Drawing.Color.Transparent;
             this.lblTaxpayer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -332,6 +347,7 @@
             // 
             // lblpTaxpayers
             // 
+            this.lblpTaxpayers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpTaxpayers.AutoSize = true;
             this.lblpTaxpayers.BackColor = System.Drawing.Color.Transparent;
             this.lblpTaxpayers.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -345,6 +361,7 @@
             // 
             // lblKodopravy
             // 
+            this.lblKodopravy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblKodopravy.AutoSize = true;
             this.lblKodopravy.BackColor = System.Drawing.Color.Transparent;
             this.lblKodopravy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -358,6 +375,7 @@
             // 
             // lblpKodopravy
             // 
+            this.lblpKodopravy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpKodopravy.AutoSize = true;
             this.lblpKodopravy.BackColor = System.Drawing.Color.Transparent;
             this.lblpKodopravy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -371,6 +389,7 @@
             // 
             // lblTovary
             // 
+            this.lblTovary.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTovary.AutoSize = true;
             this.lblTovary.BackColor = System.Drawing.Color.Transparent;
             this.lblTovary.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -384,6 +403,7 @@
             // 
             // lblpTovary
             // 
+            this.lblpTovary.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpTovary.AutoSize = true;
             this.lblpTovary.BackColor = System.Drawing.Color.Transparent;
             this.lblpTovary.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -397,6 +417,7 @@
             // 
             // lblTaxes
             // 
+            this.lblTaxes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTaxes.AutoSize = true;
             this.lblTaxes.BackColor = System.Drawing.Color.Transparent;
             this.lblTaxes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -410,6 +431,7 @@
             // 
             // lblpTaxes
             // 
+            this.lblpTaxes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpTaxes.AutoSize = true;
             this.lblpTaxes.BackColor = System.Drawing.Color.Transparent;
             this.lblpTaxes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -423,6 +445,7 @@
             // 
             // lblA1
             // 
+            this.lblA1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblA1.AutoSize = true;
             this.lblA1.BackColor = System.Drawing.Color.Transparent;
             this.lblA1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -436,6 +459,7 @@
             // 
             // lblpA1
             // 
+            this.lblpA1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpA1.AutoSize = true;
             this.lblpA1.BackColor = System.Drawing.Color.Transparent;
             this.lblpA1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -449,6 +473,7 @@
             // 
             // lblpA2
             // 
+            this.lblpA2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpA2.AutoSize = true;
             this.lblpA2.BackColor = System.Drawing.Color.Transparent;
             this.lblpA2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -462,6 +487,7 @@
             // 
             // lblA2
             // 
+            this.lblA2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblA2.AutoSize = true;
             this.lblA2.BackColor = System.Drawing.Color.Transparent;
             this.lblA2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -475,6 +501,7 @@
             // 
             // lblpB1
             // 
+            this.lblpB1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpB1.AutoSize = true;
             this.lblpB1.BackColor = System.Drawing.Color.Transparent;
             this.lblpB1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -488,6 +515,7 @@
             // 
             // lblB1
             // 
+            this.lblB1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblB1.AutoSize = true;
             this.lblB1.BackColor = System.Drawing.Color.Transparent;
             this.lblB1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -501,6 +529,7 @@
             // 
             // lblpB2
             // 
+            this.lblpB2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpB2.AutoSize = true;
             this.lblpB2.BackColor = System.Drawing.Color.Transparent;
             this.lblpB2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -514,6 +543,7 @@
             // 
             // lblB2
             // 
+            this.lblB2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblB2.AutoSize = true;
             this.lblB2.BackColor = System.Drawing.Color.Transparent;
             this.lblB2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -527,6 +557,7 @@
             // 
             // lblpB3
             // 
+            this.lblpB3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpB3.AutoSize = true;
             this.lblpB3.BackColor = System.Drawing.Color.Transparent;
             this.lblpB3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -540,6 +571,7 @@
             // 
             // lblB3
             // 
+            this.lblB3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblB3.AutoSize = true;
             this.lblB3.BackColor = System.Drawing.Color.Transparent;
             this.lblB3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -553,6 +585,7 @@
             // 
             // lblpC1
             // 
+            this.lblpC1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpC1.AutoSize = true;
             this.lblpC1.BackColor = System.Drawing.Color.Transparent;
             this.lblpC1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -566,6 +599,7 @@
             // 
             // lblC1
             // 
+            this.lblC1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblC1.AutoSize = true;
             this.lblC1.BackColor = System.Drawing.Color.Transparent;
             this.lblC1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -579,6 +613,7 @@
             // 
             // lblpC2
             // 
+            this.lblpC2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpC2.AutoSize = true;
             this.lblpC2.BackColor = System.Drawing.Color.Transparent;
             this.lblpC2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -592,6 +627,7 @@
             // 
             // lblC2
             // 
+            this.lblC2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblC2.AutoSize = true;
             this.lblC2.BackColor = System.Drawing.Color.Transparent;
             this.lblC2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -605,6 +641,7 @@
             // 
             // lblpD1
             // 
+            this.lblpD1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpD1.AutoSize = true;
             this.lblpD1.BackColor = System.Drawing.Color.Transparent;
             this.lblpD1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -618,6 +655,7 @@
             // 
             // lblD1
             // 
+            this.lblD1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblD1.AutoSize = true;
             this.lblD1.BackColor = System.Drawing.Color.Transparent;
             this.lblD1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -631,6 +669,7 @@
             // 
             // lblpD2
             // 
+            this.lblpD2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblpD2.AutoSize = true;
             this.lblpD2.BackColor = System.Drawing.Color.Transparent;
             this.lblpD2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -644,6 +683,7 @@
             // 
             // lblD2
             // 
+            this.lblD2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblD2.AutoSize = true;
             this.lblD2.BackColor = System.Drawing.Color.Transparent;
             this.lblD2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));

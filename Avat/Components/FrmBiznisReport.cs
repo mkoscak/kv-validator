@@ -12,6 +12,7 @@ using Avat.Forms;
 using System.IO;
 using System.Diagnostics;
 using System.Globalization;
+using Avat.Wrappers;
 
 namespace Avat.Components
 {
@@ -48,6 +49,9 @@ namespace Avat.Components
 
             lblpOdb.Text = br.PocetBlacklistOdb.ToString("n0", culture);
             lblpDod.Text = br.PocetBlacklistDod.ToString("n0", culture);
+
+            gridTopOdb.DataSource = new MySortableBindingList<A1Wrapper>(br.TopOdberatel);
+            gridTopDod.DataSource = new MySortableBindingList<B1Wrapper>(br.TopDodavatel);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -109,6 +113,11 @@ namespace Avat.Components
                 ws.Cells[1, 1, r - 1, 1].Style.Fill.BackgroundColor.SetColor(Color.Wheat);
                 ws.Cells[1, 2, r - 1, 2].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
                 ws.Cells[1, 2, r - 1, 2].Style.Fill.BackgroundColor.SetColor(Color.WhiteSmoke);
+
+                var wsTopOdb = pck.Workbook.Worksheets.Add(tabReports.Controls[1].Text);
+                Common.ExportGridToExcel(wsTopOdb, gridTopOdb);
+                var wsTopDod = pck.Workbook.Worksheets.Add(tabReports.Controls[2].Text);
+                Common.ExportGridToExcel(wsTopDod, gridTopDod);
 
                 pck.SaveAs(new FileInfo(fname));
             }

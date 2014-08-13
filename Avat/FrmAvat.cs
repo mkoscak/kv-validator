@@ -17,6 +17,8 @@ using Avat.Properties;
 using AvatValidator.Validators.BlackListValidator.Entities;
 using AvatValidator.Validators.TaxPayerValidator.Entities;
 using AvatValidator.Sql;
+using System.Net;
+using System.IO.Compression;
 
 namespace Avat.Forms
 {
@@ -69,10 +71,20 @@ namespace Avat.Forms
         #region Automaticke importy
 
         bool ImportRunning = false;
-        string blFile = @".\data\ds_dphz.xml";
-        string tpFile = @".\data\ds_dphs.xml";
-        string TmpDatabaseName = "tmp_avat.db";
-
+        static readonly string ImportFolder = @".\import\";
+        static readonly string tpFile = "ds_dphs";
+        static readonly string blFile = "ds_dphz";
+        static readonly string blFileXml = ImportFolder + blFile + ".xml";
+        static readonly string tpFileXml = ImportFolder + tpFile + ".xml";
+        static readonly string TmpDatabaseName = "tmp_avat.db";
+        static readonly string ImportFilesUrl = @"http://edane.drsr.sk/report/";
+        static readonly string blFileUrl = ImportFilesUrl + blFile + ".zip";
+        static readonly string tpFileUrl = ImportFilesUrl + tpFile + ".zip";
+        static readonly string tpZip = ImportFolder + tpFile + ".zip";
+        static readonly string blZip = ImportFolder + blFile + ".zip";
+        static readonly string tpFileXmlProcessed = tpFileXml + ".processed";
+        static readonly string blFileXmlProcessed = blFileXml + ".processed";
+        
         private void RunImports()
         {
             var bw = new BackgroundWorker();
@@ -87,49 +99,165 @@ namespace Avat.Forms
 
         void bw_ImportsCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            var bw = sender as BackgroundWorker;
+
             try
             {
-                if (File.Exists(TmpDatabaseName) && File.Exists(DbProvider.DefaultDataSource))
+                if (e.Result != null && e.Result is Exception)
                 {
-                    if (File.Exists(DbProvider.DefaultDataSource + ".old"))
-                        File.Delete(DbProvider.DefaultDataSource + ".old");
-
-                    File.Move(DbProvider.DefaultDataSource, DbProvider.DefaultDataSource + ".old");
-                    File.Move(TmpDatabaseName, DbProvider.DefaultDataSource);
-
-                    // aktualizacia a presun uspesne.. premenujeme zdrojove xml na spracovane
-                    if (File.Exists(blFile))
-                        File.Move(blFile, blFile + ".processed");
-                    if (File.Exists(tpFile))
-                        File.Move(tpFile, tpFile + ".processed");
+                    ShowProgress((e.Result as Exception).Message);
+                    return;
                 }
+
+                if (!File.Exists(TmpDatabaseName) || !File.Exists(DbProvider.DefaultDataSource))
+                {
+                    ShowProgress(string.Empty); // ?? chyba?
+                    return;
+                }
+
+                if (File.Exists(DbProvider.DefaultDataSource + ".old"))
+                    File.Delete(DbProvider.DefaultDataSource + ".old");
+
+                File.Move(DbProvider.DefaultDataSource, DbProvider.DefaultDataSource + ".old");
+                File.Move(TmpDatabaseName, DbProvider.DefaultDataSource);
+
+                // aktualizacia a presun uspesne.. premenujeme zdrojove xml na spracovane
+                if (File.Exists(tpFileXml))
+                    File.Move(tpFileXml, tpFileXmlProcessed);
+                if (File.Exists(blFileXml))
+                    File.Move(blFileXml, blFileXmlProcessed);
+
+                ShowProgress(string.Empty);// ak bez problemov
             }
             catch (Exception)
             {
+                ShowProgress("Neočakávaná výnimka!");
             }
             finally
             {
                 ImportRunning = false;
-                lblHeaderProgress.Text = string.Empty;
             }
         }
 
         void bw_ImportsProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            // ??
-            lblHeaderProgress.Text = (e.UserState ?? "").ToString();
+            ShowProgress((e.UserState ?? string.Empty).ToString());
+        }
+
+        void ShowProgress(string text)
+        {
+            lblHeaderProgress.Text = text;
         }
 
         void bw_ImportsWork(object sender, DoWorkEventArgs e)
         {
-            if (File.Exists(blFile) && File.Exists(tpFile))
+            e.Result = null;
+            var bw = sender as BackgroundWorker;
+            if (!Directory.Exists(ImportFolder))
+                Directory.CreateDirectory(ImportFolder);
+
+            bw.ReportProgress(10, "Kontrola aktuálnosti databázy..");
+            if (CheckTodaysImport())
+                return;
+
+            bw.ReportProgress(25, "Sťahovanie súborov na import..");
+            try {
+                DownloadDataFiles();
+            } catch (Exception ex) {
+                e.Result = new Exception("Sťahovanie súborov zlyhalo!", ex);
+                return;
+            }
+
+            bw.ReportProgress(45, "Rozbalenie súborov na import..");
+            try {
+                UnzipDataFiles();
+            }
+            catch (Exception ex) {
+                e.Result = new Exception("Rozbalenie súborov zlyhalo!", ex);
+                return;
+            }
+
+            bw.ReportProgress(50, "Import black-list..");
+            try {
+                BlackListManager.ImportDataFromXml(blFileXml, TmpDatabaseName);
+            } catch (Exception ex) {
+                e.Result = new Exception("Import black-list zlyhal!", ex);
+                return;
+            }
+            
+            bw.ReportProgress(99, "Import platcov..");
+            try {
+                TaxPayersManager.ImportDataFromXml(tpFileXml, TmpDatabaseName);
+            } catch (Exception ex) {
+                e.Result = new Exception("Import platcov zlyhal!", ex);
+                return;
+            }
+            
+            bw.ReportProgress(100, "Hotovo!");
+        }
+
+        // kontrola ci uz dnes prebehlo stiahnutie a import
+        private bool CheckTodaysImport()
+        {
+            if (!File.Exists(blFileXmlProcessed))
+                return false;
+
+            var fi = new FileInfo(blFileXmlProcessed);
+            if (fi.LastWriteTime.Date == DateTime.Now.Date)
+                return true;
+
+            return false;
+        }
+
+        private void DownloadDataFiles()
+        {
+            DownloadFile(blFileUrl, blZip);
+            DownloadFile(tpFileUrl, tpZip);
+        }
+
+        private void UnzipDataFiles()
+        {
+            UnzipFile(blZip);
+            UnzipFile(tpZip);
+        }
+
+        private void UnzipFile(string zip)
+        {
+            var fi = new FileInfo(zip);
+
+            // nefunguje..
+            using (FileStream inFile = fi.OpenRead())
             {
-                var bw = sender as BackgroundWorker;
-                bw.ReportProgress(50, "Import black-list..");
-                BlackListManager.ImportDataFromXml(blFile, TmpDatabaseName);
-                bw.ReportProgress(99, "Import platcov..");
-                TaxPayersManager.ImportDataFromXml(tpFile, TmpDatabaseName);
-                bw.ReportProgress(100, "Hotovo!");
+                // Get original file extension, for example "doc" from report.doc.gz.
+                string curFile = fi.FullName;
+                string origName = curFile.Remove(curFile.Length - fi.Extension.Length);
+
+                //Create the decompressed file. 
+                using (FileStream outFile = File.Create(origName))
+                {
+                    using (GZipStream Decompress = new GZipStream(inFile,
+                            CompressionMode.Decompress))
+                    {
+                        //Copy the decompression stream into the output file. 
+                        byte[] buffer = new byte[4096];
+                        int numRead;
+                        while ((numRead = Decompress.Read(buffer, 0, buffer.Length)) != 0)
+                        {
+                            outFile.Write(buffer, 0, numRead);
+                        }
+                        Console.WriteLine("Decompressed: {0}", fi.Name);
+                    }
+                }
+            }
+        }
+
+        private void DownloadFile(string fileUrl, string destName)
+        {
+            using (var client = new WebClient())
+            {
+                client.Proxy = WebProxy.GetDefaultProxy();
+                client.Credentials = CredentialCache.DefaultNetworkCredentials;
+                client.DownloadFile(fileUrl, destName);
             }
         }
 

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("VAToo")]
+[assembly: AssemblyTitle("Avat")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SAS Institute Inc.")]
-[assembly: AssemblyProduct("VAToo")]
-[assembly: AssemblyCopyright("Copyright © SAS Institute Inc. 2014")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Avat")]
+[assembly: AssemblyCopyright("Copyright © 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

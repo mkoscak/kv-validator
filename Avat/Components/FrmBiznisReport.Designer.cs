@@ -193,6 +193,7 @@
             this.grpPrij.Controls.Add(this.lblIcDph);
             this.grpPrij.Controls.Add(this.lblpPocPrij);
             this.grpPrij.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpPrij.ForeColor = System.Drawing.SystemColors.Highlight;
             this.grpPrij.Location = new System.Drawing.Point(6, 6);
             this.grpPrij.Name = "grpPrij";
             this.grpPrij.Size = new System.Drawing.Size(269, 151);
@@ -262,6 +263,7 @@
             this.grpVyst.Controls.Add(this.label7);
             this.grpVyst.Controls.Add(this.lblpPocVyst);
             this.grpVyst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpVyst.ForeColor = System.Drawing.SystemColors.Highlight;
             this.grpVyst.Location = new System.Drawing.Point(281, 6);
             this.grpVyst.Name = "grpVyst";
             this.grpVyst.Size = new System.Drawing.Size(269, 151);
@@ -532,6 +534,7 @@
             this.tabTopDod.Controls.Add(this.gridTopDod);
             this.tabTopDod.Location = new System.Drawing.Point(4, 22);
             this.tabTopDod.Name = "tabTopDod";
+            this.tabTopDod.Padding = new System.Windows.Forms.Padding(3);
             this.tabTopDod.Size = new System.Drawing.Size(559, 330);
             this.tabTopDod.TabIndex = 2;
             this.tabTopDod.Text = "Top 5 dodávateľských transakcií";
@@ -572,7 +575,7 @@
             this.gridTopDod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridTopDod.EnableHeadersVisualStyles = false;
             this.gridTopDod.GridColor = System.Drawing.Color.Gainsboro;
-            this.gridTopDod.Location = new System.Drawing.Point(0, 0);
+            this.gridTopDod.Location = new System.Drawing.Point(3, 3);
             this.gridTopDod.Margin = new System.Windows.Forms.Padding(1);
             this.gridTopDod.Name = "gridTopDod";
             this.gridTopDod.ReadOnly = true;
@@ -587,7 +590,7 @@
             this.gridTopDod.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.gridTopDod.RowHeadersWidth = 30;
             this.gridTopDod.RowTemplate.Height = 25;
-            this.gridTopDod.Size = new System.Drawing.Size(559, 330);
+            this.gridTopDod.Size = new System.Drawing.Size(553, 324);
             this.gridTopDod.TabIndex = 6;
             // 
             // FrmBiznisReport

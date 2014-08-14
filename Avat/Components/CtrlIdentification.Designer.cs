@@ -61,6 +61,7 @@ namespace Avat.Components
             // 
             // lblIcDph
             // 
+            this.lblIcDph.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIcDph.AutoSize = true;
             this.lblIcDph.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIcDph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -73,6 +74,7 @@ namespace Avat.Components
             // 
             // lblDruh
             // 
+            this.lblDruh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDruh.AutoSize = true;
             this.lblDruh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDruh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -85,6 +87,7 @@ namespace Avat.Components
             // 
             // lblObdobie
             // 
+            this.lblObdobie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblObdobie.AutoSize = true;
             this.lblObdobie.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObdobie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -97,6 +100,7 @@ namespace Avat.Components
             // 
             // lblNazov
             // 
+            this.lblNazov.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNazov.AutoSize = true;
             this.lblNazov.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblNazov.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -109,6 +113,7 @@ namespace Avat.Components
             // 
             // lblStat
             // 
+            this.lblStat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStat.AutoSize = true;
             this.lblStat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblStat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -121,6 +126,7 @@ namespace Avat.Components
             // 
             // lblObec
             // 
+            this.lblObec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblObec.AutoSize = true;
             this.lblObec.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -133,6 +139,7 @@ namespace Avat.Components
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -145,6 +152,7 @@ namespace Avat.Components
             // 
             // lblTelefon
             // 
+            this.lblTelefon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelefon.AutoSize = true;
             this.lblTelefon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -157,6 +165,7 @@ namespace Avat.Components
             // 
             // lblUlica
             // 
+            this.lblUlica.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUlica.AutoSize = true;
             this.lblUlica.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblUlica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -169,6 +178,7 @@ namespace Avat.Components
             // 
             // lblPsc
             // 
+            this.lblPsc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPsc.AutoSize = true;
             this.lblPsc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
@@ -181,6 +191,7 @@ namespace Avat.Components
             // 
             // txtIcDph
             // 
+            this.txtIcDph.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtIcDph.BackColor = System.Drawing.SystemColors.Info;
             this.txtIcDph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIcDph.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -192,6 +203,7 @@ namespace Avat.Components
             // 
             // txtName
             // 
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtName.BackColor = System.Drawing.SystemColors.Info;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -203,6 +215,7 @@ namespace Avat.Components
             // 
             // txtState
             // 
+            this.txtState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtState.BackColor = System.Drawing.SystemColors.Info;
             this.txtState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -214,6 +227,7 @@ namespace Avat.Components
             // 
             // txtCity
             // 
+            this.txtCity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCity.BackColor = System.Drawing.SystemColors.Info;
             this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -225,6 +239,7 @@ namespace Avat.Components
             // 
             // txtPsc
             // 
+            this.txtPsc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPsc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPsc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -236,6 +251,7 @@ namespace Avat.Components
             // 
             // txtAddress
             // 
+            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAddress.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -247,6 +263,7 @@ namespace Avat.Components
             // 
             // txtPhone
             // 
+            this.txtPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPhone.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -258,6 +275,7 @@ namespace Avat.Components
             // 
             // txteMail
             // 
+            this.txteMail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txteMail.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txteMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txteMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -270,6 +288,7 @@ namespace Avat.Components
             // 
             // txtYear
             // 
+            this.txtYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtYear.BackColor = System.Drawing.SystemColors.Info;
             this.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -291,6 +310,7 @@ namespace Avat.Components
             // 
             // txtPeriod
             // 
+            this.txtPeriod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPeriod.BackColor = System.Drawing.SystemColors.Info;
             this.txtPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,6 +332,7 @@ namespace Avat.Components
             // 
             // panelKind
             // 
+            this.panelKind.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelKind.BackColor = System.Drawing.Color.Transparent;
             this.panelKind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelKind.Controls.Add(this.cbKind);
@@ -353,6 +374,7 @@ namespace Avat.Components
             // 
             // panelPeriod
             // 
+            this.panelPeriod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelPeriod.BackColor = System.Drawing.Color.Transparent;
             this.panelPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPeriod.Controls.Add(this.cbPeriodType);

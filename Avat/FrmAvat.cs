@@ -124,9 +124,17 @@ namespace Avat.Forms
 
                 // aktualizacia a presun uspesne.. premenujeme zdrojove xml na spracovane
                 if (File.Exists(tpFileXml))
+                {
+                    if (File.Exists(tpFileXmlProcessed))
+                        File.Delete(tpFileXmlProcessed);
                     File.Move(tpFileXml, tpFileXmlProcessed);
+                }
                 if (File.Exists(blFileXml))
+                {
+                    if (File.Exists(blFileXmlProcessed))
+                        File.Delete(blFileXmlProcessed);
                     File.Move(blFileXml, blFileXmlProcessed);
+                }
 
                 ShowProgress(string.Empty);// ak bez problemov
             }
@@ -207,7 +215,8 @@ namespace Avat.Forms
                 return false;
 
             var fi = new FileInfo(blFileXmlProcessed);
-            if (fi.LastWriteTime.Date == DateTime.Now.Date)
+            //if (fi.LastWriteTime.Date == DateTime.Now.Date)
+            if (fi.LastAccessTime.Date == DateTime.Now.Date)
                 return true;
 
             return false;
@@ -239,7 +248,7 @@ namespace Avat.Forms
         {
             using (var client = new WebClient())
             {
-                client.Proxy = WebProxy.GetDefaultProxy();
+                client.Proxy = WebRequest.GetSystemWebProxy();
                 client.Credentials = CredentialCache.DefaultNetworkCredentials;
                 client.DownloadFile(fileUrl, destName);
             }

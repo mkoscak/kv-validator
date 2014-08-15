@@ -249,6 +249,7 @@ namespace Avat.Forms
             using (var client = new WebClient())
             {
                 client.Proxy = WebRequest.GetSystemWebProxy();
+                client.Proxy.Credentials = CredentialCache.DefaultNetworkCredentials;
                 client.Credentials = CredentialCache.DefaultNetworkCredentials;
                 client.DownloadFile(fileUrl, destName);
             }

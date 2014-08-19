@@ -60,6 +60,41 @@ namespace Avat.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap glyphicons_206_ok_2 {
+            get {
+                object obj = ResourceManager.GetObject("glyphicons_206_ok_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap glyphicons_207_remove_2red {
+            get {
+                object obj = ResourceManager.GetObject("glyphicons_207_remove_2red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap glyphicons_207_remove_2red1 {
+            get {
+                object obj = ResourceManager.GetObject("glyphicons_207_remove_2red1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap glyphicons_207_remove_2red2 {
+            get {
+                object obj = ResourceManager.GetObject("glyphicons_207_remove_2red2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap glyphicons_207_remove_2red3 {
+            get {
+                object obj = ResourceManager.GetObject("glyphicons_207_remove_2red3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap identdef {
             get {
                 object obj = ResourceManager.GetObject("identdef", resourceCulture);

@@ -118,22 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="glyphicons_207_remove_2red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glyphicons_207_remove_2red.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="okno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\okno.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="okdef2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\okdef2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="identdef" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\identdef.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="glyphicons_207_remove_2red2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glyphicons_207_remove_2red2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="identokno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\identokno.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="glyphicons_206_ok_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glyphicons_206_ok_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="identok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\identok.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="identdef" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\identdef.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="okdef2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\okdef2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="glyphicons_207_remove_2red1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glyphicons_207_remove_2red1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="okdef" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\okdef.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="glyphicons_207_remove_2red3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glyphicons_207_remove_2red3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

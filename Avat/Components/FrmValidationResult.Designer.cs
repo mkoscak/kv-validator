@@ -78,7 +78,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(195)))));
             this.panelHeader.Controls.Add(this.lblHeader2);
             this.panelHeader.Controls.Add(this.lblHeader);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -397,7 +397,7 @@
             this.lblTovary.Location = new System.Drawing.Point(86, 440);
             this.lblTovary.Margin = new System.Windows.Forms.Padding(10);
             this.lblTovary.Name = "lblTovary";
-            this.lblTovary.Size = new System.Drawing.Size(58, 18);
+            this.lblTovary.Size = new System.Drawing.Size(56, 18);
             this.lblTovary.TabIndex = 25;
             this.lblTovary.Text = "Tovary:";
             // 

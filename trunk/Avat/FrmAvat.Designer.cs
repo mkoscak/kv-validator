@@ -34,10 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuXml = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuOps = new System.Windows.Forms.ToolStrip();
             this.btnReadXml = new System.Windows.Forms.ToolStripButton();
@@ -65,6 +61,10 @@
             this.btnC2 = new System.Windows.Forms.ToolStripButton();
             this.btnD1 = new System.Windows.Forms.ToolStripButton();
             this.btnD2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelA = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabelB = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabelC = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabelD = new System.Windows.Forms.ToolStripLabel();
             this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -83,17 +83,17 @@
             this.menuXml.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menuXml.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuXml.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator1,
+            this.toolStripLabelA,
             this.btnA1,
             this.btnA2,
-            this.toolStripSeparator2,
+            this.toolStripLabelB,
             this.btnB1,
             this.btnB2,
             this.btnB3,
-            this.toolStripSeparator3,
+            this.toolStripLabelC,
             this.btnC1,
             this.btnC2,
-            this.toolStripSeparator4,
+            this.toolStripLabelD,
             this.btnD1,
             this.btnD2});
             this.menuXml.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
@@ -104,26 +104,6 @@
             this.menuXml.Size = new System.Drawing.Size(150, 498);
             this.menuXml.TabIndex = 1;
             this.menuXml.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
             // tableLayoutPanel1
             // 
@@ -286,7 +266,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitle.Name = "lblTitle";
@@ -553,6 +533,50 @@
             this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
             this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
             // 
+            // toolStripLabelA
+            // 
+            this.toolStripLabelA.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripLabelA.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabelA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
+            this.toolStripLabelA.Name = "toolStripLabelA";
+            this.toolStripLabelA.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.toolStripLabelA.Size = new System.Drawing.Size(149, 30);
+            this.toolStripLabelA.Text = "A";
+            this.toolStripLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripLabelB
+            // 
+            this.toolStripLabelB.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripLabelB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabelB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
+            this.toolStripLabelB.Name = "toolStripLabelB";
+            this.toolStripLabelB.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.toolStripLabelB.Size = new System.Drawing.Size(149, 30);
+            this.toolStripLabelB.Text = "B";
+            this.toolStripLabelB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripLabelC
+            // 
+            this.toolStripLabelC.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripLabelC.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabelC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
+            this.toolStripLabelC.Name = "toolStripLabelC";
+            this.toolStripLabelC.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.toolStripLabelC.Size = new System.Drawing.Size(149, 30);
+            this.toolStripLabelC.Text = "C";
+            this.toolStripLabelC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripLabelD
+            // 
+            this.toolStripLabelD.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripLabelD.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabelD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
+            this.toolStripLabelD.Name = "toolStripLabelD";
+            this.toolStripLabelD.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.toolStripLabelD.Size = new System.Drawing.Size(149, 30);
+            this.toolStripLabelD.Text = "D";
+            this.toolStripLabelD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // gridData
             // 
             this.gridData.AllowUserToOrderColumns = true;
@@ -579,7 +603,7 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(195)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
@@ -638,17 +662,13 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip menuXml;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnA1;
         private System.Windows.Forms.ToolStripButton btnB2;
         private System.Windows.Forms.ToolStripButton btnA2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnB1;
         private System.Windows.Forms.ToolStripButton btnB3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnC1;
         private System.Windows.Forms.ToolStripButton btnC2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton btnD1;
         private System.Windows.Forms.ToolStripButton btnD2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -670,5 +690,9 @@
         private System.Windows.Forms.ToolStripMenuItem btnBiznisReport;
         private Avat.Components.MyDoubleBufferedGrid gridData;
         private System.Windows.Forms.ToolStripButton btnIdentification;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelA;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelB;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelC;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelD;
     }
 }

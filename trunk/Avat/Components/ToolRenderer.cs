@@ -32,15 +32,27 @@ namespace Avat.Components
 
             e.Graphics.FillRectangle(p, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
             if (isHover)
-                e.Graphics.DrawRectangle(Pens.LightBlue, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
+                e.Graphics.DrawRectangle(new Pen(Color.FromArgb(0, 115, 195)), 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
         }
 
         protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
         {
         }
 
+        protected override void OnRenderItemImage(ToolStripItemImageRenderEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            base.OnRenderItemImage(e);
+        }
+
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
+            if (e.Item is ToolStripLabel)
+            {
+                base.OnRenderItemText(e);
+                return;
+            }
+
             if ((e.Item is ToolStripButton && (e.Item as ToolStripButton).Checked) /*|| e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position))*/)
                 e.TextColor = Color.White;
 
@@ -56,6 +68,7 @@ namespace Avat.Components
             e.Text = count;
             e.TextColor = Color.FromArgb(199,199,199);
             e.TextFormat = TextFormatFlags.NoPadding | TextFormatFlags.Right;
+            e.TextRectangle = new Rectangle(e.TextRectangle.X, e.TextRectangle.Y, e.Item.Bounds.Width - e.TextRectangle.X - 4, e.TextRectangle.Height);
             base.OnRenderItemText(e);
         }
     }

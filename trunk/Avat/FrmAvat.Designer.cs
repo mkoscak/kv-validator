@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAvat));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuXml = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelA = new System.Windows.Forms.ToolStripLabel();
+            this.btnA1 = new System.Windows.Forms.ToolStripButton();
+            this.btnA2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabelB = new System.Windows.Forms.ToolStripLabel();
+            this.btnB1 = new System.Windows.Forms.ToolStripButton();
+            this.btnB2 = new System.Windows.Forms.ToolStripButton();
+            this.btnB3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabelC = new System.Windows.Forms.ToolStripLabel();
+            this.btnC1 = new System.Windows.Forms.ToolStripButton();
+            this.btnC2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabelD = new System.Windows.Forms.ToolStripLabel();
+            this.btnD1 = new System.Windows.Forms.ToolStripButton();
+            this.btnD2 = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuOps = new System.Windows.Forms.ToolStrip();
             this.btnReadXml = new System.Windows.Forms.ToolStripButton();
@@ -50,29 +58,20 @@
             this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
             this.panelContent = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.toolStripCorner = new System.Windows.Forms.ToolStrip();
             this.btnIdentification = new System.Windows.Forms.ToolStripButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeaderProgress = new System.Windows.Forms.Label();
             this.lblHeader2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnA1 = new System.Windows.Forms.ToolStripButton();
-            this.btnA2 = new System.Windows.Forms.ToolStripButton();
-            this.btnB1 = new System.Windows.Forms.ToolStripButton();
-            this.btnB2 = new System.Windows.Forms.ToolStripButton();
-            this.btnB3 = new System.Windows.Forms.ToolStripButton();
-            this.btnC1 = new System.Windows.Forms.ToolStripButton();
-            this.btnC2 = new System.Windows.Forms.ToolStripButton();
-            this.btnD1 = new System.Windows.Forms.ToolStripButton();
-            this.btnD2 = new System.Windows.Forms.ToolStripButton();
-            this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuOps.SuspendLayout();
             this.panelContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.toolStripCorner.SuspendLayout();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.SuspendLayout();
             // 
             // menuXml
@@ -116,6 +115,46 @@
             this.toolStripLabelA.Text = "A";
             this.toolStripLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnA1
+            // 
+            this.btnA1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.btnA1.Checked = true;
+            this.btnA1.CheckOnClick = true;
+            this.btnA1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.btnA1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnA1.ForeColor = System.Drawing.Color.Black;
+            this.btnA1.Image = global::Avat.Properties.Resources.ok;
+            this.btnA1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnA1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnA1.Margin = new System.Windows.Forms.Padding(0);
+            this.btnA1.Name = "btnA1";
+            this.btnA1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.btnA1.Size = new System.Drawing.Size(149, 37);
+            this.btnA1.Text = "A1 (9)";
+            this.btnA1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnA1.ToolTipText = "A1 - Štandardné odberateľské faktúry (tuzemské)";
+            this.btnA1.Click += new System.EventHandler(this.btnA1_Click);
+            // 
+            // btnA2
+            // 
+            this.btnA2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.btnA2.CheckOnClick = true;
+            this.btnA2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnA2.ForeColor = System.Drawing.Color.Black;
+            this.btnA2.Image = global::Avat.Properties.Resources.ok;
+            this.btnA2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnA2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnA2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnA2.Margin = new System.Windows.Forms.Padding(0);
+            this.btnA2.Name = "btnA2";
+            this.btnA2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.btnA2.Size = new System.Drawing.Size(149, 37);
+            this.btnA2.Text = "A2";
+            this.btnA2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnA2.ToolTipText = "A2 - vybrané transakcie (daň platí príjemca)";
+            this.btnA2.Click += new System.EventHandler(this.btnA2_Click);
+            // 
             // toolStripLabelB
             // 
             this.toolStripLabelB.BackColor = System.Drawing.Color.Transparent;
@@ -126,6 +165,63 @@
             this.toolStripLabelB.Size = new System.Drawing.Size(149, 30);
             this.toolStripLabelB.Text = "B";
             this.toolStripLabelB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnB1
+            // 
+            this.btnB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.btnB1.CheckOnClick = true;
+            this.btnB1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnB1.ForeColor = System.Drawing.Color.Black;
+            this.btnB1.Image = global::Avat.Properties.Resources.ok;
+            this.btnB1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnB1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnB1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB1.Margin = new System.Windows.Forms.Padding(0);
+            this.btnB1.Name = "btnB1";
+            this.btnB1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.btnB1.Size = new System.Drawing.Size(149, 37);
+            this.btnB1.Text = "B1";
+            this.btnB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnB1.ToolTipText = "B1 - prijaté faktúry (daň v tuzemsku)";
+            this.btnB1.Click += new System.EventHandler(this.btnB1_Click);
+            // 
+            // btnB2
+            // 
+            this.btnB2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.btnB2.CheckOnClick = true;
+            this.btnB2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnB2.ForeColor = System.Drawing.Color.Black;
+            this.btnB2.Image = global::Avat.Properties.Resources.ok;
+            this.btnB2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnB2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnB2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB2.Margin = new System.Windows.Forms.Padding(0);
+            this.btnB2.Name = "btnB2";
+            this.btnB2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.btnB2.Size = new System.Drawing.Size(149, 37);
+            this.btnB2.Text = "B2";
+            this.btnB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnB2.ToolTipText = "B2 - prijaté faktúry (daň platí dodávateľ)";
+            this.btnB2.Click += new System.EventHandler(this.btnB2_Click);
+            // 
+            // btnB3
+            // 
+            this.btnB3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.btnB3.CheckOnClick = true;
+            this.btnB3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnB3.ForeColor = System.Drawing.Color.Black;
+            this.btnB3.Image = global::Avat.Properties.Resources.ok;
+            this.btnB3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnB3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnB3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnB3.Margin = new System.Windows.Forms.Padding(0);
+            this.btnB3.Name = "btnB3";
+            this.btnB3.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.btnB3.Size = new System.Drawing.Size(149, 37);
+            this.btnB3.Text = "B3";
+            this.btnB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnB3.ToolTipText = "B3 - celkové sumy základov dane z prijatých zjednodušených faktúr";
+            this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
             // 
             // toolStripLabelC
             // 
@@ -138,6 +234,44 @@
             this.toolStripLabelC.Text = "C";
             this.toolStripLabelC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnC1
+            // 
+            this.btnC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.btnC1.CheckOnClick = true;
+            this.btnC1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnC1.ForeColor = System.Drawing.Color.Black;
+            this.btnC1.Image = global::Avat.Properties.Resources.ok;
+            this.btnC1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnC1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnC1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnC1.Margin = new System.Windows.Forms.Padding(0);
+            this.btnC1.Name = "btnC1";
+            this.btnC1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.btnC1.Size = new System.Drawing.Size(149, 37);
+            this.btnC1.Text = "C1";
+            this.btnC1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnC1.ToolTipText = "C1 - opravné faktúry k vystaveným faktúram (okrem ERP)";
+            this.btnC1.Click += new System.EventHandler(this.btnC1_Click);
+            // 
+            // btnC2
+            // 
+            this.btnC2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.btnC2.CheckOnClick = true;
+            this.btnC2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnC2.ForeColor = System.Drawing.Color.Black;
+            this.btnC2.Image = global::Avat.Properties.Resources.ok;
+            this.btnC2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnC2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnC2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnC2.Margin = new System.Windows.Forms.Padding(0);
+            this.btnC2.Name = "btnC2";
+            this.btnC2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.btnC2.Size = new System.Drawing.Size(149, 37);
+            this.btnC2.Text = "C2";
+            this.btnC2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnC2.ToolTipText = "C2 - opravné faktúry k prijatým faktúram";
+            this.btnC2.Click += new System.EventHandler(this.btnC2_Click);
+            // 
             // toolStripLabelD
             // 
             this.toolStripLabelD.BackColor = System.Drawing.Color.Transparent;
@@ -148,6 +282,44 @@
             this.toolStripLabelD.Size = new System.Drawing.Size(149, 30);
             this.toolStripLabelD.Text = "D";
             this.toolStripLabelD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnD1
+            // 
+            this.btnD1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.btnD1.CheckOnClick = true;
+            this.btnD1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnD1.ForeColor = System.Drawing.Color.Black;
+            this.btnD1.Image = global::Avat.Properties.Resources.ok;
+            this.btnD1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnD1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnD1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnD1.Margin = new System.Windows.Forms.Padding(0);
+            this.btnD1.Name = "btnD1";
+            this.btnD1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.btnD1.Size = new System.Drawing.Size(149, 37);
+            this.btnD1.Text = "D1";
+            this.btnD1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnD1.ToolTipText = "D1 - sumár elektronickej registračnej pokladnice (ERP)";
+            this.btnD1.Click += new System.EventHandler(this.btnD1_Click);
+            // 
+            // btnD2
+            // 
+            this.btnD2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.btnD2.CheckOnClick = true;
+            this.btnD2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnD2.ForeColor = System.Drawing.Color.Black;
+            this.btnD2.Image = global::Avat.Properties.Resources.ok;
+            this.btnD2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnD2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnD2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnD2.Margin = new System.Windows.Forms.Padding(0);
+            this.btnD2.Name = "btnD2";
+            this.btnD2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.btnD2.Size = new System.Drawing.Size(149, 37);
+            this.btnD2.Text = "D2";
+            this.btnD2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
+            this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -319,6 +491,58 @@
             this.lblTitle.Text = "A1 - Štandardné odberateľské faktúry (tuzemské)";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // gridData
+            // 
+            this.gridData.AllowUserToOrderColumns = true;
+            this.gridData.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.gridData.BackgroundColor = System.Drawing.Color.White;
+            this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridData.EnableHeadersVisualStyles = false;
+            this.gridData.GridColor = System.Drawing.Color.Gainsboro;
+            this.gridData.Location = new System.Drawing.Point(1, 50);
+            this.gridData.Margin = new System.Windows.Forms.Padding(1);
+            this.gridData.Name = "gridData";
+            this.gridData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridData.RowHeadersWidth = 30;
+            this.gridData.RowTemplate.Height = 25;
+            this.gridData.Size = new System.Drawing.Size(834, 441);
+            this.gridData.TabIndex = 6;
+            this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
+            this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
+            // 
             // toolStripCorner
             // 
             this.toolStripCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(195)))));
@@ -404,231 +628,6 @@
             this.lblHeader.Text = "AVAT";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnA1
-            // 
-            this.btnA1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.btnA1.Checked = true;
-            this.btnA1.CheckOnClick = true;
-            this.btnA1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.btnA1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnA1.ForeColor = System.Drawing.Color.Black;
-            this.btnA1.Image = global::Avat.Properties.Resources.ok;
-            this.btnA1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnA1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnA1.Margin = new System.Windows.Forms.Padding(0);
-            this.btnA1.Name = "btnA1";
-            this.btnA1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnA1.Size = new System.Drawing.Size(149, 37);
-            this.btnA1.Text = "A1 (9)";
-            this.btnA1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnA1.ToolTipText = "A1 - Štandardné odberateľské faktúry (tuzemské)";
-            this.btnA1.Click += new System.EventHandler(this.btnA1_Click);
-            // 
-            // btnA2
-            // 
-            this.btnA2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.btnA2.CheckOnClick = true;
-            this.btnA2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnA2.ForeColor = System.Drawing.Color.Black;
-            this.btnA2.Image = ((System.Drawing.Image)(resources.GetObject("btnA2.Image")));
-            this.btnA2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnA2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnA2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnA2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnA2.Name = "btnA2";
-            this.btnA2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnA2.Size = new System.Drawing.Size(149, 37);
-            this.btnA2.Text = "A2";
-            this.btnA2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnA2.ToolTipText = "A2 - vybrané transakcie (daň platí príjemca)";
-            this.btnA2.Click += new System.EventHandler(this.btnA2_Click);
-            // 
-            // btnB1
-            // 
-            this.btnB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.btnB1.CheckOnClick = true;
-            this.btnB1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnB1.ForeColor = System.Drawing.Color.Black;
-            this.btnB1.Image = ((System.Drawing.Image)(resources.GetObject("btnB1.Image")));
-            this.btnB1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnB1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnB1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnB1.Margin = new System.Windows.Forms.Padding(0);
-            this.btnB1.Name = "btnB1";
-            this.btnB1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnB1.Size = new System.Drawing.Size(149, 37);
-            this.btnB1.Text = "B1";
-            this.btnB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnB1.ToolTipText = "B1 - prijaté faktúry (daň v tuzemsku)";
-            this.btnB1.Click += new System.EventHandler(this.btnB1_Click);
-            // 
-            // btnB2
-            // 
-            this.btnB2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.btnB2.CheckOnClick = true;
-            this.btnB2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnB2.ForeColor = System.Drawing.Color.Black;
-            this.btnB2.Image = ((System.Drawing.Image)(resources.GetObject("btnB2.Image")));
-            this.btnB2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnB2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnB2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnB2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnB2.Name = "btnB2";
-            this.btnB2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnB2.Size = new System.Drawing.Size(149, 37);
-            this.btnB2.Text = "B2";
-            this.btnB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnB2.ToolTipText = "B2 - prijaté faktúry (daň platí dodávateľ)";
-            this.btnB2.Click += new System.EventHandler(this.btnB2_Click);
-            // 
-            // btnB3
-            // 
-            this.btnB3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.btnB3.CheckOnClick = true;
-            this.btnB3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnB3.ForeColor = System.Drawing.Color.Black;
-            this.btnB3.Image = ((System.Drawing.Image)(resources.GetObject("btnB3.Image")));
-            this.btnB3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnB3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnB3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnB3.Margin = new System.Windows.Forms.Padding(0);
-            this.btnB3.Name = "btnB3";
-            this.btnB3.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnB3.Size = new System.Drawing.Size(149, 37);
-            this.btnB3.Text = "B3";
-            this.btnB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnB3.ToolTipText = "B3 - celkové sumy základov dane z prijatých zjednodušených faktúr";
-            this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
-            // 
-            // btnC1
-            // 
-            this.btnC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.btnC1.CheckOnClick = true;
-            this.btnC1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnC1.ForeColor = System.Drawing.Color.Black;
-            this.btnC1.Image = ((System.Drawing.Image)(resources.GetObject("btnC1.Image")));
-            this.btnC1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnC1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnC1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnC1.Margin = new System.Windows.Forms.Padding(0);
-            this.btnC1.Name = "btnC1";
-            this.btnC1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnC1.Size = new System.Drawing.Size(149, 37);
-            this.btnC1.Text = "C1";
-            this.btnC1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnC1.ToolTipText = "C1 - opravné faktúry k vystaveným faktúram (okrem ERP)";
-            this.btnC1.Click += new System.EventHandler(this.btnC1_Click);
-            // 
-            // btnC2
-            // 
-            this.btnC2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.btnC2.CheckOnClick = true;
-            this.btnC2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnC2.ForeColor = System.Drawing.Color.Black;
-            this.btnC2.Image = ((System.Drawing.Image)(resources.GetObject("btnC2.Image")));
-            this.btnC2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnC2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnC2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnC2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnC2.Name = "btnC2";
-            this.btnC2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnC2.Size = new System.Drawing.Size(149, 37);
-            this.btnC2.Text = "C2";
-            this.btnC2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnC2.ToolTipText = "C2 - opravné faktúry k prijatým faktúram";
-            this.btnC2.Click += new System.EventHandler(this.btnC2_Click);
-            // 
-            // btnD1
-            // 
-            this.btnD1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.btnD1.CheckOnClick = true;
-            this.btnD1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnD1.ForeColor = System.Drawing.Color.Black;
-            this.btnD1.Image = ((System.Drawing.Image)(resources.GetObject("btnD1.Image")));
-            this.btnD1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnD1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnD1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnD1.Margin = new System.Windows.Forms.Padding(0);
-            this.btnD1.Name = "btnD1";
-            this.btnD1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnD1.Size = new System.Drawing.Size(149, 37);
-            this.btnD1.Text = "D1";
-            this.btnD1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnD1.ToolTipText = "D1 - sumár elektronickej registračnej pokladnice (ERP)";
-            this.btnD1.Click += new System.EventHandler(this.btnD1_Click);
-            // 
-            // btnD2
-            // 
-            this.btnD2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.btnD2.CheckOnClick = true;
-            this.btnD2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnD2.ForeColor = System.Drawing.Color.Black;
-            this.btnD2.Image = ((System.Drawing.Image)(resources.GetObject("btnD2.Image")));
-            this.btnD2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnD2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnD2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnD2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnD2.Name = "btnD2";
-            this.btnD2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnD2.Size = new System.Drawing.Size(149, 37);
-            this.btnD2.Text = "D2";
-            this.btnD2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
-            this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
-            // 
-            // gridData
-            // 
-            this.gridData.AllowUserToOrderColumns = true;
-            this.gridData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.gridData.BackgroundColor = System.Drawing.Color.White;
-            this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(195)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gridData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridData.EnableHeadersVisualStyles = false;
-            this.gridData.GridColor = System.Drawing.Color.Gainsboro;
-            this.gridData.Location = new System.Drawing.Point(1, 50);
-            this.gridData.Margin = new System.Windows.Forms.Padding(1);
-            this.gridData.Name = "gridData";
-            this.gridData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.gridData.RowHeadersWidth = 30;
-            this.gridData.RowTemplate.Height = 25;
-            this.gridData.Size = new System.Drawing.Size(834, 441);
-            this.gridData.TabIndex = 6;
-            this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
-            this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
-            // 
             // FrmAvat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,11 +649,11 @@
             this.menuOps.ResumeLayout(false);
             this.menuOps.PerformLayout();
             this.panelContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
             this.toolStripCorner.ResumeLayout(false);
             this.toolStripCorner.PerformLayout();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
             this.ResumeLayout(false);
 
         }

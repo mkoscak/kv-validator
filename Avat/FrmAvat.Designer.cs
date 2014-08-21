@@ -34,24 +34,28 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuXml = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabelA = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabelB = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabelC = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabelD = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuOps = new System.Windows.Forms.ToolStrip();
             this.btnReadXml = new System.Windows.Forms.ToolStripButton();
-            this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
             this.btnSaveXml = new System.Windows.Forms.ToolStripButton();
             this.btnOtherOps = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnNewAvat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBiznisReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
             this.panelContent = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.toolStripCorner = new System.Windows.Forms.ToolStrip();
+            this.btnIdentification = new System.Windows.Forms.ToolStripButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeaderProgress = new System.Windows.Forms.Label();
             this.lblHeader2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnIdentification = new System.Windows.Forms.ToolStripButton();
             this.btnA1 = new System.Windows.Forms.ToolStripButton();
             this.btnA2 = new System.Windows.Forms.ToolStripButton();
             this.btnB1 = new System.Windows.Forms.ToolStripButton();
@@ -61,10 +65,6 @@
             this.btnC2 = new System.Windows.Forms.ToolStripButton();
             this.btnD1 = new System.Windows.Forms.ToolStripButton();
             this.btnD2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabelA = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabelB = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabelC = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabelD = new System.Windows.Forms.ToolStripLabel();
             this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -104,6 +104,50 @@
             this.menuXml.Size = new System.Drawing.Size(150, 498);
             this.menuXml.TabIndex = 1;
             this.menuXml.Text = "toolStrip1";
+            // 
+            // toolStripLabelA
+            // 
+            this.toolStripLabelA.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripLabelA.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabelA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
+            this.toolStripLabelA.Name = "toolStripLabelA";
+            this.toolStripLabelA.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.toolStripLabelA.Size = new System.Drawing.Size(149, 30);
+            this.toolStripLabelA.Text = "A";
+            this.toolStripLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripLabelB
+            // 
+            this.toolStripLabelB.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripLabelB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabelB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
+            this.toolStripLabelB.Name = "toolStripLabelB";
+            this.toolStripLabelB.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.toolStripLabelB.Size = new System.Drawing.Size(149, 30);
+            this.toolStripLabelB.Text = "B";
+            this.toolStripLabelB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripLabelC
+            // 
+            this.toolStripLabelC.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripLabelC.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabelC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
+            this.toolStripLabelC.Name = "toolStripLabelC";
+            this.toolStripLabelC.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.toolStripLabelC.Size = new System.Drawing.Size(149, 30);
+            this.toolStripLabelC.Text = "C";
+            this.toolStripLabelC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripLabelD
+            // 
+            this.toolStripLabelD.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripLabelD.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabelD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
+            this.toolStripLabelD.Name = "toolStripLabelD";
+            this.toolStripLabelD.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.toolStripLabelD.Size = new System.Drawing.Size(149, 30);
+            this.toolStripLabelD.Text = "D";
+            this.toolStripLabelD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel1
             // 
@@ -161,22 +205,6 @@
             this.btnReadXml.Size = new System.Drawing.Size(95, 34);
             this.btnReadXml.Text = "&Načítať";
             this.btnReadXml.Click += new System.EventHandler(this.btnReadXml_Click);
-            // 
-            // btnCheckAll
-            // 
-            this.btnCheckAll.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnCheckAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(145)))));
-            this.btnCheckAll.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCheckAll.ForeColor = System.Drawing.Color.White;
-            this.btnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnCheckAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCheckAll.Margin = new System.Windows.Forms.Padding(0, 6, 3, 5);
-            this.btnCheckAll.Name = "btnCheckAll";
-            this.btnCheckAll.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnCheckAll.Size = new System.Drawing.Size(130, 34);
-            this.btnCheckAll.Text = "&Skontrolovať";
-            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
             // 
             // btnSaveXml
             // 
@@ -242,6 +270,22 @@
             this.btnBiznisReport.Text = "Biznis report";
             this.btnBiznisReport.Click += new System.EventHandler(this.btnBiznisReport_Click);
             // 
+            // btnCheckAll
+            // 
+            this.btnCheckAll.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnCheckAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(145)))));
+            this.btnCheckAll.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCheckAll.ForeColor = System.Drawing.Color.White;
+            this.btnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCheckAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCheckAll.Margin = new System.Windows.Forms.Padding(0, 6, 3, 5);
+            this.btnCheckAll.Name = "btnCheckAll";
+            this.btnCheckAll.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.btnCheckAll.Size = new System.Drawing.Size(130, 34);
+            this.btnCheckAll.Text = "&Skontrolovať";
+            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
+            // 
             // panelContent
             // 
             this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -289,6 +333,20 @@
             this.toolStripCorner.Size = new System.Drawing.Size(150, 53);
             this.toolStripCorner.TabIndex = 5;
             this.toolStripCorner.Text = "toolStrip1";
+            // 
+            // btnIdentification
+            // 
+            this.btnIdentification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(145)))));
+            this.btnIdentification.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIdentification.ForeColor = System.Drawing.Color.White;
+            this.btnIdentification.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnIdentification.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnIdentification.Margin = new System.Windows.Forms.Padding(15, 10, 0, 9);
+            this.btnIdentification.Name = "btnIdentification";
+            this.btnIdentification.Padding = new System.Windows.Forms.Padding(15, 0, 5, 0);
+            this.btnIdentification.Size = new System.Drawing.Size(107, 34);
+            this.btnIdentification.Text = "&Identifikácia";
+            this.btnIdentification.Click += new System.EventHandler(this.btnIdentification_Click);
             // 
             // panelHeader
             // 
@@ -346,20 +404,6 @@
             this.lblHeader.Text = "AVAT";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnIdentification
-            // 
-            this.btnIdentification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(145)))));
-            this.btnIdentification.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIdentification.ForeColor = System.Drawing.Color.White;
-            this.btnIdentification.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnIdentification.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnIdentification.Margin = new System.Windows.Forms.Padding(15, 10, 0, 9);
-            this.btnIdentification.Name = "btnIdentification";
-            this.btnIdentification.Padding = new System.Windows.Forms.Padding(15, 0, 5, 0);
-            this.btnIdentification.Size = new System.Drawing.Size(107, 34);
-            this.btnIdentification.Text = "&Identifikácia";
-            this.btnIdentification.Click += new System.EventHandler(this.btnIdentification_Click);
-            // 
             // btnA1
             // 
             this.btnA1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
@@ -368,7 +412,7 @@
             this.btnA1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.btnA1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnA1.ForeColor = System.Drawing.Color.Black;
-            this.btnA1.Image = global::Avat.Properties.Resources.glyphicons_206_ok_2;
+            this.btnA1.Image = global::Avat.Properties.Resources.ok;
             this.btnA1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnA1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -532,50 +576,6 @@
             this.btnD2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
             this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
-            // 
-            // toolStripLabelA
-            // 
-            this.toolStripLabelA.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripLabelA.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabelA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
-            this.toolStripLabelA.Name = "toolStripLabelA";
-            this.toolStripLabelA.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.toolStripLabelA.Size = new System.Drawing.Size(149, 30);
-            this.toolStripLabelA.Text = "A";
-            this.toolStripLabelA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolStripLabelB
-            // 
-            this.toolStripLabelB.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripLabelB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabelB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
-            this.toolStripLabelB.Name = "toolStripLabelB";
-            this.toolStripLabelB.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.toolStripLabelB.Size = new System.Drawing.Size(149, 30);
-            this.toolStripLabelB.Text = "B";
-            this.toolStripLabelB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolStripLabelC
-            // 
-            this.toolStripLabelC.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripLabelC.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabelC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
-            this.toolStripLabelC.Name = "toolStripLabelC";
-            this.toolStripLabelC.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.toolStripLabelC.Size = new System.Drawing.Size(149, 30);
-            this.toolStripLabelC.Text = "C";
-            this.toolStripLabelC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolStripLabelD
-            // 
-            this.toolStripLabelD.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripLabelD.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabelD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
-            this.toolStripLabelD.Name = "toolStripLabelD";
-            this.toolStripLabelD.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.toolStripLabelD.Size = new System.Drawing.Size(149, 30);
-            this.toolStripLabelD.Text = "D";
-            this.toolStripLabelD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gridData
             // 

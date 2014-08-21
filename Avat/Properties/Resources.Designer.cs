@@ -60,79 +60,16 @@ namespace Avat.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap glyphicons_206_ok_2 {
+        internal static System.Drawing.Bitmap ok {
             get {
-                object obj = ResourceManager.GetObject("glyphicons_206_ok_2", resourceCulture);
+                object obj = ResourceManager.GetObject("ok", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap glyphicons_207_remove_2red {
+        internal static System.Drawing.Bitmap problem {
             get {
-                object obj = ResourceManager.GetObject("glyphicons_207_remove_2red", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap glyphicons_207_remove_2red1 {
-            get {
-                object obj = ResourceManager.GetObject("glyphicons_207_remove_2red1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap glyphicons_207_remove_2red2 {
-            get {
-                object obj = ResourceManager.GetObject("glyphicons_207_remove_2red2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap glyphicons_207_remove_2red3 {
-            get {
-                object obj = ResourceManager.GetObject("glyphicons_207_remove_2red3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap identdef {
-            get {
-                object obj = ResourceManager.GetObject("identdef", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap identok {
-            get {
-                object obj = ResourceManager.GetObject("identok", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap identokno {
-            get {
-                object obj = ResourceManager.GetObject("identokno", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap okdef {
-            get {
-                object obj = ResourceManager.GetObject("okdef", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap okdef2 {
-            get {
-                object obj = ResourceManager.GetObject("okdef2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap okno {
-            get {
-                object obj = ResourceManager.GetObject("okno", resourceCulture);
+                object obj = ResourceManager.GetObject("problem", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

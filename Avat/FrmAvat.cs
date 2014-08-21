@@ -626,15 +626,15 @@ namespace Avat.Forms
             if (lastValidationResult == null)
             {
                 //btnIdentification.Image = Resources.identdef;
-                btnA1.Image = Resources.glyphicons_206_ok_2;
-                btnA2.Image = Resources.glyphicons_206_ok_2;
-                btnB1.Image = Resources.glyphicons_206_ok_2;
-                btnB2.Image = Resources.glyphicons_206_ok_2;
-                btnB3.Image = Resources.glyphicons_206_ok_2;
-                btnC1.Image = Resources.glyphicons_206_ok_2;
-                btnC2.Image = Resources.glyphicons_206_ok_2;
-                btnD1.Image = Resources.glyphicons_206_ok_2;
-                btnD2.Image = Resources.glyphicons_206_ok_2;
+                btnA1.Image = Resources.ok;
+                btnA2.Image = Resources.ok;
+                btnB1.Image = Resources.ok;
+                btnB2.Image = Resources.ok;
+                btnB3.Image = Resources.ok;
+                btnC1.Image = Resources.ok;
+                btnC2.Image = Resources.ok;
+                btnD1.Image = Resources.ok;
+                btnD2.Image = Resources.ok;
                 return;
             }
 
@@ -646,23 +646,23 @@ namespace Avat.Forms
 
             // polozky
             bool prob = lastValidationResult.Any(r => r.ProblemObject is A1);
-            btnA1.Image = prob ? Resources.glyphicons_207_remove_2red3 : Resources.glyphicons_206_ok_2;
+            btnA1.Image = prob ? Resources.problem : Resources.ok;
             prob = lastValidationResult.Any(r => r.ProblemObject is A2);
-            btnA2.Image = prob ? Resources.glyphicons_207_remove_2red3 : Resources.glyphicons_206_ok_2;
+            btnA2.Image = prob ? Resources.problem : Resources.ok;
             prob = lastValidationResult.Any(r => r.ProblemObject is B1);
-            btnB1.Image = prob ? Resources.glyphicons_207_remove_2red3 : Resources.glyphicons_206_ok_2;
+            btnB1.Image = prob ? Resources.problem : Resources.ok;
             prob = lastValidationResult.Any(r => r.ProblemObject is B2);
-            btnB2.Image = prob ? Resources.glyphicons_207_remove_2red3 : Resources.glyphicons_206_ok_2;
+            btnB2.Image = prob ? Resources.problem : Resources.ok;
             prob = lastValidationResult.Any(r => r.ProblemObject is B3);
-            btnB3.Image = prob ? Resources.glyphicons_207_remove_2red3 : Resources.glyphicons_206_ok_2;
+            btnB3.Image = prob ? Resources.problem : Resources.ok;
             prob = lastValidationResult.Any(r => r.ProblemObject is C1);
-            btnC1.Image = prob ? Resources.glyphicons_207_remove_2red3 : Resources.glyphicons_206_ok_2;
+            btnC1.Image = prob ? Resources.problem : Resources.ok;
             prob = lastValidationResult.Any(r => r.ProblemObject is C2);
-            btnC2.Image = prob ? Resources.glyphicons_207_remove_2red3 : Resources.glyphicons_206_ok_2;
+            btnC2.Image = prob ? Resources.problem : Resources.ok;
             prob = lastValidationResult.Any(r => r.ProblemObject is D1);
-            btnD1.Image = prob ? Resources.glyphicons_207_remove_2red3 : Resources.glyphicons_206_ok_2;
+            btnD1.Image = prob ? Resources.problem : Resources.ok;
             prob = lastValidationResult.Any(r => r.ProblemObject is D2);
-            btnD2.Image = prob ? Resources.glyphicons_207_remove_2red3 : Resources.glyphicons_206_ok_2;
+            btnD2.Image = prob ? Resources.problem : Resources.ok;
         }
 
         private void ValidationFailed(IValidationResult lastValidationResult)

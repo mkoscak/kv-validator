@@ -160,37 +160,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\okdef2.png" />
+    <None Include="Resources\ok.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\okno.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\identdef.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\identok.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\identokno.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\okdef.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\glyphicons_206_ok_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\glyphicons_207_remove_2red.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\glyphicons_207_remove_2red1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\glyphicons_207_remove_2red2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\glyphicons_207_remove_2red3.png" />
+    <None Include="Resources\problem.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

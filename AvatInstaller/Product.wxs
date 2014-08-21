@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension"> 
+	<Product Id="*" Name="$(var.Avat.ProjectName)" Language="1033" Version="1.0.0.0" Manufacturer="MiKo" UpgradeCode="ca97d5b1-8119-4721-a99e-e341990d3197">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of AVAT is already installed." />
+		<MediaTemplate />
+    
+    <PropertyRef Id="NETFRAMEWORK35" />
+    <Condition Message="This application requires .NET Framework 3.5. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR NETFRAMEWORK35]]>
+    </Condition>
+
+    <Feature Id="ProductFeature" Title="$(var.Avat.ProjectName)" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="$(var.Avat.ProjectName)" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      
+      <Component Id="ProductAvatValidator">
+        <File Source="$(var.AvatValidator.TargetPath)" />
+      </Component>
+      <Component Id="ProductAvat">
+        <File Source="$(var.Avat.TargetPath)" />
+      </Component>
+      <Component Id="ProductSqLite">
+        <File Source="$(var.Avat.TargetDir)\System.Data.SQLite.dll" />
+      </Component>
+      <Component Id="ProductEpplus">
+        <File Source="$(var.Avat.TargetDir)\EPPlus.dll" />
+      </Component>
+      <Component Id="ProductIonicZip">
+        <File Source="$(var.Avat.TargetDir)\Ionic.Zip.dll" />
+      </Component>
+
+    </ComponentGroup>
+	</Fragment>
+</Wix>

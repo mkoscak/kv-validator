@@ -1,75 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension"> 
-	<Product Id="*" Name="$(var.Avat.ProjectName)" Language="1033" Version="1.0.0.0" Manufacturer="MiKo" UpgradeCode="ca97d5b1-8119-4721-a99e-e341990d3197">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Product Id="*"
+           Name="$(var.Avat.ProjectName)"
+           Language="1051"
+           Version="1.0.0.0"
+           Manufacturer="MiKo s.r.o."
+           UpgradeCode="ca97d5b1-8119-4721-a99e-e341990d3197">
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of AVAT is already installed." />
-		<MediaTemplate />
+    <Package InstallerVersion="200"
+             Compressed="yes"
+             InstallScope="perUser"
+             Comments="Kontrolný výkaz DPH"
+             Manufacturer="MiKo s.r.o."
+             Keywords="Installer" />
+
+    <MajorUpgrade DowngradeErrorMessage="Je nainštalovaná aktuálna alebo novšia verzia aplikácie AVAT." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <UIRef Id="WixUI_Mondo" />
+    <UIRef Id="WixUI_ErrorProgressText" />
     
     <PropertyRef Id="NETFRAMEWORK35" />
-    <Condition Message="This application requires .NET Framework 3.5. Please install the .NET Framework then run this installer again.">
+    <Condition Message="Aplikácia AVAT vyžaduje nainštalovaný .NET Framework 3.5. Prosím, nainštalujte požadovaný framework a spustite inštaláciu znova.">
       <![CDATA[Installed OR NETFRAMEWORK35]]>
     </Condition>
 
-    <Feature Id="ProductFeature" Title="$(var.Avat.ProjectName)" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
-      <ComponentRef Id="ApplicationShortcut" />
-		</Feature>
-	</Product>
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+    <WixVariable Id="WixUIBannerBmp" Value="banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="ui.bmp" />
 
-	<Fragment>
-		<Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="$(var.Avat.ProjectName)" />
-			</Directory>
+    <Feature Id="Complete" 
+             Title="$(var.Avat.ProjectName)" 
+             Description="Kompletná aplikácia AVAT." 
+             Display="expand" 
+             ConfigurableDirectory="INSTALLDIR" 
+             Level="1" 
+             Absent="disallow" 
+             AllowAdvertise="no">
       
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+
+    <Icon Id="AvatIcon.exe" SourceFile="$(var.Avat.TargetPath)"/>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="PFCompanyName" Name="MiKo s.r.o.">
+          <Directory Id="INSTALLDIR" Name="$(var.Avat.ProjectName)" />
+        </Directory>
+      </Directory>
+
       <Directory Id="DesktopFolder" />
 
       <Directory Id="ProgramMenuFolder">
         <Directory Id="AvatMenuFolder" Name="$(var.Avat.ProjectName)"/>
       </Directory>
-     </Directory>
+    </Directory>
   </Fragment>
-  
+
   <Fragment>
-      <DirectoryRef Id="AvatMenuFolder">
+    <DirectoryRef Id="AvatMenuFolder">
       <Component Id="ApplicationShortcut" Guid="*">
         <Shortcut Id="ApplicationStartMenuShortcut"
                   Name="$(var.Avat.ProjectName)"
                   Description="$(var.Avat.ProjectName)"
-                  Target="[INSTALLFOLDER]$(var.Avat.ProjectName).exe"
-                  WorkingDirectory="INSTALLFOLDER"
+                  Target="[INSTALLDIR]$(var.Avat.ProjectName).exe"
+                  WorkingDirectory="INSTALLDIR"
                   />
         <Shortcut Id="UninstallProduct"
-                  Name="Uninstall Avat"
-                  Description="Uninstalls Avat"
+                  Name="Uninstall $(var.Avat.ProjectName)"
+                  Description="Uninstalls $(var.Avat.ProjectName)"
                   Target="[SystemFolder]msiexec.exe"
                   Arguments="/x [ProductCode]"/>
         <RemoveFolder Id="AvatMenuFolder" On="uninstall"/>
-        <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.Avat.ProjectName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+        <RegistryValue Root="HKCU" Key="Software\MiKo\$(var.Avat.ProjectName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
       </Component>
     </DirectoryRef>
-	</Fragment>
+  </Fragment>
 
-	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-      
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">
+
       <Component Id="ProductAvatValidator">
         <File Source="$(var.AvatValidator.TargetPath)" />
       </Component>
-      
+
       <Component Id="ProductAvat">
-        <File Source="$(var.Avat.TargetPath)" />
-        <Shortcut Id="AvatShortCut" Name="$(var.Avat.ProjectName)" WorkingDirectory="INSTALLFOLDER" Directory="DesktopFolder" Advertise="yes" Icon="AvatIcon.exe">
-          <Icon Id="AvatIcon.exe" SourceFile="$(var.Avat.TargetPath)"/>
-        </Shortcut>
+        <File Source="$(var.Avat.TargetPath)">
+          <Shortcut Id="AvatShortCut"
+                    Name="$(var.Avat.ProjectName)"
+                    WorkingDirectory="INSTALLDIR"
+                    Directory="DesktopFolder"
+                    Advertise="yes"
+                    Icon="AvatIcon.exe">
+          </Shortcut>
+        </File>
+
         <Shortcut Id="UninstallProductInstDir"
                   Name="Uninstall"
                   Description="Uninstalls Avat"
                   Target="[SystemFolder]msiexec.exe"
                   Arguments="/x [ProductCode]"/>
       </Component>
-      
+
       <Component Id="ProductSqLite">
         <File Source="$(var.Avat.TargetDir)\System.Data.SQLite.dll" />
       </Component>
@@ -81,5 +117,5 @@
       </Component>
 
     </ComponentGroup>
-	</Fragment>
+  </Fragment>
 </Wix>

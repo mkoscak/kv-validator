@@ -9,7 +9,7 @@
 
     <Package InstallerVersion="200"
              Compressed="yes"
-             InstallScope="perUser"
+             InstallScope="perMachine"
              Comments="Kontrolný výkaz DPH"
              Manufacturer="MiKo s.r.o."
              Keywords="Installer" />

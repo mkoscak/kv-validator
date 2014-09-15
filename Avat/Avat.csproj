@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colors.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Components\BiznisReport.cs" />
     <Compile Include="Components\FrmBiznisReport.cs">

@@ -9,7 +9,7 @@ namespace Avat.Components
 {
     class ToolRenderer : ToolStripSystemRenderer
     {
-        Pen p = new Pen(Color.FromArgb(229,229,229));
+        Pen borderPen = new Pen(Color.FromArgb(229,229,229));
         bool border;
         
         public ToolRenderer(bool border)
@@ -20,19 +20,19 @@ namespace Avat.Components
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
             if (border)
-                e.Graphics.DrawLine(p, e.AffectedBounds.Right - 1, e.AffectedBounds.Top, e.AffectedBounds.Right - 1, e.AffectedBounds.Bottom);
+                e.Graphics.DrawLine(borderPen, e.AffectedBounds.Right - 1, e.AffectedBounds.Top, e.AffectedBounds.Right - 1, e.AffectedBounds.Bottom);
         }
 
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
         {
-            var p = new SolidBrush(Color.FromArgb(239, 239, 239));
+            var p = new SolidBrush(MyColors.MenuBackColor);
             var isHover = (e.Item as ToolStripButton).Checked || e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position));
             if ((e.Item as ToolStripButton).Checked)
-                p = new SolidBrush(Color.FromArgb(0, 115, 195));
+                p = new SolidBrush(Color.Black);
 
             e.Graphics.FillRectangle(p, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
             if (isHover)
-                e.Graphics.DrawRectangle(new Pen(Color.FromArgb(0, 115, 195)), 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
+                e.Graphics.DrawRectangle(new Pen(Color.Black), 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
         }
 
         protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
@@ -57,16 +57,22 @@ namespace Avat.Components
                 e.TextColor = Color.White;
 
             var text = e.Text;
-            var title = text.Substring(0, 2);
+            var index = text.LastIndexOf('.');
+            var title = text.Substring(0, index + 1);
+            if (index == -1)
+            {
+                base.OnRenderItemText(e);
+                return;
+            }
             var count = "0";
             if (text.Contains(' '))
-                count = text.Substring(text.IndexOf(' ')+1).Trim('(', ')');
+                count = text.Substring(text.IndexOf(' ') + 1).Trim('(', ')');
             
             e.Text = title;
             base.OnRenderItemText(e);
 
             e.Text = count;
-            e.TextColor = Color.FromArgb(199,199,199);
+            e.TextColor = Color.White;
             e.TextFormat = TextFormatFlags.NoPadding | TextFormatFlags.Right;
             e.TextRectangle = new Rectangle(e.TextRectangle.X, e.TextRectangle.Y, e.Item.Bounds.Width - e.TextRectangle.X - 4, e.TextRectangle.Height);
             base.OnRenderItemText(e);

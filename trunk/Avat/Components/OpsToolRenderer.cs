@@ -16,11 +16,11 @@ namespace Avat.Components
             e.Graphics.DrawLine(p2, 0, 1, e.AffectedBounds.Right, 1);
         }
 
-        Color c = Color.White; //Color.FromArgb(111, 125, 140);
+        Color c = Color.White; 
         Pen white = new Pen(Color.White);
-        Pen p = new Pen(Color.FromArgb(0, 108, 188));
-        Pen p2 = new Pen(Color.FromArgb(0, 128, 208));
-        SolidBrush b = new SolidBrush(Color.FromArgb(0, 85, 145));
+        Pen p = new Pen(MyColors.ToolstripColor1);
+        Pen p2 = new Pen(MyColors.ToolstripColor2);
+        SolidBrush b = new SolidBrush(MyColors.ButtonBackColor);
 
         public static void DrawRoundedRectangleFill(Graphics g, Rectangle r, int d, Brush b)
         {

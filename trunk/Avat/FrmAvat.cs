@@ -52,7 +52,7 @@ namespace Avat.Forms
             this.menuOps.Renderer = new OpsToolRenderer();
             this.toolStripCorner.Renderer = new OpsToolRenderer();
 
-            this.btnIdentification.PerformClick();
+            this.btnIdent.PerformClick();
             UpdateButtonTexts();
 
             // inicializacia hlavickoveho textu
@@ -275,7 +275,7 @@ namespace Avat.Forms
 
         void DisableAllButtons(ToolStripButton except)
         {
-            btnIdentification.Checked = false;
+            btnIdent.Checked = false;
             btnA1.Checked = false;
             btnA2.Checked = false;
             btnB1.Checked = false;
@@ -285,14 +285,20 @@ namespace Avat.Forms
             btnC2.Checked = false;
             btnD1.Checked = false;
             btnD2.Checked = false;
+            btnCheckResults.Checked = false;
             except.Checked = true;
 
             lblTitle.Text = except.ToolTipText;
 
-            if (except == btnIdentification)
+            if (except == btnIdent)
             {
                 gridData.Visible = false;
                 identification.Visible = true;
+            }
+            else if (except == btnCheckResults)
+            {
+                gridData.Visible = false;
+                identification.Visible = false;
             }
             else if (!gridData.Visible)
             {
@@ -301,14 +307,14 @@ namespace Avat.Forms
             }
         }
 
-        private void btnIdentification_Click(object sender, EventArgs e)
+        private void btnIdent_Click(object sender, EventArgs e)
         {
             ShowIdentification(false);
         }
 
         private void ShowIdentification(bool noProblems)
         {
-            DisableAllButtons(btnIdentification);
+            DisableAllButtons(btnIdent);
             identification.SetData(kvDph.Identifikacia, noProblems);
             gridData.DataSource = null;
             identification.lblIcDph.Focus();
@@ -320,6 +326,11 @@ namespace Avat.Forms
             ItemCounter.Reset();
             gridData.DataSource = null;
             gridData.DataSource = new MySortableBindingList<T>();
+        }
+
+        private void btnCheckResults_Click(object sender, EventArgs e)
+        {
+            DisableAllButtons(btnCheckResults);
         }
 
         private void btnA1_Click(object sender, EventArgs e)
@@ -475,15 +486,15 @@ namespace Avat.Forms
 
         private void UpdateButtonTexts()
         {
-            btnA1.Text = string.Format("A1 ({0})", kvDph.Transakcie.A1.Count);
-            btnA2.Text = string.Format("A2 ({0})", kvDph.Transakcie.A2.Count);
-            btnB1.Text = string.Format("B1 ({0})", kvDph.Transakcie.B1.Count);
-            btnB2.Text = string.Format("B2 ({0})", kvDph.Transakcie.B2.Count);
-            btnB3.Text = string.Format("B3 ({0})", kvDph.Transakcie.B3.Count);
-            btnC1.Text = string.Format("C1 ({0})", kvDph.Transakcie.C1.Count);
-            btnC2.Text = string.Format("C2 ({0})", kvDph.Transakcie.C2.Count);
-            btnD1.Text = string.Format("D1 ({0})", kvDph.Transakcie.D1.Count);
-            btnD2.Text = string.Format("D2 ({0})", kvDph.Transakcie.D2.Count);
+            btnA1.Text = string.Format("A.1. ({0})", kvDph.Transakcie.A1.Count);
+            btnA2.Text = string.Format("A.2. ({0})", kvDph.Transakcie.A2.Count);
+            btnB1.Text = string.Format("B.1. ({0})", kvDph.Transakcie.B1.Count);
+            btnB2.Text = string.Format("B.2. ({0})", kvDph.Transakcie.B2.Count);
+            btnB3.Text = string.Format("B.3. ({0})", kvDph.Transakcie.B3.Count);
+            btnC1.Text = string.Format("C.1. ({0})", kvDph.Transakcie.C1.Count);
+            btnC2.Text = string.Format("C.2. ({0})", kvDph.Transakcie.C2.Count);
+            btnD1.Text = string.Format("D.1. ({0})", kvDph.Transakcie.D1.Count);
+            btnD2.Text = string.Format("D.2. ({0})", kvDph.Transakcie.D2.Count);
         }
 
         private bool ReadXml(string path)

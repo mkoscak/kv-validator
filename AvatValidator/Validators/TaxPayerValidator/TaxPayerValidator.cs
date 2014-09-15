@@ -49,6 +49,9 @@ namespace AvatValidator.Validators.TaxPayerValidator
             if (icDphOdb != null || icDphDod != null)
             {
                 var icDph = icDphOdb ?? icDphDod;
+
+                if (icDph.Trim().Substring(0, 2).ToUpper() != "SK") // mame DB len slovenskych podnikatelov
+                    return ret;
                 
                 var found = TaxPayerEntity.Load(string.Format("IC_DPH = \"{0}\"", icDph));
                 if (found != null && found.Count == 0)

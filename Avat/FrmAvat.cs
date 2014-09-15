@@ -1254,5 +1254,11 @@ namespace Avat.Forms
 
             // B3?
         }
+
+        private void gridData_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            MessageBox.Show(this, "Zadaná hodnota nie je validná. Skontrolujte správne zadanie desatinnej bodky resp. čiarky!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
     }
 }

@@ -284,7 +284,7 @@ namespace AvatValidator.Validators
 
         private ValidationItemResult Validation2002Failed(object problemItem)
         {
-            return CreateFailedResult(problemItem, "Daň je chybná!", "Základ dane * sadzba dane sa nerovná výslednej dani!");
+            return CreateWarningResult(problemItem, "Daň je chybná!", "Základ dane * sadzba dane sa nerovná výslednej dani!");
         }
 
         private IValidationItemResult Validation2003Failed(object problemItem)

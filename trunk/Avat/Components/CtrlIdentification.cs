@@ -92,7 +92,11 @@ namespace Avat.Components
                 ctrl.BackColor = Color.FromArgb(255, 128, 128);
 
             if (probs.Count > 0)
-                new ToolTip().SetToolTip(ctrl, string.Join(Environment.NewLine, probs.Select(ir => ir.ResultMessage + " - " + ir.ResultTooltip).ToArray()));
+            {
+                var tt = new ToolTip();
+                tt.AutoPopDelay = 30000;
+                tt.SetToolTip(ctrl, string.Join(Environment.NewLine, probs.Select(ir => ir.ResultMessage + " - " + ir.ResultTooltip).ToArray()));
+            }
         }
 
         public void SetData(Identifikacia data, bool noProblem)

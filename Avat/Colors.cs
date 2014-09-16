@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace Avat
 {
-    class MyColors
+    public class MyColors
     {
         public static Color HeaderBackColor
         {
@@ -45,6 +45,14 @@ namespace Avat
             get
             {
                 return Color.FromArgb(32, 115, 45);
+            }
+        }
+
+        public static Color LeftToolGray
+        {
+            get
+            {
+                return Color.FromArgb(117, 117, 117);
             }
         }
     }

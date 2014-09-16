@@ -48,6 +48,7 @@ namespace Avat.Forms
 
         private void FrmDesignOne_Load(object sender, EventArgs e)
         {
+            LayoutHeader();
             this.menuXml.Renderer = new ToolRenderer(true);
             this.menuOps.Renderer = new OpsToolRenderer();
             this.toolStripCorner.Renderer = new OpsToolRenderer();
@@ -158,7 +159,7 @@ namespace Avat.Forms
 
         void ShowProgress(string text)
         {
-            lblHeaderProgress.Text = text;
+            //lblHeaderProgress.Text = text;
         }
 
         void bw_ImportsWork(object sender, DoWorkEventArgs e)
@@ -1270,6 +1271,26 @@ namespace Avat.Forms
         {
             e.ThrowException = false;
             MessageBox.Show(this, "Zadaná hodnota nie je validná. Skontrolujte správne zadanie desatinnej bodky resp. čiarky!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void FrmAvat_Resize(object sender, EventArgs e)
+        {
+            LayoutHeader();
+        }
+
+        Padding pad;
+        private void LayoutHeader()
+        {
+            var middle = this.Size.Width / 2;
+            lblHeader.Size = new Size(middle - 25, lblHeader.Size.Height);
+
+            if (pad == null)
+                pad = btnCheckAll.Margin;
+            pad.Left = middle - 350;
+            pad.Top = 6;
+            pad.Right = 3;
+            pad.Bottom = 5;
+            btnCheckAll.Margin = pad;
         }
     }
 }

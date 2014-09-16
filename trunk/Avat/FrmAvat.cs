@@ -160,6 +160,7 @@ namespace Avat.Forms
         void ShowProgress(string text)
         {
             //lblHeaderProgress.Text = text;
+            toolbarLabel.Text = text;
         }
 
         void bw_ImportsWork(object sender, DoWorkEventArgs e)

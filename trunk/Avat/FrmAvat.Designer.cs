@@ -66,6 +66,8 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnReadXml = new System.Windows.Forms.ToolStripButton();
             this.btnCloseNoChanges = new System.Windows.Forms.ToolStripButton();
+            this.toolbar = new System.Windows.Forms.StatusStrip();
+            this.toolbarLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -73,6 +75,7 @@
             this.panelContent.SuspendLayout();
             this.toolStripCorner.SuspendLayout();
             this.panelHeader.SuspendLayout();
+            this.toolbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +108,7 @@
             this.menuXml.Name = "menuXml";
             this.menuXml.Padding = new System.Windows.Forms.Padding(0);
             this.menuXml.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuXml.Size = new System.Drawing.Size(166, 559);
+            this.menuXml.Size = new System.Drawing.Size(166, 563);
             this.menuXml.TabIndex = 1;
             this.menuXml.Text = "toolStrip1";
             // 
@@ -406,7 +409,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 612);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 616);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // menuOps
@@ -524,7 +527,7 @@
             this.panelContent.RowCount = 2;
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelContent.Size = new System.Drawing.Size(820, 553);
+            this.panelContent.Size = new System.Drawing.Size(820, 557);
             this.panelContent.TabIndex = 4;
             // 
             // lblTitle
@@ -626,6 +629,26 @@
             this.btnCloseNoChanges.Size = new System.Drawing.Size(136, 34);
             this.btnCloseNoChanges.Text = "&Zatvoriť bez zmien";
             // 
+            // toolbar
+            // 
+            this.toolbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(120)))), ((int)(((byte)(50)))));
+            this.toolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolbarLabel});
+            this.toolbar.Location = new System.Drawing.Point(0, 658);
+            this.toolbar.Name = "toolbar";
+            this.toolbar.Size = new System.Drawing.Size(992, 23);
+            this.toolbar.TabIndex = 4;
+            this.toolbar.Text = "toolbar";
+            // 
+            // toolbarLabel
+            // 
+            this.toolbarLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.toolbarLabel.ForeColor = System.Drawing.Color.White;
+            this.toolbarLabel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.toolbarLabel.Name = "toolbarLabel";
+            this.toolbarLabel.Size = new System.Drawing.Size(75, 19);
+            this.toolbarLabel.Text = "progress..";
+            // 
             // gridData
             // 
             this.gridData.AllowUserToOrderColumns = true;
@@ -673,7 +696,7 @@
             this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridData.RowHeadersWidth = 30;
             this.gridData.RowTemplate.Height = 25;
-            this.gridData.Size = new System.Drawing.Size(818, 502);
+            this.gridData.Size = new System.Drawing.Size(818, 506);
             this.gridData.TabIndex = 6;
             this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
             this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
@@ -684,11 +707,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(992, 677);
+            this.ClientSize = new System.Drawing.Size(992, 681);
+            this.Controls.Add(this.toolbar);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
-            this.MinimumSize = new System.Drawing.Size(800, 711);
+            this.MinimumSize = new System.Drawing.Size(800, 715);
             this.Name = "FrmAvat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VATFIX - kontrolný výkaz DPH";
@@ -704,8 +728,11 @@
             this.toolStripCorner.ResumeLayout(false);
             this.toolStripCorner.PerformLayout();
             this.panelHeader.ResumeLayout(false);
+            this.toolbar.ResumeLayout(false);
+            this.toolbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -746,5 +773,7 @@
         private System.Windows.Forms.ToolStripButton btnIdent;
         private System.Windows.Forms.ToolStripButton btnReadXml;
         private System.Windows.Forms.ToolStripButton btnCloseNoChanges;
+        private System.Windows.Forms.StatusStrip toolbar;
+        private System.Windows.Forms.ToolStripStatusLabel toolbarLabel;
     }
 }

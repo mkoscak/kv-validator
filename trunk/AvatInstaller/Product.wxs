@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
   <Product Id="*"
-           Name="$(var.Avat.ProjectName)"
+           Name="$(var._ProductName)"
            Language="1051"
            Version="1.0.0.0"
            Manufacturer="MiKo s.r.o."
@@ -14,14 +14,14 @@
              Manufacturer="MiKo s.r.o."
              Keywords="Installer" />
 
-    <MajorUpgrade DowngradeErrorMessage="Je nainštalovaná aktuálna alebo novšia verzia aplikácie AVAT." />
+    <MajorUpgrade DowngradeErrorMessage="Je nainštalovaná aktuálna alebo novšia verzia aplikácie Vatfix." />
     <MediaTemplate EmbedCab="yes" />
 
     <UIRef Id="WixUI_Mondo" />
     <UIRef Id="WixUI_ErrorProgressText" />
     
     <PropertyRef Id="NETFRAMEWORK35" />
-    <Condition Message="Aplikácia AVAT vyžaduje nainštalovaný .NET Framework 3.5. Prosím, nainštalujte požadovaný framework a spustite inštaláciu znova.">
+    <Condition Message="Aplikácia Vatfix vyžaduje nainštalovaný .NET Framework 3.5. Prosím, nainštalujte požadovaný framework a spustite inštaláciu znova.">
       <![CDATA[Installed OR NETFRAMEWORK35]]>
     </Condition>
 
@@ -30,8 +30,8 @@
     <WixVariable Id="WixUIDialogBmp" Value="ui.bmp" />
 
     <Feature Id="Complete" 
-             Title="$(var.Avat.ProjectName)" 
-             Description="Kompletná aplikácia AVAT." 
+             Title="$(var._ProductName)" 
+             Description="Kompletná aplikácia Vatfix." 
              Display="expand" 
              ConfigurableDirectory="INSTALLDIR" 
              Level="1" 
@@ -49,14 +49,14 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="PFCompanyName" Name="MiKo s.r.o.">
-          <Directory Id="INSTALLDIR" Name="$(var.Avat.ProjectName)" />
+          <Directory Id="INSTALLDIR" Name="$(var._ProductName)" />
         </Directory>
       </Directory>
 
       <Directory Id="DesktopFolder" />
 
       <Directory Id="ProgramMenuFolder">
-        <Directory Id="AvatMenuFolder" Name="$(var.Avat.ProjectName)"/>
+        <Directory Id="AvatMenuFolder" Name="$(var._ProductName)"/>
       </Directory>
     </Directory>
   </Fragment>
@@ -65,18 +65,18 @@
     <DirectoryRef Id="AvatMenuFolder">
       <Component Id="ApplicationShortcut" Guid="*">
         <Shortcut Id="ApplicationStartMenuShortcut"
-                  Name="$(var.Avat.ProjectName)"
-                  Description="$(var.Avat.ProjectName)"
-                  Target="[INSTALLDIR]$(var.Avat.ProjectName).exe"
+                  Name="$(var._ProductName)"
+                  Description="$(var._ProductName)"
+                  Target="[INSTALLDIR]$(var._ProductName).exe"
                   WorkingDirectory="INSTALLDIR"
                   />
         <Shortcut Id="UninstallProduct"
-                  Name="Uninstall $(var.Avat.ProjectName)"
-                  Description="Uninstalls $(var.Avat.ProjectName)"
+                  Name="Uninstall $(var._ProductName)"
+                  Description="Uninstalls $(var._ProductName)"
                   Target="[SystemFolder]msiexec.exe"
                   Arguments="/x [ProductCode]"/>
         <RemoveFolder Id="AvatMenuFolder" On="uninstall"/>
-        <RegistryValue Root="HKCU" Key="Software\MiKo\$(var.Avat.ProjectName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+        <RegistryValue Root="HKCU" Key="Software\MiKo\$(var._ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
       </Component>
     </DirectoryRef>
   </Fragment>
@@ -91,7 +91,7 @@
       <Component Id="ProductAvat">
         <File Source="$(var.Avat.TargetPath)">
           <Shortcut Id="AvatShortCut"
-                    Name="$(var.Avat.ProjectName)"
+                    Name="$(var._ProductName)"
                     WorkingDirectory="INSTALLDIR"
                     Directory="DesktopFolder"
                     Advertise="yes"
@@ -101,7 +101,7 @@
 
         <Shortcut Id="UninstallProductInstDir"
                   Name="Uninstall"
-                  Description="Uninstalls Avat"
+                  Description="Uninstalls Vatfix"
                   Target="[SystemFolder]msiexec.exe"
                   Arguments="/x [ProductCode]"/>
       </Component>

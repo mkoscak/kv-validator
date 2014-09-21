@@ -12,6 +12,25 @@
     <AssemblyName>Vatfix</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ManifestCertificateThumbprint>66924055FE93E2E6BB0F1AE8D5D952A117DA9BDF</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Avat_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Programing\_publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,7 +79,19 @@
   <ItemGroup>
     <Compile Include="Colors.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="Components\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\BiznisReport.cs" />
+    <Compile Include="Components\CtrlValidationResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CtrlValidationResult.Designer.cs">
+      <DependentUpon>CtrlValidationResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\FrmBiznisReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +133,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CtrlValidationResult.resx">
+      <DependentUpon>CtrlValidationResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\FrmBiznisReport.resx">
       <DependentUpon>FrmBiznisReport.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -164,7 +203,30 @@
     <None Include="Resources\ok.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Avat_TemporaryKey.pfx" />
     <None Include="Resources\problem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

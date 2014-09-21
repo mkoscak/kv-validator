@@ -12,7 +12,7 @@ namespace Avat
         {
             get
             {
-                return Color.FromArgb(37, 120, 50);
+                return Color.FromArgb(50, 127, 63);
             }
         }
 
@@ -24,7 +24,31 @@ namespace Avat
             }
         }
 
-        public static Color MenuBackColor
+        public static Color ButtonHover
+        {
+            get
+            {
+                return Color.FromArgb(2, 48, 9);
+            }
+        }
+
+        public static Color ButtonInactive
+        {
+            get
+            {
+                return Color.FromArgb(61, 138, 74);
+            }
+        }
+
+        public static Color SidebarBack
+        {
+            get
+            {
+                return Color.FromArgb(51, 51, 51);
+            }
+        }
+
+        public static Color SidebarHover
         {
             get
             {
@@ -36,7 +60,7 @@ namespace Avat
         {
             get
             {
-                return Color.FromArgb(32, 115, 45);
+                return Color.FromArgb(27, 100, 38);
             }
         }
 
@@ -44,7 +68,7 @@ namespace Avat
         {
             get
             {
-                return Color.FromArgb(32, 115, 45);
+                return Color.FromArgb(27, 100, 38);
             }
         }
 
@@ -52,7 +76,15 @@ namespace Avat
         {
             get
             {
-                return Color.FromArgb(117, 117, 117);
+                return Color.FromArgb(128, 128, 128);
+            }
+        }
+
+        public static Color Yellow
+        {
+            get
+            {
+                return Color.FromArgb(255, 162, 0);
             }
         }
     }

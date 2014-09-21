@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAvat));
             this.menuXml = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnCheckResults = new System.Windows.Forms.ToolStripButton();
@@ -51,23 +52,27 @@
             this.btnD2 = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuOps = new System.Windows.Forms.ToolStrip();
+            this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
             this.btnSaveXml = new System.Windows.Forms.ToolStripButton();
+            this.btnCloseNoChanges = new System.Windows.Forms.ToolStripButton();
             this.btnOtherOps = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnNewAvat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBiznisReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
+            this.btnAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.panelContent = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.panelLine = new System.Windows.Forms.Panel();
             this.toolStripCorner = new System.Windows.Forms.ToolStrip();
+            this.btnReadXml = new System.Windows.Forms.ToolStripButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeader2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnReadXml = new System.Windows.Forms.ToolStripButton();
-            this.btnCloseNoChanges = new System.Windows.Forms.ToolStripButton();
             this.toolbar = new System.Windows.Forms.StatusStrip();
-            this.toolbarLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusProgress = new System.Windows.Forms.ToolStripProgressBar();
+            this.statusProgressText = new System.Windows.Forms.ToolStripStatusLabel();
             this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.menuXml.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -82,7 +87,7 @@
             // menuXml
             // 
             this.menuXml.AutoSize = false;
-            this.menuXml.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.menuXml.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.menuXml.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuXml.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menuXml.ImageScalingSize = new System.Drawing.Size(32, 32);
@@ -415,7 +420,7 @@
             // menuOps
             // 
             this.menuOps.AutoSize = false;
-            this.menuOps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(120)))), ((int)(((byte)(50)))));
+            this.menuOps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
             this.menuOps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuOps.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.menuOps.ImageScalingSize = new System.Drawing.Size(32, 32);
@@ -432,6 +437,21 @@
             this.menuOps.TabIndex = 2;
             this.menuOps.Text = "toolStrip1";
             // 
+            // btnCheckAll
+            // 
+            this.btnCheckAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(77)))), ((int)(((byte)(25)))));
+            this.btnCheckAll.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCheckAll.ForeColor = System.Drawing.Color.White;
+            this.btnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCheckAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCheckAll.Margin = new System.Windows.Forms.Padding(0, 6, 3, 5);
+            this.btnCheckAll.Name = "btnCheckAll";
+            this.btnCheckAll.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.btnCheckAll.Size = new System.Drawing.Size(130, 34);
+            this.btnCheckAll.Text = "&Skontrolovať";
+            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
+            // 
             // btnSaveXml
             // 
             this.btnSaveXml.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(77)))), ((int)(((byte)(25)))));
@@ -447,6 +467,21 @@
             this.btnSaveXml.Text = "&Uložiť";
             this.btnSaveXml.Click += new System.EventHandler(this.btnSaveXml_Click);
             // 
+            // btnCloseNoChanges
+            // 
+            this.btnCloseNoChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(77)))), ((int)(((byte)(25)))));
+            this.btnCloseNoChanges.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCloseNoChanges.ForeColor = System.Drawing.Color.White;
+            this.btnCloseNoChanges.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCloseNoChanges.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCloseNoChanges.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCloseNoChanges.Margin = new System.Windows.Forms.Padding(5, 6, 0, 5);
+            this.btnCloseNoChanges.Name = "btnCloseNoChanges";
+            this.btnCloseNoChanges.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnCloseNoChanges.Size = new System.Drawing.Size(136, 34);
+            this.btnCloseNoChanges.Text = "&Zatvoriť bez zmien";
+            this.btnCloseNoChanges.Click += new System.EventHandler(this.btnCloseNoChanges_Click);
+            // 
             // btnOtherOps
             // 
             this.btnOtherOps.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -455,7 +490,8 @@
             this.btnNewAvat,
             this.toolStripSeparator6,
             this.btnExportToExcel,
-            this.btnBiznisReport});
+            this.btnBiznisReport,
+            this.btnAbout});
             this.btnOtherOps.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOtherOps.ForeColor = System.Drawing.Color.White;
             this.btnOtherOps.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -498,20 +534,12 @@
             this.btnBiznisReport.Visible = false;
             this.btnBiznisReport.Click += new System.EventHandler(this.btnBiznisReport_Click);
             // 
-            // btnCheckAll
+            // btnAbout
             // 
-            this.btnCheckAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(77)))), ((int)(((byte)(25)))));
-            this.btnCheckAll.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCheckAll.ForeColor = System.Drawing.Color.White;
-            this.btnCheckAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckAll.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnCheckAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCheckAll.Margin = new System.Windows.Forms.Padding(0, 6, 3, 5);
-            this.btnCheckAll.Name = "btnCheckAll";
-            this.btnCheckAll.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnCheckAll.Size = new System.Drawing.Size(130, 34);
-            this.btnCheckAll.Text = "&Skontrolovať";
-            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(218, 22);
+            this.btnAbout.Text = "O aplikácii";
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // panelContent
             // 
@@ -521,11 +549,13 @@
             this.panelContent.ColumnCount = 1;
             this.panelContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.panelContent.Controls.Add(this.lblTitle, 0, 0);
-            this.panelContent.Controls.Add(this.gridData, 0, 1);
+            this.panelContent.Controls.Add(this.gridData, 0, 2);
+            this.panelContent.Controls.Add(this.panelLine, 0, 1);
             this.panelContent.Location = new System.Drawing.Point(169, 56);
             this.panelContent.Name = "panelContent";
-            this.panelContent.RowCount = 2;
-            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.panelContent.RowCount = 3;
+            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.panelContent.Size = new System.Drawing.Size(820, 557);
             this.panelContent.TabIndex = 4;
@@ -541,14 +571,24 @@
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(820, 49);
+            this.lblTitle.Size = new System.Drawing.Size(820, 45);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "A1 - Štandardné odberateľské faktúry (tuzemské)";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panelLine
+            // 
+            this.panelLine.BackColor = System.Drawing.Color.Gray;
+            this.panelLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLine.Location = new System.Drawing.Point(0, 45);
+            this.panelLine.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine.Name = "panelLine";
+            this.panelLine.Size = new System.Drawing.Size(820, 1);
+            this.panelLine.TabIndex = 7;
+            // 
             // toolStripCorner
             // 
-            this.toolStripCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(120)))), ((int)(((byte)(50)))));
+            this.toolStripCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
             this.toolStripCorner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripCorner.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripCorner.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -560,45 +600,6 @@
             this.toolStripCorner.Size = new System.Drawing.Size(166, 53);
             this.toolStripCorner.TabIndex = 5;
             this.toolStripCorner.Text = "toolStrip1";
-            // 
-            // panelHeader
-            // 
-            this.panelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(120)))), ((int)(((byte)(50)))));
-            this.panelHeader.Controls.Add(this.lblHeader2);
-            this.panelHeader.Controls.Add(this.lblHeader);
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(992, 65);
-            this.panelHeader.TabIndex = 3;
-            // 
-            // lblHeader2
-            // 
-            this.lblHeader2.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeader2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblHeader2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader2.ForeColor = System.Drawing.Color.White;
-            this.lblHeader2.Location = new System.Drawing.Point(461, 0);
-            this.lblHeader2.Name = "lblHeader2";
-            this.lblHeader2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lblHeader2.Size = new System.Drawing.Size(240, 65);
-            this.lblHeader2.TabIndex = 1;
-            this.lblHeader2.Text = "- Kontrolný výkaz DPH";
-            this.lblHeader2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeader.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblHeader.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.ForeColor = System.Drawing.Color.White;
-            this.lblHeader.Location = new System.Drawing.Point(0, 0);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(461, 65);
-            this.lblHeader.TabIndex = 0;
-            this.lblHeader.Text = "VATFIX";
-            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnReadXml
             // 
@@ -615,39 +616,83 @@
             this.btnReadXml.Text = "&Načítať";
             this.btnReadXml.Click += new System.EventHandler(this.btnReadXml_Click);
             // 
-            // btnCloseNoChanges
+            // panelHeader
             // 
-            this.btnCloseNoChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(77)))), ((int)(((byte)(25)))));
-            this.btnCloseNoChanges.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCloseNoChanges.ForeColor = System.Drawing.Color.White;
-            this.btnCloseNoChanges.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCloseNoChanges.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnCloseNoChanges.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCloseNoChanges.Margin = new System.Windows.Forms.Padding(5, 6, 0, 5);
-            this.btnCloseNoChanges.Name = "btnCloseNoChanges";
-            this.btnCloseNoChanges.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnCloseNoChanges.Size = new System.Drawing.Size(136, 34);
-            this.btnCloseNoChanges.Text = "&Zatvoriť bez zmien";
+            this.panelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
+            this.panelHeader.Controls.Add(this.lblHeader2);
+            this.panelHeader.Controls.Add(this.lblHeader);
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(992, 65);
+            this.panelHeader.TabIndex = 3;
+            // 
+            // lblHeader2
+            // 
+            this.lblHeader2.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeader2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHeader2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader2.ForeColor = System.Drawing.Color.White;
+            this.lblHeader2.Location = new System.Drawing.Point(151, 0);
+            this.lblHeader2.Name = "lblHeader2";
+            this.lblHeader2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.lblHeader2.Size = new System.Drawing.Size(841, 65);
+            this.lblHeader2.TabIndex = 1;
+            this.lblHeader2.Text = "Spoločnosť s.r.o - DIČ 64325322 - 09/2015";
+            this.lblHeader2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeader.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblHeader.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.White;
+            this.lblHeader.Location = new System.Drawing.Point(0, 0);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(151, 65);
+            this.lblHeader.TabIndex = 0;
+            this.lblHeader.Text = "VATFIX";
+            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolbar
             // 
-            this.toolbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(120)))), ((int)(((byte)(50)))));
+            this.toolbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
             this.toolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolbarLabel});
-            this.toolbar.Location = new System.Drawing.Point(0, 658);
+            this.statusProgressText,
+            this.statusProgress,
+            this.statusText});
+            this.toolbar.Location = new System.Drawing.Point(0, 657);
             this.toolbar.Name = "toolbar";
-            this.toolbar.Size = new System.Drawing.Size(992, 23);
+            this.toolbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolbar.Size = new System.Drawing.Size(992, 24);
             this.toolbar.TabIndex = 4;
             this.toolbar.Text = "toolbar";
             // 
-            // toolbarLabel
+            // statusText
             // 
-            this.toolbarLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolbarLabel.ForeColor = System.Drawing.Color.White;
-            this.toolbarLabel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.toolbarLabel.Name = "toolbarLabel";
-            this.toolbarLabel.Size = new System.Drawing.Size(75, 19);
-            this.toolbarLabel.Text = "progress..";
+            this.statusText.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusText.ForeColor = System.Drawing.Color.White;
+            this.statusText.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.statusText.Name = "statusText";
+            this.statusText.Size = new System.Drawing.Size(168, 20);
+            this.statusText.Text = "Aktulizacia databazy DIC";
+            // 
+            // statusProgress
+            // 
+            this.statusProgress.ForeColor = System.Drawing.Color.White;
+            this.statusProgress.Name = "statusProgress";
+            this.statusProgress.Size = new System.Drawing.Size(100, 18);
+            this.statusProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.statusProgress.Value = 35;
+            // 
+            // statusProgressText
+            // 
+            this.statusProgressText.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusProgressText.ForeColor = System.Drawing.Color.White;
+            this.statusProgressText.Name = "statusProgressText";
+            this.statusProgressText.Size = new System.Drawing.Size(28, 19);
+            this.statusProgressText.Text = "0%";
             // 
             // gridData
             // 
@@ -682,7 +727,7 @@
             this.gridData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridData.EnableHeadersVisualStyles = false;
             this.gridData.GridColor = System.Drawing.Color.Gainsboro;
-            this.gridData.Location = new System.Drawing.Point(1, 50);
+            this.gridData.Location = new System.Drawing.Point(1, 47);
             this.gridData.Margin = new System.Windows.Forms.Padding(1);
             this.gridData.Name = "gridData";
             this.gridData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -696,7 +741,7 @@
             this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridData.RowHeadersWidth = 30;
             this.gridData.RowTemplate.Height = 25;
-            this.gridData.Size = new System.Drawing.Size(818, 506);
+            this.gridData.Size = new System.Drawing.Size(818, 509);
             this.gridData.TabIndex = 6;
             this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
             this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
@@ -712,6 +757,7 @@
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(800, 715);
             this.Name = "FrmAvat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -774,6 +820,10 @@
         private System.Windows.Forms.ToolStripButton btnReadXml;
         private System.Windows.Forms.ToolStripButton btnCloseNoChanges;
         private System.Windows.Forms.StatusStrip toolbar;
-        private System.Windows.Forms.ToolStripStatusLabel toolbarLabel;
+        private System.Windows.Forms.ToolStripStatusLabel statusText;
+        private System.Windows.Forms.ToolStripMenuItem btnAbout;
+        private System.Windows.Forms.Panel panelLine;
+        private System.Windows.Forms.ToolStripProgressBar statusProgress;
+        private System.Windows.Forms.ToolStripStatusLabel statusProgressText;
     }
 }

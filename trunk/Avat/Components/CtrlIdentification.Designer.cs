@@ -159,7 +159,7 @@ namespace Avat.Components
             this.lblTelefon.Location = new System.Drawing.Point(84, 346);
             this.lblTelefon.Margin = new System.Windows.Forms.Padding(10);
             this.lblTelefon.Name = "lblTelefon";
-            this.lblTelefon.Size = new System.Drawing.Size(61, 18);
+            this.lblTelefon.Size = new System.Drawing.Size(63, 18);
             this.lblTelefon.TabIndex = 15;
             this.lblTelefon.Text = "Telefón:";
             // 

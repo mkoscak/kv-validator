@@ -117,22 +117,116 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuXml.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="menuOps.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>115, 17</value>
-  </metadata>
-  <metadata name="toolStripCorner.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>219, 17</value>
-  </metadata>
-  <metadata name="toolbar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>345, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>35</value>
-  </metadata>
+  <data name="txtLicence.Text" xml:space="preserve">
+    <value>Uvodny riadok boldom!
+
+Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral sadzobnicu plnú tlačových znakov a pomiešal ich, aby tak vytvoril vzorkovú knihu. Prežil nielen päť storočí, ale aj skok do elektronickej sadzby, a pritom zostal v podstate nezmenený. Spopularizovaný bol v 60-tych rokoch 20.storočia, vydaním hárkov Letraset, ktoré obsahovali pasáže Lorem Ipsum, a neskôr aj publikačným softvérom ako Aldus PageMaker, ktorý obsahoval verzie Lorem Ipsum.
+
+Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral sadzobnicu plnú tlačových znakov a pomiešal ich, aby tak vytvoril vzorkovú knihu. Prežil nielen päť storočí, ale aj skok do elektronickej sadzby, a pritom zostal v podstate nezmenený. Spopularizovaný bol v 60-tych rokoch 20.storočia, vydaním hárkov Letraset, ktoré obsahovali pasáže Lorem Ipsum, a neskôr aj publikačným softvérom ako Aldus PageMaker, ktorý obsahoval verzie Lorem Ipsum.
+
+Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral sadzobnicu plnú tlačových znakov a pomiešal ich, aby tak vytvoril vzorkovú knihu. Prežil nielen päť storočí, ale aj skok do elektronickej sadzby, a pritom zostal v podstate nezmenený. Spopularizovaný bol v 60-tych rokoch 20.storočia, vydaním hárkov Letraset, ktoré obsahovali pasáže Lorem Ipsum, a neskôr aj publikačným softvérom ako Aldus PageMaker, ktorý obsahoval verzie Lorem Ipsum.
+
+Lorem Ipsum je fiktívny text, používaný pri návrhu tlačovín a typografie. Lorem Ipsum je štandardným výplňovým textom už od 16. storočia, keď neznámy tlačiar zobral sadzobnicu plnú tlačových znakov a pomiešal ich, aby tak vytvoril vzorkovú knihu. Prežil nielen päť storočí, ale aj skok do elektronickej sadzby, a pritom zostal v podstate nezmenený. Spopularizovaný bol v 60-tych rokoch 20.storočia, vydaním hárkov Letraset, ktoré obsahovali pasáže Lorem Ipsum, a neskôr aj publikačným softvérom ako Aldus PageMaker, ktorý obsahoval verzie Lorem Ipsum.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="picLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        3vxhMwjUahmufx97fNP6+3YAUDI9AYCSBWwkCx4c2GsGgN7TXblGHq9luOZDhnafoa33FACUFAAf7X3L
+        DAD6jF+rZfjhs/uvuv6yPW8CgBJqCQCUMGjKCtYtw/Vtf172GdsyXPOxzlaM777CAAAlBYBu2Om/eMqs
+        CqjVMlz3C4wcav2ddwMRxnVvXFd7CgBKCgAJYNWhT8wAcP7yueyW3psmzOqjW4ZrHq4EyTh+YQEASgyA
+        +VvmmAFAA9dqGa5nB3TQ+tuvaV1CEgCUGABqud1sx956yKGn//LEppbhuj6tvwEAJWBBIOk8vqEeLzf1
+        mtotw2+uPpzkMiMxll+YUAEUZFxXQn95u23L8IfW35NrcG7+8WtYV7oZGQcAlBwA01dPragFt9VRq2W4
+        a0Eynl+gAICSA0CG2XOm18r/2dg7KfEj0MhEYAUAEQT3nV1LzACgvwdQq2U4Wdtv1na53wAgAgA00rG3
+        GVLoLwO5FB1jhQMMABABAGSoY18ebcbbdb2nVstwDB2OoRuNBQCIBAArDnxYl5mbeZF+69dfCW5UXLw+
+        fDAAgEgAMHfzrGa8Xfd7dNMPhg7f0I3GCABEAgC14tb9+1ZH++EVACASrYyGBACIKKgbjrZb+b9Sq2V4
+        o5mH14dRTQCAiACQ17HXBRlmdzxIFRCRXgRhABBRQG9bNbmi1txWR62W4WT1MLJ6I3EAABEBQIGfqGOv
+        CygcOruPCiAyvQCAyAL6eu9iF16fcAw1BG0kw/DasKsCABAZADBc2IYLLT4AAACQ0RPWAABIOPihZSPm
+        4796AQAAgAogYQ0AgISDT8b1n3FD23MAAACoABLWAABIOPihZSPm478iAQAAgAogYQ0AgISDT8b1n3FD
+        23MAAACoABLWAABIOPihZSPm478iAQAAgAogYQ0AgISDT8b1n3FD23MAAACoABLWAABIOPihZSPm478i
+        AQAAgAogYQ0AgISDT8b1n3FD23MAAACoABLWAABIOPihZSPm478iAQAAgAogYQ0AgISDT8b1n3FD23MA
+        AACoABLWAABIOPihZSPm478iAQAAgAogYQ0AgISDT8b1n3FD23MAAACoABLWAABIOPihZSPm478iAQAA
+        gAogYQ0AgISDT8b1n3FD23MAAACoABLWAABIOPihZSPm478iAQAAgAogYQ0AgISDT8b1n3FD23MAAACo
+        ABLWAABIOPihZSPm478iAQAAgAogYQ0AgISDT8b1n3FD23MAAACoABLWAABIOPihZSPm478iAQAAgAog
+        YQ0IAIOQ1z952XP2PAANDAoA/QFMhCyUcBZCf4XBsF8A6CYAhQUA8AG+IjXQLQAsBQAAAA0kqYGlAsA0
+        gp9k8IvMPFw7jMrnDgHgVwAAAKCBJDVwvQAwKTuPIIAkBUAmDiMTFxEHeX6SAKBzJgAAAGggKQ3I89eM
+        AOA67gdIKvhFZByuGU61oXt/5Pn/A0AgmEcGAAJoIAkNzP9f5X8VAK7lpqAkgk8mDicTFxEL3fgnr1er
+        /5GPACP/+zsyABBAA1Fr4Pcj5h8PAALBAgQQtQCKyDpcM4yq49nR5p8IAN/P/uFdIAAE0EBUGpCn5e2r
+        qv6xHwFG/vuH2QuXIYCoBEAWDiMLFxGHDzIvy9Pf8vtEAND//z0+DgAAkkDpNaCP9PLyuF7PA8DoLwZP
+        I4TSC6GIzMM1i6s65NkbJjL+RL8CTASEH2dv0G+HNA8pLqCYib2vRwPyqLwqz9ZM8DVfMGYQ3T30cHYe
+        pSKgIkADQWlAnpQ3q3f41XvW/cIxA+oBouuzU48Sq5/Atuz8IjuvIIqgRFFPxuA15aos5DF5TZ6T9+RB
+        eVGebNjP/wVUFsACaQ06rwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA

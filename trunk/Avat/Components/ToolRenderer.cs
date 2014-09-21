@@ -9,7 +9,7 @@ namespace Avat.Components
 {
     class ToolRenderer : ToolStripSystemRenderer
     {
-        Pen borderPen = new Pen(Color.FromArgb(229,229,229));
+        Pen borderPen = new Pen(MyColors.SidebarHover);
         bool border;
         
         public ToolRenderer(bool border)
@@ -25,25 +25,21 @@ namespace Avat.Components
 
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
         {
-            var p = new SolidBrush(MyColors.MenuBackColor);
+            var p = new SolidBrush(MyColors.SidebarBack);
             var isHover = (e.Item as ToolStripButton).Checked || e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position));
             if ((e.Item as ToolStripButton).Checked)
                 p = new SolidBrush(Color.Black);
 
             e.Graphics.FillRectangle(p, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
             if (isHover)
-                e.Graphics.DrawRectangle(new Pen(Color.Black), 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
+                e.Graphics.FillRectangle(new SolidBrush(Color.Black), 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
+            else
+                e.Graphics.FillRectangle(p, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
         }
 
         protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
         {
         }
-
-        /*protected override void OnRenderItemImage(ToolStripItemImageRenderEventArgs e)
-        {
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            base.OnRenderItemImage(e);
-        }*/
 
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
@@ -60,13 +56,17 @@ namespace Avat.Components
             var format = e.TextFormat;
 
             // symbol 0x25CF
-            e.TextColor = MyColors.LeftToolGray;
+            var iconCol = MyColors.LeftToolGray;
+            if (e.Item.Tag != null && e.Item.Tag is Color)
+                iconCol = (Color)e.Item.Tag;
+            e.TextColor = iconCol;
             e.TextFont = new Font(e.TextFont.FontFamily, 18);
             e.Text = " \u25CF ";
             e.TextFormat = TextFormatFlags.NoPadding | TextFormatFlags.Left;
             e.TextRectangle = new Rectangle(e.TextRectangle.X, 2, 40, 40);
             base.OnRenderItemText(e);
 
+            // render textu
             e.Text = text;
             e.TextFont = font;
             e.TextRectangle = rect;

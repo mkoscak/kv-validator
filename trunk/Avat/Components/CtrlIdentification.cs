@@ -87,9 +87,9 @@ namespace Avat.Components
             HasProblems = true;
 
             if (probs.Any(i => i.ValidationResultState == ResultState.OkWithWarning))
-                ctrl.BackColor = Color.Orange;
+                ctrl.BackColor = MyColors.Yellow;//Color.Orange;
             else
-                ctrl.BackColor = Color.FromArgb(255, 128, 128);
+                ctrl.BackColor = Color.Red;//FromArgb(255, 128, 128);
 
             if (probs.Count > 0)
             {

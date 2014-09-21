@@ -20,7 +20,8 @@ namespace Avat.Components
         Pen white = new Pen(Color.White);
         Pen p = new Pen(MyColors.ToolstripColor1);
         Pen p2 = new Pen(MyColors.ToolstripColor2);
-        SolidBrush b = new SolidBrush(MyColors.ButtonBackColor);
+        SolidBrush buttonBack = new SolidBrush(MyColors.ButtonBackColor);
+        SolidBrush buttonHover = new SolidBrush(MyColors.ButtonHover);
 
         public static void DrawRoundedRectangleFill(Graphics g, Rectangle r, int d, Brush b)
         {
@@ -53,19 +54,18 @@ namespace Avat.Components
         int rund = 7;
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
         {
-            DrawRoundedRectangleFill(e.Graphics, new Rectangle( 0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, b);
-
             if (e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position)))
-                DrawRoundedRectangle(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1), rund, white);
+                DrawRoundedRectangleFill(e.Graphics, new Rectangle( 0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, buttonHover);
+            else
+                DrawRoundedRectangleFill(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, buttonBack);
         }
 
         protected override void OnRenderDropDownButtonBackground(ToolStripItemRenderEventArgs e)
         {
-            //e.Graphics.FillRectangle(b, 0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height);
-            DrawRoundedRectangleFill(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, b);
-
             if (e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position)))
-                DrawRoundedRectangle(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1), rund, white);
+                DrawRoundedRectangleFill(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, buttonHover);
+            else
+                DrawRoundedRectangleFill(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, buttonBack);
         }
 
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)

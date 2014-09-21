@@ -34,6 +34,7 @@ namespace Avat.Forms
         DataGridViewCellStyle errorStyle;
         DataGridViewCellStyle warningStyle;
         CtrlIdentification identification;
+        CtrlValidationResult validationResults;
 
         public FrmAvat()
         {
@@ -41,9 +42,15 @@ namespace Avat.Forms
 
             identification = new CtrlIdentification();
             identification.BorderStyle = BorderStyle.None;
-            identification.Dock = DockStyle.Fill;
-            identification.Margin = new Padding(0);
+            identification.Dock = DockStyle.None;
+            identification.Margin = new Padding(0, 20, 0, 0);
             panelContent.Controls.Add(identification);
+
+            validationResults = new CtrlValidationResult();
+            validationResults.BorderStyle = BorderStyle.None;
+            validationResults.Dock = DockStyle.None;
+            validationResults.Margin = new Padding(0, 20, 0, 0);
+            panelContent.Controls.Add(validationResults);
         }
 
         private void FrmDesignOne_Load(object sender, EventArgs e)
@@ -60,14 +67,14 @@ namespace Avat.Forms
             this.FormTitle = this.Text;
 
             errorStyle = new DataGridViewCellStyle(gridData.DefaultCellStyle);
-            errorStyle.BackColor = Color.FromArgb(255, 128, 128);
+            errorStyle.BackColor = Color.Red;//FromArgb(255, 100, 100);
             errorStyle.ForeColor = Color.White;
             warningStyle = new DataGridViewCellStyle(gridData.DefaultCellStyle);
-            warningStyle.BackColor = Color.DarkOrange;
+            warningStyle.BackColor = MyColors.Yellow;
 
             NewAvat();
 
-// stahovanie len v release
+            // stahovanie len v release
 #if !DEBUG
             RunImports();
 #endif
@@ -89,7 +96,7 @@ namespace Avat.Forms
         static readonly string blZip = ImportFolder + blFile + ".zip";
         static readonly string tpFileXmlProcessed = tpFileXml + ".processed";
         static readonly string blFileXmlProcessed = blFileXml + ".processed";
-        
+
         private void RunImports()
         {
             var bw = new BackgroundWorker();
@@ -160,7 +167,7 @@ namespace Avat.Forms
         void ShowProgress(string text)
         {
             //lblHeaderProgress.Text = text;
-            toolbarLabel.Text = text;
+            statusText.Text = text;
         }
 
         void bw_ImportsWork(object sender, DoWorkEventArgs e)
@@ -178,38 +185,49 @@ namespace Avat.Forms
             }
 
             bw.ReportProgress(25, "Sťahovanie súborov na import..");
-            try {
+            try
+            {
                 DownloadDataFiles();
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 e.Result = new Exception("Sťahovanie súborov zlyhalo!", ex);
                 return;
             }
 
             bw.ReportProgress(45, "Rozbalenie súborov na import..");
-            try {
+            try
+            {
                 UnzipDataFiles();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 e.Result = new Exception("Rozbalenie súborov zlyhalo!", ex);
                 return;
             }
 
             bw.ReportProgress(50, "Import black-list..");
-            try {
+            try
+            {
                 BlackListManager.ImportDataFromXml(blFileXml, TmpDatabaseName);
-            } catch (Exception ex) {
-                e.Result = new Exception("Import black-list zlyhal!", ex);
+            }
+            catch (Exception ex)
+            {
+                e.Result = new Exception(string.Format("Ups import platiteľov DPH s dôvodom na zrušenie registrácie neprebehol úspešne: {0}{0}{1}", Environment.NewLine, ex.Message));
                 return;
             }
-            
+
             bw.ReportProgress(99, "Import platcov..");
-            try {
+            try
+            {
                 TaxPayersManager.ImportDataFromXml(tpFileXml, TmpDatabaseName);
-            } catch (Exception ex) {
-                e.Result = new Exception("Import platcov zlyhal!", ex);
+            }
+            catch (Exception ex)
+            {
+                e.Result = new Exception(string.Format("Ups import registrovaných platiteľov DPH neprebehol úspešne: {0}{0}{1}", Environment.NewLine, ex.Message));
                 return;
             }
-            
+
             bw.ReportProgress(100, "Hotovo!");
         }
 
@@ -265,9 +283,11 @@ namespace Avat.Forms
         private void NewAvat()
         {
             kvDph = new KVDPH();
+            lastValidationResult = null;
             ShowIdentification(true);
             UpdateButtonTexts();
             SetFileName("nový.xml");
+            SetIcons(null);//def icons
         }
 
         private void SetFileName(string name)
@@ -296,16 +316,19 @@ namespace Avat.Forms
             {
                 gridData.Visible = false;
                 identification.Visible = true;
+                validationResults.Visible = false;
             }
             else if (except == btnCheckResults)
             {
                 gridData.Visible = false;
                 identification.Visible = false;
+                validationResults.Visible = true;
             }
             else if (!gridData.Visible)
             {
                 gridData.Visible = true;
                 identification.Visible = false;
+                validationResults.Visible = false;
             }
         }
 
@@ -323,7 +346,7 @@ namespace Avat.Forms
         }
 
         void ClearGrid<T>()
-            where T: IIdHolder
+            where T : IIdHolder
         {
             ItemCounter.Reset();
             gridData.DataSource = null;
@@ -333,6 +356,15 @@ namespace Avat.Forms
         private void btnCheckResults_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnCheckResults);
+            ShowValidationResults();
+        }
+
+        private void ShowValidationResults()
+        {
+            DisableAllButtons(btnCheckResults);
+            validationResults.ShowResult(lastValidationResult);
+            gridData.DataSource = null;
+            identification.lblIcDph.Focus();
         }
 
         private void btnA1_Click(object sender, EventArgs e)
@@ -454,7 +486,7 @@ namespace Avat.Forms
                 lastValidationResult = null;
 
                 var p = new Progress(0, 100, "Načítanie vstupného súboru", "Načítavam..", ReadXmlProc, XmlRead, path, false, false);
-                p.SetErrorMessage("Načítanie vstupného súboru neprebehlo úspešne, kontaktujte administrátora!", "Načítanie vstupu", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
+                p.SetErrorMessage("Ups načítanie vstupného súboru neprebehlo úspešne, XML súbor pravdepodobne nezodpovedá XSD schéme pre kontrolný výkaz DPH. Validnosť xml súboru na xsd schému je možné overiť XML validátorom v štandarde W3C.", "Načítanie vstupu", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
                 p.StartWorker();
             }
             catch (Exception ex)
@@ -497,6 +529,39 @@ namespace Avat.Forms
             btnC2.Text = string.Format("C.2. ({0})", kvDph.Transakcie.C2.Count);
             btnD1.Text = string.Format("D.1. ({0})", kvDph.Transakcie.D1.Count);
             btnD2.Text = string.Format("D.2. ({0})", kvDph.Transakcie.D2.Count);
+            
+            if (lastValidationResult != null)
+            {
+                var Result = lastValidationResult;
+
+                var c = Result.Count(r => r.ProblemObject is A1);
+                if (c > 0)
+                    btnA1.Text = string.Format("A.1. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                c = Result.Count(r => r.ProblemObject is A2);
+                if (c > 0)
+                    btnA2.Text = string.Format("A.2. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                c = Result.Count(r => r.ProblemObject is B1);
+                if (c > 0)
+                    btnB1.Text = string.Format("B.1. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                c = Result.Count(r => r.ProblemObject is B2);
+                if (c > 0)
+                    btnB2.Text = string.Format("B.2. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                c = Result.Count(r => r.ProblemObject is B3);
+                if (c > 0)
+                    btnB3.Text = string.Format("B.3. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                c = Result.Count(r => r.ProblemObject is C1);
+                if (c > 0)
+                    btnC1.Text = string.Format("C.1. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                c = Result.Count(r => r.ProblemObject is C2);
+                if (c > 0)
+                    btnC2.Text = string.Format("C.2. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                c = Result.Count(r => r.ProblemObject is D1);
+                if (c > 0)
+                    btnD1.Text = string.Format("D.1. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                c = Result.Count(r => r.ProblemObject is D2);
+                if (c > 0)
+                    btnD2.Text = string.Format("D.2. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+            }
         }
 
         private bool ReadXml(string path)
@@ -557,7 +622,7 @@ namespace Avat.Forms
         {
             if (ImportRunning)
             {
-                MessageBox.Show(this, "Práve prebieha aktualizácia databázy, počkajte kým sa proces dokončí.", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Prebieha prvotná inicializácia databázy subjektov registrovaných pre DPH. Tento proces vás už nebude pri dalších spusteniach aplikácie obmedzovať, je však nevyhnutný pre prvé korektné spustenie aplikácie a môže trvať niekoľko minút (10). Počkajte prosím kým sa inicializácia ukončí. Coffee break", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -568,7 +633,7 @@ namespace Avat.Forms
             {
                 identification.HasProblems = false;
                 var p = new Progress(0, 100, "Kontrola výkazu", "Validujem..", ValidationProc, ValidationDone, null, true, false);
-                p.SetErrorMessage("Kontrola výkazu neprebehla úspešne, nastala neočakávaná chyba!", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
+                p.SetErrorMessage("Ups kontrola výkazu neprebehla úspešne, nastala neočakávaná chyba, reštartujte prosím aplikáciu a zopakujte kontrolu. Ak chyba pretrváva kontaktuje podporu.", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
                 p.StartWorker();
             }
             catch (Exception ex)
@@ -618,78 +683,65 @@ namespace Avat.Forms
             }
 
             if (lastValidationResult == null)
-                return;
-
-            if (lastValidationResult.Count == 0)
             {
-                ValidationPassed();
-            }
-            else
-            {
-                ValidationFailed(lastValidationResult);
-                ShowIdentification(false);
-                identification.SetProblems(lastValidationResult);
-
                 SetIcons(lastValidationResult);
+                return;
             }
+
+            identification.SetProblems(lastValidationResult);
+            ShowValidationResults();
+            UpdateButtonTexts();
+            SetIcons(lastValidationResult);
         }
 
         private void SetIcons(IValidationResult lastValidationResult)
         {
+            // def farby
+            btnA1.Tag = MyColors.LeftToolGray;
+            btnA2.Tag = MyColors.LeftToolGray;
+            btnB1.Tag = MyColors.LeftToolGray;
+            btnB2.Tag = MyColors.LeftToolGray;
+            btnB3.Tag = MyColors.LeftToolGray;
+            btnC1.Tag = MyColors.LeftToolGray;
+            btnC2.Tag = MyColors.LeftToolGray;
+            btnD1.Tag = MyColors.LeftToolGray;
+            btnD2.Tag = MyColors.LeftToolGray;
+            btnIdent.Tag = MyColors.LeftToolGray;
+            btnCheckResults.Tag = MyColors.LeftToolGray;
+
+            menuXml.Invalidate();
+
             if (lastValidationResult == null)
-            {
-                //btnIdentification.Image = Resources.identdef;
-                btnA1.Image = Resources.ok;
-                btnA2.Image = Resources.ok;
-                btnB1.Image = Resources.ok;
-                btnB2.Image = Resources.ok;
-                btnB3.Image = Resources.ok;
-                btnC1.Image = Resources.ok;
-                btnC2.Image = Resources.ok;
-                btnD1.Image = Resources.ok;
-                btnD2.Image = Resources.ok;
                 return;
-            }
 
             // identifikacia
-            /*if (identification.HasProblems)
-                btnIdentification.Image = Resources.identokno;
+            if (identification.HasProblems)
+                btnIdent.Tag = Color.Red;
             else
-                btnIdentification.Image = Resources.identok;*/
+                btnIdent.Tag = Color.Green;
 
             // polozky
-            bool prob = lastValidationResult.Any(r => r.ProblemObject is A1);
-            btnA1.Image = prob ? Resources.problem : Resources.ok;
+            bool prob;
+            prob = lastValidationResult.Any(r => r.ProblemObject is A1);
+            btnA1.Tag = prob ? Color.Red : Color.Green;
             prob = lastValidationResult.Any(r => r.ProblemObject is A2);
-            btnA2.Image = prob ? Resources.problem : Resources.ok;
+            btnA2.Tag = prob ? Color.Red : Color.Green;
             prob = lastValidationResult.Any(r => r.ProblemObject is B1);
-            btnB1.Image = prob ? Resources.problem : Resources.ok;
+            btnB1.Tag = prob ? Color.Red : Color.Green;
             prob = lastValidationResult.Any(r => r.ProblemObject is B2);
-            btnB2.Image = prob ? Resources.problem : Resources.ok;
+            btnB2.Tag = prob ? Color.Red : Color.Green;
             prob = lastValidationResult.Any(r => r.ProblemObject is B3);
-            btnB3.Image = prob ? Resources.problem : Resources.ok;
+            btnB3.Tag = prob ? Color.Red : Color.Green;
             prob = lastValidationResult.Any(r => r.ProblemObject is C1);
-            btnC1.Image = prob ? Resources.problem : Resources.ok;
+            btnC1.Tag = prob ? Color.Red : Color.Green;
             prob = lastValidationResult.Any(r => r.ProblemObject is C2);
-            btnC2.Image = prob ? Resources.problem : Resources.ok;
+            btnC2.Tag = prob ? Color.Red : Color.Green;
             prob = lastValidationResult.Any(r => r.ProblemObject is D1);
-            btnD1.Image = prob ? Resources.problem : Resources.ok;
+            btnD1.Tag = prob ? Color.Red : Color.Green;
             prob = lastValidationResult.Any(r => r.ProblemObject is D2);
-            btnD2.Image = prob ? Resources.problem : Resources.ok;
-        }
+            btnD2.Tag = prob ? Color.Red : Color.Green;
 
-        private void ValidationFailed(IValidationResult lastValidationResult)
-        {
-            //MessageBox.Show(this, string.Format("Validácia neprebehla v poriadku, bolo zistených {0} problémov..", lastValidationResult.Count), "Validácia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            var frm = new FrmValidationResult(lastValidationResult);
-            frm.ShowDialog(this);
-        }
-
-        private void ValidationPassed()
-        {
-            //MessageBox.Show(this, "Validácia prebehla v poriadku, nenašiel sa žiadny problém!", "Validácia", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            var frm = new FrmValidationResult(lastValidationResult);
-            frm.ShowDialog(this);
+            menuXml.Invalidate();
         }
 
         private void btnSaveXml_Click(object sender, EventArgs e)
@@ -860,7 +912,7 @@ namespace Avat.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, string.Format("Export kontrolného výkazu do programu Excel neprebehol úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Export", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, string.Format("Ups export kontrolného výkazu do programu Excel neprebehol úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Export", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -1224,7 +1276,7 @@ namespace Avat.Forms
             var icList = string.Join(", ", list.Select(s => "\"" + s + "\"").ToArray());
             var q = string.Format("select count(*) from {0} where {1} in ({2})", BlackListEntity.TABLE_NAME, BlackListEntity.IC_DPH, icList);
             var ds = DbProvider.Instance.ExecuteQuery(q);
-            
+
             return Convert.ToInt32(ds.Tables[0].Rows[0][0]);
         }
 
@@ -1283,7 +1335,7 @@ namespace Avat.Forms
         private void LayoutHeader()
         {
             var middle = this.Size.Width / 2;
-            lblHeader.Size = new Size(middle - 25, lblHeader.Size.Height);
+            //lblHeader.Size = new Size(middle - 25, lblHeader.Size.Height);
 
             if (pad == null)
                 pad = btnCheckAll.Margin;
@@ -1292,6 +1344,20 @@ namespace Avat.Forms
             pad.Right = 3;
             pad.Bottom = 5;
             btnCheckAll.Margin = pad;
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            About frm = new About();
+            frm.Show(this);
+        }
+
+        private void btnCloseNoChanges_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "Naozaj si prajete zatvoriť kontrolný výkaz? Všetky neuložené zmeny budú stratené!", "Zatvoriť bez zmien", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            NewAvat();
         }
     }
 }

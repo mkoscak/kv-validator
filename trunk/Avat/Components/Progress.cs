@@ -72,7 +72,7 @@ namespace Avat.Components
 
             if (e.Cancelled == true)
             {
-                MessageBox.Show(this, "Operácia prerušená používateľom!", "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Operácia bola zrušená užívateľom.", "Hotovo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Visible = false;
                 Close();
             }

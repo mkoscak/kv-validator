@@ -69,6 +69,12 @@ namespace Avat.Components
 
         protected override void OnRenderDropDownButtonBackground(ToolStripItemRenderEventArgs e)
         {
+            if (!e.Item.Enabled)
+            {
+                DrawRoundedRectangleFill(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, buttonInact);
+                return;
+            }
+
             if (e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position)))
                 DrawRoundedRectangleFill(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, buttonHover);
             else

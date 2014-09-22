@@ -115,7 +115,7 @@ namespace Avat.Forms
             this.leftMenu.Name = "leftMenu";
             this.leftMenu.Padding = new System.Windows.Forms.Padding(0);
             this.leftMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.leftMenu.Size = new System.Drawing.Size(166, 563);
+            this.leftMenu.Size = new System.Drawing.Size(166, 543);
             this.leftMenu.TabIndex = 1;
             this.leftMenu.Text = "toolStrip1";
             // 
@@ -416,7 +416,7 @@ namespace Avat.Forms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 616);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 596);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // topMenu
@@ -559,7 +559,7 @@ namespace Avat.Forms
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelContent.Size = new System.Drawing.Size(820, 557);
+            this.panelContent.Size = new System.Drawing.Size(820, 537);
             this.panelContent.TabIndex = 4;
             // 
             // lblTitle
@@ -625,7 +625,7 @@ namespace Avat.Forms
             this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridData.RowHeadersWidth = 30;
             this.gridData.RowTemplate.Height = 25;
-            this.gridData.Size = new System.Drawing.Size(818, 509);
+            this.gridData.Size = new System.Drawing.Size(818, 489);
             this.gridData.TabIndex = 6;
             this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
             this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
@@ -718,7 +718,7 @@ namespace Avat.Forms
             this.statusText,
             this.statusProgress,
             this.statusProgressVal});
-            this.toolbar.Location = new System.Drawing.Point(0, 657);
+            this.toolbar.Location = new System.Drawing.Point(0, 661);
             this.toolbar.Name = "toolbar";
             this.toolbar.Size = new System.Drawing.Size(992, 24);
             this.toolbar.SizingGrip = false;
@@ -760,13 +760,13 @@ namespace Avat.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(992, 681);
+            this.ClientSize = new System.Drawing.Size(992, 685);
             this.Controls.Add(this.toolbar);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(800, 715);
+            this.MinimumSize = new System.Drawing.Size(800, 719);
             this.Name = "FrmAvat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VATFIX - kontrolný výkaz DPH";

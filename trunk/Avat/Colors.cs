@@ -95,5 +95,13 @@ namespace Avat
                 return Color.FromArgb(255, 162, 0);
             }
         }
+
+        public static Color YellowHover
+        {
+            get
+            {
+                return Color.FromArgb(215, 142, 0);
+            }
+        }
     }
 }

@@ -59,6 +59,7 @@ namespace Avat.Forms
         }
 
         Vatfix.Licensing.License licence = null;
+        bool LicenceOk = false;
         private void CheckLicence()
         {
             try
@@ -66,10 +67,12 @@ namespace Avat.Forms
                 var lic = Vatfix.Licensing.LicenseManager.GetLicense();
                 licence = lic;
                 lblHeader2.Text = string.Format("{0} {1} - {2} - {3:00}/{4}", lic.User.Name, lic.User.Surname, lic.DIC[0], lic.Expiration.Month, lic.Expiration.Year);
+                if (DateTime.Now < lic.Expiration)
+                    LicenceOk = true;   // az tu je licencia ok
             }
             catch (Exception ex)
             {
-                ShowProgress("Problém s licenciou: " + ex.Message);
+                //ShowProgress("Problém s licenciou: " + ex.Message);
             }
         }
 
@@ -105,6 +108,9 @@ namespace Avat.Forms
             {
                 NewAvat();
             }
+            
+            CheckSetLicence();
+
             // stahovanie len v release
 #if !DEBUG
             RunImports();
@@ -133,6 +139,18 @@ namespace Avat.Forms
             btnOtherOps.Enabled = !show;
             btnCloseNoChanges.Enabled = !show;
             btnCheckAll.Enabled = !show;
+
+            CheckSetLicence();
+        }
+
+        private void CheckSetLicence()
+        {
+            if (!LicenceOk)
+            {
+                btnSaveXml.Enabled = false;
+                btnCheckAll.Enabled = false;
+                btnExportToExcel.Enabled = false;
+            }
         }
 
         #region Automaticke importy

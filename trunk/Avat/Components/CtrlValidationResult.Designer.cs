@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnExportReport = new System.Windows.Forms.Button();
             this.lblpD2 = new System.Windows.Forms.Label();
             this.lblD2 = new System.Windows.Forms.Label();
             this.lblpD1 = new System.Windows.Forms.Label();
@@ -69,27 +68,8 @@
             this.lblDruh = new System.Windows.Forms.Label();
             this.lblpIcDph = new System.Windows.Forms.Label();
             this.lblIcDph = new System.Windows.Forms.Label();
+            this.btnExportReport = new Avat.Components.RoundedButton();
             this.SuspendLayout();
-            // 
-            // btnExportReport
-            // 
-            this.btnExportReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportReport.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.btnExportReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExportReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnExportReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
-            this.btnExportReport.Location = new System.Drawing.Point(361, 426);
-            this.btnExportReport.Margin = new System.Windows.Forms.Padding(0);
-            this.btnExportReport.Name = "btnExportReport";
-            this.btnExportReport.Size = new System.Drawing.Size(100, 26);
-            this.btnExportReport.TabIndex = 129;
-            this.btnExportReport.TabStop = false;
-            this.btnExportReport.Text = "&Uložiť report";
-            this.btnExportReport.UseVisualStyleBackColor = false;
-            this.btnExportReport.Click += new System.EventHandler(this.btnExportReport_Click);
             // 
             // lblpD2
             // 
@@ -651,6 +631,26 @@
             this.lblIcDph.TabIndex = 89;
             this.lblIcDph.Text = "IČ platitela DPH:";
             // 
+            // btnExportReport
+            // 
+            this.btnExportReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportReport.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
+            this.btnExportReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExportReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnExportReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportReport.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnExportReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(125)))), ((int)(((byte)(140)))));
+            this.btnExportReport.Location = new System.Drawing.Point(382, 434);
+            this.btnExportReport.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExportReport.Name = "btnExportReport";
+            this.btnExportReport.Size = new System.Drawing.Size(122, 32);
+            this.btnExportReport.TabIndex = 129;
+            this.btnExportReport.TabStop = false;
+            this.btnExportReport.Text = "Uložiť report";
+            this.btnExportReport.UseVisualStyleBackColor = false;
+            this.btnExportReport.Click += new System.EventHandler(this.btnExportReport_Click);
+            // 
             // CtrlValidationResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -706,7 +706,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnExportReport;
+        private RoundedButton btnExportReport;
         internal System.Windows.Forms.Label lblpD2;
         internal System.Windows.Forms.Label lblD2;
         internal System.Windows.Forms.Label lblpD1;

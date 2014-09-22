@@ -200,6 +200,7 @@ namespace Avat.Components
             this.txtIcDph.Name = "txtIcDph";
             this.txtIcDph.Size = new System.Drawing.Size(315, 26);
             this.txtIcDph.TabIndex = 17;
+            this.txtIcDph.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txtName
             // 
@@ -212,6 +213,7 @@ namespace Avat.Components
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(315, 26);
             this.txtName.TabIndex = 20;
+            this.txtName.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txtState
             // 
@@ -224,6 +226,7 @@ namespace Avat.Components
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(315, 26);
             this.txtState.TabIndex = 21;
+            this.txtState.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txtCity
             // 
@@ -236,6 +239,7 @@ namespace Avat.Components
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(315, 26);
             this.txtCity.TabIndex = 22;
+            this.txtCity.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txtPsc
             // 
@@ -248,6 +252,7 @@ namespace Avat.Components
             this.txtPsc.Name = "txtPsc";
             this.txtPsc.Size = new System.Drawing.Size(315, 26);
             this.txtPsc.TabIndex = 23;
+            this.txtPsc.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txtAddress
             // 
@@ -260,6 +265,7 @@ namespace Avat.Components
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(315, 26);
             this.txtAddress.TabIndex = 24;
+            this.txtAddress.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txtPhone
             // 
@@ -272,6 +278,7 @@ namespace Avat.Components
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(315, 26);
             this.txtPhone.TabIndex = 25;
+            this.txtPhone.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txteMail
             // 
@@ -285,6 +292,7 @@ namespace Avat.Components
             this.txteMail.Size = new System.Drawing.Size(315, 26);
             this.txteMail.TabIndex = 26;
             this.txteMail.Text = "@";
+            this.txteMail.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txtYear
             // 
@@ -307,6 +315,7 @@ namespace Avat.Components
             0,
             0,
             0});
+            this.txtYear.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txtPeriod
             // 
@@ -329,6 +338,7 @@ namespace Avat.Components
             0,
             0,
             0});
+            this.txtPeriod.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // panelKind
             // 
@@ -341,6 +351,7 @@ namespace Avat.Components
             this.panelKind.Name = "panelKind";
             this.panelKind.Size = new System.Drawing.Size(315, 24);
             this.panelKind.TabIndex = 32;
+            this.panelKind.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // cbKind
             // 
@@ -383,6 +394,7 @@ namespace Avat.Components
             this.panelPeriod.Name = "panelPeriod";
             this.panelPeriod.Size = new System.Drawing.Size(164, 24);
             this.panelPeriod.TabIndex = 33;
+            this.panelPeriod.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // CtrlIdentification
             // 

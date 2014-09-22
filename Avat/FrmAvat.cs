@@ -35,6 +35,7 @@ namespace Avat.Forms
         DataGridViewCellStyle warningStyle;
         CtrlIdentification identification;
         CtrlValidationResult validationResults;
+        CtrlFirstRun firstRunCtrl;
 
         public FrmAvat()
         {
@@ -51,6 +52,10 @@ namespace Avat.Forms
             validationResults.Dock = DockStyle.None;
             validationResults.Margin = new Padding(0, 20, 0, 0);
             panelContent.Controls.Add(validationResults);
+
+            firstRunCtrl = new CtrlFirstRun();
+            firstRunCtrl.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(firstRunCtrl);
         }
 
         Vatfix.Licensing.License licence = null;
@@ -64,16 +69,17 @@ namespace Avat.Forms
             }
             catch (Exception ex)
             {
-                ShowProgress("Problem s licenciou: " + ex.Message);
+                ShowProgress("Problém s licenciou: " + ex.Message);
             }
         }
 
+        bool firstRun = false;
         private void FrmDesignOne_Load(object sender, EventArgs e)
         {
             LayoutHeader();
-            this.menuXml.Renderer = new ToolRenderer(true);
-            this.menuOps.Renderer = new OpsToolRenderer();
-            this.toolStripCorner.Renderer = new OpsToolRenderer();
+            this.leftMenu.Renderer = new ToolRenderer(true);
+            this.topMenu.Renderer = new OpsToolRenderer();
+            this.cornerMenu.Renderer = new OpsToolRenderer();
 
             CheckLicence();
 
@@ -89,12 +95,44 @@ namespace Avat.Forms
             warningStyle = new DataGridViewCellStyle(gridData.DefaultCellStyle);
             warningStyle.BackColor = MyColors.Yellow;
 
-            NewAvat();
-
+            // prvy beh je identifikovany pom. existencie DB suboru
+            firstRun = !File.Exists(DbProvider.DefaultDataSource);
+            if (firstRun)
+            {
+                ShowFirstRun(true);
+            }
+            else
+            {
+                NewAvat();
+            }
             // stahovanie len v release
 #if !DEBUG
             RunImports();
 #endif
+        }
+
+        private void ShowFirstRun(bool show)
+        {
+            leftMenu.Visible = !show;
+            firstRunCtrl.Visible = show;
+            identification.Visible = !show;
+            if (show)
+            {
+                Cursor = Cursors.WaitCursor;
+                lblTitle.ForeColor = Color.White;
+                panelLine.BackColor = Color.White;
+            }
+            else
+            {
+                Cursor = Cursors.Default;
+                lblTitle.ForeColor = Color.Black;
+                panelLine.BackColor = Color.Gray;
+            }
+            btnReadXml.Enabled = !show;
+            btnSaveXml.Enabled = !show;
+            btnOtherOps.Enabled = !show;
+            btnCloseNoChanges.Enabled = !show;
+            btnCheckAll.Enabled = !show;
         }
 
         #region Automaticke importy
@@ -164,7 +202,7 @@ namespace Avat.Forms
                     File.Move(blFileXml, blFileXmlProcessed);
                 }
 
-                ShowProgress(string.Empty);// ak bez problemov
+                ShowProgress("Databáza je aktuálna.");// ak bez problemov
             }
             catch (Exception)
             {
@@ -173,18 +211,47 @@ namespace Avat.Forms
             finally
             {
                 ImportRunning = false;
+
+                if (firstRun)
+                {
+                    firstRun = false;
+                    ShowFirstRun(false);
+                }
             }
         }
 
         void bw_ImportsProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            ShowProgress((e.UserState ?? string.Empty).ToString());
+            ShowProgress((e.UserState ?? string.Empty).ToString(), e.ProgressPercentage);
+            if (firstRun)
+            {
+                firstRunCtrl.progress.Value = e.ProgressPercentage;
+                firstRunCtrl.lblPercentage.Text = string.Format("{0}%", e.ProgressPercentage);
+            }
         }
 
         void ShowProgress(string text)
         {
-            //lblHeaderProgress.Text = text;
+            if (statusProgress.Visible)
+            {
+                statusProgress.Visible = false;
+                statusProgressVal.Visible = false;
+            }
+
             statusText.Text = text;
+        }
+        
+        void ShowProgress(string text, int percent)
+        {
+            if (!statusProgress.Visible)
+            {
+                statusProgress.Visible = true;
+                statusProgressVal.Visible = true;
+            }
+
+            statusText.Text = text;
+            statusProgressVal.Text = string.Format("{0}%", percent);
+            statusProgress.Value = percent;
         }
 
         void bw_ImportsWork(object sender, DoWorkEventArgs e)
@@ -194,17 +261,17 @@ namespace Avat.Forms
             if (!Directory.Exists(ImportFolder))
                 Directory.CreateDirectory(ImportFolder);
 
-            bw.ReportProgress(10, "Kontrola aktuálnosti databázy..");
+            bw.ReportProgress(0, "Kontrola aktuálnosti databázy..");
             if (CheckTodaysImport())
             {
                 e.Result = new Exception("Databáza je aktuálna.");
                 return;
             }
 
-            bw.ReportProgress(25, "Sťahovanie súborov na import..");
+            bw.ReportProgress(10, "Sťahovanie súborov na import..");
             try
             {
-                DownloadDataFiles();
+                //DownloadDataFiles();
             }
             catch (Exception ex)
             {
@@ -215,6 +282,10 @@ namespace Avat.Forms
             bw.ReportProgress(45, "Rozbalenie súborov na import..");
             try
             {
+                var tmps = Directory.GetFiles(ImportFolder, "*.tmp");
+                foreach (var tmp in tmps)
+                    File.Delete(tmp);
+
                 UnzipDataFiles();
             }
             catch (Exception ex)
@@ -223,7 +294,7 @@ namespace Avat.Forms
                 return;
             }
 
-            bw.ReportProgress(50, "Import black-list..");
+            bw.ReportProgress(50, "Aktualizácia databázy DIČ..");
             try
             {
                 BlackListManager.ImportDataFromXml(blFileXml, TmpDatabaseName);
@@ -234,7 +305,7 @@ namespace Avat.Forms
                 return;
             }
 
-            bw.ReportProgress(99, "Import platcov..");
+            bw.ReportProgress(75, "Aktualizácia databázy DIČ..");
             try
             {
                 TaxPayersManager.ImportDataFromXml(tpFileXml, TmpDatabaseName);
@@ -245,7 +316,13 @@ namespace Avat.Forms
                 return;
             }
 
-            bw.ReportProgress(100, "Hotovo!");
+            bw.ReportProgress(99, "Prepínanie schémy..");
+
+            // so switchom DB pockame kym sa nedokonci kontrola
+            while (CheckRunning)
+                ;
+
+            bw.ReportProgress(100, "Hotovo.");
         }
 
         // kontrola ci uz dnes prebehlo stiahnutie a import
@@ -630,6 +707,7 @@ namespace Avat.Forms
             return true;
         }
 
+        bool CheckRunning = false;
         /// <summary>
         /// Samotna validacia
         /// </summary>
@@ -637,17 +715,18 @@ namespace Avat.Forms
         /// <param name="e"></param>
         private void btnCheckAll_Click(object sender, EventArgs e)
         {
-            if (ImportRunning)
+            /*if (ImportRunning)
             {
                 MessageBox.Show(this, "Prebieha prvotná inicializácia databázy subjektov registrovaných pre DPH. Tento proces vás už nebude pri dalších spusteniach aplikácie obmedzovať, je však nevyhnutný pre prvé korektné spustenie aplikácie a môže trvať niekoľko minút (10). Počkajte prosím kým sa inicializácia ukončí. Coffee break", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-            }
+            }*/
 
             if (!ReadIdent())
                 return;
 
             try
             {
+                CheckRunning = true;
                 identification.HasProblems = false;
                 var p = new Progress(0, 100, "Kontrola výkazu", "Validujem..", ValidationProc, ValidationDone, null, true, false);
                 p.SetErrorMessage("Ups kontrola výkazu neprebehla úspešne, nastala neočakávaná chyba, reštartujte prosím aplikáciu a zopakujte kontrolu. Ak chyba pretrváva kontaktuje podporu.", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
@@ -655,6 +734,7 @@ namespace Avat.Forms
             }
             catch (Exception ex)
             {
+                CheckRunning = false;
                 MessageBox.Show(this, string.Format("Kontrola výkazu neprebehla úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
@@ -699,6 +779,8 @@ namespace Avat.Forms
                 return;
             }
 
+            CheckRunning = false;
+
             if (lastValidationResult == null)
             {
                 SetIcons(lastValidationResult);
@@ -726,7 +808,7 @@ namespace Avat.Forms
             btnIdent.Tag = MyColors.LeftToolGray;
             btnCheckResults.Tag = MyColors.LeftToolGray;
 
-            menuXml.Invalidate();
+            leftMenu.Invalidate();
 
             if (lastValidationResult == null)
                 return;
@@ -758,7 +840,7 @@ namespace Avat.Forms
             prob = lastValidationResult.Any(r => r.ProblemObject is D2);
             btnD2.Tag = prob ? Color.Red : Color.Green;
 
-            menuXml.Invalidate();
+            leftMenu.Invalidate();
         }
 
         private void btnSaveXml_Click(object sender, EventArgs e)

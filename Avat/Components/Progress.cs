@@ -130,7 +130,7 @@ namespace Avat.Components
         }
     }
 
-    class MyProgress : ProgressBar
+    /*class MyProgress : ProgressBar
     {
         public MyProgress()
         {
@@ -149,5 +149,5 @@ namespace Avat.Components
             
             //base.OnPaintBackground(e);
         }
-    }
+    }*/
 }

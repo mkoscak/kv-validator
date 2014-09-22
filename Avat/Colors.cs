@@ -72,6 +72,14 @@ namespace Avat
             }
         }
 
+        public static Color ProgressBack
+        {
+            get
+            {
+                return Color.FromArgb(27, 103, 39);
+            }
+        }
+
         public static Color LeftToolGray
         {
             get

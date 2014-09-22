@@ -1,4 +1,5 @@
-﻿namespace Avat.Forms
+﻿using Avat.Components;
+namespace Avat.Forms
 {
     partial class FrmAvat
     {
@@ -33,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAvat));
-            this.menuXml = new System.Windows.Forms.ToolStrip();
+            this.leftMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnCheckResults = new System.Windows.Forms.ToolStripButton();
             this.btnIdent = new System.Windows.Forms.ToolStripButton();
@@ -51,7 +52,7 @@
             this.btnD1 = new System.Windows.Forms.ToolStripButton();
             this.btnD2 = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.menuOps = new System.Windows.Forms.ToolStrip();
+            this.topMenu = new System.Windows.Forms.ToolStrip();
             this.btnCheckAll = new System.Windows.Forms.ToolStripButton();
             this.btnSaveXml = new System.Windows.Forms.ToolStripButton();
             this.btnCloseNoChanges = new System.Windows.Forms.ToolStripButton();
@@ -63,35 +64,36 @@
             this.btnAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.panelContent = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.gridData = new Avat.Components.MyDoubleBufferedGrid();
             this.panelLine = new System.Windows.Forms.Panel();
-            this.toolStripCorner = new System.Windows.Forms.ToolStrip();
+            this.cornerMenu = new System.Windows.Forms.ToolStrip();
             this.btnReadXml = new System.Windows.Forms.ToolStripButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeader2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.toolbar = new System.Windows.Forms.StatusStrip();
+            this.statusFiller = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusProgress = new System.Windows.Forms.ToolStripProgressBar();
-            this.statusProgressText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.gridData = new Avat.Components.MyDoubleBufferedGrid();
-            this.menuXml.SuspendLayout();
+            this.statusProgress = new Avat.Components.MyStatusProgress();
+            this.statusProgressVal = new System.Windows.Forms.ToolStripStatusLabel();
+            this.leftMenu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.menuOps.SuspendLayout();
+            this.topMenu.SuspendLayout();
             this.panelContent.SuspendLayout();
-            this.toolStripCorner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
+            this.cornerMenu.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.toolbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuXml
+            // leftMenu
             // 
-            this.menuXml.AutoSize = false;
-            this.menuXml.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.menuXml.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuXml.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.menuXml.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.menuXml.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.leftMenu.AutoSize = false;
+            this.leftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.leftMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.leftMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.leftMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.leftMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.btnCheckResults,
             this.btnIdent,
@@ -108,14 +110,14 @@
             this.toolStripLabelD,
             this.btnD1,
             this.btnD2});
-            this.menuXml.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuXml.Location = new System.Drawing.Point(0, 53);
-            this.menuXml.Name = "menuXml";
-            this.menuXml.Padding = new System.Windows.Forms.Padding(0);
-            this.menuXml.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuXml.Size = new System.Drawing.Size(166, 563);
-            this.menuXml.TabIndex = 1;
-            this.menuXml.Text = "toolStrip1";
+            this.leftMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.leftMenu.Location = new System.Drawing.Point(0, 53);
+            this.leftMenu.Name = "leftMenu";
+            this.leftMenu.Padding = new System.Windows.Forms.Padding(0);
+            this.leftMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.leftMenu.Size = new System.Drawing.Size(166, 563);
+            this.leftMenu.TabIndex = 1;
+            this.leftMenu.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
@@ -402,10 +404,10 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 166F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.menuXml, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.menuOps, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.leftMenu, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.topMenu, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelContent, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.toolStripCorner, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cornerMenu, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 65);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -417,25 +419,25 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 616);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // menuOps
+            // topMenu
             // 
-            this.menuOps.AutoSize = false;
-            this.menuOps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
-            this.menuOps.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuOps.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.menuOps.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.menuOps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.topMenu.AutoSize = false;
+            this.topMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
+            this.topMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.topMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.topMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.topMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCheckAll,
             this.btnSaveXml,
             this.btnCloseNoChanges,
             this.btnOtherOps});
-            this.menuOps.Location = new System.Drawing.Point(166, 0);
-            this.menuOps.Name = "menuOps";
-            this.menuOps.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.menuOps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuOps.Size = new System.Drawing.Size(826, 53);
-            this.menuOps.TabIndex = 2;
-            this.menuOps.Text = "toolStrip1";
+            this.topMenu.Location = new System.Drawing.Point(166, 0);
+            this.topMenu.Name = "topMenu";
+            this.topMenu.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.topMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.topMenu.Size = new System.Drawing.Size(826, 53);
+            this.topMenu.TabIndex = 2;
+            this.topMenu.Text = "toolStrip1";
             // 
             // btnCheckAll
             // 
@@ -475,7 +477,7 @@
             this.btnCloseNoChanges.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCloseNoChanges.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCloseNoChanges.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCloseNoChanges.Margin = new System.Windows.Forms.Padding(5, 6, 0, 5);
+            this.btnCloseNoChanges.Margin = new System.Windows.Forms.Padding(8, 6, 0, 5);
             this.btnCloseNoChanges.Name = "btnCloseNoChanges";
             this.btnCloseNoChanges.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnCloseNoChanges.Size = new System.Drawing.Size(136, 34);
@@ -576,6 +578,59 @@
             this.lblTitle.Text = "A1 - Štandardné odberateľské faktúry (tuzemské)";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // gridData
+            // 
+            this.gridData.AllowUserToOrderColumns = true;
+            this.gridData.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.gridData.BackgroundColor = System.Drawing.Color.White;
+            this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridData.EnableHeadersVisualStyles = false;
+            this.gridData.GridColor = System.Drawing.Color.Gainsboro;
+            this.gridData.Location = new System.Drawing.Point(1, 47);
+            this.gridData.Margin = new System.Windows.Forms.Padding(1);
+            this.gridData.Name = "gridData";
+            this.gridData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridData.RowHeadersWidth = 30;
+            this.gridData.RowTemplate.Height = 25;
+            this.gridData.Size = new System.Drawing.Size(818, 509);
+            this.gridData.TabIndex = 6;
+            this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
+            this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
+            this.gridData.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gridData_DataError);
+            // 
             // panelLine
             // 
             this.panelLine.BackColor = System.Drawing.Color.Gray;
@@ -586,20 +641,20 @@
             this.panelLine.Size = new System.Drawing.Size(820, 1);
             this.panelLine.TabIndex = 7;
             // 
-            // toolStripCorner
+            // cornerMenu
             // 
-            this.toolStripCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
-            this.toolStripCorner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripCorner.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripCorner.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cornerMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
+            this.cornerMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cornerMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.cornerMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnReadXml});
-            this.toolStripCorner.Location = new System.Drawing.Point(0, 0);
-            this.toolStripCorner.Name = "toolStripCorner";
-            this.toolStripCorner.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.toolStripCorner.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStripCorner.Size = new System.Drawing.Size(166, 53);
-            this.toolStripCorner.TabIndex = 5;
-            this.toolStripCorner.Text = "toolStrip1";
+            this.cornerMenu.Location = new System.Drawing.Point(0, 0);
+            this.cornerMenu.Name = "cornerMenu";
+            this.cornerMenu.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.cornerMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.cornerMenu.Size = new System.Drawing.Size(166, 53);
+            this.cornerMenu.TabIndex = 5;
+            this.cornerMenu.Text = "toolStrip1";
             // 
             // btnReadXml
             // 
@@ -659,15 +714,22 @@
             // 
             this.toolbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
             this.toolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusProgressText,
+            this.statusFiller,
+            this.statusText,
             this.statusProgress,
-            this.statusText});
+            this.statusProgressVal});
             this.toolbar.Location = new System.Drawing.Point(0, 657);
             this.toolbar.Name = "toolbar";
-            this.toolbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolbar.Size = new System.Drawing.Size(992, 24);
+            this.toolbar.SizingGrip = false;
             this.toolbar.TabIndex = 4;
             this.toolbar.Text = "toolbar";
+            // 
+            // statusFiller
+            // 
+            this.statusFiller.Name = "statusFiller";
+            this.statusFiller.Size = new System.Drawing.Size(681, 19);
+            this.statusFiller.Spring = true;
             // 
             // statusText
             // 
@@ -682,70 +744,16 @@
             // 
             this.statusProgress.ForeColor = System.Drawing.Color.White;
             this.statusProgress.Name = "statusProgress";
-            this.statusProgress.Size = new System.Drawing.Size(100, 18);
-            this.statusProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.statusProgress.Size = new System.Drawing.Size(100, 22);
             this.statusProgress.Value = 35;
             // 
-            // statusProgressText
+            // statusProgressVal
             // 
-            this.statusProgressText.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusProgressText.ForeColor = System.Drawing.Color.White;
-            this.statusProgressText.Name = "statusProgressText";
-            this.statusProgressText.Size = new System.Drawing.Size(28, 19);
-            this.statusProgressText.Text = "0%";
-            // 
-            // gridData
-            // 
-            this.gridData.AllowUserToOrderColumns = true;
-            this.gridData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gridData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.gridData.BackgroundColor = System.Drawing.Color.White;
-            this.gridData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(195)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridData.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gridData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridData.EnableHeadersVisualStyles = false;
-            this.gridData.GridColor = System.Drawing.Color.Gainsboro;
-            this.gridData.Location = new System.Drawing.Point(1, 47);
-            this.gridData.Margin = new System.Windows.Forms.Padding(1);
-            this.gridData.Name = "gridData";
-            this.gridData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.gridData.RowHeadersWidth = 30;
-            this.gridData.RowTemplate.Height = 25;
-            this.gridData.Size = new System.Drawing.Size(818, 509);
-            this.gridData.TabIndex = 6;
-            this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
-            this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
-            this.gridData.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gridData_DataError);
+            this.statusProgressVal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusProgressVal.ForeColor = System.Drawing.Color.White;
+            this.statusProgressVal.Name = "statusProgressVal";
+            this.statusProgressVal.Size = new System.Drawing.Size(28, 19);
+            this.statusProgressVal.Text = "0%";
             // 
             // FrmAvat
             // 
@@ -764,19 +772,19 @@
             this.Text = "VATFIX - kontrolný výkaz DPH";
             this.Load += new System.EventHandler(this.FrmDesignOne_Load);
             this.Resize += new System.EventHandler(this.FrmAvat_Resize);
-            this.menuXml.ResumeLayout(false);
-            this.menuXml.PerformLayout();
+            this.leftMenu.ResumeLayout(false);
+            this.leftMenu.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.menuOps.ResumeLayout(false);
-            this.menuOps.PerformLayout();
+            this.topMenu.ResumeLayout(false);
+            this.topMenu.PerformLayout();
             this.panelContent.ResumeLayout(false);
-            this.toolStripCorner.ResumeLayout(false);
-            this.toolStripCorner.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
+            this.cornerMenu.ResumeLayout(false);
+            this.cornerMenu.PerformLayout();
             this.panelHeader.ResumeLayout(false);
             this.toolbar.ResumeLayout(false);
             this.toolbar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -784,7 +792,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip menuXml;
+        private System.Windows.Forms.ToolStrip leftMenu;
         private System.Windows.Forms.ToolStripButton btnA1;
         private System.Windows.Forms.ToolStripButton btnB2;
         private System.Windows.Forms.ToolStripButton btnA2;
@@ -795,7 +803,7 @@
         private System.Windows.Forms.ToolStripButton btnD1;
         private System.Windows.Forms.ToolStripButton btnD2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ToolStrip menuOps;
+        private System.Windows.Forms.ToolStrip topMenu;
         private System.Windows.Forms.ToolStripButton btnCheckAll;
         private System.Windows.Forms.ToolStripButton btnSaveXml;
         private System.Windows.Forms.ToolStripDropDownButton btnOtherOps;
@@ -807,7 +815,7 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblHeader2;
-        private System.Windows.Forms.ToolStrip toolStripCorner;
+        private System.Windows.Forms.ToolStrip cornerMenu;
         private System.Windows.Forms.ToolStripMenuItem btnBiznisReport;
         private Avat.Components.MyDoubleBufferedGrid gridData;
         private System.Windows.Forms.ToolStripLabel toolStripLabelA;
@@ -823,7 +831,8 @@
         private System.Windows.Forms.ToolStripStatusLabel statusText;
         private System.Windows.Forms.ToolStripMenuItem btnAbout;
         private System.Windows.Forms.Panel panelLine;
-        private System.Windows.Forms.ToolStripProgressBar statusProgress;
-        private System.Windows.Forms.ToolStripStatusLabel statusProgressText;
+        private System.Windows.Forms.ToolStripStatusLabel statusProgressVal;
+        private System.Windows.Forms.ToolStripStatusLabel statusFiller;
+        private MyStatusProgress statusProgress;
     }
 }

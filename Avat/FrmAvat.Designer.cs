@@ -639,7 +639,7 @@
             this.lblHeader2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.lblHeader2.Size = new System.Drawing.Size(841, 65);
             this.lblHeader2.TabIndex = 1;
-            this.lblHeader2.Text = "Spoločnosť s.r.o - DIČ 64325322 - 09/2015";
+            this.lblHeader2.Text = "Nemáte licenciu! ";
             this.lblHeader2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHeader

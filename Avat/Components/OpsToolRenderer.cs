@@ -22,6 +22,7 @@ namespace Avat.Components
         Pen p2 = new Pen(MyColors.ToolstripColor2);
         SolidBrush buttonBack = new SolidBrush(MyColors.ButtonBackColor);
         SolidBrush buttonHover = new SolidBrush(MyColors.ButtonHover);
+        SolidBrush buttonInact = new SolidBrush(MyColors.ButtonInactive);
 
         public static void DrawRoundedRectangleFill(Graphics g, Rectangle r, int d, Brush b)
         {
@@ -54,6 +55,12 @@ namespace Avat.Components
         int rund = 7;
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
         {
+            if (!e.Item.Enabled)
+            {
+                DrawRoundedRectangleFill(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, buttonInact);
+                return;
+            }
+
             if (e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position)))
                 DrawRoundedRectangleFill(e.Graphics, new Rectangle( 0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, buttonHover);
             else

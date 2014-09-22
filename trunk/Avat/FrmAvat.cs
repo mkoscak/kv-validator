@@ -53,12 +53,29 @@ namespace Avat.Forms
             panelContent.Controls.Add(validationResults);
         }
 
+        Vatfix.Licensing.License licence = null;
+        private void CheckLicence()
+        {
+            try
+            {
+                var lic = Vatfix.Licensing.LicenseManager.GetLicense();
+                licence = lic;
+                lblHeader2.Text = string.Format("{0} {1} - {2} - {3:00}/{4}", lic.User.Name, lic.User.Surname, lic.DIC[0], lic.Expiration.Month, lic.Expiration.Year);
+            }
+            catch (Exception ex)
+            {
+                ShowProgress("Problem s licenciou: " + ex.Message);
+            }
+        }
+
         private void FrmDesignOne_Load(object sender, EventArgs e)
         {
             LayoutHeader();
             this.menuXml.Renderer = new ToolRenderer(true);
             this.menuOps.Renderer = new OpsToolRenderer();
             this.toolStripCorner.Renderer = new OpsToolRenderer();
+
+            CheckLicence();
 
             this.btnIdent.PerformClick();
             UpdateButtonTexts();

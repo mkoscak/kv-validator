@@ -15,6 +15,7 @@ namespace Avat.Components
     {
         Color origColorMandatory;
         Color origColorNoMandatory;
+        Action<string> progress;
 
         public CtrlIdentification()
         {
@@ -22,6 +23,12 @@ namespace Avat.Components
 
             cbKind.Items.AddRange(Enum.GetNames(typeof(DruhKvType)));
             cbPeriodType.Items.AddRange(Enum.GetNames(typeof(ItemChoiceType)));
+        }
+
+        public CtrlIdentification(Action<string> progressListener)
+            : this()
+        {
+            progress = progressListener;
         }
 
         private void CtrlIdentification_Load(object sender, EventArgs e)
@@ -42,7 +49,8 @@ namespace Avat.Components
         private void ShowProblems()
         {
             ShowNoProblems();
-            var probs = problems.Where(p => p.ProblemObject != null && (p.ProblemObject.Equals(identification.IcDphPlatitela) || p.ProblemObject.ToString() == "<icdph>") ).ToList();
+            
+            var probs = problems.Where(p => p.ProblemObject != null && (p.ProblemObject.Equals(identification.IcDphPlatitela) || p.ProblemObject.ToString() == "<icdph>")).ToList();
             if (probs.Count > 0)
                 SetProblems(txtIcDph, probs);
 
@@ -91,11 +99,14 @@ namespace Avat.Components
             else
                 ctrl.BackColor = Color.Red;//FromArgb(255, 128, 128);
 
+            ctrl.Tag = string.Empty;
             if (probs.Count > 0)
             {
                 var tt = new ToolTip();
                 tt.AutoPopDelay = 30000;
-                tt.SetToolTip(ctrl, string.Join(Environment.NewLine, probs.Select(ir => ir.ResultMessage + " - " + ir.ResultTooltip).ToArray()));
+                var text = string.Join(Environment.NewLine, probs.Select(ir => ir.ResultMessage + " - " + ir.ResultTooltip).ToArray());
+                tt.SetToolTip(ctrl, text);
+                ctrl.Tag = text;
             }
         }
 
@@ -158,6 +169,19 @@ namespace Avat.Components
             txtPhone.BackColor = origColorNoMandatory;
             txtPsc.BackColor = origColorNoMandatory;
             txtAddress.BackColor = origColorNoMandatory;
+
+            foreach (Control c in Controls)
+                c.Tag = string.Empty;
+        }
+
+        private void panelPeriod_Enter(object sender, EventArgs e)
+        {
+            if (progress == null)
+                return;
+
+            var c = sender as Control;
+            var tt = (c.Tag ?? "").ToString();
+            progress(tt);
         }
     }
 }

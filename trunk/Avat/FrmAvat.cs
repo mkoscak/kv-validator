@@ -41,7 +41,7 @@ namespace Avat.Forms
         {
             InitializeComponent();
 
-            identification = new CtrlIdentification();
+            identification = new CtrlIdentification(ShowProgress);
             identification.BorderStyle = BorderStyle.None;
             identification.Dock = DockStyle.None;
             identification.Margin = new Padding(0, 20, 0, 0);
@@ -409,6 +409,8 @@ namespace Avat.Forms
 
         void DisableAllButtons(ToolStripButton except)
         {
+            ShowProgress(string.Empty);
+
             btnIdent.Checked = false;
             btnA1.Checked = false;
             btnA2.Checked = false;
@@ -1475,6 +1477,23 @@ namespace Avat.Forms
                 return;
 
             NewAvat();
+        }
+
+        private void gridData_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //gridData.Rows[e.RowIndex].DataBoundItem
+            if (e.RowIndex < 0)
+                return;
+
+            var row = gridData.Rows[e.RowIndex];
+            if (row.Tag == null)
+                return;
+
+            var problems = row.Tag as List<IValidationItemResult>;
+            if (problems.Count == 0)
+                ShowProgress(string.Empty);
+            else
+                ShowProgress(BuildErrorTooltip(problems));
         }
     }
 }

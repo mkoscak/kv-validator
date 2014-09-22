@@ -115,7 +115,7 @@ namespace Avat.Forms
             this.leftMenu.Name = "leftMenu";
             this.leftMenu.Padding = new System.Windows.Forms.Padding(0);
             this.leftMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.leftMenu.Size = new System.Drawing.Size(166, 543);
+            this.leftMenu.Size = new System.Drawing.Size(166, 545);
             this.leftMenu.TabIndex = 1;
             this.leftMenu.Text = "toolStrip1";
             // 
@@ -416,7 +416,7 @@ namespace Avat.Forms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 596);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 598);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // topMenu
@@ -559,7 +559,7 @@ namespace Avat.Forms
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
             this.panelContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelContent.Size = new System.Drawing.Size(820, 537);
+            this.panelContent.Size = new System.Drawing.Size(820, 539);
             this.panelContent.TabIndex = 4;
             // 
             // lblTitle
@@ -625,11 +625,12 @@ namespace Avat.Forms
             this.gridData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridData.RowHeadersWidth = 30;
             this.gridData.RowTemplate.Height = 25;
-            this.gridData.Size = new System.Drawing.Size(818, 489);
+            this.gridData.Size = new System.Drawing.Size(818, 491);
             this.gridData.TabIndex = 6;
             this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
             this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
             this.gridData.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gridData_DataError);
+            this.gridData.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellEnter);
             // 
             // panelLine
             // 

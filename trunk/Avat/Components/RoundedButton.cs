@@ -30,7 +30,8 @@ namespace Avat.Components
 
         protected override void OnPaint(PaintEventArgs pevent)
         {
-            pevent.Graphics.FillRectangle(Brushes.White, pevent.ClipRectangle);
+            pevent.Graphics.FillRectangle(new SolidBrush(Parent.BackColor), pevent.ClipRectangle);
+
             if (Enabled && Bounds.Contains(Parent.PointToClient(Cursor.Position)))
                 Common.DrawRoundedRectangle(pevent.Graphics, pevent.ClipRectangle, 4, hover);
             else

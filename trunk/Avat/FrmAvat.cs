@@ -1504,6 +1504,12 @@ namespace Avat.Forms
                 ShowProgress(BuildErrorTooltip(problems));
         }
 
+        private void gridData_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > 0)
+                gridData.InvalidateRow(e.RowIndex);
+        }
+
         private void gridData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             var item0 = gridData.Rows[0].DataBoundItem;
@@ -1553,6 +1559,12 @@ namespace Avat.Forms
                 kvDph.Transakcie.D2 = (gridData.DataSource as BindingList<D2Wrapper>).Select(a => a.d2).ToList();*/
 
             UpdateButtonTexts();
+        }
+
+        private void FrmAvat_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                btnAbout.PerformClick();
         }
     }
 }

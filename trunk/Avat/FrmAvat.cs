@@ -289,7 +289,7 @@ namespace Avat.Forms
             bw.ReportProgress(10, "Sťahovanie súborov na import..");
             try
             {
-                //DownloadDataFiles();
+                DownloadDataFiles();
             }
             catch (Exception ex)
             {

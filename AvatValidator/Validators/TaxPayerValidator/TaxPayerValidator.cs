@@ -25,6 +25,10 @@ namespace AvatValidator.Validators.TaxPayerValidator
             get { return "Validátor aktuálnych platiteľov DPH"; }
         }
 
+        Type[] relevant = new Type[] { typeof(A1), typeof(A2), typeof(C1), typeof(B1), typeof(B2), typeof(C2) };
+        Type[] relevantOdb = new Type[] { typeof(A1), typeof(A2), typeof(C1) };
+        Type[] relevantDod = new Type[] { typeof(B1), typeof(B2), typeof(C2) };
+
         public IList<IValidationItemResult> Validate(object input)
         {
             var ret = new List<IValidationItemResult>();
@@ -46,9 +50,13 @@ namespace AvatValidator.Validators.TaxPayerValidator
             if (input is C2)
                 icDphDod = (input as C2).Dod;
 
-            if (icDphOdb != null || icDphDod != null)
+            string icDph = icDphOdb ?? icDphDod;
+            if (icDph != null && icDph.Trim().Length == 0)
+                icDph = null;
+
+            if (icDph != null)
             {
-                var icDph = icDphOdb ?? icDphDod;
+                //var icDph = icDphOdb ?? icDphDod;
 
                 if (icDph.Trim().Substring(0, 2).ToUpper() != "SK") // mame DB len slovenskych podnikatelov
                     return ret;
@@ -57,6 +65,40 @@ namespace AvatValidator.Validators.TaxPayerValidator
                 if (found != null && found.Count == 0)
                     ret.Add(icDphOdb == null ? ValidationFailedDod(input, icDph) : ValidationFailedOdb(input, icDph));
             }
+                // typ vstupu je medzi relevantnymi triedami -> IC nesmie byt null
+            else if (relevant.Contains(input.GetType()))
+            {
+                // nevyplnene IC DPH
+                ret.Add(MissingIcDph(input, GetSubjectType(input)));
+            }
+
+            return ret;
+        }
+
+        private string GetSubjectType(object input)
+        {
+            if (input == null)
+                return null;
+
+            if (relevantOdb.Contains(input.GetType()))
+                return "odberateľa";
+
+            if (relevantDod.Contains(input.GetType()))
+                return "dodávateľa";
+
+            return null;
+        }
+
+        private IValidationItemResult MissingIcDph(object problemItem, string odbDod)
+        {
+            var ret = new ValidationItemResult(this);
+
+            ret.ValidationResultState = ResultState.Error;
+            ret.ResultMessage = string.Format("Nie je vyplnené IČ {0}!", (odbDod ?? "DPH"));
+            ret.ResultTooltip = string.Format("Vyplňte povinné pole IČ {0}!", (odbDod ?? "DPH"));
+            ret.ProblemObject = problemItem;
+            ret.Details = new DetailedResultInfo();
+            ret.Details.LineNumber = 0;
 
             return ret;
         }
@@ -66,7 +108,7 @@ namespace AvatValidator.Validators.TaxPayerValidator
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = "IČ DPH dodávateľa sa nenachádza medzi registrovanými platcami!";
+            ret.ResultMessage = "IČ dodávateľa sa nenachádza medzi registrovanými platcami!";
             ret.ResultTooltip = string.Format("Preverte, či je zoznam platiteľov DPH aktuálny a či je zadané IČ dodávateľa '{0}' správne!", icDph);
             ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();
@@ -80,7 +122,7 @@ namespace AvatValidator.Validators.TaxPayerValidator
             var ret = new ValidationItemResult(this);
 
             ret.ValidationResultState = ResultState.Error;
-            ret.ResultMessage = "IČ DPH odberateľa sa nenachádza medzi registrovanými platcami!";
+            ret.ResultMessage = "IČ odberateľa sa nenachádza medzi registrovanými platcami!";
             ret.ResultTooltip = string.Format("Preverte, či je zoznam platiteľov DPH aktuálny a či je zadané IČ odberateľa '{0}' správne!", icDph);
             ret.ProblemObject = problemItem;
             ret.Details = new DetailedResultInfo();

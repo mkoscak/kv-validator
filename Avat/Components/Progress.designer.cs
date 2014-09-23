@@ -41,7 +41,7 @@
             this.lblCurrentOp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCurrentOp.AutoSize = true;
             this.lblCurrentOp.ForeColor = System.Drawing.Color.Gray;
-            this.lblCurrentOp.Location = new System.Drawing.Point(11, 14);
+            this.lblCurrentOp.Location = new System.Drawing.Point(12, 14);
             this.lblCurrentOp.Name = "lblCurrentOp";
             this.lblCurrentOp.Size = new System.Drawing.Size(99, 13);
             this.lblCurrentOp.TabIndex = 1;
@@ -53,7 +53,7 @@
             this.lblOp.AutoSize = true;
             this.lblOp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOp.ForeColor = System.Drawing.Color.Gray;
-            this.lblOp.Location = new System.Drawing.Point(116, 14);
+            this.lblOp.Location = new System.Drawing.Point(117, 14);
             this.lblOp.Name = "lblOp";
             this.lblOp.Size = new System.Drawing.Size(44, 13);
             this.lblOp.TabIndex = 2;
@@ -64,7 +64,7 @@
             this.lblProgrress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblProgrress.AutoSize = true;
             this.lblProgrress.ForeColor = System.Drawing.Color.Gray;
-            this.lblProgrress.Location = new System.Drawing.Point(11, 59);
+            this.lblProgrress.Location = new System.Drawing.Point(12, 59);
             this.lblProgrress.Name = "lblProgrress";
             this.lblProgrress.Size = new System.Drawing.Size(49, 13);
             this.lblProgrress.TabIndex = 3;
@@ -76,7 +76,7 @@
             this.lblProg.AutoSize = true;
             this.lblProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProg.ForeColor = System.Drawing.Color.Gray;
-            this.lblProg.Location = new System.Drawing.Point(116, 59);
+            this.lblProg.Location = new System.Drawing.Point(117, 59);
             this.lblProg.Name = "lblProg";
             this.lblProg.Size = new System.Drawing.Size(44, 13);
             this.lblProg.TabIndex = 4;
@@ -91,7 +91,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Gray;
-            this.btnCancel.Location = new System.Drawing.Point(400, 73);
+            this.btnCancel.Location = new System.Drawing.Point(401, 73);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 26);
@@ -104,7 +104,7 @@
             // progressBar
             // 
             this.progressBar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.progressBar.Location = new System.Drawing.Point(14, 30);
+            this.progressBar.Location = new System.Drawing.Point(15, 30);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(486, 26);
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -115,7 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(518, 123);
+            this.ClientSize = new System.Drawing.Size(518, 139);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblProg);
@@ -124,6 +124,7 @@
             this.Controls.Add(this.lblCurrentOp);
             this.Controls.Add(this.progressBar);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimumSize = new System.Drawing.Size(526, 147);
             this.Name = "Progress";
             this.ShowIcon = false;

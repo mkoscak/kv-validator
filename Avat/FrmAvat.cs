@@ -56,6 +56,7 @@ namespace Avat.Forms
             firstRunCtrl = new CtrlFirstRun();
             firstRunCtrl.Dock = DockStyle.Fill;
             panelContent.Controls.Add(firstRunCtrl);
+            firstRunCtrl.Visible = false;
         }
 
         Vatfix.Licensing.License licence = null;

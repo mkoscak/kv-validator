@@ -24,6 +24,27 @@ namespace Avat
             TaxPayerCache = TaxPayerEntity.LoadAll();
         }*/
 
+        public static string GetExistingFilePath(string defExt, string filter)
+        {
+            var curDir = Environment.CurrentDirectory;
+
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.CheckFileExists = true;
+            ofd.CheckPathExists = true;
+            ofd.DefaultExt = defExt;
+            ofd.Filter = filter;
+            ofd.Multiselect = false;
+            ofd.InitialDirectory = Environment.CurrentDirectory;
+            ofd.RestoreDirectory = true;
+
+            Environment.CurrentDirectory = curDir;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+                return ofd.FileName;
+
+            return null;
+        }
+
         /// <summary>
         /// Nacitanie platitela DPH podla IC DPH
         /// </summary>

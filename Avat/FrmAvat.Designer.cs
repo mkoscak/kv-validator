@@ -629,6 +629,7 @@ namespace Avat.Forms
             this.gridData.TabIndex = 6;
             this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
             this.gridData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridData_RowsAdded);
+            this.gridData.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellEndEdit);
             this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
             this.gridData.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gridData_DataError);
             this.gridData.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellEnter);
@@ -769,12 +770,14 @@ namespace Avat.Forms
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(800, 719);
             this.Name = "FrmAvat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VATFIX - kontrolný výkaz DPH";
             this.Load += new System.EventHandler(this.FrmDesignOne_Load);
             this.Resize += new System.EventHandler(this.FrmAvat_Resize);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmAvat_KeyDown);
             this.leftMenu.ResumeLayout(false);
             this.leftMenu.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

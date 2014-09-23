@@ -65,7 +65,7 @@ namespace AvatValidator.Validators.BlackListValidator
         {
             var ret = new ValidationItemResult(this);
 
-            ret.ValidationResultState = ResultState.Error;
+            ret.ValidationResultState = ResultState.OkWithWarning;
             ret.ResultMessage = string.Format("Subjekt s IČ DPH {0} sa nachádza na zozname platiteľov DPH s dôvodom na zrušenie registrácie!", foundEntity.IcDph);
             ret.ResultTooltip = string.Format("IČ DPH: {1}{0}Názov: {2}{0}Rok porušenia: {3}{0}Dátum zverejnenia: {4}{0}", Environment.NewLine, foundEntity.IcDph, foundEntity.Nazov, foundEntity.RokPorusenia, foundEntity.DatumZverejnenia);
             ret.ProblemObject = problemItem;

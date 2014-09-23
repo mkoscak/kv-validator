@@ -10,14 +10,16 @@ namespace Avat.Components
 {
     class OpsToolRenderer : ToolStripSystemRenderer
     {
+        public OpsToolRenderer() 
+        {
+        }
+
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
             e.Graphics.DrawLine(p, 0, 0, e.AffectedBounds.Right, 0);
             e.Graphics.DrawLine(p2, 0, 1, e.AffectedBounds.Right, 1);
         }
 
-        Color c = Color.White; 
-        Pen white = new Pen(Color.White);
         Pen p = new Pen(MyColors.ToolstripColor1);
         Pen p2 = new Pen(MyColors.ToolstripColor2);
         SolidBrush buttonBack = new SolidBrush(MyColors.ButtonBackColor);
@@ -55,8 +57,10 @@ namespace Avat.Components
 
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
-            if (e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position)))
-                e.TextColor = c;
+            //if (e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position)))
+            e.TextColor = Color.White;
+            if (e.Item is ToolStripMenuItem)
+                e.TextColor = Color.Black;
 
             base.OnRenderItemText(e);
         }

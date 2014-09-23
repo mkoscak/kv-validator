@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUploadLicence = new Avat.Components.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -111,12 +112,24 @@
             this.panel1.Size = new System.Drawing.Size(457, 262);
             this.panel1.TabIndex = 5;
             // 
+            // btnUploadLicence
+            // 
+            this.btnUploadLicence.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadLicence.Location = new System.Drawing.Point(322, 132);
+            this.btnUploadLicence.Name = "btnUploadLicence";
+            this.btnUploadLicence.Size = new System.Drawing.Size(123, 28);
+            this.btnUploadLicence.TabIndex = 6;
+            this.btnUploadLicence.Text = "Nahrať licenciu";
+            this.btnUploadLicence.UseVisualStyleBackColor = true;
+            this.btnUploadLicence.Click += new System.EventHandler(this.btnUploadLicence_Click);
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(127)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(464, 437);
+            this.Controls.Add(this.btnUploadLicence);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -125,6 +138,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(470, 469);
@@ -132,6 +146,7 @@
             this.ShowInTaskbar = false;
             this.Text = "O aplikácii";
             this.Load += new System.EventHandler(this.About_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.About_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -147,5 +162,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private RoundedButton btnUploadLicence;
     }
 }

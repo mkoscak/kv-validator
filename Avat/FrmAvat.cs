@@ -876,6 +876,13 @@ namespace Avat.Forms
             {
                 Cursor = Cursors.WaitCursor;
                 kvDph.SaveToFile(fName);
+
+                var found = fName.LastIndexOf('\\');
+                if (found >= 0)
+                    ActualFileName = fName.Substring(found + 1);
+                else
+                    ActualFileName = fName;
+                SetFileName(ActualFileName);
             }
             catch (Exception ex)
             {
@@ -1494,6 +1501,57 @@ namespace Avat.Forms
                 ShowProgress(string.Empty);
             else
                 ShowProgress(BuildErrorTooltip(problems));
+        }
+
+        private void gridData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            var item0 = gridData.Rows[0].DataBoundItem;
+            if (item0 is A1Wrapper)
+                kvDph.Transakcie.A1 = (gridData.DataSource as BindingList<A1Wrapper>).Select(a => a.a1).ToList();
+            if (item0 is A2Wrapper)
+                kvDph.Transakcie.A2 = (gridData.DataSource as BindingList<A2Wrapper>).Select(a => a.a2).ToList();
+            if (item0 is B1Wrapper)
+                kvDph.Transakcie.B1 = (gridData.DataSource as BindingList<B1Wrapper>).Select(a => a.b1).ToList();
+            if (item0 is B2Wrapper)
+                kvDph.Transakcie.B2 = (gridData.DataSource as BindingList<B2Wrapper>).Select(a => a.b2).ToList();
+            if (item0 is B3Wrapper)
+                kvDph.Transakcie.B3 = (gridData.DataSource as BindingList<B3Wrapper>).Select(a => a.b3).ToList();
+            if (item0 is C1Wrapper)
+                kvDph.Transakcie.C1 = (gridData.DataSource as BindingList<C1Wrapper>).Select(a => a.c1).ToList();
+            if (item0 is C2Wrapper)
+                kvDph.Transakcie.C2 = (gridData.DataSource as BindingList<C2Wrapper>).Select(a => a.c2).ToList();
+            if (item0 is D1Wrapper)
+                kvDph.Transakcie.D1 = (gridData.DataSource as BindingList<D1Wrapper>).Select(a => a.d1).ToList();
+            if (item0 is D2Wrapper)
+                kvDph.Transakcie.D2 = (gridData.DataSource as BindingList<D2Wrapper>).Select(a => a.d2).ToList();
+
+            UpdateButtonTexts();
+        }
+
+        private void gridData_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            // TODO!!!
+
+            /*if (btnA1.Checked)
+                kvDph.Transakcie.A1 = (gridData.DataSource as BindingList<A1Wrapper>).Select(a => a.a1).ToList();
+            if (btnA2.Checked)
+                kvDph.Transakcie.A2 = (gridData.DataSource as BindingList<A2Wrapper>).Select(a => a.a2).ToList();
+            if (btnB1.Checked)
+                kvDph.Transakcie.B1 = (gridData.DataSource as BindingList<B1Wrapper>).Select(a => a.b1).ToList();
+            if (btnB2.Checked)
+                kvDph.Transakcie.B2 = (gridData.DataSource as BindingList<B2Wrapper>).Select(a => a.b2).ToList();
+            if (btnB3.Checked)
+                kvDph.Transakcie.B3 = (gridData.DataSource as BindingList<B3Wrapper>).Select(a => a.b3).ToList();
+            if (btnC1.Checked)
+                kvDph.Transakcie.C1 = (gridData.DataSource as BindingList<C1Wrapper>).Select(a => a.c1).ToList();
+            if (btnC2.Checked)
+                kvDph.Transakcie.C2 = (gridData.DataSource as BindingList<C2Wrapper>).Select(a => a.c2).ToList();
+            if (btnD1.Checked)
+                kvDph.Transakcie.D1 = (gridData.DataSource as BindingList<D1Wrapper>).Select(a => a.d1).ToList();
+            if (btnD2.Checked)
+                kvDph.Transakcie.D2 = (gridData.DataSource as BindingList<D2Wrapper>).Select(a => a.d2).ToList();*/
+
+            UpdateButtonTexts();
         }
     }
 }

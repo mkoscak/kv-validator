@@ -628,9 +628,11 @@ namespace Avat.Forms
             this.gridData.Size = new System.Drawing.Size(818, 491);
             this.gridData.TabIndex = 6;
             this.gridData.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.gridData_RowPrePaint);
+            this.gridData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridData_RowsAdded);
             this.gridData.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.gridData_CellToolTipTextNeeded);
             this.gridData.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gridData_DataError);
             this.gridData.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridData_CellEnter);
+            this.gridData.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridData_RowsRemoved);
             // 
             // panelLine
             // 

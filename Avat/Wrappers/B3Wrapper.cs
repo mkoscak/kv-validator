@@ -16,6 +16,12 @@ namespace Avat.Wrappers
             return a.b3;
         }
 
+        public B3Wrapper()
+        {
+            this.b3 = new B3();
+            id = ItemCounter.Next;
+        }
+
         public B3Wrapper(B3 b3)
         {
             this.b3 = b3;

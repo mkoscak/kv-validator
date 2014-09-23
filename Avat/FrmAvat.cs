@@ -13,12 +13,10 @@ using Avat.Components;
 using OfficeOpenXml;
 using System.IO;
 using Avat.Wrappers;
-using Avat.Properties;
 using AvatValidator.Validators.BlackListValidator.Entities;
 using AvatValidator.Validators.TaxPayerValidator.Entities;
 using AvatValidator.Sql;
 using System.Net;
-using System.IO.Compression;
 using Ionic.Zip;
 
 namespace Avat.Forms
@@ -396,6 +394,16 @@ namespace Avat.Forms
         private void NewAvat()
         {
             kvDph = new KVDPH();
+            a1w = new MySortableBindingList<A1Wrapper>();
+            a2w = new MySortableBindingList<A2Wrapper>();
+            b1w = new MySortableBindingList<B1Wrapper>();
+            b2w = new MySortableBindingList<B2Wrapper>();
+            b3w = new MySortableBindingList<B3Wrapper>();
+            c1w = new MySortableBindingList<C1Wrapper>();
+            c2w = new MySortableBindingList<C2Wrapper>();
+            d1w = new MySortableBindingList<D1Wrapper>();
+            d2w = new MySortableBindingList<D2Wrapper>();
+
             lastValidationResult = null;
             ShowIdentification(true);
             UpdateButtonTexts();
@@ -464,8 +472,8 @@ namespace Avat.Forms
             where T : IIdHolder
         {
             ItemCounter.Reset();
-            gridData.DataSource = null;
-            gridData.DataSource = new MySortableBindingList<T>();
+            /*gridData.DataSource = null;
+            gridData.DataSource = new MySortableBindingList<T>();*/
         }
 
         private void btnCheckResults_Click(object sender, EventArgs e)
@@ -482,15 +490,26 @@ namespace Avat.Forms
             identification.lblIcDph.Focus();
         }
 
+        BindingSource bindingSource = new BindingSource();
+        MySortableBindingList<A1Wrapper> a1w = new MySortableBindingList<A1Wrapper>();
+        MySortableBindingList<A2Wrapper> a2w = new MySortableBindingList<A2Wrapper>();
+        MySortableBindingList<B1Wrapper> b1w = new MySortableBindingList<B1Wrapper>();
+        MySortableBindingList<B2Wrapper> b2w = new MySortableBindingList<B2Wrapper>();
+        MySortableBindingList<B3Wrapper> b3w = new MySortableBindingList<B3Wrapper>();
+        MySortableBindingList<C1Wrapper> c1w = new MySortableBindingList<C1Wrapper>();
+        MySortableBindingList<C2Wrapper> c2w = new MySortableBindingList<C2Wrapper>();
+        MySortableBindingList<D1Wrapper> d1w = new MySortableBindingList<D1Wrapper>();
+        MySortableBindingList<D2Wrapper> d2w = new MySortableBindingList<D2Wrapper>();
+
         private void btnA1_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnA1);
             ClearGrid<A1Wrapper>();
 
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A1 != null)
+            //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A1 != null)
             {
-                var ds = new MySortableBindingList<A1Wrapper>(kvDph.Transakcie.A1.Select(a => new A1Wrapper(a)).ToList());
-                gridData.DataSource = ds;
+                bindingSource.DataSource = a1w;
+                gridData.DataSource = bindingSource;
             }
         }
 
@@ -499,10 +518,10 @@ namespace Avat.Forms
             DisableAllButtons(btnA2);
             ClearGrid<A2Wrapper>();
 
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A2 != null)
+            //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A2 != null)
             {
-                var ds = new MySortableBindingList<A2Wrapper>(kvDph.Transakcie.A2.Select(a => new A2Wrapper(a)).ToList());
-                gridData.DataSource = ds;
+                bindingSource.DataSource = a2w;
+                gridData.DataSource = bindingSource;
             }
         }
         private void btnB1_Click(object sender, EventArgs e)
@@ -510,10 +529,10 @@ namespace Avat.Forms
             DisableAllButtons(btnB1);
             ClearGrid<B1Wrapper>();
 
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B1 != null)
+            //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B1 != null)
             {
-                var ds = new MySortableBindingList<B1Wrapper>(kvDph.Transakcie.B1.Select(a => new B1Wrapper(a)).ToList());
-                gridData.DataSource = ds;
+                bindingSource.DataSource = b1w;
+                gridData.DataSource = bindingSource;
             }
         }
 
@@ -522,10 +541,10 @@ namespace Avat.Forms
             DisableAllButtons(btnB2);
             ClearGrid<B2Wrapper>();
 
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B2 != null)
+            //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B2 != null)
             {
-                var ds = new MySortableBindingList<B2Wrapper>(kvDph.Transakcie.B2.Select(a => new B2Wrapper(a)).ToList());
-                gridData.DataSource = ds;
+                bindingSource.DataSource = b2w;
+                gridData.DataSource = bindingSource;
             }
         }
 
@@ -534,10 +553,10 @@ namespace Avat.Forms
             DisableAllButtons(btnB3);
             ClearGrid<B3Wrapper>();
 
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B3 != null)
+            //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B3 != null)
             {
-                var ds = new MySortableBindingList<B3Wrapper>(kvDph.Transakcie.B3.Select(a => new B3Wrapper(a)).ToList());
-                gridData.DataSource = ds;
+                bindingSource.DataSource = b3w;
+                gridData.DataSource = bindingSource;
             }
         }
 
@@ -546,10 +565,10 @@ namespace Avat.Forms
             DisableAllButtons(btnC1);
             ClearGrid<C1Wrapper>();
 
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C1 != null)
+            //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C1 != null)
             {
-                var ds = new MySortableBindingList<C1Wrapper>(kvDph.Transakcie.C1.Select(a => new C1Wrapper(a)).ToList());
-                gridData.DataSource = ds;
+                bindingSource.DataSource = c1w;
+                gridData.DataSource = bindingSource;
             }
         }
 
@@ -558,10 +577,10 @@ namespace Avat.Forms
             DisableAllButtons(btnC2);
             ClearGrid<C2Wrapper>();
 
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C2 != null)
+            //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C2 != null)
             {
-                var ds = new MySortableBindingList<C2Wrapper>(kvDph.Transakcie.C2.Select(a => new C2Wrapper(a)).ToList());
-                gridData.DataSource = ds;
+                bindingSource.DataSource = c2w;
+                gridData.DataSource = bindingSource;
             }
         }
 
@@ -570,10 +589,10 @@ namespace Avat.Forms
             DisableAllButtons(btnD1);
             ClearGrid<D1Wrapper>();
 
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D1 != null)
+            //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D1 != null)
             {
-                var ds = new MySortableBindingList<D1Wrapper>(kvDph.Transakcie.D1.Select(a => new D1Wrapper(a)).ToList());
-                gridData.DataSource = ds;
+                bindingSource.DataSource = d1w;
+                gridData.DataSource = bindingSource;
             }
         }
 
@@ -582,10 +601,10 @@ namespace Avat.Forms
             DisableAllButtons(btnD2);
             ClearGrid<D2Wrapper>();
 
-            if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D2 != null)
+            //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D2 != null)
             {
-                var ds = new MySortableBindingList<D2Wrapper>(kvDph.Transakcie.D2.Select(a => new D2Wrapper(a)).ToList());
-                gridData.DataSource = ds;
+                bindingSource.DataSource = d2w;
+                gridData.DataSource = bindingSource;
             }
         }
 
@@ -627,6 +646,16 @@ namespace Avat.Forms
         {
             if (kvDph != null)
             {
+                a1w = new MySortableBindingList<A1Wrapper>(kvDph.Transakcie.A1.Select(a => new A1Wrapper(a)).ToList());
+                a2w = new MySortableBindingList<A2Wrapper>(kvDph.Transakcie.A2.Select(a => new A2Wrapper(a)).ToList());
+                b1w = new MySortableBindingList<B1Wrapper>(kvDph.Transakcie.B1.Select(a => new B1Wrapper(a)).ToList());
+                b2w = new MySortableBindingList<B2Wrapper>(kvDph.Transakcie.B2.Select(a => new B2Wrapper(a)).ToList());
+                b3w = new MySortableBindingList<B3Wrapper>(kvDph.Transakcie.B3.Select(a => new B3Wrapper(a)).ToList());
+                c1w = new MySortableBindingList<C1Wrapper>(kvDph.Transakcie.C1.Select(a => new C1Wrapper(a)).ToList());
+                c2w = new MySortableBindingList<C2Wrapper>(kvDph.Transakcie.C2.Select(a => new C2Wrapper(a)).ToList());
+                d1w = new MySortableBindingList<D1Wrapper>(kvDph.Transakcie.D1.Select(a => new D1Wrapper(a)).ToList());
+                d2w = new MySortableBindingList<D2Wrapper>(kvDph.Transakcie.D2.Select(a => new D2Wrapper(a)).ToList());
+
                 UpdateButtonTexts();
                 ShowIdentification(true);
                 SetFileName(ActualFileName);
@@ -635,15 +664,15 @@ namespace Avat.Forms
 
         private void UpdateButtonTexts()
         {
-            btnA1.Text = string.Format("A.1. ({0})", kvDph.Transakcie.A1.Count);
-            btnA2.Text = string.Format("A.2. ({0})", kvDph.Transakcie.A2.Count);
-            btnB1.Text = string.Format("B.1. ({0})", kvDph.Transakcie.B1.Count);
-            btnB2.Text = string.Format("B.2. ({0})", kvDph.Transakcie.B2.Count);
-            btnB3.Text = string.Format("B.3. ({0})", kvDph.Transakcie.B3.Count);
-            btnC1.Text = string.Format("C.1. ({0})", kvDph.Transakcie.C1.Count);
-            btnC2.Text = string.Format("C.2. ({0})", kvDph.Transakcie.C2.Count);
-            btnD1.Text = string.Format("D.1. ({0})", kvDph.Transakcie.D1.Count);
-            btnD2.Text = string.Format("D.2. ({0})", kvDph.Transakcie.D2.Count);
+            btnA1.Text = string.Format("A.1. ({0})", a1w.Count);
+            btnA2.Text = string.Format("A.2. ({0})", a2w.Count);
+            btnB1.Text = string.Format("B.1. ({0})", b1w.Count);
+            btnB2.Text = string.Format("B.2. ({0})", b2w.Count);
+            btnB3.Text = string.Format("B.3. ({0})", b3w.Count);
+            btnC1.Text = string.Format("C.1. ({0})", c1w.Count);
+            btnC2.Text = string.Format("C.2. ({0})", c2w.Count);
+            btnD1.Text = string.Format("D.1. ({0})", d1w.Count);
+            btnD2.Text = string.Format("D.2. ({0})", d2w.Count);
             
             if (lastValidationResult != null)
             {
@@ -713,15 +742,29 @@ namespace Avat.Forms
             return null;
         }
 
-        bool ReadIdent()
+        /// <summary>
+        /// Nacitanie udajov z UI do KVDPH
+        /// </summary>
+        /// <returns></returns>
+        bool ReadKV()
         {
             try
             {
+                gridData.CancelEdit();
                 kvDph.Identifikacia = identification.GetData();
+                kvDph.Transakcie.A1 = a1w.Select(w => w.a1).ToList();
+                kvDph.Transakcie.A2 = a2w.Select(w => w.a2).ToList();
+                kvDph.Transakcie.B1 = b1w.Select(w => w.b1).ToList();
+                kvDph.Transakcie.B2 = b2w.Select(w => w.b2).ToList();
+                kvDph.Transakcie.B3 = b3w.Select(w => w.b3).ToList();
+                kvDph.Transakcie.C1 = c1w.Select(w => w.c1).ToList();
+                kvDph.Transakcie.C2 = c2w.Select(w => w.c2).ToList();
+                kvDph.Transakcie.D1 = d1w.Select(w => w.d1).ToList();
+                kvDph.Transakcie.D2 = d2w.Select(w => w.d2).ToList();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, string.Format("Načítanie Identifikácie skončilo nasledujúcou výnimkou: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, string.Format("Načítanie výkazu skončilo nasledujúcou výnimkou: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
 
@@ -742,7 +785,7 @@ namespace Avat.Forms
                 return;
             }*/
 
-            if (!ReadIdent())
+            if (!ReadKV())
                 return;
 
             try
@@ -866,7 +909,7 @@ namespace Avat.Forms
 
         private void btnSaveXml_Click(object sender, EventArgs e)
         {
-            if (!ReadIdent())
+            if (!ReadKV())
                 return;
 
             string fName = GetOutXmlFileName();
@@ -1025,7 +1068,7 @@ namespace Avat.Forms
         /// <param name="e"></param>
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            if (!ReadIdent())
+            if (!ReadKV())
                 return;
 
             try
@@ -1346,7 +1389,7 @@ namespace Avat.Forms
             if (kvDph == null)
                 return;
 
-            ReadIdent();
+            ReadKV();
 
             var br = new BiznisReport();
 
@@ -1512,52 +1555,11 @@ namespace Avat.Forms
 
         private void gridData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            var item0 = gridData.Rows[0].DataBoundItem;
-            if (item0 is A1Wrapper)
-                kvDph.Transakcie.A1 = (gridData.DataSource as BindingList<A1Wrapper>).Select(a => a.a1).ToList();
-            if (item0 is A2Wrapper)
-                kvDph.Transakcie.A2 = (gridData.DataSource as BindingList<A2Wrapper>).Select(a => a.a2).ToList();
-            if (item0 is B1Wrapper)
-                kvDph.Transakcie.B1 = (gridData.DataSource as BindingList<B1Wrapper>).Select(a => a.b1).ToList();
-            if (item0 is B2Wrapper)
-                kvDph.Transakcie.B2 = (gridData.DataSource as BindingList<B2Wrapper>).Select(a => a.b2).ToList();
-            if (item0 is B3Wrapper)
-                kvDph.Transakcie.B3 = (gridData.DataSource as BindingList<B3Wrapper>).Select(a => a.b3).ToList();
-            if (item0 is C1Wrapper)
-                kvDph.Transakcie.C1 = (gridData.DataSource as BindingList<C1Wrapper>).Select(a => a.c1).ToList();
-            if (item0 is C2Wrapper)
-                kvDph.Transakcie.C2 = (gridData.DataSource as BindingList<C2Wrapper>).Select(a => a.c2).ToList();
-            if (item0 is D1Wrapper)
-                kvDph.Transakcie.D1 = (gridData.DataSource as BindingList<D1Wrapper>).Select(a => a.d1).ToList();
-            if (item0 is D2Wrapper)
-                kvDph.Transakcie.D2 = (gridData.DataSource as BindingList<D2Wrapper>).Select(a => a.d2).ToList();
-
             UpdateButtonTexts();
         }
 
         private void gridData_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            // TODO!!!
-
-            /*if (btnA1.Checked)
-                kvDph.Transakcie.A1 = (gridData.DataSource as BindingList<A1Wrapper>).Select(a => a.a1).ToList();
-            if (btnA2.Checked)
-                kvDph.Transakcie.A2 = (gridData.DataSource as BindingList<A2Wrapper>).Select(a => a.a2).ToList();
-            if (btnB1.Checked)
-                kvDph.Transakcie.B1 = (gridData.DataSource as BindingList<B1Wrapper>).Select(a => a.b1).ToList();
-            if (btnB2.Checked)
-                kvDph.Transakcie.B2 = (gridData.DataSource as BindingList<B2Wrapper>).Select(a => a.b2).ToList();
-            if (btnB3.Checked)
-                kvDph.Transakcie.B3 = (gridData.DataSource as BindingList<B3Wrapper>).Select(a => a.b3).ToList();
-            if (btnC1.Checked)
-                kvDph.Transakcie.C1 = (gridData.DataSource as BindingList<C1Wrapper>).Select(a => a.c1).ToList();
-            if (btnC2.Checked)
-                kvDph.Transakcie.C2 = (gridData.DataSource as BindingList<C2Wrapper>).Select(a => a.c2).ToList();
-            if (btnD1.Checked)
-                kvDph.Transakcie.D1 = (gridData.DataSource as BindingList<D1Wrapper>).Select(a => a.d1).ToList();
-            if (btnD2.Checked)
-                kvDph.Transakcie.D2 = (gridData.DataSource as BindingList<D2Wrapper>).Select(a => a.d2).ToList();*/
-
             UpdateButtonTexts();
         }
 

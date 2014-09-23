@@ -390,7 +390,7 @@ namespace Avat.Forms
             this.btnD2.Margin = new System.Windows.Forms.Padding(0);
             this.btnD2.Name = "btnD2";
             this.btnD2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnD2.Size = new System.Drawing.Size(165, 36);
+            this.btnD2.Size = new System.Drawing.Size(36, 36);
             this.btnD2.Text = "D.2.";
             this.btnD2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";

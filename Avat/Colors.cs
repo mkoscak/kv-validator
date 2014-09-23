@@ -48,7 +48,7 @@ namespace Avat
             }
         }
 
-        public static Color SidebarHover
+        public static Color SidebarBorder
         {
             get
             {

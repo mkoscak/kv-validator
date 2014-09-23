@@ -63,9 +63,9 @@ namespace Avat.Components
             // 
             this.lblIcDph.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIcDph.AutoSize = true;
-            this.lblIcDph.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIcDph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblIcDph.Location = new System.Drawing.Point(22, 10);
+            this.lblIcDph.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblIcDph.ForeColor = System.Drawing.Color.Black;
+            this.lblIcDph.Location = new System.Drawing.Point(76, 31);
             this.lblIcDph.Margin = new System.Windows.Forms.Padding(10);
             this.lblIcDph.Name = "lblIcDph";
             this.lblIcDph.Size = new System.Drawing.Size(123, 18);
@@ -76,12 +76,12 @@ namespace Avat.Components
             // 
             this.lblDruh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDruh.AutoSize = true;
-            this.lblDruh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDruh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblDruh.Location = new System.Drawing.Point(50, 54);
+            this.lblDruh.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDruh.ForeColor = System.Drawing.Color.Black;
+            this.lblDruh.Location = new System.Drawing.Point(99, 75);
             this.lblDruh.Margin = new System.Windows.Forms.Padding(10);
             this.lblDruh.Name = "lblDruh";
-            this.lblDruh.Size = new System.Drawing.Size(95, 18);
+            this.lblDruh.Size = new System.Drawing.Size(100, 18);
             this.lblDruh.TabIndex = 7;
             this.lblDruh.Text = "Druh výkazu:";
             // 
@@ -89,9 +89,9 @@ namespace Avat.Components
             // 
             this.lblObdobie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblObdobie.AutoSize = true;
-            this.lblObdobie.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblObdobie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblObdobie.Location = new System.Drawing.Point(72, 94);
+            this.lblObdobie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblObdobie.ForeColor = System.Drawing.Color.Black;
+            this.lblObdobie.Location = new System.Drawing.Point(126, 115);
             this.lblObdobie.Margin = new System.Windows.Forms.Padding(10);
             this.lblObdobie.Name = "lblObdobie";
             this.lblObdobie.Size = new System.Drawing.Size(73, 18);
@@ -102,12 +102,12 @@ namespace Avat.Components
             // 
             this.lblNazov.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNazov.AutoSize = true;
-            this.lblNazov.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazov.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblNazov.Location = new System.Drawing.Point(29, 136);
+            this.lblNazov.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNazov.ForeColor = System.Drawing.Color.Black;
+            this.lblNazov.Location = new System.Drawing.Point(77, 157);
             this.lblNazov.Margin = new System.Windows.Forms.Padding(10);
             this.lblNazov.Name = "lblNazov";
-            this.lblNazov.Size = new System.Drawing.Size(116, 18);
+            this.lblNazov.Size = new System.Drawing.Size(122, 18);
             this.lblNazov.TabIndex = 9;
             this.lblNazov.Text = "Názov subjektu:";
             // 
@@ -115,9 +115,9 @@ namespace Avat.Components
             // 
             this.lblStat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStat.AutoSize = true;
-            this.lblStat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblStat.Location = new System.Drawing.Point(105, 178);
+            this.lblStat.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblStat.ForeColor = System.Drawing.Color.Black;
+            this.lblStat.Location = new System.Drawing.Point(159, 199);
             this.lblStat.Margin = new System.Windows.Forms.Padding(10);
             this.lblStat.Name = "lblStat";
             this.lblStat.Size = new System.Drawing.Size(40, 18);
@@ -128,9 +128,9 @@ namespace Avat.Components
             // 
             this.lblObec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblObec.AutoSize = true;
-            this.lblObec.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblObec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblObec.Location = new System.Drawing.Point(95, 220);
+            this.lblObec.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblObec.ForeColor = System.Drawing.Color.Black;
+            this.lblObec.Location = new System.Drawing.Point(149, 241);
             this.lblObec.Margin = new System.Windows.Forms.Padding(10);
             this.lblObec.Name = "lblObec";
             this.lblObec.Size = new System.Drawing.Size(50, 18);
@@ -141,12 +141,12 @@ namespace Avat.Components
             // 
             this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblEmail.Location = new System.Drawing.Point(90, 388);
+            this.lblEmail.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblEmail.Location = new System.Drawing.Point(145, 409);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(10);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(55, 18);
+            this.lblEmail.Size = new System.Drawing.Size(54, 18);
             this.lblEmail.TabIndex = 16;
             this.lblEmail.Text = "e-mail:";
             // 
@@ -154,12 +154,12 @@ namespace Avat.Components
             // 
             this.lblTelefon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelefon.AutoSize = true;
-            this.lblTelefon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTelefon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblTelefon.Location = new System.Drawing.Point(84, 346);
+            this.lblTelefon.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTelefon.ForeColor = System.Drawing.Color.Black;
+            this.lblTelefon.Location = new System.Drawing.Point(132, 367);
             this.lblTelefon.Margin = new System.Windows.Forms.Padding(10);
             this.lblTelefon.Name = "lblTelefon";
-            this.lblTelefon.Size = new System.Drawing.Size(63, 18);
+            this.lblTelefon.Size = new System.Drawing.Size(67, 18);
             this.lblTelefon.TabIndex = 15;
             this.lblTelefon.Text = "Telefón:";
             // 
@@ -167,9 +167,9 @@ namespace Avat.Components
             // 
             this.lblUlica.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUlica.AutoSize = true;
-            this.lblUlica.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUlica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblUlica.Location = new System.Drawing.Point(98, 304);
+            this.lblUlica.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblUlica.ForeColor = System.Drawing.Color.Black;
+            this.lblUlica.Location = new System.Drawing.Point(152, 325);
             this.lblUlica.Margin = new System.Windows.Forms.Padding(10);
             this.lblUlica.Name = "lblUlica";
             this.lblUlica.Size = new System.Drawing.Size(47, 18);
@@ -180,12 +180,12 @@ namespace Avat.Components
             // 
             this.lblPsc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPsc.AutoSize = true;
-            this.lblPsc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblPsc.Location = new System.Drawing.Point(99, 259);
+            this.lblPsc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPsc.ForeColor = System.Drawing.Color.Black;
+            this.lblPsc.Location = new System.Drawing.Point(156, 280);
             this.lblPsc.Margin = new System.Windows.Forms.Padding(10);
             this.lblPsc.Name = "lblPsc";
-            this.lblPsc.Size = new System.Drawing.Size(46, 18);
+            this.lblPsc.Size = new System.Drawing.Size(43, 18);
             this.lblPsc.TabIndex = 12;
             this.lblPsc.Text = "PSČ:";
             // 
@@ -196,7 +196,7 @@ namespace Avat.Components
             this.txtIcDph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIcDph.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtIcDph.ForeColor = System.Drawing.Color.Black;
-            this.txtIcDph.Location = new System.Drawing.Point(158, 7);
+            this.txtIcDph.Location = new System.Drawing.Point(213, 28);
             this.txtIcDph.Name = "txtIcDph";
             this.txtIcDph.Size = new System.Drawing.Size(315, 26);
             this.txtIcDph.TabIndex = 17;
@@ -209,7 +209,7 @@ namespace Avat.Components
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(158, 133);
+            this.txtName.Location = new System.Drawing.Point(213, 154);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(315, 26);
             this.txtName.TabIndex = 20;
@@ -222,7 +222,7 @@ namespace Avat.Components
             this.txtState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtState.ForeColor = System.Drawing.Color.Black;
-            this.txtState.Location = new System.Drawing.Point(158, 175);
+            this.txtState.Location = new System.Drawing.Point(213, 196);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(315, 26);
             this.txtState.TabIndex = 21;
@@ -235,7 +235,7 @@ namespace Avat.Components
             this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtCity.ForeColor = System.Drawing.Color.Black;
-            this.txtCity.Location = new System.Drawing.Point(158, 217);
+            this.txtCity.Location = new System.Drawing.Point(213, 238);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(315, 26);
             this.txtCity.TabIndex = 22;
@@ -248,7 +248,7 @@ namespace Avat.Components
             this.txtPsc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPsc.ForeColor = System.Drawing.Color.Black;
-            this.txtPsc.Location = new System.Drawing.Point(158, 256);
+            this.txtPsc.Location = new System.Drawing.Point(213, 277);
             this.txtPsc.Name = "txtPsc";
             this.txtPsc.Size = new System.Drawing.Size(315, 26);
             this.txtPsc.TabIndex = 23;
@@ -261,7 +261,7 @@ namespace Avat.Components
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress.Location = new System.Drawing.Point(158, 301);
+            this.txtAddress.Location = new System.Drawing.Point(213, 322);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(315, 26);
             this.txtAddress.TabIndex = 24;
@@ -274,7 +274,7 @@ namespace Avat.Components
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtPhone.Location = new System.Drawing.Point(158, 343);
+            this.txtPhone.Location = new System.Drawing.Point(213, 364);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(315, 26);
             this.txtPhone.TabIndex = 25;
@@ -287,7 +287,7 @@ namespace Avat.Components
             this.txteMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txteMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txteMail.ForeColor = System.Drawing.Color.Black;
-            this.txteMail.Location = new System.Drawing.Point(158, 385);
+            this.txteMail.Location = new System.Drawing.Point(213, 406);
             this.txteMail.Name = "txteMail";
             this.txteMail.Size = new System.Drawing.Size(315, 26);
             this.txteMail.TabIndex = 26;
@@ -301,7 +301,7 @@ namespace Avat.Components
             this.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYear.ForeColor = System.Drawing.Color.Black;
-            this.txtYear.Location = new System.Drawing.Point(402, 92);
+            this.txtYear.Location = new System.Drawing.Point(457, 113);
             this.txtYear.Maximum = new decimal(new int[] {
             2099,
             0,
@@ -324,7 +324,7 @@ namespace Avat.Components
             this.txtPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeriod.ForeColor = System.Drawing.Color.Black;
-            this.txtPeriod.Location = new System.Drawing.Point(158, 92);
+            this.txtPeriod.Location = new System.Drawing.Point(213, 113);
             this.txtPeriod.Maximum = new decimal(new int[] {
             999,
             0,
@@ -346,7 +346,7 @@ namespace Avat.Components
             this.panelKind.BackColor = System.Drawing.Color.Transparent;
             this.panelKind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelKind.Controls.Add(this.cbKind);
-            this.panelKind.Location = new System.Drawing.Point(158, 52);
+            this.panelKind.Location = new System.Drawing.Point(213, 73);
             this.panelKind.Margin = new System.Windows.Forms.Padding(0);
             this.panelKind.Name = "panelKind";
             this.panelKind.Size = new System.Drawing.Size(315, 24);
@@ -389,7 +389,7 @@ namespace Avat.Components
             this.panelPeriod.BackColor = System.Drawing.Color.Transparent;
             this.panelPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPeriod.Controls.Add(this.cbPeriodType);
-            this.panelPeriod.Location = new System.Drawing.Point(235, 92);
+            this.panelPeriod.Location = new System.Drawing.Point(290, 113);
             this.panelPeriod.Margin = new System.Windows.Forms.Padding(0);
             this.panelPeriod.Name = "panelPeriod";
             this.panelPeriod.Size = new System.Drawing.Size(164, 24);
@@ -424,7 +424,7 @@ namespace Avat.Components
             this.Controls.Add(this.lblDruh);
             this.Controls.Add(this.lblIcDph);
             this.Name = "CtrlIdentification";
-            this.Size = new System.Drawing.Size(532, 452);
+            this.Size = new System.Drawing.Size(596, 452);
             this.Load += new System.EventHandler(this.CtrlIdentification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriod)).EndInit();

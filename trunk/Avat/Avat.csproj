@@ -15,7 +15,7 @@
     <ManifestCertificateThumbprint>66924055FE93E2E6BB0F1AE8D5D952A117DA9BDF</ManifestCertificateThumbprint>
     <ManifestKeyFile>Avat_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Programing\_publish\</PublishUrl>
     <Install>true</Install>

@@ -9,7 +9,7 @@ namespace Avat.Components
 {
     class ToolRenderer : ToolStripSystemRenderer
     {
-        Pen borderPen = new Pen(MyColors.SidebarHover);
+        Pen borderPen = new Pen(MyColors.SidebarBorder);
         bool border;
         
         public ToolRenderer(bool border)
@@ -25,16 +25,30 @@ namespace Avat.Components
 
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
         {
-            var p = new SolidBrush(MyColors.SidebarBack);
+            RenderBack(e);
+        }
+
+        private void RenderBack(ToolStripItemRenderEventArgs e)
+        {
+            Brush p = new SolidBrush(MyColors.SidebarBack);
             var isHover = (e.Item as ToolStripButton).Checked || e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position));
             if ((e.Item as ToolStripButton).Checked)
-                p = new SolidBrush(Color.Black);
+                p = Brushes.Black;
 
             e.Graphics.FillRectangle(p, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
             if (isHover)
                 e.Graphics.FillRectangle(new SolidBrush(Color.Black), 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
             else
                 e.Graphics.FillRectangle(p, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
+
+            e.Graphics.DrawLine(borderPen, 0, e.Item.Bounds.Height - 1, e.Item.Bounds.Width, e.Item.Bounds.Height - 1);
+        }
+
+        protected override void OnRenderLabelBackground(ToolStripItemRenderEventArgs e)
+        {
+            Brush p = new SolidBrush(MyColors.SidebarBack);
+            e.Graphics.FillRectangle(p, 0, 0, e.Item.Bounds.Width - 1, e.Item.Bounds.Height - 1);
+            e.Graphics.DrawLine(borderPen, 0, e.Item.Bounds.Height - 1, e.Item.Bounds.Width, e.Item.Bounds.Height - 1);
         }
 
         protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
@@ -68,7 +82,7 @@ namespace Avat.Components
 
             // render textu
             e.Text = text;
-            e.TextFont = font;
+            e.TextFont = new Font(font, FontStyle.Bold);
             e.TextRectangle = rect;
             e.TextFormat = format;
             e.TextColor = Color.White;
@@ -92,9 +106,10 @@ namespace Avat.Components
             if (text.Contains(' '))
                 count = text.Substring(text.IndexOf(' ') + 1).Trim('(', ')');
             e.Text = count;
+            e.TextFont = font;
             e.TextColor = MyColors.LeftToolGray;
             e.TextFormat = TextFormatFlags.NoPadding | TextFormatFlags.Right;
-            e.TextRectangle = new Rectangle(e.TextRectangle.X, e.TextRectangle.Y, e.Item.Bounds.Width - e.TextRectangle.X - 4, e.TextRectangle.Height);
+            e.TextRectangle = new Rectangle(e.TextRectangle.X, e.TextRectangle.Y, e.Item.Bounds.Width - e.TextRectangle.X - 10, e.TextRectangle.Height);
             base.OnRenderItemText(e);
         }
     }

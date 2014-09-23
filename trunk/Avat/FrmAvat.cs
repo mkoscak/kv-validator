@@ -508,6 +508,7 @@ namespace Avat.Forms
 
             //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A1 != null)
             {
+                a1w.ToList().ForEach(w => w.SetId(ItemCounter.Next));
                 bindingSource.DataSource = a1w;
                 gridData.DataSource = bindingSource;
             }
@@ -520,6 +521,7 @@ namespace Avat.Forms
 
             //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.A2 != null)
             {
+                a2w.ToList().ForEach(w => w.SetId(ItemCounter.Next));
                 bindingSource.DataSource = a2w;
                 gridData.DataSource = bindingSource;
             }
@@ -531,6 +533,7 @@ namespace Avat.Forms
 
             //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B1 != null)
             {
+                b1w.ToList().ForEach(w => w.SetId(ItemCounter.Next));
                 bindingSource.DataSource = b1w;
                 gridData.DataSource = bindingSource;
             }
@@ -543,6 +546,7 @@ namespace Avat.Forms
 
             //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B2 != null)
             {
+                b2w.ToList().ForEach(w => w.SetId(ItemCounter.Next));
                 bindingSource.DataSource = b2w;
                 gridData.DataSource = bindingSource;
             }
@@ -555,6 +559,7 @@ namespace Avat.Forms
 
             //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.B3 != null)
             {
+                b3w.ToList().ForEach(w => w.SetId(ItemCounter.Next));
                 bindingSource.DataSource = b3w;
                 gridData.DataSource = bindingSource;
             }
@@ -567,6 +572,7 @@ namespace Avat.Forms
 
             //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C1 != null)
             {
+                c1w.ToList().ForEach(w => w.SetId(ItemCounter.Next));
                 bindingSource.DataSource = c1w;
                 gridData.DataSource = bindingSource;
             }
@@ -579,6 +585,7 @@ namespace Avat.Forms
 
             //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.C2 != null)
             {
+                c2w.ToList().ForEach(w => w.SetId(ItemCounter.Next));
                 bindingSource.DataSource = c2w;
                 gridData.DataSource = bindingSource;
             }
@@ -591,6 +598,7 @@ namespace Avat.Forms
 
             //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D1 != null)
             {
+                d1w.ToList().ForEach(w => w.SetId(ItemCounter.Next));
                 bindingSource.DataSource = d1w;
                 gridData.DataSource = bindingSource;
             }
@@ -603,6 +611,7 @@ namespace Avat.Forms
 
             //if (kvDph != null && kvDph.Transakcie != null && kvDph.Transakcie.D2 != null)
             {
+                d2w.ToList().ForEach(w => w.SetId(ItemCounter.Next));
                 bindingSource.DataSource = d2w;
                 gridData.DataSource = bindingSource;
             }
@@ -1257,86 +1266,6 @@ namespace Avat.Forms
 
             return table;
         }
-
-        #endregion
-
-        #region Importy do DB
-
-        /// <summary>
-        /// Import neplaticov - zrusenych platcov DPH
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*private void btnImportBlackList_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var xml = GetXmlPath();
-                if (string.IsNullOrEmpty(xml))
-                    return;
-
-                var p = new Progress(0, 100, "Import platiteľov DPH s dôvodom na zrušenie registrácie", "Importujem..", ImportBlackList, ImportDone, xml, false, true);
-                p.StartWorker();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, string.Format("Import platiteľov DPH s dôvodom na zrušenie registrácie neprebehol úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Cursor = Cursors.Default;
-            }
-        }
-        
-        void ImportDone()
-        {
-            this.Focus();
-            this.BringToFront();
-        }
-
-        void ImportBlackList(BackgroundWorker bw, DoWorkEventArgs e, object userData)
-        {
-            var path = userData.ToString();
-
-            bw.ReportProgress(50);
-            var count = AvatValidator.Validators.BlackListValidator.Entities.BlackListManager.ImportDataFromXml(path);
-            bw.ReportProgress(100);
-        }*/
-
-        /// <summary>
-        /// Import platitelov DPH
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*private void btnImportVatPayers_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var xml = GetXmlPath();
-                if (string.IsNullOrEmpty(xml))
-                    return;
-
-                var p = new Progress(0, 100, "Import registrovaných platiteľov DPH", "Importujem..", ImportTaxPayers, ImportDone, xml, false, true);
-                p.StartWorker();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, string.Format("Import registrovaných platiteľov DPH neprebehol úspešne: {0}{0}{1}", Environment.NewLine, ex.Message), "Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Cursor = Cursors.Default;
-            }
-        }
-
-        void ImportTaxPayers(BackgroundWorker bw, DoWorkEventArgs e, object userData)
-        {
-            var path = userData.ToString();
-
-            bw.ReportProgress(50);
-            var count = AvatValidator.Validators.TaxPayerValidator.Entities.TaxPayersManager.ImportDataFromXml(path);
-            bw.ReportProgress(100);
-        }*/
 
         #endregion
 

@@ -16,6 +16,12 @@ namespace Avat.Wrappers
             return a.d1;
         }
 
+        public D1Wrapper()
+        {
+            this.d1 = new D1();
+            id = ItemCounter.Next;
+        }
+
         public D1Wrapper(D1 d1)
         {
             this.d1 = d1;

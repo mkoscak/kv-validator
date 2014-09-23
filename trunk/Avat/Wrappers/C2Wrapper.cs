@@ -16,6 +16,12 @@ namespace Avat.Wrappers
             return a.c2;
         }
 
+        public C2Wrapper()
+        {
+            this.c2 = new C2();
+            id = ItemCounter.Next;
+        }
+
         public C2Wrapper(C2 c2)
         {
             this.c2 = c2;

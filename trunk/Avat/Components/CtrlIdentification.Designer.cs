@@ -400,6 +400,7 @@ namespace Avat.Components
             this.txtIcDph.Size = new System.Drawing.Size(313, 24);
             this.txtIcDph.TabIndex = 29;
             this.txtIcDph.Enter += new System.EventHandler(this.panelPeriod_Enter);
+            this.txtIcDph.TextChanged += new System.EventHandler(this.txtIcDph_TextChanged);
             // 
             // panelIC
             // 

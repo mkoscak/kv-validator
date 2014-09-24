@@ -16,6 +16,7 @@ namespace Avat.Components
         Color origColorMandatory;
         Color origColorNoMandatory;
         Action<string> progress;
+        Action<string> icDphChanged;
 
         public CtrlIdentification()
         {
@@ -25,10 +26,11 @@ namespace Avat.Components
             cbPeriodType.Items.AddRange(Enum.GetNames(typeof(ItemChoiceType)));
         }
 
-        public CtrlIdentification(Action<string> progressListener)
+        public CtrlIdentification(Action<string> progressListener, Action<string> icDphChanged)
             : this()
         {
-            progress = progressListener;
+            this.progress = progressListener;
+            this.icDphChanged = icDphChanged;
         }
 
         private void CtrlIdentification_Load(object sender, EventArgs e)
@@ -189,6 +191,20 @@ namespace Avat.Components
             var c = sender as Control;
             var tt = (c.Tag ?? "").ToString();
             progress(tt);
+        }
+
+        private void txtIcDph_TextChanged(object sender, EventArgs e)
+        {
+            if (icDphChanged != null)
+            {
+                var text = txtIcDph.Text;
+
+                var found = Common.GetTaxPayer(txtIcDph.Text.Trim());
+                if (found != null)
+                    text = string.Format("{0}: {1}", txtIcDph.Text.Trim(), found.Nazov);
+
+                icDphChanged(text);
+            }
         }
     }
 }

@@ -101,39 +101,39 @@ namespace Avat.Components
 
             found = Result.Where(r => r.ProblemObject is A1).ToList();
             if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+                AddProblem("A1", found.Count, "Problémové položky typu A1.", false);
 
             found = Result.Where(r => r.ProblemObject is A2).ToList();
             if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+                AddProblem("A2", found.Count, "Problémové položky typu A2.", false);
 
             found = Result.Where(r => r.ProblemObject is B1).ToList();
             if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+                AddProblem("B1", found.Count, "Problémové položky typu B1.", false);
 
             found = Result.Where(r => r.ProblemObject is B2).ToList();
             if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+                AddProblem("B2", found.Count, "Problémové položky typu B2.", false);
 
             found = Result.Where(r => r.ProblemObject is B3).ToList();
             if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+                AddProblem("B3", found.Count, "Problémové položky typu B3.", false);
 
             found = Result.Where(r => r.ProblemObject is C1).ToList();
             if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+                AddProblem("C1", found.Count, "Problémové položky typu C1.", false);
 
             found = Result.Where(r => r.ProblemObject is C2).ToList();
             if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+                AddProblem("C2", found.Count, "Problémové položky typu C2.", false);
 
             found = Result.Where(r => r.ProblemObject is D1).ToList();
             if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+                AddProblem("D1", found.Count, "Problémové položky typu D1.", false);
 
             found = Result.Where(r => r.ProblemObject is D2).ToList();
             if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+                AddProblem("D2", found.Count, "Problémové položky typu D2.", false);
 
             flowContent.SuspendLayout();
             flowContent.Controls.Remove(notRunPanel);

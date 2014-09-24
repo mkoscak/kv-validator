@@ -65,19 +65,19 @@ namespace AvatValidator.Validators
             if (input is A1)
             {
                 var i = input as A1;
-                if (i.D >= i.Z)
+                if (Math.Abs(i.D) >= Math.Abs(i.Z))
                     return CreateWarningResult(input, errMsgs[0], "");
             }
             if (input is B1)
             {
                 var i = input as B1;
-                if (i.D >= i.Z)
+                if (Math.Abs(i.D) >= Math.Abs(i.Z))
                     return CreateWarningResult(input, errMsgs[0], "");
             }
             if (input is B2)
             {
                 var i = input as B2;
-                if (i.D >= i.Z)
+                if (Math.Abs(i.D) >= Math.Abs(i.Z))
                     return CreateWarningResult(input, errMsgs[0], "");
             }
 
@@ -85,7 +85,7 @@ namespace AvatValidator.Validators
             if (input is B3)
             {
                 var i = input as B3;
-                if (i.D >= i.Z)
+                if (Math.Abs(i.D) >= Math.Abs(i.Z))
                     return CreateWarningResult(input, errMsgs[1], "");
             }
 
@@ -93,13 +93,13 @@ namespace AvatValidator.Validators
             if (input is C1)
             {
                 var i = input as C1;
-                if (i.DR >= i.ZR)
+                if (Math.Abs(i.DR) >= Math.Abs(i.ZR))
                     return CreateWarningResult(input, errMsgs[2], "");
             }
             if (input is C2)
             {
                 var i = input as C2;
-                if (i.DR >= i.ZR)
+                if (Math.Abs(i.DR) >= Math.Abs(i.ZR))
                     return CreateWarningResult(input, errMsgs[2], "");
             }
 
@@ -107,13 +107,13 @@ namespace AvatValidator.Validators
             if (input is D1)
             {
                 var i = input as D1;
-                if (i.D >= i.Z)
+                if (Math.Abs(i.D) >= Math.Abs(i.Z))
                     return CreateWarningResult(input, errMsgs[3], "");
             }
             if (input is D2)
             {
                 var i = input as D2;
-                if (i.D >= i.Z)
+                if (Math.Abs(i.D) >= Math.Abs(i.Z))
                     return CreateWarningResult(input, errMsgs[3], "");
             }
 
@@ -121,13 +121,13 @@ namespace AvatValidator.Validators
             if (input is D1)
             {
                 var i = input as D1;
-                if (i.DZn >= i.ZZn)
+                if (Math.Abs(i.DZn) >= Math.Abs(i.ZZn))
                     return CreateWarningResult(input, errMsgs[4], "");
             }
             if (input is D2)
             {
                 var i = input as D2;
-                if (i.DZn >= i.ZZn)
+                if (Math.Abs(i.DZn) >= Math.Abs(i.ZZn))
                     return CreateWarningResult(input, errMsgs[4], "");
             }
 

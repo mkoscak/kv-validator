@@ -58,7 +58,6 @@ namespace Avat.Forms
             this.btnCloseNoChanges = new System.Windows.Forms.ToolStripButton();
             this.btnOtherOps = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnNewAvat = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExportToExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBiznisReport = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAbout = new System.Windows.Forms.ToolStripMenuItem();
@@ -390,7 +389,7 @@ namespace Avat.Forms
             this.btnD2.Margin = new System.Windows.Forms.Padding(0);
             this.btnD2.Name = "btnD2";
             this.btnD2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.btnD2.Size = new System.Drawing.Size(36, 36);
+            this.btnD2.Size = new System.Drawing.Size(165, 36);
             this.btnD2.Text = "D.2.";
             this.btnD2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnD2.ToolTipText = "D2 - dodanie tovaru alebo služby nezdaniteľným osobám";
@@ -490,7 +489,6 @@ namespace Avat.Forms
             this.btnOtherOps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(77)))), ((int)(((byte)(25)))));
             this.btnOtherOps.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNewAvat,
-            this.toolStripSeparator6,
             this.btnExportToExcel,
             this.btnBiznisReport,
             this.btnAbout});
@@ -513,11 +511,6 @@ namespace Avat.Forms
             this.btnNewAvat.Size = new System.Drawing.Size(218, 22);
             this.btnNewAvat.Text = "Nový výkaz";
             this.btnNewAvat.Click += new System.EventHandler(this.btnNewAvat_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(215, 6);
             // 
             // btnExportToExcel
             // 
@@ -816,7 +809,6 @@ namespace Avat.Forms
         private System.Windows.Forms.TableLayoutPanel panelContent;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ToolStripMenuItem btnExportToExcel;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem btnNewAvat;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblHeader;

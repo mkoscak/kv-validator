@@ -75,7 +75,7 @@ namespace Avat.Components
                 iconCol = (Color)e.Item.Tag;
             e.TextColor = iconCol;
             e.TextFont = new Font(e.TextFont.FontFamily, 18);
-            e.Text = " \u25CF ";
+            e.Text = Common.theSign;
             e.TextFormat = TextFormatFlags.NoPadding | TextFormatFlags.Left;
             e.TextRectangle = new Rectangle(e.TextRectangle.X, 2, 40, 40);
             base.OnRenderItemText(e);

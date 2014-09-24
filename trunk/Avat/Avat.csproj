@@ -96,11 +96,23 @@
     <Compile Include="Components\CtrlFirstRun.Designer.cs">
       <DependentUpon>CtrlFirstRun.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\CtrlResultPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CtrlResultPanel.Designer.cs">
+      <DependentUpon>CtrlResultPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\CtrlValidationResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\CtrlValidationResult.Designer.cs">
       <DependentUpon>CtrlValidationResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CtrlValidationResult2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CtrlValidationResult2.Designer.cs">
+      <DependentUpon>CtrlValidationResult2.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\FrmBiznisReport.cs">
       <SubType>Form</SubType>
@@ -157,8 +169,16 @@
       <DependentUpon>CtrlFirstRun.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\CtrlResultPanel.resx">
+      <DependentUpon>CtrlResultPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\CtrlValidationResult.resx">
       <DependentUpon>CtrlValidationResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CtrlValidationResult2.resx">
+      <DependentUpon>CtrlValidationResult2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\FrmBiznisReport.resx">

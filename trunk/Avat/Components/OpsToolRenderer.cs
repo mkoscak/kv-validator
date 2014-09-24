@@ -41,6 +41,14 @@ namespace Avat.Components
                 Common.DrawRoundedRectangle(e.Graphics, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height), rund, buttonBack);
         }
 
+        protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+        {
+            if (e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position)))
+                e.Graphics.FillRectangle(buttonHover, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height));
+            else
+                e.Graphics.FillRectangle(buttonBack, new Rectangle(0, 0, e.Item.Bounds.Width, e.Item.Bounds.Height));
+        }
+
         protected override void OnRenderDropDownButtonBackground(ToolStripItemRenderEventArgs e)
         {
             if (!e.Item.Enabled)
@@ -59,8 +67,8 @@ namespace Avat.Components
         {
             //if (e.Item.Bounds.Contains(e.ToolStrip.PointToClient(Cursor.Position)))
             e.TextColor = Color.White;
-            if (e.Item is ToolStripMenuItem)
-                e.TextColor = Color.Black;
+            /*if (e.Item is ToolStripMenuItem)
+                e.TextColor = Color.Black;*/
 
             base.OnRenderItemText(e);
         }

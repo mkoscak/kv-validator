@@ -68,6 +68,9 @@ namespace Avat.Forms
                 lblHeader2.Text = string.Format("{0} {1} - {2:00}/{3}               ", lic.User.Name, lic.User.Surname, lic.Expiration.Month, lic.Expiration.Year);
                 if (DateTime.Now < lic.Expiration)
                     LicenceOk = true;   // az tu je licencia ok
+              
+                foreach (var item in licence.DIC)
+                    identification.txtIcDph.Items.Add(item);
             }
             catch (Exception ex)
             {

@@ -39,7 +39,6 @@ namespace Avat.Components
             this.lblTelefon = new System.Windows.Forms.Label();
             this.lblUlica = new System.Windows.Forms.Label();
             this.lblPsc = new System.Windows.Forms.Label();
-            this.txtIcDph = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtState = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
@@ -53,10 +52,13 @@ namespace Avat.Components
             this.cbKind = new System.Windows.Forms.ComboBox();
             this.cbPeriodType = new System.Windows.Forms.ComboBox();
             this.panelPeriod = new System.Windows.Forms.Panel();
+            this.txtIcDph = new System.Windows.Forms.ComboBox();
+            this.panelIC = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.txtYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriod)).BeginInit();
             this.panelKind.SuspendLayout();
             this.panelPeriod.SuspendLayout();
+            this.panelIC.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIcDph
@@ -189,23 +191,10 @@ namespace Avat.Components
             this.lblPsc.TabIndex = 12;
             this.lblPsc.Text = "PSČ:";
             // 
-            // txtIcDph
-            // 
-            this.txtIcDph.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIcDph.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.txtIcDph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIcDph.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtIcDph.ForeColor = System.Drawing.Color.Black;
-            this.txtIcDph.Location = new System.Drawing.Point(213, 28);
-            this.txtIcDph.Name = "txtIcDph";
-            this.txtIcDph.Size = new System.Drawing.Size(315, 26);
-            this.txtIcDph.TabIndex = 17;
-            this.txtIcDph.Enter += new System.EventHandler(this.panelPeriod_Enter);
-            // 
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtName.ForeColor = System.Drawing.Color.Black;
@@ -218,7 +207,7 @@ namespace Avat.Components
             // txtState
             // 
             this.txtState.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txtState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.txtState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtState.ForeColor = System.Drawing.Color.Black;
@@ -231,7 +220,7 @@ namespace Avat.Components
             // txtCity
             // 
             this.txtCity.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txtCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtCity.ForeColor = System.Drawing.Color.Black;
@@ -244,7 +233,7 @@ namespace Avat.Components
             // txtPsc
             // 
             this.txtPsc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPsc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txtPsc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.txtPsc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPsc.ForeColor = System.Drawing.Color.Black;
@@ -257,7 +246,7 @@ namespace Avat.Components
             // txtAddress
             // 
             this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
@@ -270,7 +259,7 @@ namespace Avat.Components
             // txtPhone
             // 
             this.txtPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
@@ -283,7 +272,7 @@ namespace Avat.Components
             // txteMail
             // 
             this.txteMail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txteMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txteMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.txteMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txteMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txteMail.ForeColor = System.Drawing.Color.Black;
@@ -297,7 +286,7 @@ namespace Avat.Components
             // txtYear
             // 
             this.txtYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txtYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYear.ForeColor = System.Drawing.Color.Black;
@@ -320,7 +309,7 @@ namespace Avat.Components
             // txtPeriod
             // 
             this.txtPeriod.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPeriod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txtPeriod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.txtPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeriod.ForeColor = System.Drawing.Color.Black;
@@ -343,7 +332,7 @@ namespace Avat.Components
             // panelKind
             // 
             this.panelKind.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelKind.BackColor = System.Drawing.Color.Transparent;
+            this.panelKind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.panelKind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelKind.Controls.Add(this.cbKind);
             this.panelKind.Location = new System.Drawing.Point(213, 73);
@@ -355,7 +344,7 @@ namespace Avat.Components
             // 
             // cbKind
             // 
-            this.cbKind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.cbKind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.cbKind.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -367,11 +356,12 @@ namespace Avat.Components
             this.cbKind.Name = "cbKind";
             this.cbKind.Size = new System.Drawing.Size(313, 24);
             this.cbKind.TabIndex = 27;
+            this.cbKind.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // cbPeriodType
             // 
-            this.cbPeriodType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.cbPeriodType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbPeriodType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbPeriodType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.cbPeriodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPeriodType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPeriodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -386,7 +376,7 @@ namespace Avat.Components
             // panelPeriod
             // 
             this.panelPeriod.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelPeriod.BackColor = System.Drawing.Color.Transparent;
+            this.panelPeriod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.panelPeriod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPeriod.Controls.Add(this.cbPeriodType);
             this.panelPeriod.Location = new System.Drawing.Point(290, 113);
@@ -396,11 +386,37 @@ namespace Avat.Components
             this.panelPeriod.TabIndex = 33;
             this.panelPeriod.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
+            // txtIcDph
+            // 
+            this.txtIcDph.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.txtIcDph.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtIcDph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtIcDph.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIcDph.ForeColor = System.Drawing.Color.Black;
+            this.txtIcDph.FormattingEnabled = true;
+            this.txtIcDph.Location = new System.Drawing.Point(0, 0);
+            this.txtIcDph.Margin = new System.Windows.Forms.Padding(0);
+            this.txtIcDph.Name = "txtIcDph";
+            this.txtIcDph.Size = new System.Drawing.Size(313, 24);
+            this.txtIcDph.TabIndex = 29;
+            this.txtIcDph.Enter += new System.EventHandler(this.panelPeriod_Enter);
+            // 
+            // panelIC
+            // 
+            this.panelIC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.panelIC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelIC.Controls.Add(this.txtIcDph);
+            this.panelIC.Location = new System.Drawing.Point(213, 28);
+            this.panelIC.Name = "panelIC";
+            this.panelIC.Size = new System.Drawing.Size(315, 24);
+            this.panelIC.TabIndex = 34;
+            // 
             // CtrlIdentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panelIC);
             this.Controls.Add(this.panelPeriod);
             this.Controls.Add(this.panelKind);
             this.Controls.Add(this.txtPeriod);
@@ -412,7 +428,6 @@ namespace Avat.Components
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtIcDph);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTelefon);
             this.Controls.Add(this.lblUlica);
@@ -430,6 +445,7 @@ namespace Avat.Components
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriod)).EndInit();
             this.panelKind.ResumeLayout(false);
             this.panelPeriod.ResumeLayout(false);
+            this.panelIC.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,7 +463,6 @@ namespace Avat.Components
         internal System.Windows.Forms.Label lblTelefon;
         internal System.Windows.Forms.Label lblUlica;
         internal System.Windows.Forms.Label lblPsc;
-        internal System.Windows.Forms.TextBox txtIcDph;
         internal System.Windows.Forms.TextBox txtName;
         internal System.Windows.Forms.TextBox txtState;
         internal System.Windows.Forms.TextBox txtCity;
@@ -461,5 +476,7 @@ namespace Avat.Components
         internal ComboBox cbPeriodType;
         private System.Windows.Forms.Panel panelKind;
         private Panel panelPeriod;
+        internal ComboBox txtIcDph;
+        private Panel panelIC;
     }
 }

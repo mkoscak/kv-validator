@@ -24,6 +24,16 @@ namespace Avat
             TaxPayerCache = TaxPayerEntity.LoadAll();
         }*/
 
+        public static readonly string theSign = " \u25CF ";
+
+        public static string FormatErrCount(int c)
+        {
+            if (c == -1)
+                return string.Empty;
+            
+            return string.Format("{0} {1}", c, (c > 4 || c == 0) ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+        }
+
         public static string GetExistingFilePath(string defExt, string filter)
         {
             var curDir = Environment.CurrentDirectory;

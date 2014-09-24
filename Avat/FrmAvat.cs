@@ -32,7 +32,7 @@ namespace Avat.Forms
         DataGridViewCellStyle errorStyle;
         DataGridViewCellStyle warningStyle;
         CtrlIdentification identification;
-        CtrlValidationResult validationResults;
+        CtrlValidationResult2 validationResults;
         CtrlFirstRun firstRunCtrl;
 
         public FrmAvat()
@@ -45,10 +45,10 @@ namespace Avat.Forms
             identification.Margin = new Padding(0, 20, 0, 0);
             panelContent.Controls.Add(identification);
 
-            validationResults = new CtrlValidationResult();
+            validationResults = new CtrlValidationResult2();
             validationResults.BorderStyle = BorderStyle.None;
-            validationResults.Dock = DockStyle.None;
-            validationResults.Margin = new Padding(0, 20, 0, 0);
+            validationResults.Dock = DockStyle.Fill;
+            validationResults.Margin = new Padding(20, 20, 20, 20);
             panelContent.Controls.Add(validationResults);
 
             firstRunCtrl = new CtrlFirstRun();
@@ -65,7 +65,7 @@ namespace Avat.Forms
             {
                 var lic = Vatfix.Licensing.LicenseManager.GetLicense();
                 licence = lic;
-                lblHeader2.Text = string.Format("{0} {1} - {2} - {3:00}/{4}", lic.User.Name, lic.User.Surname, lic.DIC[0], lic.Expiration.Month, lic.Expiration.Year);
+                lblHeader2.Text = string.Format("{0} {1} - {2:00}/{3}               ", lic.User.Name, lic.User.Surname, lic.Expiration.Month, lic.Expiration.Year);
                 if (DateTime.Now < lic.Expiration)
                     LicenceOk = true;   // az tu je licencia ok
             }
@@ -394,6 +394,7 @@ namespace Avat.Forms
         private void NewAvat()
         {
             kvDph = new KVDPH();
+            kvDph.Identifikacia.Obdobie.Rok = DateTime.Now.Year;
             a1w = new MySortableBindingList<A1Wrapper>();
             a2w = new MySortableBindingList<A2Wrapper>();
             b1w = new MySortableBindingList<B1Wrapper>();
@@ -405,6 +406,8 @@ namespace Avat.Forms
             d2w = new MySortableBindingList<D2Wrapper>();
 
             lastValidationResult = null;
+            validationResults.Clear();
+            identification.SetData(kvDph.Identifikacia, true);
             ShowIdentification(true);
             UpdateButtonTexts();
             SetFileName("nový.xml");
@@ -463,7 +466,7 @@ namespace Avat.Forms
         private void ShowIdentification(bool noProblems)
         {
             DisableAllButtons(btnIdent);
-            identification.SetData(kvDph.Identifikacia, noProblems);
+            //identification.SetData(kvDph.Identifikacia, noProblems);
             gridData.DataSource = null;
             identification.lblIcDph.Focus();
         }
@@ -479,13 +482,14 @@ namespace Avat.Forms
         private void btnCheckResults_Click(object sender, EventArgs e)
         {
             DisableAllButtons(btnCheckResults);
-            ShowValidationResults();
+            ShowValidationResults(false);
         }
 
-        private void ShowValidationResults()
+        private void ShowValidationResults(bool refresh)
         {
             DisableAllButtons(btnCheckResults);
-            validationResults.ShowResult(lastValidationResult);
+            if (refresh)
+                validationResults.ShowResult(lastValidationResult);
             gridData.DataSource = null;
             identification.lblIcDph.Focus();
         }
@@ -627,6 +631,7 @@ namespace Avat.Forms
 
                 SetIcons(null);//def icons
                 lastValidationResult = null;
+                validationResults.Clear();
 
                 var p = new Progress(0, 100, "Načítanie vstupného súboru", "Načítavam..", ReadXmlProc, XmlRead, path, false, false);
                 p.SetErrorMessage("Ups načítanie vstupného súboru neprebehlo úspešne, XML súbor pravdepodobne nezodpovedá XSD schéme pre kontrolný výkaz DPH. Validnosť xml súboru na xsd schému je možné overiť XML validátorom v štandarde W3C.", "Načítanie vstupu", MessageBoxButtons.OK, MessageBoxIcon.Error, false);
@@ -666,6 +671,7 @@ namespace Avat.Forms
                 d2w = new MySortableBindingList<D2Wrapper>(kvDph.Transakcie.D2.Select(a => new D2Wrapper(a)).ToList());
 
                 UpdateButtonTexts();
+                identification.SetData(kvDph.Identifikacia, true);
                 ShowIdentification(true);
                 SetFileName(ActualFileName);
             }
@@ -689,31 +695,31 @@ namespace Avat.Forms
 
                 var c = Result.Count(r => r.ProblemObject is A1);
                 if (c > 0)
-                    btnA1.Text = string.Format("A.1. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                    btnA1.Text = string.Format("A.1. ({0})", Common.FormatErrCount(c));
                 c = Result.Count(r => r.ProblemObject is A2);
                 if (c > 0)
-                    btnA2.Text = string.Format("A.2. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                    btnA2.Text = string.Format("A.2. ({0})", Common.FormatErrCount(c));
                 c = Result.Count(r => r.ProblemObject is B1);
                 if (c > 0)
-                    btnB1.Text = string.Format("B.1. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                    btnB1.Text = string.Format("B.1. ({0})", Common.FormatErrCount(c));
                 c = Result.Count(r => r.ProblemObject is B2);
                 if (c > 0)
-                    btnB2.Text = string.Format("B.2. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                    btnB2.Text = string.Format("B.2. ({0})", Common.FormatErrCount(c));
                 c = Result.Count(r => r.ProblemObject is B3);
                 if (c > 0)
-                    btnB3.Text = string.Format("B.3. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                    btnB3.Text = string.Format("B.3. ({0})", Common.FormatErrCount(c));
                 c = Result.Count(r => r.ProblemObject is C1);
                 if (c > 0)
-                    btnC1.Text = string.Format("C.1. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                    btnC1.Text = string.Format("C.1. ({0})", Common.FormatErrCount(c));
                 c = Result.Count(r => r.ProblemObject is C2);
                 if (c > 0)
-                    btnC2.Text = string.Format("C.2. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                    btnC2.Text = string.Format("C.2. ({0})", Common.FormatErrCount(c));
                 c = Result.Count(r => r.ProblemObject is D1);
                 if (c > 0)
-                    btnD1.Text = string.Format("D.1. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                    btnD1.Text = string.Format("D.1. ({0})", Common.FormatErrCount(c));
                 c = Result.Count(r => r.ProblemObject is D2);
                 if (c > 0)
-                    btnD2.Text = string.Format("D.2. ({0} {1})", c, c > 4 ? "chýb" : (c > 1 ? "chyby" : "chyba"));
+                    btnD2.Text = string.Format("D.2. ({0})", Common.FormatErrCount(c));
             }
         }
 
@@ -749,6 +755,21 @@ namespace Avat.Forms
                 return ofd.FileName;
 
             return null;
+        }
+
+        bool ReadIdent()
+        {
+            try
+            {
+                kvDph.Identifikacia = identification.GetData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, string.Format("Načítanie identifikácie skončilo nasledujúcou výnimkou: {0}{0}{1}", Environment.NewLine, ex.Message), "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -861,7 +882,7 @@ namespace Avat.Forms
             }
 
             identification.SetProblems(lastValidationResult);
-            ShowValidationResults();
+            ShowValidationResults(true);
             UpdateButtonTexts();
             SetIcons(lastValidationResult);
         }

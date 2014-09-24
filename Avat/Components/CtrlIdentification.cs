@@ -142,7 +142,14 @@ namespace Avat.Components
         {
             this.identification = new Identifikacia();
             this.identification.IcDphPlatitela = txtIcDph.Text;
-            this.identification.Druh = (DruhKvType)Enum.Parse(typeof(DruhKvType), cbKind.Text);
+            try
+            {
+                this.identification.Druh = (DruhKvType)Enum.Parse(typeof(DruhKvType), cbKind.Text);
+            }
+            catch (Exception)
+            {
+                this.identification.Druh = DruhKvType.X;
+            }
             this.identification.Obdobie.Item = Convert.ToInt32(txtPeriod.Text);
             this.identification.Obdobie.ItemElementName = (ItemChoiceType)Enum.Parse(typeof(ItemChoiceType), cbPeriodType.Text);
             this.identification.Obdobie.Rok = Convert.ToInt32(txtYear.Text);

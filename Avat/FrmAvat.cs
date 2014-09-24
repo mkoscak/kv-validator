@@ -39,7 +39,7 @@ namespace Avat.Forms
         {
             InitializeComponent();
 
-            identification = new CtrlIdentification(ShowProgress);
+            identification = new CtrlIdentification(ShowProgress, ShowActualIc);
             identification.BorderStyle = BorderStyle.None;
             identification.Dock = DockStyle.None;
             identification.Margin = new Padding(0, 20, 0, 0);
@@ -65,10 +65,13 @@ namespace Avat.Forms
             {
                 var lic = Vatfix.Licensing.LicenseManager.GetLicense();
                 licence = lic;
-                lblHeader2.Text = string.Format("{0} {1} - {2:00}/{3}               ", lic.User.Name, lic.User.Surname, lic.Expiration.Month, lic.Expiration.Year);
+                //lblHeader2.Text = string.Format("{0} {1} - {2:00}/{3}               ", lic.User.Name, lic.User.Surname, lic.Expiration.Month, lic.Expiration.Year);
                 if (DateTime.Now < lic.Expiration)
+                {
                     LicenceOk = true;   // az tu je licencia ok
-              
+                    lblHeader2.Text = string.Empty;
+                }
+
                 foreach (var item in licence.DIC)
                     identification.txtIcDph.Items.Add(item);
             }
@@ -76,6 +79,11 @@ namespace Avat.Forms
             {
                 //ShowProgress("Problém s licenciou: " + ex.Message);
             }
+        }
+
+        void ShowActualIc(string text)
+        {
+            lblHeader2.Text = string.Format("{0}               ", text);
         }
 
         bool firstRun = false;

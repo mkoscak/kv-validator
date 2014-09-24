@@ -48,23 +48,22 @@
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
+            this.lblName.AutoEllipsis = true;
             this.lblName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblName.Location = new System.Drawing.Point(20, 22);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(58, 19);
+            this.lblName.Size = new System.Drawing.Size(386, 19);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Nazov";
             // 
             // lblErrorCount
             // 
             this.lblErrorCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblErrorCount.AutoSize = true;
             this.lblErrorCount.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblErrorCount.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCount.Location = new System.Drawing.Point(438, 23);
+            this.lblErrorCount.Location = new System.Drawing.Point(412, 23);
             this.lblErrorCount.Name = "lblErrorCount";
-            this.lblErrorCount.Size = new System.Drawing.Size(60, 18);
+            this.lblErrorCount.Size = new System.Drawing.Size(86, 18);
             this.lblErrorCount.TabIndex = 2;
             this.lblErrorCount.Text = "2 chyby";
             this.lblErrorCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -56,48 +56,31 @@ namespace Avat.Components
             List<IValidationItemResult> found;
 
             found = Result.Where(r => r.FromRule is IcDphValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
+            CheckFound(found);
             found = Result.Where(r => r.FromRule is KvKindValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
-            found = Result.Where(r => r.FromRule is PeriodValidator || r.FromRule is YearValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
+            CheckFound(found);
+            found = Result.Where(r => r.FromRule is PeriodValidator).ToList();
+            CheckFound(found);
+            found = Result.Where(r => r.FromRule is YearValidator).ToList();
+            CheckFound(found);
             found = Result.Where(r => r.FromRule is NameValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
+            CheckFound(found);
             found = Result.Where(r => r.FromRule is StateValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
+            CheckFound(found);
             found = Result.Where(r => r.FromRule is CityValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
+            CheckFound(found);
             found = Result.Where(r => r.FromRule is BlackListValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
+            CheckFound(found);
             found = Result.Where(r => r.FromRule is TaxPayerValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
+            CheckFound(found);
             found = Result.Where(r => r.FromRule is CorrectionValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
+            CheckFound(found);
             found = Result.Where(r => r.FromRule is GoodsValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
-
-            found = Result.Where(r => r.FromRule is TaxRateValidator || r.FromRule is ItemTaxValidator).ToList();
-            if (found.Count > 0)
-                AddProblem(found[0].FromRule.RuleName, found.Count, found[0].FromRule.RuleDescription, false);
+            CheckFound(found);
+            found = Result.Where(r => r.FromRule is TaxRateValidator).ToList();
+            CheckFound(found);
+            found = Result.Where(r => r.FromRule is ItemTaxValidator).ToList();
+            CheckFound(found);
 
             found = Result.Where(r => r.ProblemObject is A1).ToList();
             if (found.Count > 0)
@@ -141,6 +124,16 @@ namespace Avat.Components
             if (flowContent.Controls.Count == 0)
                 flowContent.Controls.Add(okPanel);
             flowContent.ResumeLayout();
+        }
+
+        private void CheckFound(List<IValidationItemResult> found)
+        {
+            var err = found.Where(r => r.ValidationResultState == ResultState.Error).ToList();
+            if (err.Count > 0)
+                AddProblem(err[0].FromRule.RuleName, err.Count, err[0].FromRule.RuleDescription, false);
+            var warn = found.Where(r => r.ValidationResultState == ResultState.OkWithWarning).ToList();
+            if (warn.Count > 0)
+                AddProblem(warn[0].FromRule.RuleName, warn.Count, warn[0].FromRule.RuleDescription, true);
         }
     }
 }

@@ -164,7 +164,7 @@ namespace Avat.Components
             this.identification.Email = txteMail.Text;
         }
 
-        private void ShowNoProblems()
+        public void ShowNoProblems()
         {
             txtIcDph.BackColor = origColorMandatory;
             cbKind.BackColor = origColorMandatory;
@@ -201,10 +201,25 @@ namespace Avat.Components
 
                 var found = Common.GetTaxPayer(txtIcDph.Text.Trim());
                 if (found != null)
-                    text = string.Format("{0}: {1}", txtIcDph.Text.Trim(), found.Nazov);
+                    text = string.Format("{0}, {1}, {2}, {3}", found.Nazov, txtIcDph.Text.Trim(), cbKind.Text, FormatPeriod());
+                else if (txtIcDph.Text.Trim().Length > 0)
+                    text = string.Format("{0}, {1}, {2}", txtIcDph.Text.Trim(), cbKind.Text, FormatPeriod());
+                else
+                    text = string.Format("{0}, {1}", cbKind.Text, FormatPeriod());
 
                 icDphChanged(text);
             }
+        }
+
+        private string FormatPeriod()
+        {
+            var obd = string.Empty;
+            if (cbPeriodType.SelectedIndex == 1 && txtPeriod.Value > 0 && txtPeriod.Value < 13)
+                obd = Application.CurrentCulture.DateTimeFormat.GetMonthName((int)txtPeriod.Value) + " ";
+            else if (cbPeriodType.SelectedIndex == 2 && txtPeriod.Value > 0 && txtPeriod.Value < 5)
+                obd = txtPeriod.Value.ToString() + ". štvrťrok ";
+
+            return string.Format("{0}{1}", obd, txtYear.Value);
         }
     }
 }

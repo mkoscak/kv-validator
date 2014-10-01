@@ -793,6 +793,11 @@ namespace Avat.Forms
             {
                 gridData.CancelEdit();
                 kvDph.Identifikacia = identification.GetData();
+                if (!licence.DIC.Contains(kvDph.Identifikacia.IcDphPlatitela))
+                {
+                    MessageBox.Show(this, "Nemožno validovať subjekt, ktorý sa nenachádza v licenčnom súbore!", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false;
+                }
                 kvDph.Transakcie.A1 = a1w.Select(w => w.a1).ToList();
                 kvDph.Transakcie.A2 = a2w.Select(w => w.a2).ToList();
                 kvDph.Transakcie.B1 = b1w.Select(w => w.b1).ToList();

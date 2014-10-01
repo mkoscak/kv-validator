@@ -69,7 +69,7 @@ namespace AvatValidator.Validators.TaxPayerValidator
             else if (relevant.Contains(input.GetType()))
             {
                 // nevyplnene IC DPH
-                ret.Add(MissingIcDph(input, GetSubjectType(input)));
+                //ret.Add(MissingIcDph(input, GetSubjectType(input))); // ic nemusi byt zadane.. neplatca DPH
             }
 
             return ret;

@@ -67,12 +67,12 @@ namespace Avat.Components
             this.lblIcDph.AutoSize = true;
             this.lblIcDph.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIcDph.ForeColor = System.Drawing.Color.Black;
-            this.lblIcDph.Location = new System.Drawing.Point(76, 31);
+            this.lblIcDph.Location = new System.Drawing.Point(28, 31);
             this.lblIcDph.Margin = new System.Windows.Forms.Padding(10);
             this.lblIcDph.Name = "lblIcDph";
-            this.lblIcDph.Size = new System.Drawing.Size(123, 18);
+            this.lblIcDph.Size = new System.Drawing.Size(171, 18);
             this.lblIcDph.TabIndex = 6;
-            this.lblIcDph.Text = "IČ platitela DPH:";
+            this.lblIcDph.Text = "IČ DPH podávateľa KV:";
             // 
             // lblDruh
             // 
@@ -304,6 +304,7 @@ namespace Avat.Components
             0,
             0,
             0});
+            this.txtYear.ValueChanged += new System.EventHandler(this.txtIcDph_TextChanged);
             this.txtYear.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // txtPeriod
@@ -315,7 +316,12 @@ namespace Avat.Components
             this.txtPeriod.ForeColor = System.Drawing.Color.Black;
             this.txtPeriod.Location = new System.Drawing.Point(213, 113);
             this.txtPeriod.Maximum = new decimal(new int[] {
-            999,
+            12,
+            0,
+            0,
+            0});
+            this.txtPeriod.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -323,10 +329,11 @@ namespace Avat.Components
             this.txtPeriod.Size = new System.Drawing.Size(71, 24);
             this.txtPeriod.TabIndex = 31;
             this.txtPeriod.Value = new decimal(new int[] {
-            999,
+            1,
             0,
             0,
             0});
+            this.txtPeriod.ValueChanged += new System.EventHandler(this.txtIcDph_TextChanged);
             this.txtPeriod.Enter += new System.EventHandler(this.panelPeriod_Enter);
             // 
             // panelKind
@@ -357,6 +364,8 @@ namespace Avat.Components
             this.cbKind.Size = new System.Drawing.Size(313, 24);
             this.cbKind.TabIndex = 27;
             this.cbKind.Enter += new System.EventHandler(this.panelPeriod_Enter);
+            this.cbKind.SelectedValueChanged += new System.EventHandler(this.txtIcDph_TextChanged);
+            this.cbKind.TextChanged += new System.EventHandler(this.txtIcDph_TextChanged);
             // 
             // cbPeriodType
             // 
@@ -372,6 +381,8 @@ namespace Avat.Components
             this.cbPeriodType.Name = "cbPeriodType";
             this.cbPeriodType.Size = new System.Drawing.Size(162, 24);
             this.cbPeriodType.TabIndex = 29;
+            this.cbPeriodType.SelectedValueChanged += new System.EventHandler(this.txtIcDph_TextChanged);
+            this.cbPeriodType.TextChanged += new System.EventHandler(this.txtIcDph_TextChanged);
             // 
             // panelPeriod
             // 

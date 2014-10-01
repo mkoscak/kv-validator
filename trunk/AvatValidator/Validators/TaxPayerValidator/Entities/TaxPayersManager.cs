@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using AvatValidator.Sql;
 using System.Xml;
+using System.ComponentModel;
 
 namespace AvatValidator.Validators.TaxPayerValidator.Entities
 {
@@ -13,10 +14,11 @@ namespace AvatValidator.Validators.TaxPayerValidator.Entities
         /// Import dat z XML 'ds_dphs.xml'
         /// </summary>
         /// <param name="path"></param>
-        public static int ImportDataFromXml(string path, string dbName)
+        public static int ImportDataFromXml(string path, string dbName, BackgroundWorker bw)
         {
             var entities = new List<TaxPayerEntity>();
 
+            bw.ReportProgress(0, "Čítanie vstupného súboru..");
             // nacitanie entit z xml
             LoadEntitiesFromXml(path, entities);
 
@@ -31,7 +33,11 @@ namespace AvatValidator.Validators.TaxPayerValidator.Entities
                 con.Open();
                 using (var tr = con.BeginTransaction())
                 {
-                    entities.ForEach(e => e.Save(con, tr));
+                    for (int i = 0; i < entities.Count; i++)
+                    {
+                        entities[i].Save(con, tr);
+                        bw.ReportProgress((int)((double)(i + 1) / entities.Count * 100), "Aktualizácia databázy DIČ..");
+                    }
                     tr.Commit();
                 }
                 con.Close();

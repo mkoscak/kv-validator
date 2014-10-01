@@ -193,7 +193,7 @@ namespace AvatValidator.Validators
                 return null;
 
             var dest = Math.Round( (z.Value * 100 * s.Value) / 10000, 2, MidpointRounding.AwayFromZero);
-            if (Math.Abs(dest) - Math.Abs(d) > 0.01) // do 1 centa vratane nie je problem..
+            if ((Math.Abs(dest) - Math.Abs(d.Value)) > Convert.ToDecimal(0.01)) // do 1 centa vratane nie je problem..
                 return Validation2002Failed(input);
 
             return null;

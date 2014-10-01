@@ -5,6 +5,7 @@ using System.Text;
 using AvatValidator.Sql;
 using System.Xml.Linq;
 using System.Xml;
+using System.ComponentModel;
 
 namespace AvatValidator.Validators.BlackListValidator.Entities
 {
@@ -17,10 +18,11 @@ namespace AvatValidator.Validators.BlackListValidator.Entities
         /// Import dat z XML 'ds_dphz.xml'
         /// </summary>
         /// <param name="path"></param>
-        public static int ImportDataFromXml(string path, string dbName)
+        public static int ImportDataFromXml(string path, string dbName, BackgroundWorker bw)
         {
             var entities = new List<BlackListEntity>();
 
+            bw.ReportProgress(0, "Čítanie vstupného súboru..");
             // nacitanie entit z xml
             LoadEntitiesFromXml(path, entities);
 
@@ -35,7 +37,11 @@ namespace AvatValidator.Validators.BlackListValidator.Entities
                 con.Open();
                 using (var tr = con.BeginTransaction())
                 {
-                    entities.ForEach(e => e.Save(con, tr));
+                    for (int i = 0; i < entities.Count; i++)
+                    {
+                        entities[i].Save(con, tr);
+                        bw.ReportProgress((int)((double)(i + 1) / entities.Count * 100), "Aktualizácia databázy DIČ (black-list)..");
+                    }
                     tr.Commit();
                 }
                 con.Close();

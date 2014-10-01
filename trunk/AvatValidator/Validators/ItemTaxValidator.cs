@@ -193,7 +193,7 @@ namespace AvatValidator.Validators
                 return null;
 
             var dest = Math.Round( (z.Value * 100 * s.Value) / 10000, 2, MidpointRounding.AwayFromZero);
-            if (dest != d)
+            if (Math.Abs(dest) - Math.Abs(d) > 0.01) // do 1 centa vratane nie je problem..
                 return Validation2002Failed(input);
 
             return null;
@@ -211,10 +211,10 @@ namespace AvatValidator.Validators
                 return (input as C1).D;
             if (input is C2)
                 return (input as C2).D;*/
-            if (input is D1)
+            /*if (input is D1)
                 return (input as D1).D;
             if (input is D2)
-                return (input as D2).D;
+                return (input as D2).D;*/
 
             return null;
         }
@@ -258,10 +258,10 @@ namespace AvatValidator.Validators
                 return (input as C1).Z;
             if (input is C2)
                 return (input as C2).Z;*/
-            if (input is D1)
+            /*if (input is D1)
                 return (input as D1).Z;
             if (input is D2)
-                return (input as D2).Z;
+                return (input as D2).Z;*/
 
             return null;
         }

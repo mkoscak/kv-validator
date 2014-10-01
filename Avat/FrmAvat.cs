@@ -325,7 +325,7 @@ namespace Avat.Forms
             bw.ReportProgress(50, "Aktualizácia databázy DIČ..");
             try
             {
-                BlackListManager.ImportDataFromXml(blFileXml, TmpDatabaseName);
+                BlackListManager.ImportDataFromXml(blFileXml, TmpDatabaseName, bw);
             }
             catch (Exception ex)
             {
@@ -336,7 +336,7 @@ namespace Avat.Forms
             bw.ReportProgress(75, "Aktualizácia databázy DIČ..");
             try
             {
-                TaxPayersManager.ImportDataFromXml(tpFileXml, TmpDatabaseName);
+                TaxPayersManager.ImportDataFromXml(tpFileXml, TmpDatabaseName, bw);
             }
             catch (Exception ex)
             {

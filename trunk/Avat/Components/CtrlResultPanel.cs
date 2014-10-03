@@ -38,6 +38,9 @@ namespace Avat.Components
                 lblErrorCount.ForeColor = Color.Green;
             else if (warning)
                 lblErrorCount.ForeColor = MyColors.Yellow;
+
+            if (errorCount == -1)
+                lblErrorCount.Visible = false;
         }
     }
 }

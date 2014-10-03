@@ -33,7 +33,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtVersion = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUploadLicence = new Avat.Components.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -88,16 +88,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "kontrolný výkaz DPH 2014";
             // 
-            // label3
+            // txtVersion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(178, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "verzia: 1.0.0";
+            this.txtVersion.AutoSize = true;
+            this.txtVersion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVersion.ForeColor = System.Drawing.Color.White;
+            this.txtVersion.Location = new System.Drawing.Point(178, 103);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Size = new System.Drawing.Size(87, 19);
+            this.txtVersion.TabIndex = 4;
+            this.txtVersion.Text = "verzia: 1.0.0";
             // 
             // panel1
             // 
@@ -131,7 +131,7 @@
             this.ClientSize = new System.Drawing.Size(464, 437);
             this.Controls.Add(this.btnUploadLicence);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtVersion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picLogo);
@@ -160,7 +160,7 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtVersion;
         private System.Windows.Forms.Panel panel1;
         private RoundedButton btnUploadLicence;
     }

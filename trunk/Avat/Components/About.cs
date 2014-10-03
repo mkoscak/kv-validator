@@ -23,6 +23,9 @@ namespace Avat.Components
             txtLicence.Select(0, idx);
             txtLicence.SelectionFont = new Font(txtLicence.Font, FontStyle.Bold);
             txtLicence.DeselectAll();
+
+            var ver = typeof(About).Assembly.GetName().Version;
+            txtVersion.Text = string.Format("Verzia: {0}", ver);
         }
 
         private void picLogo_Paint(object sender, PaintEventArgs e)

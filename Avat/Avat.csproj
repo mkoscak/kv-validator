@@ -102,6 +102,12 @@
     <Compile Include="Components\CtrlResultPanel.Designer.cs">
       <DependentUpon>CtrlResultPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\CtrlResultPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CtrlResultPanel2.Designer.cs">
+      <DependentUpon>CtrlResultPanel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\CtrlValidationResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\ToolRenderer.cs" />
+    <Compile Include="Components\CtrlValidationResult3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CtrlValidationResult3.Designer.cs">
+      <DependentUpon>CtrlValidationResult3.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAvat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +183,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\CtrlResultPanel.resx">
       <DependentUpon>CtrlResultPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CtrlResultPanel2.resx">
+      <DependentUpon>CtrlResultPanel2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\CtrlValidationResult.resx">
@@ -195,6 +211,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Progress.resx">
       <DependentUpon>Progress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CtrlValidationResult3.resx">
+      <DependentUpon>CtrlValidationResult3.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAvat.resx">

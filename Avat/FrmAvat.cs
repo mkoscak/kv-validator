@@ -32,7 +32,7 @@ namespace Avat.Forms
         DataGridViewCellStyle errorStyle;
         DataGridViewCellStyle warningStyle;
         CtrlIdentification identification;
-        CtrlValidationResult2 validationResults;
+        CtrlValidationResult3 validationResults;
         CtrlFirstRun firstRunCtrl;
 
         public FrmAvat()
@@ -45,7 +45,7 @@ namespace Avat.Forms
             identification.Margin = new Padding(0, 20, 0, 0);
             panelContent.Controls.Add(identification);
 
-            validationResults = new CtrlValidationResult2();
+            validationResults = new CtrlValidationResult3();
             validationResults.BorderStyle = BorderStyle.None;
             validationResults.Dock = DockStyle.Fill;
             validationResults.Margin = new Padding(20, 20, 20, 20);
@@ -165,7 +165,6 @@ namespace Avat.Forms
 
         #region Automaticke importy
 
-        bool ImportRunning = false;
         static readonly string ImportFolder = @".\import\";
         static readonly string tpFile = "ds_dphs";
         static readonly string blFile = "ds_dphz";
@@ -188,7 +187,6 @@ namespace Avat.Forms
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_ImportsCompleted);
             bw.WorkerReportsProgress = true;
             bw.WorkerSupportsCancellation = true;
-            ImportRunning = true;
             bw.RunWorkerAsync();
         }
 
@@ -238,8 +236,6 @@ namespace Avat.Forms
             }
             finally
             {
-                ImportRunning = false;
-
                 if (firstRun)
                 {
                     firstRun = false;
@@ -500,7 +496,12 @@ namespace Avat.Forms
         {
             DisableAllButtons(btnCheckResults);
             if (refresh)
+            {
                 validationResults.ShowResult(lastValidationResult);
+                var tmp = this.Size;
+                this.Size = new Size(tmp.Width + 100, tmp.Height + 1);
+                this.Size = tmp;
+            }
             gridData.DataSource = null;
             identification.lblIcDph.Focus();
         }

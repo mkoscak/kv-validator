@@ -136,7 +136,6 @@ namespace Avat.Forms
             this.btnCheckResults.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnCheckResults.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCheckResults.ForeColor = System.Drawing.Color.White;
-            this.btnCheckResults.Image = global::Avat.Properties.Resources.ok;
             this.btnCheckResults.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheckResults.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCheckResults.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -156,7 +155,6 @@ namespace Avat.Forms
             this.btnIdent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnIdent.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIdent.ForeColor = System.Drawing.Color.White;
-            this.btnIdent.Image = global::Avat.Properties.Resources.ok;
             this.btnIdent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIdent.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnIdent.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -189,7 +187,6 @@ namespace Avat.Forms
             this.btnA1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnA1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnA1.ForeColor = System.Drawing.Color.White;
-            this.btnA1.Image = global::Avat.Properties.Resources.ok;
             this.btnA1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnA1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnA1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -209,7 +206,6 @@ namespace Avat.Forms
             this.btnA2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnA2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnA2.ForeColor = System.Drawing.Color.White;
-            this.btnA2.Image = global::Avat.Properties.Resources.ok;
             this.btnA2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnA2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnA2.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -240,7 +236,6 @@ namespace Avat.Forms
             this.btnB1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnB1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnB1.ForeColor = System.Drawing.Color.White;
-            this.btnB1.Image = global::Avat.Properties.Resources.ok;
             this.btnB1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnB1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnB1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -260,7 +255,6 @@ namespace Avat.Forms
             this.btnB2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnB2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnB2.ForeColor = System.Drawing.Color.White;
-            this.btnB2.Image = global::Avat.Properties.Resources.ok;
             this.btnB2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnB2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnB2.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -280,7 +274,6 @@ namespace Avat.Forms
             this.btnB3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnB3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnB3.ForeColor = System.Drawing.Color.White;
-            this.btnB3.Image = global::Avat.Properties.Resources.ok;
             this.btnB3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnB3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnB3.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -311,7 +304,6 @@ namespace Avat.Forms
             this.btnC1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnC1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnC1.ForeColor = System.Drawing.Color.White;
-            this.btnC1.Image = global::Avat.Properties.Resources.ok;
             this.btnC1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnC1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnC1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -331,7 +323,6 @@ namespace Avat.Forms
             this.btnC2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnC2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnC2.ForeColor = System.Drawing.Color.White;
-            this.btnC2.Image = global::Avat.Properties.Resources.ok;
             this.btnC2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnC2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnC2.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -362,7 +353,6 @@ namespace Avat.Forms
             this.btnD1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnD1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnD1.ForeColor = System.Drawing.Color.White;
-            this.btnD1.Image = global::Avat.Properties.Resources.ok;
             this.btnD1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnD1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnD1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -382,7 +372,6 @@ namespace Avat.Forms
             this.btnD2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnD2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnD2.ForeColor = System.Drawing.Color.White;
-            this.btnD2.Image = global::Avat.Properties.Resources.ok;
             this.btnD2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnD2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnD2.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -684,7 +673,7 @@ namespace Avat.Forms
             // 
             this.lblHeader2.BackColor = System.Drawing.Color.Transparent;
             this.lblHeader2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHeader2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblHeader2.ForeColor = System.Drawing.Color.White;
             this.lblHeader2.Location = new System.Drawing.Point(151, 0);
             this.lblHeader2.Name = "lblHeader2";

@@ -172,7 +172,7 @@ namespace Avat.Forms
         static readonly string blFileXml = ImportFolder + blFile + ".xml";
         static readonly string tpFileXml = ImportFolder + tpFile + ".xml";
         static readonly string TmpDatabaseName = "tmp_avat.db";
-        static readonly string ImportFilesUrl = @"http://edane.drsr.sk/report/";
+        static readonly string ImportFilesUrl = @"http://download.vatfix.sk/lists/";
         static readonly string blFileUrl = ImportFilesUrl + blFile + ".zip";
         static readonly string tpFileUrl = ImportFilesUrl + tpFile + ".zip";
         static readonly string tpZip = ImportFolder + tpFile + ".zip";

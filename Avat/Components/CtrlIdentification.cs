@@ -201,11 +201,11 @@ namespace Avat.Components
 
                 var found = Common.GetTaxPayer(txtIcDph.Text.Trim());
                 if (found != null)
-                    text = string.Format("{0}, {1}, {2}, {3}", found.Nazov, txtIcDph.Text.Trim(), cbKind.Text, FormatPeriod());
+                    text = string.Format("{0}  -  DIC: {1}  -  {2}  -  {3}", found.Nazov, txtIcDph.Text.Trim(), cbKind.Text, FormatPeriod());
                 else if (txtIcDph.Text.Trim().Length > 0)
-                    text = string.Format("{0}, {1}, {2}", txtIcDph.Text.Trim(), cbKind.Text, FormatPeriod());
+                    text = string.Format("DIC: {0}  -  {1}  -  {2}", txtIcDph.Text.Trim(), cbKind.Text, FormatPeriod());
                 else
-                    text = string.Format("{0}, {1}", cbKind.Text, FormatPeriod());
+                    text = string.Format("{0}  -  {1}", cbKind.Text, FormatPeriod());
 
                 icDphChanged(text);
             }

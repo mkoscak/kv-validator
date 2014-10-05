@@ -71,7 +71,7 @@ namespace Avat.Wrappers
             }
         }
 
-        [DisplayName("Odberateľ")]
+        [DisplayName("Názov spoločnosti")]
         public string OdberatelName
         {
             get

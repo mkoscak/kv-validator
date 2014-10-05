@@ -22,8 +22,48 @@ namespace Avat.Components
         {
             InitializeComponent();
 
-            cbKind.Items.AddRange(Enum.GetNames(typeof(DruhKvType)));
+            //cbKind.Items.AddRange(Enum.GetNames(typeof(DruhKvType)));
+            cbKind.Items.AddRange(GetKindNames());
             cbPeriodType.Items.AddRange(Enum.GetNames(typeof(ItemChoiceType)));
+        }
+
+        string[] GetKindNames()
+        {
+            return new string[] { GetKindText(DruhKvType.X), GetKindText(DruhKvType.R), GetKindText(DruhKvType.O), GetKindText(DruhKvType.D) };
+        }
+
+        string GetKindText(DruhKvType type)
+        {
+            switch (type)
+            {
+                case DruhKvType.X:
+                    return string.Empty;
+                case DruhKvType.R:
+                    return "Riadny";
+                case DruhKvType.O:
+                    return "Opravný";
+                case DruhKvType.D:
+                    return "Dodatočný";
+                default:
+                    break;
+            }
+
+            return Enum.GetName(typeof(DruhKvType), type);
+        }
+
+        DruhKvType GetSelectedKind()
+        {
+            var si = cbKind.SelectedIndex;
+            if (si == 0)
+                return DruhKvType.X;
+            if (si == 1)
+                return DruhKvType.R;
+            if (si == 2)
+                return DruhKvType.O;
+            if (si == 3)
+                return DruhKvType.D;
+
+            return DruhKvType.X;
         }
 
         public CtrlIdentification(Action<string> progressListener, Action<string> icDphChanged)
@@ -117,7 +157,7 @@ namespace Avat.Components
             this.identification = data;
 
             txtIcDph.Text = data.IcDphPlatitela;
-            cbKind.Text = data.Druh.ToString();
+            cbKind.Text = GetKindText(data.Druh);
             txtPeriod.Text = data.Obdobie.Item.ToString();
             cbPeriodType.Text = data.Obdobie.ItemElementName.ToString();
             txtYear.Text = data.Obdobie.Rok.ToString();
@@ -146,7 +186,7 @@ namespace Avat.Components
             this.identification.IcDphPlatitela = txtIcDph.Text;
             try
             {
-                this.identification.Druh = (DruhKvType)Enum.Parse(typeof(DruhKvType), cbKind.Text);
+                this.identification.Druh = GetSelectedKind();//(DruhKvType)Enum.Parse(typeof(DruhKvType), cbKind.Text);
             }
             catch (Exception)
             {

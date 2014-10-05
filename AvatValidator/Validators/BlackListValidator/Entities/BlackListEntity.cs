@@ -29,6 +29,11 @@ namespace AvatValidator.Validators.BlackListValidator.Entities
         public static string ROK_PORUSENIA = "ROK_PORUSENIA";
         public static string DAT_ZVEREJNENIA = "DAT_ZVEREJNENIA";
 
+        static BlackListEntity()
+        {
+            new BlackListEntity();
+        }
+
         public BlackListEntity(DbProvider db)
             : base(db)
         {

@@ -84,13 +84,14 @@
             this.contentLayout.ColumnCount = 2;
             this.contentLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.contentLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.contentLayout.Location = new System.Drawing.Point(22, 101);
+            this.contentLayout.Location = new System.Drawing.Point(22, 109);
+            this.contentLayout.Margin = new System.Windows.Forms.Padding(0);
             this.contentLayout.Name = "contentLayout";
-            this.contentLayout.RowCount = 3;
+            this.contentLayout.RowCount = 1;
             this.contentLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.contentLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.contentLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.contentLayout.Size = new System.Drawing.Size(665, 158);
+            this.contentLayout.Size = new System.Drawing.Size(665, 150);
             this.contentLayout.TabIndex = 1;
             // 
             // panel2

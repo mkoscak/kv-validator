@@ -110,7 +110,7 @@ namespace Avat.Forms
             warningStyle.BackColor = MyColors.Yellow;
 
             // prvy beh je identifikovany pom. existencie DB suboru
-            firstRun = !File.Exists(DbProvider.DefaultDataSource);
+            firstRun = !DbProvider.DefDataSourceExist;
             if (firstRun)
             {
                 ShowFirstRun(true);
@@ -287,10 +287,14 @@ namespace Avat.Forms
                 Directory.CreateDirectory(ImportFolder);
 
             bw.ReportProgress(0, "Kontrola aktuálnosti databázy..");
-            if (CheckTodaysImport())
+            if (DbProvider.DefDataSourceExist && CheckTodaysImport())
             {
-                e.Result = new Exception("Databáza je aktuálna.");
-                return;
+                var fi = new FileInfo(DbProvider.DefaultDataSource);
+                if (fi.Length > 0)
+                {
+                    e.Result = new Exception("Databáza je aktuálna.");
+                    return;
+                }
             }
 
             bw.ReportProgress(10, "Sťahovanie súborov na import..");
@@ -1536,7 +1540,7 @@ namespace Avat.Forms
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            About frm = new About();
+            About frm = new About(this.licence);
             frm.Show(this);
         }
 

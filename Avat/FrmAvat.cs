@@ -18,6 +18,7 @@ using AvatValidator.Validators.TaxPayerValidator.Entities;
 using AvatValidator.Sql;
 using System.Net;
 using Ionic.Zip;
+using System.Reflection;
 
 namespace Avat.Forms
 {
@@ -1186,56 +1187,56 @@ namespace Avat.Forms
                 dataCol.Style.Font.Color.SetColor(Color.DimGray);
 
                 var ws = excel.Workbook.Worksheets.Add("A1");
-                if (!ExportList<A1>(ws, kvDph.Transakcie.A1, bw))
+                if (!ExportList2<A1Wrapper>(ws, a1w, bw))
                 {
                     e.Cancel = true;
                     return;
                 }
                 ws = excel.Workbook.Worksheets.Add("A2");
-                if (!ExportList<A2>(ws, kvDph.Transakcie.A2, bw))
+                if (!ExportList2<A2Wrapper>(ws, a2w, bw))
                 {
                     e.Cancel = true;
                     return;
                 }
                 ws = excel.Workbook.Worksheets.Add("B1");
-                if (!ExportList<B1>(ws, kvDph.Transakcie.B1, bw))
+                if (!ExportList2<B1Wrapper>(ws, b1w, bw))
                 {
                     e.Cancel = true;
                     return;
                 }
                 ws = excel.Workbook.Worksheets.Add("B2");
-                if (!ExportList<B2>(ws, kvDph.Transakcie.B2, bw))
+                if (!ExportList2<B2Wrapper>(ws, b2w, bw))
                 {
                     e.Cancel = true;
                     return;
                 }
                 ws = excel.Workbook.Worksheets.Add("B3");
-                if (!ExportList<B3>(ws, kvDph.Transakcie.B3, bw))
+                if (!ExportList2<B3Wrapper>(ws, b3w, bw))
                 {
                     e.Cancel = true;
                     return;
                 }
                 ws = excel.Workbook.Worksheets.Add("C1");
-                if (!ExportList<C1>(ws, kvDph.Transakcie.C1, bw))
+                if (!ExportList2<C1Wrapper>(ws, c1w, bw))
                 {
                     e.Cancel = true;
                     e.Cancel = true;
                     return;
                 }
                 ws = excel.Workbook.Worksheets.Add("C2");
-                if (!ExportList<C2>(ws, kvDph.Transakcie.C2, bw))
+                if (!ExportList2<C2Wrapper>(ws, c2w, bw))
                 {
                     e.Cancel = true;
                     return;
                 }
                 ws = excel.Workbook.Worksheets.Add("D1");
-                if (!ExportList<D1>(ws, kvDph.Transakcie.D1, bw))
+                if (!ExportList2<D1Wrapper>(ws, d1w, bw))
                 {
                     e.Cancel = true;
                     return;
                 }
                 ws = excel.Workbook.Worksheets.Add("D2");
-                if (!ExportList<D2>(ws, kvDph.Transakcie.D2, bw))
+                if (!ExportList2<D2Wrapper>(ws, d2w, bw))
                 {
                     e.Cancel = true;
                     return;
@@ -1243,6 +1244,56 @@ namespace Avat.Forms
 
                 excel.SaveAs(new FileInfo(path));
             }
+        }
+
+        private bool ExportList2<T1>(ExcelWorksheet ws, IList<T1> aw, BackgroundWorker bw)
+            where T1 : class
+        {
+            bw.ReportProgress(0, "Export položiek " + ws.Name);
+            var props = TypeDescriptor.GetProperties(typeof(T1));
+            
+            double totalCells = props.Count * aw.Count;
+
+            for (int i = 0; i < props.Count; i++)
+            {
+                var p = props[i];
+                ws.Cells[1, i + 1].Value = p.DisplayName;
+
+                var pinf = typeof(T1).GetProperty(p.Name);
+                for (int j = 0; j < aw.Count; j++)
+                {
+                    var val = pinf.GetValue(aw[j], null);
+                    if (val != null)
+                    {
+                        if (val.ToString().ToUpper() == "PRAVDA" ||
+                            val.ToString().ToUpper() == "TRUE")
+                            val = "Áno";
+                        if (val.ToString().ToUpper() == "NEPRAVDA" ||
+                            val.ToString().ToUpper() == "FALSE")
+                            val = "Nie";
+                        ws.Cells[2 + j, i + 1].Value = val;
+                    }
+
+                    var progres = ((double)(i * aw.Count + j) / totalCells) * 100.0;
+                    bw.ReportProgress(Convert.ToInt32(progres));
+                    if (bw.CancellationPending)
+                    {
+                        bw.CancelAsync();
+                        return false;
+                    }
+                }
+            }
+
+            bw.ReportProgress(100, "Nastavujem šírku stĺpcov " + ws.Name);
+            for (int i = 0; i < props.Count; i++)
+                ws.Column(i + 1).AutoFit();
+
+            var headerRow = ws.Cells[1, 1, 1, props.Count];
+            headerRow.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+            headerRow.Style.Fill.BackgroundColor.SetColor(Color.Silver);
+            headerRow.Style.Font.Bold = true;
+
+            return true;
         }
 
         bool ExportList<T>(ExcelWorksheet ws, IList<T> data, BackgroundWorker bw)

@@ -41,21 +41,51 @@ namespace Avat.Components
             contentLayout.Controls.Add(podlaTypu);
             contentLayout.Controls.Add(podlaVyskytu);
             contentLayout.ResumeLayout(true);
+
+            left.Clear();
+            right.Clear();
         }
 
+        List<CtrlResultPanel2> left = new List<CtrlResultPanel2>();
+        List<CtrlResultPanel2> right = new List<CtrlResultPanel2>();
         public void AddProblem(string name, int count, string text, bool warning, int row, int col)
         {
             CtrlResultPanel2 p = new CtrlResultPanel2(name, count/*, text, warning*/);
+            p.Margin = new Padding(0);
+            p.Padding = new Padding(0);
 
-            contentLayout.SuspendLayout();
+            if (col == 0)
+                left.Add(p);
+            else
+                right.Add(p);
+
+            /*contentLayout.SuspendLayout();
             contentLayout.Controls.Add(p, col, row);
-            contentLayout.ResumeLayout(false);
+            contentLayout.ResumeLayout(false);*/
+        }
+
+        void FinalizeResults()
+        {
+            contentLayout.SuspendLayout();
+            var count = left.Count > right.Count ? left.Count : right.Count;
+            for (int i = 0; i < count; i++)
+			{
+                if (i < left.Count)
+                    contentLayout.Controls.Add(left[i]);
+                else
+                    contentLayout.Controls.Add(new Label());
+
+                if (i < right.Count)
+                    contentLayout.Controls.Add(right[i]);
+                else
+                    contentLayout.Controls.Add(new Label());
+			}
+            contentLayout.ResumeLayout(true);
         }
 
         public void ShowResult(IValidationResult Result)
         {
             Clear();
-            contentLayout.SuspendLayout();
 
             if (Result == null)
                 Result = new ValidationResult();
@@ -131,7 +161,7 @@ namespace Avat.Components
             if (found.Count > 0)
                 AddProblem("D.2.", found.Count, "Problémové položky typu D2.", false, row++, 1);
 
-            contentLayout.ResumeLayout(true);
+            FinalizeResults();
         }
 
         private void CheckFound(List<IValidationItemResult> found, ref int row, int col)

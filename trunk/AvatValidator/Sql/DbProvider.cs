@@ -5,6 +5,8 @@ using System.Text;
 using System.Data.SQLite;
 using System.Data;
 using System.IO;
+using System.IO.IsolatedStorage;
+using System.Reflection;
 
 namespace AvatValidator.Sql
 {
@@ -15,11 +17,44 @@ namespace AvatValidator.Sql
     {
         string DataSource;
 
+        static string DefDBName = "vatfix.db";
+        static string DefDataSource;
+
+        public static bool DefDataSourceExist
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(DefDataSource))
+                {
+                    var isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.User | IsolatedStorageScope.Assembly, null, null);
+                    var found = isoStore.GetFileNames(DefDBName);
+                    foreach (var f in found)
+                    {
+                        if (f == DefDBName)
+                            return true;
+                    }
+                }
+                 
+                return false;
+            }
+        }
+
         public static string DefaultDataSource
         {
             get
             {
-                return @".\kvalidator.db";
+                if (string.IsNullOrEmpty(DefDataSource))
+                {
+                    var isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.User | IsolatedStorageScope.Assembly, null, null);
+                    using (var f = new IsolatedStorageFileStream(DefDBName, FileMode.OpenOrCreate, isoStore))
+                    {
+                        DefDataSource = f.GetType().GetField("m_FullPath", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(f).ToString();
+                        f.Close();
+                    }
+                }
+
+                return DefDataSource;
+                //return @".\kvalidator.db";
             }
         }
 

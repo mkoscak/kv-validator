@@ -79,6 +79,7 @@
             this.progress.Location = new System.Drawing.Point(21, 84);
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(521, 16);
+            this.progress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progress.TabIndex = 0;
             this.progress.Value = 38;
             // 

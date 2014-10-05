@@ -247,7 +247,7 @@ namespace Avat.Components
                 else
                     text = string.Format("{0}  -  {1}", cbKind.Text, FormatPeriod());
 
-                icDphChanged(text);
+                icDphChanged(text.Trim(' ', '-'));
             }
         }
 

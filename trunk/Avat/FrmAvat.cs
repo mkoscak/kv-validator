@@ -788,13 +788,13 @@ namespace Avat.Forms
         /// Nacitanie udajov z UI do KVDPH
         /// </summary>
         /// <returns></returns>
-        bool ReadKV()
+        bool ReadKV(bool checkLicence)
         {
             try
             {
                 gridData.CancelEdit();
                 kvDph.Identifikacia = identification.GetData();
-                if (!licence.DIC.Contains(kvDph.Identifikacia.IcDphPlatitela))
+                if (checkLicence && !licence.DIC.Contains(kvDph.Identifikacia.IcDphPlatitela))
                 {
                     MessageBox.Show(this, "Nemožno validovať subjekt, ktorý sa nenachádza v licenčnom súbore!", "Kontrola", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false;
@@ -832,7 +832,7 @@ namespace Avat.Forms
                 return;
             }*/
 
-            if (!ReadKV())
+            if (!ReadKV(true))
                 return;
 
             try
@@ -956,7 +956,7 @@ namespace Avat.Forms
 
         private void btnSaveXml_Click(object sender, EventArgs e)
         {
-            if (!ReadKV())
+            if (!ReadKV(false))
                 return;
 
             string fName = GetOutXmlFileName();
@@ -1115,7 +1115,7 @@ namespace Avat.Forms
         /// <param name="e"></param>
         private void btnExportToExcel_Click(object sender, EventArgs e)
         {
-            if (!ReadKV())
+            if (!ReadKV(false))
                 return;
 
             try
@@ -1356,7 +1356,7 @@ namespace Avat.Forms
             if (kvDph == null)
                 return;
 
-            ReadKV();
+            ReadKV(false);
 
             var br = new BiznisReport();
 

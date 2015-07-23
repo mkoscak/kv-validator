@@ -1,0 +1,1 @@
+validator kontrolneho vykazu dph..
